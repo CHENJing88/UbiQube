@@ -10,7 +10,10 @@
   font-weight: normal;
   color: white;
   padding: 0 15px; }
+.top-bar .logo {
+  text-align: center;
 
+}
 //typography
 h1,h2,h3,h4,h5,h6{
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -54,15 +57,12 @@ footer{
   }
  }
 }
-image-index{
+.image-index{
   text-align: center;
   display: block;
 }
 
-.top-bar .logo {
-  text-align: center;
-  
-}
+
 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
