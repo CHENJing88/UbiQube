@@ -21,12 +21,11 @@
   float: left;
   margin-left: 5px;
   margin-right: 10px;
-  margin-bottom: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 7px;
   font-weight: bold;
   &:hover{
     color: #dcdcdc;
@@ -78,14 +77,6 @@ footer{
   }
  }
 }
-logo-index {
-  text-align: center;
-  float: left;
-  margin-left: 300px;
-  display:inline;
-
-}
-
 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -121,6 +112,14 @@ main {
   @include twelve-columns;
   background-color: #eee;
   }
+
+main logo-index {
+  text-align: center;
+  float: left;
+  display:inline;
+
+}
+
 section {
   @extend .row;
   margin-top: 20px;
