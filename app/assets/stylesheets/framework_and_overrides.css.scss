@@ -10,7 +10,7 @@
   font-weight: normal;
   color: white;
   padding: 0 15px; }
-.top-bar .logo img{
+.top-bar logo {
   text-align: center;
   height:45px;
   width: auto;
@@ -59,13 +59,15 @@ footer{
   }
  }
 }
-.image-index img{
+logo-index {
   text-align: center;
-  float: left;
+  
   display: block;
 
 }
-
+.center{
+  text-align: center;
+}
 
 
 
