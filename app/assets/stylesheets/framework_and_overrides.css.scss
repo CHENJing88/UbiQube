@@ -3,9 +3,10 @@
 //@import "bootstrap-sprockets";
 //@import "bootstrap";
 // override for the 'Home' navigation link
-.top-bar{
-  float: right;
+.top-bar .top-bar-section{
+  float:right;
 }
+
 .top-bar .name {
   font-size: rem-calc(13);
   line-height: 45px; }
@@ -18,8 +19,9 @@
   height:45px;
   width: auto;
   float: left;
+  margin-left: 5px;
   margin-right: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
@@ -27,7 +29,7 @@
   padding-top: 9px;
   font-weight: bold;
   &:hover{
-    color: #fff;
+    color: #dcdcdc;
     text-decoration: none;
    }
 }
@@ -37,13 +39,12 @@ h1,h2,h3,h4,h5,h6{
   font-weight: 700;
   line-height:1;
 }
-body{
-  padding-top: 60px;
-}
+
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 20px;
+  margin-top:20px;
   text-align: center;
   font-weight: normal;
 }
@@ -80,7 +81,7 @@ footer{
 logo-index {
   text-align: center;
   float: left;
-  margin-left: 60px;
+  margin-left: 300px;
   display:inline;
 
 }

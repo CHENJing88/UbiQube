@@ -17556,3 +17556,270 @@ ActionController::RoutingError (No route matches [GET] "/images/logo_sur_menu.jp
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (27.0ms)
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (146.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 14:29:19 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.7ms)
+  Rendered layouts/_navigation.html.erb (25.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 9993ms (Views: 9986.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 14:41:15 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (8.1ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (3.6ms)
+  Rendered layouts/_navigation.html.erb (13.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 9593ms (Views: 9574.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 14:41:35 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (2.7ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 570ms (Views: 566.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 14:41:36 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (6.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (3.8ms)
+  Rendered layouts/_navigation.html.erb (29.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 795ms (Views: 791.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 14:41:37 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (3.8ms)
+  Rendered layouts/_navigation.html.erb (6.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 513ms (Views: 509.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-10 14:41:40 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (1.8ms)
+  Rendered users/_user.html.erb (0.9ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/index.html.erb within layouts/application (19.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (11.8ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 531ms (Views: 520.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 14:41:44 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (5.2ms)
+  Rendered layouts/_navigation.html.erb (12.5ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 641ms (Views: 638.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 14:58:03 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (2.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.5ms)
+  Rendered layouts/_navigation.html.erb (7.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 9282ms (Views: 9278.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 14:58:16 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (9.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.0ms)
+  Rendered layouts/_navigation.html.erb (6.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 837ms (Views: 833.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 14:58:17 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.2ms)
+  Rendered layouts/_navigation.html.erb (8.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 829ms (Views: 825.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:12:03 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (2.9ms)
+  Rendered layouts/_navigation.html.erb (6.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 10038ms (Views: 10035.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:21:04 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (3.4ms)
+  Rendered layouts/_navigation.html.erb (5.7ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 9293ms (Views: 9288.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:21:17 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.6ms)
+  Rendered layouts/_navigation.html.erb (9.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 491ms (Views: 487.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:26:46 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (6.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (3.1ms)
+  Rendered layouts/_navigation.html.erb (7.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 9977ms (Views: 9974.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:30:19 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.4ms)
+  Rendered layouts/_navigation.html.erb (6.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 9158ms (Views: 9154.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:33:08 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (2.9ms)
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 9372ms (Views: 9368.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:35:13 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.3ms)
+  Rendered layouts/_navigation.html.erb (7.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 10263ms (Views: 10259.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:36:39 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.5ms)
+  Rendered layouts/_navigation.html.erb (7.7ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 10215ms (Views: 10211.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:36:53 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (8.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (6.7ms)
+  Rendered layouts/_navigation.html.erb (14.9ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 1167ms (Views: 1162.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 15:36:55 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.2ms)
+  Rendered layouts/_navigation.html.erb (7.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 657ms (Views: 651.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:36:57 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (1.8ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 759ms (Views: 755.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 15:38:35 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (4.0ms)
+  Rendered layouts/_navigation.html.erb (7.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 8873ms (Views: 8870.2ms | ActiveRecord: 0.7ms)
