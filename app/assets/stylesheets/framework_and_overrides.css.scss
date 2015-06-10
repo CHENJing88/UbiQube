@@ -13,6 +13,8 @@
 
 //typography
 h1,h2,h3,h4,h5,h6{
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
   line-height:1;
 }
 h1 {
@@ -52,8 +54,15 @@ footer{
   }
  }
 }
+image-index{
+  text-align: center;
+  display: block;
+}
 
-
+#logo {
+  text-align: center;
+  
+}
 
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
