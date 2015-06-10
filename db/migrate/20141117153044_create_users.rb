@@ -4,8 +4,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :provider
       t.string :uid
-      
-      t.timestamps :last_connect
+      t.datetime :last_connect
+
+      t.timestamps 
     end
   end
 end

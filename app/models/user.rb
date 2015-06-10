@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :role
+  has_and_belongs_to_many :app
 
   def self.create_with_omniauth(auth)
     create! do |user|
