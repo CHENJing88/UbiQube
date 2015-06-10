@@ -10,9 +10,11 @@
   font-weight: normal;
   color: white;
   padding: 0 15px; }
-.top-bar .logo {
+.top-bar .logo img{
   text-align: center;
-
+  height:45px;
+  width: auto;
+  float: left;
 }
 //typography
 h1,h2,h3,h4,h5,h6{
@@ -57,9 +59,11 @@ footer{
   }
  }
 }
-.image-index{
+.image-index img{
   text-align: center;
+  float: left;
   display: block;
+
 }
 
 
