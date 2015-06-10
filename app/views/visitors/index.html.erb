@@ -1,4 +1,4 @@
 <h1>Welcome to UbiQube</h1>
 
-<%= image_tag("logo_ubiqube_grey.jpg", alt:"UbiQube logo", class:"logo-index") %>
+<%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
 <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>

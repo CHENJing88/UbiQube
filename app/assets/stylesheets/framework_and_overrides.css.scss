@@ -34,12 +34,13 @@
 }
 //typography
 h1,h2,h3,h4,h5,h6{
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   line-height:1;
 }
 
 h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 20px;
@@ -113,10 +114,11 @@ main {
   background-color: #eee;
   }
 
-logo-index {
-  text-align: center;
-  float: left;
-  display:inline;
+#logo-index{
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 
 }
 
