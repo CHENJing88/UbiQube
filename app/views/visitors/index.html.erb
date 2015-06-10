@@ -1,9 +1,4 @@
-<div class="center jumbtron">
 <h1>Welcome to UbiQube</h1>
 
-<%= link_to image_tag("logo_ubiqube.jpg", alt: "UbiQube logo"), root_path %>
-<!--img alt="logo" src="/assets/logo_ubiqube.jpg" /-->
-
-<p><%link_to 'Users:', users_path %> <%User.count%> registered</p>
-
-</div>
+<%= image_tag "logo_ubiqube.jpg", alt:"UbiQube logo" %>
+<p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
