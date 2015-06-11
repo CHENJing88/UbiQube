@@ -1,5 +1,20 @@
 class App < ActiveRecord::Base
-has_and_belongs_to_many :usr
-has_and_belongs_to_many :role
+  #les attributs modifable
+  attr_accessible :nom, :niveau, :etat_id, :etape_id, :groupe_app_id
+  #validation d'existance
+  validates :nom, presence: true
+  validates :niveau, presence: true
+
+  #relation d'APP
+
+  #si une App est supprimée, on va supprimer tous les records dans user_app_roles
+  has_many :user_app_roles, foreign_key: "app_id", dependent: :destroy
+  #APP a plusieurs users et roles(many to many)
+  has_many :users, through: :user_app_roles, source: "user_id"
+  has_many :roles, through: :user_app_roles, source: "role_id"
+
+  has_one :etape_apps
+  has_one :etat_apps
+  has_one :groupe_apps
 
 end
