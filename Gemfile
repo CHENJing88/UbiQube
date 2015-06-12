@@ -12,7 +12,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'foundation-rails'
-#gem 'bootstrap-sass', '3.2.0.0'
+#gem 'will_paginate', '3.0.7'
+#gem 'bootstrap-will_paginate', '0.0.10'
+gem 'bootstrap-sass', '~>3.3.4'
+gem 'sass-rails', '>=3.2'
+
 gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-facebook'

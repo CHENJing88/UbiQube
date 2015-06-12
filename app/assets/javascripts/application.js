@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
-//= require bootstrap
-//= require_tree .
+
+/*//= require_tree .*/
 
 $(function() {
   $(document).foundation();
