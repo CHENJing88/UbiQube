@@ -14,6 +14,10 @@ class AppsController < ApplicationController
 
   def create
     @app=App.new(app_params)
+<<<<<<< HEAD
+=======
+    if @app.save
+>>>>>>> 16362a257cc8b0db1284bcb2e5404dfac55dded5
 
 
   end
