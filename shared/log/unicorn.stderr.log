@@ -2107,10 +2107,10 @@ I, [2014-11-20T10:46:25.312543 #19800]  INFO -- : reaped #<Process::Status: pid 
 I, [2014-11-20T10:46:25.312769 #19800]  INFO -- : master complete
 I, [2014-11-20T10:46:29.995936 #20218]  INFO -- : Refreshing Gem list
 /usr/local/rvm/gems/ruby-2.1.3/gems/activesupport-4.1.6/lib/active_support/dependencies.rb:241:in `load': /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:7: syntax error, unexpected ':', expecting keyword_end (SyntaxError)
-		login_url: '/login', 
+		login_url: '/login',
 		          ^
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:7: syntax error, unexpected ',', expecting keyword_end
-		login_url: '/login', 
+		login_url: '/login',
 		                    ^
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:8: syntax error, unexpected ',', expecting keyword_end
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:9: syntax error, unexpected ',', expecting keyword_end
@@ -2162,10 +2162,10 @@ I, [2014-11-20T10:46:29.995936 #20218]  INFO -- : Refreshing Gem list
 	from /usr/local/rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `<main>'
 I, [2014-11-20T10:46:44.794358 #20334]  INFO -- : Refreshing Gem list
 /usr/local/rvm/gems/ruby-2.1.3/gems/activesupport-4.1.6/lib/active_support/dependencies.rb:241:in `load': /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:7: syntax error, unexpected ':', expecting keyword_end (SyntaxError)
-		login_url: '/login', 
+		login_url: '/login',
 		          ^
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:7: syntax error, unexpected ',', expecting keyword_end
-		login_url: '/login', 
+		login_url: '/login',
 		                    ^
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:8: syntax error, unexpected ',', expecting keyword_end
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:9: syntax error, unexpected ',', expecting keyword_end
@@ -2217,10 +2217,10 @@ I, [2014-11-20T10:46:44.794358 #20334]  INFO -- : Refreshing Gem list
 	from /usr/local/rvm/gems/ruby-2.1.3/bin/ruby_executable_hooks:15:in `<main>'
 I, [2014-11-20T10:49:45.420306 #20631]  INFO -- : Refreshing Gem list
 /usr/local/rvm/gems/ruby-2.1.3/gems/activesupport-4.1.6/lib/active_support/dependencies.rb:241:in `load': /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:7: syntax error, unexpected ':', expecting keyword_end (SyntaxError)
-		login_url: '/login', 
+		login_url: '/login',
 		          ^
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:7: syntax error, unexpected ',', expecting keyword_end
-		login_url: '/login', 
+		login_url: '/login',
 		                    ^
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:8: syntax error, unexpected ',', expecting keyword_end
 /usr/local/src/test/rails-omniauth/config/initializers/omniauth.rb:9: syntax error, unexpected ',', expecting keyword_end
