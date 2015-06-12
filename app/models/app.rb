@@ -1,9 +1,9 @@
 class App < ActiveRecord::Base
   #les attributs modifable
-  attr_accessible :nom, :niveau, :etat_id, :etape_id, :groupe_app_id
+ # attr_accessible :nom, :niveau, :etat_id, :etape_id, :groupe_app_id
   #validation d'existance
-  validates :nom, presence: true
-  validates :niveau, presence: true
+  #validates :nom, presence: true
+  #validates :niveau, presence: true
 
   #relation d'APP
 

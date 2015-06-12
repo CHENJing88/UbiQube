@@ -19081,3 +19081,293 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_messages.html.erb (0.2ms)
   Rendered layouts/_footer.html.erb (0.5ms)
 Completed 200 OK in 431ms (Views: 373.4ms | ActiveRecord: 0.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 16:19:17 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (78.9ms)
+Completed 500 Internal Server Error in 1097ms
+
+ActionView::Template::Error (couldn't find file 'bootstrap'
+  (in /usr/local/src/ubiQube/rails/app/assets/javascripts/application.js:17)):
+     7:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+     8:     <%# Modernizr is required for Zurb Foundation %>
+     9:     <%= javascript_include_tag 'vendor/modernizr' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11:     <%= csrf_meta_tags %>
+    12:   </head>
+    13:   <body>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1931334955993786968_70907780'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (25.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 16:19:27 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 229ms
+
+ActionView::Template::Error (couldn't find file 'bootstrap'
+  (in /usr/local/src/ubiQube/rails/app/assets/javascripts/application.js:17)):
+     7:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+     8:     <%# Modernizr is required for Zurb Foundation %>
+     9:     <%= javascript_include_tag 'vendor/modernizr' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11:     <%= csrf_meta_tags %>
+    12:   </head>
+    13:   <body>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1931334955993786968_71046460'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.5ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 16:26:44 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (235.4ms)
+Completed 500 Internal Server Error in 1418ms
+
+ActionView::Template::Error (couldn't find file 'bootstrap'
+  (in /usr/local/src/ubiQube/rails/app/assets/javascripts/application.js:17)):
+     7:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+     8:     <%# Modernizr is required for Zurb Foundation %>
+     9:     <%= javascript_include_tag 'vendor/modernizr' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    11:     <%= csrf_meta_tags %>
+    12:   </head>
+    13:   <body>
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___1931334955993786968_68937880'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (89.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (45.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (252.6ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 16:35:19 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (2.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_navigation_links.html.erb (4.1ms)
+  Rendered layouts/_navigation.html.erb (14.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (2.5ms)
+Completed 200 OK in 1811ms (Views: 1802.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/signin" for 193.52.209.13 at 2015-06-12 16:35:27 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://ubiqube.univ-tours.fr/auth/cas
+Completed 403 Forbidden in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/cas" for 193.52.209.13 at 2015-06-12 16:35:27 +0200
+
+
+Started GET "/auth/cas/callback?url&ticket=ST-130904-443CDCH4metKdHLwvnbw-cas.univ-tours.fr?url&ticket=ST-130904-443CDCH4metKdHLwvnbw-cas.univ-tours.fr" for 193.52.209.13 at 2015-06-12 16:35:33 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"url"=>nil, "ticket"=>"ST-130904-443CDCH4metKdHLwvnbw-cas.univ-tours.fr", "provider"=>"cas"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'cas' AND "users"."uid" = '21205909t'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://ubiqube.univ-tours.fr/app/index
+Completed 302 Found in 95ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:35:34 +0200
+
+SyntaxError (/usr/local/src/ubiQube/rails/app/controllers/apps_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/apps_controller.rb:33: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.5ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:36:59 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 98ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (79.4ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:24 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 31ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.0ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:28 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 31ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:29 +0200
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.1ms)
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 20ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.2ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:30 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 11ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (68.8ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:30 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 37ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.4ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:31 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 22ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (8.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.2ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 16:38:34 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (40.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (18.7ms)
+  Rendered layouts/_navigation.html.erb (24.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 731ms (Views: 727.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/app/index" for 193.52.209.13 at 2015-06-12 16:38:51 +0200
+Processing by AppsController#index as HTML
+Completed 500 Internal Server Error in 23ms
+
+NoMethodError (undefined method `attr_accessible' for App(id: integer, created_at: datetime, updated_at: datetime):Class):
+  app/models/app.rb:3:in `<class:App>'
+  app/models/app.rb:1:in `<top (required)>'
+  app/controllers/apps_controller.rb:4:in `index'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.4ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-12 16:40:29 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (2.6ms)
+  Rendered users/_user.html.erb (0.4ms)
+  Rendered users/_user.html.erb (0.7ms)
+  Rendered users/index.html.erb within layouts/application (33.4ms)
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 469ms (Views: 433.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-12 16:40:31 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (3.0ms)
+  Rendered layouts/_navigation.html.erb (5.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 390ms (Views: 387.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 16:40:49 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (47.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation_links.html.erb (24.9ms)
+  Rendered layouts/_navigation.html.erb (32.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1485ms (Views: 1478.6ms | ActiveRecord: 3.1ms)
