@@ -18353,3 +18353,426 @@ Processing by UsersController#index as HTML
 Redirected to http://ubiqube.univ-tours.fr/
 Filter chain halted as :authenticate_user! rendered or redirected
 Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 17:45:54 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 959ms (Views: 956.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 17:46:00 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (1.3ms)
+Completed 200 OK in 494ms (Views: 491.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 17:46:14 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 397ms (Views: 395.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 17:46:59 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (4.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 526ms (Views: 522.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 17:47:05 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 388ms (Views: 386.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 17:47:06 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (2.7ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 17:47:06 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 387ms (Views: 385.7ms | ActiveRecord: 0.4ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 409ms (Views: 407.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 17:47:13 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (4.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 409ms (Views: 407.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 17:47:15 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 462ms (Views: 460.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 17:47:18 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 367ms (Views: 364.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 17:47:29 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 367ms (Views: 365.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 17:49:07 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 381ms (Views: 378.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 20:41:33 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 363ms (Views: 361.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 20:42:16 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 301ms (Views: 298.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 20:42:18 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 327ms (Views: 325.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-10 20:42:27 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 367ms (Views: 364.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-10 20:42:29 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (41.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 609ms (Views: 604.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-11 09:12:42 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (11.2ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (64.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (9.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 652ms (Views: 608.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-11 09:18:30 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.1ms)
+  Rendered layouts/_navigation.html.erb (6.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 607ms (Views: 603.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/signin" for 193.52.209.13 at 2015-06-11 09:20:18 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://ubiqube.univ-tours.fr/auth/cas
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/cas" for 193.52.209.13 at 2015-06-11 09:20:18 +0200
+
+
+Started GET "/auth/cas/callback?url&ticket=ST-15017-HtYRpMOOpO3WWbB1CYQa-cas.univ-tours.fr?url&ticket=ST-15017-HtYRpMOOpO3WWbB1CYQa-cas.univ-tours.fr" for 193.52.209.13 at 2015-06-11 09:20:26 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"url"=>nil, "ticket"=>"ST-15017-HtYRpMOOpO3WWbB1CYQa-cas.univ-tours.fr", "provider"=>"cas"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."provider" = 'cas' AND "users"."uid" = 'beuneche'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://ubiqube.univ-tours.fr/
+Completed 302 Found in 16ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-11 09:20:26 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (5.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (3.4ms)
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 432ms (Views: 428.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-11 09:20:30 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/_user.html.erb (2.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/_user.html.erb (0.2ms)
+  Rendered users/index.html.erb within layouts/application (13.9ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 228ms (Views: 214.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 193.52.209.13 at 2015-06-11 09:20:32 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 360ms (Views: 353.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-11 09:20:35 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (3.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (5.2ms)
+  Rendered layouts/_navigation.html.erb (7.6ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 589ms (Views: 585.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-11 09:20:40 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (6.8ms)
+  Rendered layouts/_navigation.html.erb (9.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 754ms (Views: 750.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-11 09:20:46 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/_user.html.erb (11.0ms)
+  Rendered users/_user.html.erb (0.8ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (32.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 672ms (Views: 662.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/signout" for 193.52.209.13 at 2015-06-11 09:20:47 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to https://cas.univ-tours.fr/cas/logout?service=http://ubiqube.univ-tours.fr
+Completed 403 Forbidden in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-11 09:20:47 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (4.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 450ms (Views: 447.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-11 09:23:06 +0200
+Processing by UsersController#index as HTML
+Redirected to http://ubiqube.univ-tours.fr/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 08:44:09 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (1210.2ms)
+Completed 500 Internal Server Error in 1259ms
+
+ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000007a80690>:0x000000081f3be8>):
+    2: 
+    3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
+    4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
+    5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
+  app/views/visitors/index.html.erb:5:in `_app_views_visitors_index_html_erb__3749516905253269041_68129800'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (20.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (130.9ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 08:46:23 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  Rendered visitors/index.html.erb within layouts/application (825.2ms)
+Completed 500 Internal Server Error in 853ms
+
+ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000008bafab0>:0x00000008bae200>):
+    2: 
+    3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
+    4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
+    5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
+  app/views/visitors/index.html.erb:5:in `_app_views_visitors_index_html_erb__3749516905253269041_73289540'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (28.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (18.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.4ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-12 08:57:01 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (5.7ms)[0m  SELECT COUNT(*) FROM "users"
+  Rendered visitors/index.html.erb within layouts/application (159.6ms)
+Completed 500 Internal Server Error in 165ms
+
+ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000008bafab0>:0x0000000931cd70>):
+    2: 
+    3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
+    4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
+    5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
+  app/views/visitors/index.html.erb:5:in `_app_views_visitors_index_html_erb__3749516905253269041_73289540'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.4ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_app_roles_on_app_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_app_roles_on_app_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_app_roles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_app_roles_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_app_roles_on_app_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_app_roles_on_app_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_app_roles_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_app_roles_on_user_id' AND type='index'
+
