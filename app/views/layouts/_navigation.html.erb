@@ -1,6 +1,12 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <nav class="top-bar" data-topbar>
-  <%= link_to "UbiQube", root_path, id: "logo"%>
+
+  <% if user_signed_in? %>
+    <%= link_to "UbiQube", mesapps_path,id: "logo" %>
+  <% else %>
+    <%= link_to "UbiQube", root_path, id: "logo"%>
+  <% end %>
+  
   <ul class="title-area">
     <!--li class="name"--><%#= link_to 'Home', root_path %><!--/li-->
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>

@@ -1,7 +1,7 @@
 // import the CSS framework
-@import "foundation";
-//@import "bootstrap-sprockets";
-//@import "bootstrap";
+//@import "foundation";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 // override for the 'Home' navigation link
 .top-bar .top-bar-section{
   float:right;
