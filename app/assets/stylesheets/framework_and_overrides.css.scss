@@ -14,6 +14,7 @@
   font-weight: normal;
   color: white;
   padding: 0 15px; }
+  
 #logo {
   text-align: center;
   height:45px;
@@ -113,14 +114,6 @@ main {
   @include twelve-columns;
   background-color: #eee;
   }
-
-#logo-index{
-  text-align:center;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-
-}
 
 section {
   @extend .row;
