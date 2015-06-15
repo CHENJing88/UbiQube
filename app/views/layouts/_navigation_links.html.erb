@@ -1,16 +1,16 @@
-<%# add navigation links to this file id="fat-menu" %>
+<%# add navigation links to this file  %>
 <li><%= link_to 'About', page_path('about') %></li>
 <% if user_signed_in? %>
 
   <li><%= link_to 'Users', users_path %></li>
 
-  <li class="dropdown">
+  <li id="fat-menu" class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
       Mon Compte <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li><%= link_to "Mon Profile", "#" %></li>
-      
+
       <li class="divider"></li>
       <li><%= link_to 'Sign out', signout_path %></li>
     </ul>
