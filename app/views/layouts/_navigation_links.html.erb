@@ -1,4 +1,4 @@
-<%# add navigation links to this file  %>
+<%# add navigation links to this file   %>
 <li><%= link_to 'About', page_path('about') %></li>
 <% if user_signed_in? %>
 
@@ -12,9 +12,11 @@
       <li><%= link_to "Mon Profile", "#" %></li>
 
       <li class="divider"></li>
+
       <li><%= link_to 'Sign out', signout_path %></li>
     </ul>
   </li>
+
 <% else %>
   <li><%= link_to 'Sign in', signin_path %></li>
 <% end %>
