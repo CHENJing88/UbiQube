@@ -16302,3 +16302,291 @@ I, [2015-06-15T14:19:07.314798 #3563]  INFO -- : worker=3 ready
 10.3.3.116, 193.52.209.13 - - [15/Jun/2015 14:38:09] "GET /users HTTP/1.0" 304 - 1.0395
 10.3.3.116, 193.52.209.13 - - [15/Jun/2015 14:38:15] "GET / HTTP/1.0" 304 - 1.1370
 10.3.3.116, 193.52.209.13 - - [15/Jun/2015 14:38:37] "GET /users HTTP/1.0" 304 - 0.8168
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 14:41:59] "GET / HTTP/1.0" 304 - 0.3644
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 14:46:10] "GET / HTTP/1.0" 304 - 0.8361
+I, [2015-06-15T15:34:51.069228 #4966]  INFO -- : pid=/usr/local/src/ubiQube/rails/shared/pids/unicorn.pid possibly stale, got EPERM signalling PID:3549
+I, [2015-06-15T15:34:51.070039 #4966]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-15T15:34:51.071476 #4966] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:34:51.071572 #4966] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-15T15:34:51.573985 #4966] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:34:51.574177 #4966] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-15T15:34:52.076602 #4966] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:34:52.076803 #4966] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-15T15:34:52.578581 #4966] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:34:52.578800 #4966] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-15T15:34:53.082003 #4966] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:34:53.082209 #4966] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-15T15:34:53.584474 #4966] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:35:02] "GET / HTTP/1.0" 500 33443 5.7784
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:35:14] "GET / HTTP/1.0" 500 33443 2.4290
+I, [2015-06-15T15:37:48.955333 #4996]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-15T15:37:48.961719 #4996] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:37:48.961863 #4996] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-15T15:37:49.463265 #4996] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:37:49.463490 #4996] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-15T15:37:49.964868 #4996] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:37:49.965334 #4996] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-15T15:37:50.466721 #4996] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:37:50.466992 #4996] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-15T15:37:50.968810 #4996] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:37:50.969060 #4996] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-15T15:37:51.472561 #4996] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET / HTTP/1.0" 200 - 17.6662
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0216
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0425
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0457
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0391
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /application.css?body=1 HTTP/1.0" 200 319791 0.2164
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0131
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0089
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0225
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 200 752220 0.2602
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0211
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0209
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0250
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0268
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0222
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0229
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0328
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0305
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0270
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0218
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0163
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0386
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0322
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0184
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/affix.js?body=1 HTTP/1.0" 200 4807 0.0412
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/alert.js?body=1 HTTP/1.0" 200 2261 0.0317
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/collapse.js?body=1 HTTP/1.0" 200 5964 0.0299
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/carousel.js?body=1 HTTP/1.0" 200 7142 0.0387
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/button.js?body=1 HTTP/1.0" 200 3275 0.0898
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/dropdown.js?body=1 HTTP/1.0" 200 4698 0.0321
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.1200
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/modal.js?body=1 HTTP/1.0" 200 9989 0.0425
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/scrollspy.js?body=1 HTTP/1.0" 200 4708 0.0275
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/tab.js?body=1 HTTP/1.0" 200 3797 0.0336
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/transition.js?body=1 HTTP/1.0" 200 1832 0.0378
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/popover.js?body=1 HTTP/1.0" 200 3164 0.0384
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap/tooltip.js?body=1 HTTP/1.0" 200 15349 0.0420
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0186
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /logo_ubiqube_grey.jpg HTTP/1.0" 304 - 0.0169
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:09] "GET /bootstrap-sprockets.js?body=1 HTTP/1.0" 200 12 0.0566
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:10] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0909
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:25] "GET /app/index HTTP/1.0" 200 - 1.8423
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:26] "GET /app/index HTTP/1.0" 200 - 1.7261
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /app/index HTTP/1.0" 304 - 1.4910
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0230
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0255
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0286
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0230
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0236
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0180
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.1080
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0282
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0216
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0208
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0124
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0295
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0266
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0193
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0264
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0213
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0327
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0206
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0339
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0364
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0224
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0189
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0283
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0223
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:28] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0188
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:34] "GET /pages/about HTTP/1.0" 200 - 1.1851
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:38] "GET /app/index HTTP/1.0" 304 - 1.2528
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:38:43] "GET /users HTTP/1.0" 200 - 1.0682
+I, [2015-06-15T15:45:44.094435 #5190]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-15T15:45:44.095899 #5190] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:45:44.096079 #5190] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-15T15:45:44.598015 #5190] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:45:44.598244 #5190] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-15T15:45:45.100152 #5190] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:45:45.100391 #5190] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-15T15:45:45.602615 #5190] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:45:45.602887 #5190] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-15T15:45:46.105345 #5190] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-15T15:45:46.105590 #5190] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-15T15:45:46.607274 #5190] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /users HTTP/1.0" 200 - 1.0264
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0117
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.0178
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /application.css?body=1 HTTP/1.0" 304 - 0.0148
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0101
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0135
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0167
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0391
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0186
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0246
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0179
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0334
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0254
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0278
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0231
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0673
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0271
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0216
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0476
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0201
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0453
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0265
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0234
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0300
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0488
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/affix.js?body=1 HTTP/1.0" 304 - 0.0478
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/button.js?body=1 HTTP/1.0" 304 - 0.0381
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/alert.js?body=1 HTTP/1.0" 304 - 0.0719
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/dropdown.js?body=1 HTTP/1.0" 304 - 0.0169
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/collapse.js?body=1 HTTP/1.0" 304 - 0.0396
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/carousel.js?body=1 HTTP/1.0" 304 - 0.0645
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/scrollspy.js?body=1 HTTP/1.0" 304 - 0.0414
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/tab.js?body=1 HTTP/1.0" 304 - 0.0505
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/transition.js?body=1 HTTP/1.0" 304 - 0.0547
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/tooltip.js?body=1 HTTP/1.0" 304 - 0.0472
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/modal.js?body=1 HTTP/1.0" 304 - 0.1001
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap/popover.js?body=1 HTTP/1.0" 304 - 0.0508
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0281
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0354
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:47] "GET /bootstrap-sprockets.js?body=1 HTTP/1.0" 304 - 0.0837
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:51] "GET /users HTTP/1.0" 304 - 0.8086
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:53] "GET /app/index HTTP/1.0" 200 - 0.9016
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:45:59] "GET /pages/about HTTP/1.0" 200 - 0.9879
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:01] "GET /users HTTP/1.0" 304 - 0.9612
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:07] "GET / HTTP/1.0" 200 - 1.3356
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:07] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0372
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:07] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0276
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:07] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0208
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:07] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0190
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:07] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0294
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0238
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0230
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0223
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.1286
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /application.css?body=1 HTTP/1.0" 304 - 0.1325
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0245
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0249
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0426
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0225
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0716
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0193
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0187
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0237
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0256
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0189
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0263
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0209
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0203
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0184
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/carousel.js?body=1 HTTP/1.0" 304 - 0.0266
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/alert.js?body=1 HTTP/1.0" 304 - 0.0386
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/affix.js?body=1 HTTP/1.0" 304 - 0.0424
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/button.js?body=1 HTTP/1.0" 304 - 0.0483
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/collapse.js?body=1 HTTP/1.0" 304 - 0.0200
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/modal.js?body=1 HTTP/1.0" 304 - 0.0254
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/tab.js?body=1 HTTP/1.0" 304 - 0.0215
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/dropdown.js?body=1 HTTP/1.0" 304 - 0.0462
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/tooltip.js?body=1 HTTP/1.0" 304 - 0.0173
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/scrollspy.js?body=1 HTTP/1.0" 304 - 0.0598
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap-sprockets.js?body=1 HTTP/1.0" 304 - 0.0182
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/popover.js?body=1 HTTP/1.0" 304 - 0.0355
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /bootstrap/transition.js?body=1 HTTP/1.0" 304 - 0.0556
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0167
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /logo_ubiqube_grey.jpg HTTP/1.0" 304 - 0.0142
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:08] "GET /application.js?body=1 HTTP/1.0" 304 - 0.2327
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:12] "GET /users HTTP/1.0" 304 - 0.9478
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:15] "GET /users/2 HTTP/1.0" 200 - 0.7987
+10.3.3.116, 193.52.209.13 - - [15/Jun/2015 15:46:19] "GET /users/1 HTTP/1.0" 302 - 0.0474
