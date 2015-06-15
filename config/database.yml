@@ -7,6 +7,10 @@
 default: &default
 #  adapter: sqlite3
   adapter: mysql2
+  encoding: utf8
+  username: root
+  password:
+  reconnect: false
   pool: 5
   timeout: 5000
 #production:
@@ -32,13 +36,13 @@ default: &default
 # Ensure the MySQL gem is defined in your Gemfile
 #   gem 'mysql2'
 
-development: 
+development:
   adapter: mysql2
   encoding: utf8
   pool: 5
   username: root
   password:
-  reconnect: false 
+  reconnect: false
   #socket: /tmp/mysql.sock
   host: localhost
   database: ubiqube_development
