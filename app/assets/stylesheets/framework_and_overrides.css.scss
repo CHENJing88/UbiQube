@@ -4,12 +4,14 @@
 @import "bootstrap";
 // override for the 'Home' navigation link
 .top-bar .top-bar-section{
+  font-size: 100%;
   float:right;
 }
 
 .top-bar .name {
-  font-size: rem-calc(30);
+  font-size: rem-calc(25);
   line-height: 45px; }
+
 .top-bar .name a {
   font-weight: normal;
   color: white;
