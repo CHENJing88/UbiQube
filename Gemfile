@@ -14,12 +14,8 @@ gem 'spring',        group: :development
 gem 'foundation-rails'
 #gem 'will_paginate', '3.0.7'
 #gem 'bootstrap-will_paginate', '0.0.10'
-<<<<<<< HEAD
 gem 'bootstrap-sass', '~>3.3.4'
-gem 'sass-rails', '>=3.2'
 
-=======
->>>>>>> b34cbefb293a5a50c66d40a26d09d6872d5d94ad
 gem 'high_voltage'
 gem 'omniauth'
 gem 'omniauth-facebook'
