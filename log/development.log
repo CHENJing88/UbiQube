@@ -21400,3 +21400,6 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_messages.html.erb (0.3ms)
   Rendered layouts/_footer.html.erb (0.6ms)
 Completed 200 OK in 506ms (Views: 503.7ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
