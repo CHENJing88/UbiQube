@@ -178,3 +178,26 @@ textarea{
   @extend .radius;
   @extend .tiny;
 }
+
+// Users' Apps page
+.row{
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.card{
+  color:#fff;
+  display: block;
+  margin: 4px 0;
+}
+.card h2{
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top:25%;
+  padding: 0 20px 0;
+}
+.col-xs{
+
+}
