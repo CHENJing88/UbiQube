@@ -20,9 +20,5 @@
 $(function() {
   $(document).foundation();
 
-  /*$(document).ready(foundation(){
-    $('.dropdown-toggle').dropdown();
-  });*/
-
 
 });

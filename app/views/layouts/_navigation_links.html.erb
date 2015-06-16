@@ -3,12 +3,12 @@
 <% if user_signed_in? %>
 
   <li><%= link_to 'Users', users_path %></li>
+  <li><%= link_to 'Sign out', signout_path %></li>
 
-  <li id="fat-menu" class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      Mon Compte <b class="caret"></b>
-    </a>
-    <ul class="dropdown-menu">
+  <li id="fat-menu" class="has-dropdown hover" data-option="is_hover:false">
+    <a href="#"> Mon Compte <b class="caret"></b> </a>
+    
+    <ul class="dropdown" >
       <li><%= link_to "Mon Profile", "#" %></li>
 
       <li class="divider"></li>

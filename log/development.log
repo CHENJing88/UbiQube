@@ -4,7 +4,7 @@
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 Migrating to CreateUsers (20141117153044)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime)
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141117153044"]]
   [1m[35m (12.2ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -4638,7 +4638,7 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 316ms (Views: 313.7ms | ActiveRecord: 0.6ms)
   [1m[36m (28.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
-  [1m[35m (9.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[35m (9.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL)
   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (6.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -5149,7 +5149,7 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_messages.html.erb (0.3ms)
 Completed 200 OK in 331ms (Views: 327.8ms | ActiveRecord: 1.4ms)
   [1m[36m (22.4ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
-  [1m[35m (10.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[35m (10.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL)
   [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (10.5ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -5478,7 +5478,7 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_messages.html.erb (1.1ms)
 Completed 200 OK in 333ms (Views: 331.5ms | ActiveRecord: 0.5ms)
   [1m[36m (19.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
-  [1m[35m (9.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[35m (9.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL)
   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (13.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -5557,7 +5557,7 @@ Completed 200 OK in 355ms (Views: 320.9ms | ActiveRecord: 1.0ms)
 Started GET "/signout" for 193.52.209.13 at 2014-11-20 12:08:38 +0100
 Processing by SessionsController#destroy as HTML
 Redirected to https://cas.univ-tours.fr/cas/logout
-Redirected to 
+Redirected to
 Completed 500 Internal Server Error in 2ms
 
 AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
@@ -5573,7 +5573,7 @@ AbstractController::DoubleRenderError (Render and/or redirect were called multip
 Started GET "/signout" for 193.52.209.13 at 2014-11-20 12:08:38 +0100
 Processing by SessionsController#destroy as HTML
 Redirected to https://cas.univ-tours.fr/cas/logout
-Redirected to 
+Redirected to
 Completed 500 Internal Server Error in 2ms
 
 AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
@@ -5585,7 +5585,7 @@ AbstractController::DoubleRenderError (Render and/or redirect were called multip
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
   [1m[36m (16.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
-  [1m[35m (11.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[35m (11.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL)
   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (14.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -6663,7 +6663,7 @@ Processing by VisitorsController#index as HTML
   Rendered layouts/_messages.html.erb (0.7ms)
 Completed 200 OK in 337ms (Views: 316.5ms | ActiveRecord: 0.5ms)
   [1m[36m (27.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
-  [1m[35m (9.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[35m (9.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL)
   [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
   [1m[35m (12.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
@@ -16968,9 +16968,9 @@ Migrating to CreateRoles (20150610072317)
 Migrating to CreateUserAppRoles (20150610073011)
   [1m[35m (0.2ms)[0m  begin transaction
   [1m[36m (0.8ms)[0m  [1mCREATE TABLE "user" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "provider" varchar(255), "uid" varchar(255), "last_connect" datetime, "created_at" datetime, "updated_at" datetime) [0m
-  [1m[35m (0.4ms)[0m  CREATE TABLE "app" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "niveau" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[35m (0.4ms)[0m  CREATE TABLE "app" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "niveau" varchar(255), "created_at" datetime, "updated_at" datetime)
   [1m[36m (1.1ms)[0m  [1mCREATE TABLE "role" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
-SQLite3::SQLException: table "role" already exists: CREATE TABLE "role" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+SQLite3::SQLException: table "role" already exists: CREATE TABLE "role" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime)
   [1m[35m (0.4ms)[0m  rollback transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 Migrating to CreateUserAppRoles (20150610073011)
@@ -18692,7 +18692,7 @@ Processing by VisitorsController#index as HTML
 Completed 500 Internal Server Error in 1259ms
 
 ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000007a80690>:0x000000081f3be8>):
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
     5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
@@ -18711,7 +18711,7 @@ Processing by VisitorsController#index as HTML
 Completed 500 Internal Server Error in 853ms
 
 ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000008bafab0>:0x00000008bae200>):
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
     5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
@@ -18730,7 +18730,7 @@ Processing by VisitorsController#index as HTML
 Completed 500 Internal Server Error in 165ms
 
 ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000008bafab0>:0x0000000931cd70>):
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
     5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
@@ -18777,7 +18777,7 @@ ActionView::Template::Error (undefined local variable or method `apps_path' for 
             WHERE name='index_user_app_roles_on_user_id' AND type='index'
 
   [1m[36m (28.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
-  [1m[35m (41.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[35m (41.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`)
   [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
 Migrating to CreateUsers (20141117153044)
   [1m[35m (11.1ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `provider` varchar(255), `uid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
@@ -18787,7 +18787,7 @@ Migrating to CreateUsers (20141117153044)
 Migrating to CreateApps (20150609142351)
   [1m[35m (10.5ms)[0m  CREATE TABLE `apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `niveau` varchar(255), `etat_id` int(11), `etape_id` int(11), `groupe_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
   [1m[36m (25.0ms)[0m  [1mCREATE  INDEX `index_apps_on_etat_id`  ON `apps` (`etat_id`) [0m
-  [1m[35m (48.3ms)[0m  CREATE  INDEX `index_apps_on_etape_id`  ON `apps` (`etape_id`) 
+  [1m[35m (48.3ms)[0m  CREATE  INDEX `index_apps_on_etape_id`  ON `apps` (`etape_id`)
   [1m[36m (25.6ms)[0m  [1mCREATE  INDEX `index_apps_on_groupe_app_id`  ON `apps` (`groupe_app_id`) [0m
   [1m[35m (0.5ms)[0m  BEGIN
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150609142351')[0m
@@ -18799,9 +18799,9 @@ Migrating to CreateRoles (20150610072317)
   [1m[35m (16.1ms)[0m  COMMIT
 Migrating to CreateUserAppRoles (20150610073011)
   [1m[36m (9.9ms)[0m  [1mCREATE TABLE `user_app_roles` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `app_id` int(11), `role_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
-  [1m[35m (28.6ms)[0m  CREATE  INDEX `index_user_app_roles_on_user_id`  ON `user_app_roles` (`user_id`) 
+  [1m[35m (28.6ms)[0m  CREATE  INDEX `index_user_app_roles_on_user_id`  ON `user_app_roles` (`user_id`)
   [1m[36m (24.1ms)[0m  [1mCREATE  INDEX `index_user_app_roles_on_app_id`  ON `user_app_roles` (`app_id`) [0m
-  [1m[35m (24.5ms)[0m  CREATE  INDEX `index_user_app_roles_on_role_id`  ON `user_app_roles` (`role_id`) 
+  [1m[35m (24.5ms)[0m  CREATE  INDEX `index_user_app_roles_on_role_id`  ON `user_app_roles` (`role_id`)
   [1m[36m (25.2ms)[0m  [1mCREATE UNIQUE INDEX `index_user_app_roles_on_user_id_and_app_id_and_role_id`  ON `user_app_roles` (`user_id`, `app_id`, `role_id`) [0m
   [1m[35m (0.5ms)[0m  BEGIN
   [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150610073011')[0m
@@ -18813,9 +18813,9 @@ Migrating to CreateDroits (20150610101736)
   [1m[35m (5.1ms)[0m  COMMIT
 Migrating to CreateRoleDroits (20150610101811)
   [1m[36m (13.8ms)[0m  [1mCREATE TABLE `role_droits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `droit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
-  [1m[35m (24.8ms)[0m  CREATE  INDEX `index_role_droits_on_role_id`  ON `role_droits` (`role_id`) 
+  [1m[35m (24.8ms)[0m  CREATE  INDEX `index_role_droits_on_role_id`  ON `role_droits` (`role_id`)
   [1m[36m (33.0ms)[0m  [1mCREATE  INDEX `index_role_droits_on_droit_id`  ON `role_droits` (`droit_id`) [0m
-  [1m[35m (25.3ms)[0m  CREATE UNIQUE INDEX `index_role_droits_on_role_id_and_droit_id`  ON `role_droits` (`role_id`, `droit_id`) 
+  [1m[35m (25.3ms)[0m  CREATE UNIQUE INDEX `index_role_droits_on_role_id_and_droit_id`  ON `role_droits` (`role_id`, `droit_id`)
   [1m[36m (0.5ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150610101811')
   [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
@@ -18827,7 +18827,7 @@ Migrating to CreateCatalogDroits (20150610143516)
 Migrating to CreateDroitCatalogdroits (20150610143544)
   [1m[35m (8.6ms)[0m  CREATE TABLE `droit_catalogdroits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `catalogdroit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
   [1m[36m (28.7ms)[0m  [1mCREATE  INDEX `index_droit_catalogdroits_on_role_id`  ON `droit_catalogdroits` (`role_id`) [0m
-  [1m[35m (23.3ms)[0m  CREATE  INDEX `index_droit_catalogdroits_on_catalogdroit_id`  ON `droit_catalogdroits` (`catalogdroit_id`) 
+  [1m[35m (23.3ms)[0m  CREATE  INDEX `index_droit_catalogdroits_on_catalogdroit_id`  ON `droit_catalogdroits` (`catalogdroit_id`)
   [1m[36m (24.4ms)[0m  [1mCREATE UNIQUE INDEX `index_droit_catalogdroits_on_role_id_and_catalogdroit_id`  ON `droit_catalogdroits` (`role_id`, `catalogdroit_id`) [0m
   [1m[35m (0.5ms)[0m  BEGIN
   [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20150610143544')[0m
@@ -18839,9 +18839,9 @@ Migrating to CreateGroupeUsers (20150610143658)
   [1m[35m (5.7ms)[0m  COMMIT
 Migrating to CreateUserGroupeUsers (20150610143715)
   [1m[36m (25.9ms)[0m  [1mCREATE TABLE `user_groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `groupe_user_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
-  [1m[35m (24.1ms)[0m  CREATE  INDEX `index_user_groupe_users_on_user_id`  ON `user_groupe_users` (`user_id`) 
+  [1m[35m (24.1ms)[0m  CREATE  INDEX `index_user_groupe_users_on_user_id`  ON `user_groupe_users` (`user_id`)
   [1m[36m (27.8ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_groupe_user_id`  ON `user_groupe_users` (`groupe_user_id`) [0m
-  [1m[35m (25.3ms)[0m  CREATE UNIQUE INDEX `index_user_groupe_users_on_user_id_and_groupe_user_id`  ON `user_groupe_users` (`user_id`, `groupe_user_id`) 
+  [1m[35m (25.3ms)[0m  CREATE UNIQUE INDEX `index_user_groupe_users_on_user_id_and_groupe_user_id`  ON `user_groupe_users` (`user_id`, `groupe_user_id`)
   [1m[36m (0.7ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150610143715')
   [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
@@ -18895,7 +18895,7 @@ Processing by VisitorsController#index as HTML
 Completed 500 Internal Server Error in 1027ms
 
 ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000009bd5818>:0x00000009bd4f08>):
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
     5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
@@ -18914,7 +18914,7 @@ Processing by VisitorsController#index as HTML
 Completed 500 Internal Server Error in 516ms
 
 ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000009781910>:0x00000009780fb0>):
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
     5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
@@ -18933,7 +18933,7 @@ Processing by VisitorsController#index as HTML
 Completed 500 Internal Server Error in 247ms
 
 ActionView::Template::Error (undefined local variable or method `apps_path' for #<#<Class:0x00000009781910>:0x0000000914e570>):
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
     5: <p><%= link_to 'APPs:', apps_path %> ,<%= APP.count %> created</p>
@@ -19381,7 +19381,7 @@ Completed 500 Internal Server Error in 74ms
 
 ActionView::Template::Error (SQLite3::CorruptException: database disk image is malformed: PRAGMA table_info("users")):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_48708080'
@@ -19400,7 +19400,7 @@ Completed 500 Internal Server Error in 18ms
 
 ActionView::Template::Error (SQLite3::CorruptException: database disk image is malformed: PRAGMA table_info("users")):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_48708080'
@@ -19418,7 +19418,7 @@ Completed 500 Internal Server Error in 38ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_66604980'
@@ -19437,7 +19437,7 @@ Completed 500 Internal Server Error in 18ms
 
 ActionView::Template::Error (SQLite3::CorruptException: database disk image is malformed: PRAGMA table_info("users")):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_48708080'
@@ -19455,7 +19455,7 @@ Completed 500 Internal Server Error in 78ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_74184780'
@@ -19473,7 +19473,7 @@ Completed 500 Internal Server Error in 75ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_74184780'
@@ -19491,7 +19491,7 @@ Completed 500 Internal Server Error in 102ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_66604980'
@@ -19509,7 +19509,7 @@ Completed 500 Internal Server Error in 87ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_74184780'
@@ -19528,7 +19528,7 @@ Completed 500 Internal Server Error in 56ms
 
 ActionView::Template::Error (SQLite3::CorruptException: database disk image is malformed: PRAGMA table_info("users")):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_48708080'
@@ -19546,7 +19546,7 @@ Completed 500 Internal Server Error in 127ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_74184780'
@@ -19564,7 +19564,7 @@ Completed 500 Internal Server Error in 129ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_74184780'
@@ -19582,7 +19582,7 @@ Completed 500 Internal Server Error in 318ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_24959100'
@@ -19600,7 +19600,7 @@ Completed 500 Internal Server Error in 204ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:', users_path %> <%= User.count%> registered</p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_48708080'
@@ -19805,7 +19805,7 @@ Completed 500 Internal Server Error in 76ms
 
 ActionView::Template::Error (Could not find table 'users'):
     1: <!--h1>Welcome to UbiQube</h1-->
-    2: 
+    2:
     3: <%= image_tag("logo_ubiqube_grey.jpg", :alt=>"UbiQube logo", :id=>"logo-index") %>
     4: <p><%= link_to 'Users:',users_path %><% User.count %> registered </p>
   app/views/visitors/index.html.erb:4:in `_app_views_visitors_index_html_erb__3749516905253269041_53367280'
