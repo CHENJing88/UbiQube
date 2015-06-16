@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def showmesapps
+    @user=User.find(params[:id])
     @mesapps=@user.apps
   end
 
