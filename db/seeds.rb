@@ -11,10 +11,17 @@ e3=EtatApp.create(nom:"Maintenance")
 
 
 ep1=EtapeApp.create(nom:"Brouillion")
+<<<<<<< HEAD
 ep2=EtatApp.create(nom:"En cours de validation")
 ep3=EtatApp.create(nom:"Validé")
 ep4=EtatApp.create(nom:"Refusé")
 ep5=EtatApp.create(nom:"Archivé")
+=======
+ep2=EtapeApp.create(nom:"En cours de validation")
+ep3=EtapeApp.create(nom:"Validé")
+ep4=EtapeApp.create(nom:"Refusé")
+ep5=EtapeApp.create(nom:"Archivé")
+>>>>>>> e633d8ddccafbf0d9d8b4a50477eb98ab61a0205
 
 gu1=GroupeUser.create(nom:"EDTIC")
 
