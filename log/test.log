@@ -5,3 +5,61 @@
   [1m[36m (0.4ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (15.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141117153044')
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (164.7ms)[0m  [1mCREATE TABLE `apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `niveau` varchar(255), `etat_id` int(11), `etape_id` int(11), `groupe_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (153.7ms)[0m  CREATE  INDEX `index_apps_on_etape_id` USING btree ON `apps` (`etape_id`) 
+  [1m[36m (40.2ms)[0m  [1mCREATE  INDEX `index_apps_on_etat_id` USING btree ON `apps` (`etat_id`) [0m
+  [1m[35m (49.4ms)[0m  CREATE  INDEX `index_apps_on_groupe_app_id` USING btree ON `apps` (`groupe_app_id`) 
+  [1m[36m (35.8ms)[0m  [1mCREATE TABLE `catalog_droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (26.2ms)[0m  CREATE TABLE `droit_catalogdroits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `catalogdroit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (36.0ms)[0m  [1mCREATE  INDEX `index_droit_catalogdroits_on_catalogdroit_id` USING btree ON `droit_catalogdroits` (`catalogdroit_id`) [0m
+  [1m[35m (31.2ms)[0m  CREATE UNIQUE INDEX `index_droit_catalogdroits_on_role_id_and_catalogdroit_id` USING btree ON `droit_catalogdroits` (`role_id`, `catalogdroit_id`) 
+  [1m[36m (37.8ms)[0m  [1mCREATE  INDEX `index_droit_catalogdroits_on_role_id` USING btree ON `droit_catalogdroits` (`role_id`) [0m
+  [1m[35m (12.5ms)[0m  CREATE TABLE `droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (19.8ms)[0m  [1mCREATE TABLE `etape_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (17.2ms)[0m  CREATE TABLE `etat_apps` (`id` int(11) auto_increment PRIMARY KEY, `etat_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (24.0ms)[0m  [1mCREATE TABLE `groupe_apps` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (21.1ms)[0m  CREATE TABLE `groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (33.2ms)[0m  [1mCREATE TABLE `reseaus` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (23.9ms)[0m  CREATE TABLE `role_droits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `droit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (48.7ms)[0m  [1mCREATE  INDEX `index_role_droits_on_droit_id` USING btree ON `role_droits` (`droit_id`) [0m
+  [1m[35m (30.8ms)[0m  CREATE UNIQUE INDEX `index_role_droits_on_role_id_and_droit_id` USING btree ON `role_droits` (`role_id`, `droit_id`) 
+  [1m[36m (35.1ms)[0m  [1mCREATE  INDEX `index_role_droits_on_role_id` USING btree ON `role_droits` (`role_id`) [0m
+  [1m[35m (14.5ms)[0m  CREATE TABLE `roles` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (13.5ms)[0m  [1mCREATE TABLE `service_in_apps` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (11.8ms)[0m  CREATE TABLE `service_out_apps` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (10.7ms)[0m  [1mCREATE TABLE `services` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (19.9ms)[0m  CREATE TABLE `user_app_roles` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `app_id` int(11), `role_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (31.9ms)[0m  [1mCREATE  INDEX `index_user_app_roles_on_app_id` USING btree ON `user_app_roles` (`app_id`) [0m
+  [1m[35m (23.1ms)[0m  CREATE  INDEX `index_user_app_roles_on_role_id` USING btree ON `user_app_roles` (`role_id`) 
+  [1m[36m (26.9ms)[0m  [1mCREATE UNIQUE INDEX `index_user_app_roles_on_user_id_and_app_id_and_role_id` USING btree ON `user_app_roles` (`user_id`, `app_id`, `role_id`) [0m
+  [1m[35m (27.2ms)[0m  CREATE  INDEX `index_user_app_roles_on_user_id` USING btree ON `user_app_roles` (`user_id`) 
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE `user_groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `groupe_user_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (34.2ms)[0m  CREATE  INDEX `index_user_groupe_users_on_groupe_user_id` USING btree ON `user_groupe_users` (`groupe_user_id`) 
+  [1m[36m (36.0ms)[0m  [1mCREATE UNIQUE INDEX `index_user_groupe_users_on_user_id_and_groupe_user_id` USING btree ON `user_groupe_users` (`user_id`, `groupe_user_id`) [0m
+  [1m[35m (32.0ms)[0m  CREATE  INDEX `index_user_groupe_users_on_user_id` USING btree ON `user_groupe_users` (`user_id`) 
+  [1m[36m (24.8ms)[0m  [1mCREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `provider` varchar(255), `uid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (15.1ms)[0m  CREATE TABLE `vm_install_service_ins` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (29.3ms)[0m  [1mCREATE TABLE `vms` (`id` int(11) auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (13.2ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (81.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (4.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (25.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150615125428')[0m
+  [1m[35m (27.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143809')
+  [1m[36m (6.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20141117153044')[0m
+  [1m[35m (7.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143757')
+  [1m[36m (9.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143544')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145813')
+  [1m[36m (16.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150609142351')[0m
+  [1m[35m (14.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145738')
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143658')[0m
+  [1m[35m (4.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145709')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610101811')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610101736')
+  [1m[36m (4.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610072317')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143715')
+  [1m[36m (6.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143516')[0m
+  [1m[35m (6.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145725')
+  [1m[36m (7.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145550')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610073011')
+  [1m[36m (4.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145020')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`

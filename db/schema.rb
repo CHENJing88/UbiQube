@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150615125428) do
   create_table "apps", force: true do |t|
     t.string   "nom"
     t.string   "niveau"
-    t.integer  "etat_id"
+    t.integer  "etat_app_id"
     t.integer  "etape_id"
     t.integer  "groupe_app_id"
     t.datetime "created_at"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20150615125428) do
   end
 
   add_index "apps", ["etape_id"], name: "index_apps_on_etape_id", using: :btree
-  add_index "apps", ["etat_id"], name: "index_apps_on_etat_id", using: :btree
+  add_index "apps", ["etat_app_id"], name: "index_apps_on_etat_app_id", using: :btree
   add_index "apps", ["groupe_app_id"], name: "index_apps_on_groupe_app_id", using: :btree
 
   create_table "catalog_droits", force: true do |t|
@@ -58,27 +58,24 @@ ActiveRecord::Schema.define(version: 20150615125428) do
 
   create_table "etat_apps", force: true do |t|
     t.integer  "etat_id"
+    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "groupe_apps", force: true do |t|
+    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "groupe_users", force: true do |t|
+    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "reseaus", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "role", force: true do |t|
-    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -93,6 +90,12 @@ ActiveRecord::Schema.define(version: 20150615125428) do
   add_index "role_droits", ["droit_id"], name: "index_role_droits_on_droit_id", using: :btree
   add_index "role_droits", ["role_id", "droit_id"], name: "index_role_droits_on_role_id_and_droit_id", unique: true, using: :btree
   add_index "role_droits", ["role_id"], name: "index_role_droits_on_role_id", using: :btree
+
+  create_table "roles", force: true do |t|
+    t.string   "nom"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "service_in_apps", force: true do |t|
     t.datetime "created_at"
