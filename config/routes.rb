@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
 
-  get '/users/:id/mesapps' => 'users#showmesapps', :as => :mesapps
+  get '/users/:uid/mesapps' => 'users#mesapps', :as => :mesapps
 end

@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def showmesapps
-    @user=User.find(params[:id])
+  def mesapps
+    @user = User.find(params[:id])
     @mesapps=@user.apps
   end
 
