@@ -17,17 +17,6 @@
   color: white;
   padding: 0 15px; }
 
-//dropdown menu
-.top-bar-section .dropdown {
-  & ul{
-    display: none;
-  }
-  &:hover ul {
-    display: block;
-    text-align: center;
-  }
-}
-
 
 
 #logo {
