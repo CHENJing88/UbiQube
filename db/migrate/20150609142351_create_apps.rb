@@ -1,7 +1,7 @@
 class CreateApps < ActiveRecord::Migration
   def change
     create_table :apps do |t|
-      t.string :nom，null:false
+      t.string :nom , unique:true
       t.string :niveau
 
       t.integer :etat_app_id
