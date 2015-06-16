@@ -10,11 +10,11 @@ class App < ActiveRecord::Base
   #si une App est supprimée, on va supprimer tous les records dans user_app_roles
   has_many :user_app_roles, foreign_key: "app_id", dependent: :destroy
   #APP a plusieurs users et roles(many to many)
-  has_many :users, through: :user_app_roles, source: "user_id"
-  has_many :roles, through: :user_app_roles, source: "role_id"
+  has_many :users, through: :user_app_roles
+  has_many :roles, through: :user_app_roles
 
   has_one :etape_apps
-  has_one :etat_apps
+  has_one :etat_apps, :as => :etat_collection 
   has_one :groupe_apps
 
 end

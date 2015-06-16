@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @apps=@user.apps
+    @mesapps=@user.apps
   end
 
 end

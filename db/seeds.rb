@@ -30,6 +30,3 @@ UserAppRole.create(user_id:2,app_id:1,role_id:1)
 UserAppRole.create(user_id:2,app_id:2,role_id:1)
 UserAppRole.create(user_id:1,app_id:1,role_id:1)
 UserAppRole.create(user_id:1,app_id:2,role_id:1)
-
-
-
