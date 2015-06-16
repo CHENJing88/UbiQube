@@ -57,8 +57,9 @@ ActiveRecord::Schema.define(version: 20150615125428) do
   end
 
   create_table "etat_apps", force: true do |t|
-    t.integer  "etat_id"
     t.string   "nom"
+    t.integer  "etat_collection_id"
+    t.string   "etat_collection_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

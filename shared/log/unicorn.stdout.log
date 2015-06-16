@@ -310,3 +310,8 @@ Exiting
 I, [2015-06-16T15:11:59.736074 #3554]  INFO -- omniauth: (cas) Request phase initiated.
 I, [2015-06-16T15:12:21.158307 #3554]  INFO -- omniauth: (cas) Callback phase initiated.
 Exiting
+I, [2015-06-16T17:18:48.997943 #3563]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-16T17:18:56.276026 #3563]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
+I, [2015-06-16T17:22:30.576378 #3557]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-16T17:22:44.791159 #3559]  INFO -- omniauth: (cas) Callback phase initiated.
