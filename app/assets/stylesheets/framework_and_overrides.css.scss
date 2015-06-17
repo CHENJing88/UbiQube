@@ -194,7 +194,6 @@ textarea{
 }
 .apps{
   list-style: none;
-  display:inline;
   float:left;
   padding: 0;
   li{
@@ -214,19 +213,11 @@ textarea{
   display:table;
 }
 .card{
-  color:#fff;
-  display: block;
+  text-align: center;
+  display:inline;
   margin: 4px 0;
 }
-.card h3{
-  color: #fff;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top:25%;
-  padding: 0 20px 0;
-}
+
 .container{
   margin-right: auto;
   margin-left: auto;
