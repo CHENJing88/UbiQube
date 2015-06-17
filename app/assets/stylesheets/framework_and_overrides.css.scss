@@ -181,7 +181,7 @@ textarea{
 // Users' Apps page
 .mesapps{
   margin: px 0;
-  &:h3{
+  h3{
     color: #fff;
     position: absolute;
     padding: 0 20px 0;
@@ -197,7 +197,7 @@ textarea{
   display:inline;
   float:left;
   padding: 0;
-  &:li{
+  li{
     padding: 10px 0;
     border: 1px solid #e8e8e8;
     list-style:none;
@@ -218,7 +218,7 @@ textarea{
   display: block;
   margin: 4px 0;
 }
-.card h2{
+.card h3{
   color: #fff;
   position: absolute;
   left: 0;

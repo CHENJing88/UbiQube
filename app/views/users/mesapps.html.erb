@@ -1,11 +1,21 @@
+
 <div class="row">
   <div class="mesapps">
     <h3>Mon APP</h3>
     <div class="container ">
         <!--div class="col-md-8"-->
-          <ol class="apps">
-            <%= render 'users/mesapps' %>
-          </ol>
+          <ul class="apps">
+            <%#= render 'users/mesapps' %>
+            <%= @mesapps.each do |a|%>
+            <div class="card yellow">
+
+                <p><%= a.nom %></p>
+                <p><%= a.niveau %></p>
+
+            </div>
+            <% end%>
+
+          </ul>
     </div>
   </div>
 
