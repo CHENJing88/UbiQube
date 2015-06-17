@@ -2,15 +2,14 @@
   <h3>Mon APP</h3>
   <div class="container ">
     <div class="cards row">
-
-      <%= @mesapps.each do |a| %>
-
-        <div class="card col-xs">
+      <div class="card col-md-8">
+      <%#= @mesapps.each do |a| %>
           <h2><%= a.nom %></h2>
-        </div>
-
-      <% end %>
-
+          <ol class="apps">
+            <%= render @mesapps %>
+          </ol>
+      <%# end %>
+    </div>
     </div>
   </div>
 </div>
