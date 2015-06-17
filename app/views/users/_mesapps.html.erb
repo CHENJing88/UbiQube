@@ -1,9 +1,9 @@
 
 <%= @mesapps.each do |a|%>
-<li class="w3-card yellow">
-  <p><%= a.nom %></p>
-  <p><%= a.niveau %></p>
-
-</li>
-
+<div class="dark card">
+  <div class="card-section">
+    <li><%= a.nom %></li>
+    <li><%= a.niveau %></li>
+  </div>
+</div>
 <% end%>

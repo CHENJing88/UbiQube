@@ -5,15 +5,7 @@
     <div class="container ">
         <!--div class="col-md-8"-->
           <ul class="apps">
-            <%#= render 'users/mesapps' %>
-            <%= @mesapps.each do |a|%>
-            <div class="card yellow">
-
-                <p><%= a.nom %></p>
-                <p><%= a.niveau %></p>
-
-            </div>
-            <% end%>
+            <%= render 'users/mesapps' %>
 
           </ul>
     </div>
