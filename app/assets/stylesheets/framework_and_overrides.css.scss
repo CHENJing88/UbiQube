@@ -180,8 +180,8 @@ textarea{
 }
 // Users' Apps page
 .row{
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .row:after,
 .row:before{
@@ -195,6 +195,7 @@ textarea{
   h3{
     position:absolute;
     padding: 0 20px 0;
+    margin: 60px 0;
     left: 0;
     right: 0;
     top: 25%;
