@@ -347,3 +347,17 @@ Exiting
 Exiting
 Exiting
 Exiting
+I, [2015-06-17T13:39:08.286515 #3559]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-17T13:39:11.410434 #3559]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-17T13:40:04.279871 #3563]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-17T13:40:20.116958 #3563]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
+I, [2015-06-17T13:43:37.938853 #3557]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-17T13:43:38.039188 #3559]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-17T13:50:51.308738 #3557]  INFO -- omniauth: (cas) Callback phase initiated.
+E, [2015-06-17T13:50:51.409149 #3557] ERROR -- omniauth: (cas) Authentication failure! invalid_ticket: OmniAuth::Strategies::CAS::InvalidCASTicket, Invalid CAS Ticket
+I, [2015-06-17T13:51:46.722912 #3557]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-17T13:51:48.094820 #3554]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-17T13:51:49.370543 #3559]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-17T13:51:54.030961 #3563]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
