@@ -178,11 +178,28 @@ textarea{
   @extend .radius;
   @extend .tiny;
 }
-
 // Users' Apps page
+.mesapps{
+  margin: 80px 0;
+  &h3{
+    color: #fff;
+    position: absolute;
+    padding: 0 20px 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 25%;
+  }
+
+}
 .row{
   margin-left: -15px;
   margin-right: -15px;
+}
+.row:after,
+.row:before{
+  content: " ";
+  display: table;
 }
 .card{
   color:#fff;
@@ -198,6 +215,9 @@ textarea{
   top:25%;
   padding: 0 20px 0;
 }
-.col-xs{
-
+.container{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
