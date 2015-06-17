@@ -194,6 +194,8 @@ textarea{
 }
 .apps{
   list-style: none;
+  display:inline;
+  float:left;
   padding: 0;
   li{
     padding: 10px 0;
@@ -208,7 +210,6 @@ textarea{
 .row:after,
 .row:before{
   content: " ";
-  display: table;
 }
 .card{
   color:#fff;
