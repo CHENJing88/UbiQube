@@ -207,9 +207,9 @@ textarea{
   list-style: none;
   float:left;
   padding: 0;
-  li{
+  h2{
     text-align: center;
-    padding: 10px 0;
+    padding: 0 20px 0;
     border: 1px solid #e8e8e8;
     list-style:none;
     display:inline;
@@ -219,9 +219,19 @@ textarea{
   position:absolute;
   display: block;
   padding: 0;
-  margin: 10px 5px 5px 5px;
+  margin: 4px 0;
   -webkit-perspective: 500;
   perspective: 500;
+  h2{
+    color:#fff;
+    position: absolute;
+    padding: 0 20px 0;
+    left:0;
+    right:0;
+    text-align: center;
+    top: 25%;
+  }
+
 }
 
 
@@ -230,4 +240,16 @@ textarea{
   margin-left: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+//grid
+*{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+*:before
+*:after{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
 }
