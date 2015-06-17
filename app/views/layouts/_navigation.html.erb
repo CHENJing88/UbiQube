@@ -1,7 +1,7 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <nav class="top-bar" data-topbar>
   <% if user_signed_in? %>
-    <%= link_to "UbiQube", mesapps_path,id: "logo" %>
+    <%= link_to "UbiQube", mesapps_path(session[:user_id]),id: "logo" %>
   <% else %>
     <%= link_to "UbiQube", root_path, id: "logo"%>
   <% end %>

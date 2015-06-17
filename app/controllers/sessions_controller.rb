@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     reset_session
     session[:user_id] = user.id
     #redirect_to root_url, :notice => 'Signed in!'
-    redirect_to mesapps_url(user.id), :notice => 'Signed in!'
+    redirect_to mesapps_url, :notice => 'Signed in!'
   end
 
   def destroy
