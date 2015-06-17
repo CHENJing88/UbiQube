@@ -1,7 +1,11 @@
-<div class="cards row">
+
+<%= @mesapps.each do |a|%>
+<div class="row">
 <li>
-  <span><%= link_to mesapp.nom %></span>
-  <span><%= link_to mesapp.niveau %></span>
+  <p><%= a.nom %></p>
+  <p><%= a.niveau %></p>
   
 </li>
 </div>
+<% end%>
+

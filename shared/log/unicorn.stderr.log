@@ -19039,3 +19039,610 @@ E, [2015-06-17T10:36:31.350768 #17042] ERROR -- : adding listener failed addr=/t
 10.3.3.116, 193.52.209.13 - - [17/Jun/2015 10:37:10] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0081
 10.3.3.116, 193.52.209.13 - - [17/Jun/2015 10:37:10] "GET /logo_ubiqube_grey.jpg HTTP/1.0" 304 - 0.0107
 10.3.3.116, 193.52.209.13 - - [17/Jun/2015 10:37:15] "GET /users/1/mesapps HTTP/1.0" 200 - 0.7927
+I, [2015-06-17T10:52:27.707249 #17337]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T10:52:27.709698 #17337] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:52:27.709845 #17337] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T10:52:28.211662 #17337] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:52:28.212402 #17337] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T10:52:28.713820 #17337] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:52:28.714187 #17337] ERROR -- : retrying in 0.5 seconds (2 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 10:52:28] "GET /users/1/mesapps HTTP/1.0" 500 25848 0.3478
+E, [2015-06-17T10:52:29.215225 #17337] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:52:29.215505 #17337] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T10:52:29.716672 #17337] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:52:29.717041 #17337] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T10:52:30.218640 #17337] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+I, [2015-06-17T10:53:54.993983 #17433]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T10:53:54.996968 #17433] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:53:54.997135 #17433] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T10:53:55.499019 #17433] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:53:55.499220 #17433] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T10:53:56.001284 #17433] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:53:56.001535 #17433] ERROR -- : retrying in 0.5 seconds (2 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 10:53:56] "GET /users/1/mesapps HTTP/1.0" 500 27160 0.3591
+E, [2015-06-17T10:53:56.504439 #17433] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:53:56.504688 #17433] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T10:53:57.006459 #17433] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T10:53:57.006654 #17433] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T10:53:57.509117 #17433] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+I, [2015-06-17T11:19:26.429220 #17882]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:19:26.431213 #17882] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:19:26.431348 #17882] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:19:26.933797 #17882] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:19:26.934100 #17882] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:19:27.436546 #17882] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:19:27.436733 #17882] ERROR -- : retrying in 0.5 seconds (2 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:27] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.3345
+E, [2015-06-17T11:19:27.938569 #17882] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:19:27.938767 #17882] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T11:19:28.440984 #17882] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:19:28.441292 #17882] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:19:28.943477 #17882] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:31] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.0686
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:36] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.1354
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:38] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.1400
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:38] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.3028
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:38] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.1267
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:19:39] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.1241
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:15] "GET /users/1/mesapps HTTP/1.0" 500 27166 0.1727
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /users HTTP/1.0" 304 - 8.2782
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0053
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0155
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0312
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0200
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0104
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 200 434397 0.1518
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0172
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0176
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0193
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0110
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0241
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0099
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0233
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0163
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0145
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0167
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0165
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0218
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0153
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0164
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0183
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0234
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0278
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /bootstrap.js?body=1 HTTP/1.0" 304 - 0.0211
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0166
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /application.css?body=1 HTTP/1.0" 304 - 0.2270
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:27] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0148
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:29] "GET /users/1/mesapps HTTP/1.0" 500 27105 0.1560
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:20:29] "GET /users/1/mesapps HTTP/1.0" 500 27124 0.1529
+I, [2015-06-17T11:22:00.804255 #17900]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:22:00.807311 #17900] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:22:00.807506 #17900] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:22:01.309139 #17900] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:22:01.309400 #17900] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:22:01.812169 #17900] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:22:01.812520 #17900] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:22:02.314613 #17900] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:22:02.314841 #17900] ERROR -- : retrying in 0.5 seconds (1 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:22:02] "GET /users/1/mesapps HTTP/1.0" 500 25815 0.1952
+E, [2015-06-17T11:22:02.817302 #17900] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:22:02.817510 #17900] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:22:03.319316 #17900] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+I, [2015-06-17T11:24:09.257588 #17976]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:24:09.261213 #17976] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:24:09.261299 #17976] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:24:09.763383 #17976] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:24:09.763583 #17976] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:24:10.265336 #17976] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:24:10.265534 #17976] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:24:10.767836 #17976] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:24:10.768041 #17976] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T11:24:11.269762 #17976] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:24:11.269963 #17976] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:24:11.771112 #17976] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:24:11] "GET /users/1/mesapps HTTP/1.0" 500 28354 0.1727
+I, [2015-06-17T11:30:11.839030 #18088]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:30:11.841365 #18088] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:30:11.841499 #18088] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:30:12.344501 #18088] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:30:12.344870 #18088] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:30:12.847364 #18088] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:30:12.848420 #18088] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:30:13.350510 #18088] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:30:13.350748 #18088] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T11:30:13.852819 #18088] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:30:13.853015 #18088] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:30:14.355130 #18088] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:30:18] "GET /users/1/mesapps HTTP/1.0" 500 28329 0.1652
+I, [2015-06-17T11:34:37.100817 #18169]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:34:37.103054 #18169] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:34:37.103191 #18169] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:34:37.605473 #18169] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:34:37.605688 #18169] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:34:38.108277 #18169] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:34:38.108524 #18169] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:34:38.610507 #18169] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:34:38.610704 #18169] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T11:34:39.112975 #18169] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:34:39.113237 #18169] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:34:39.615444 #18169] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:34:39] "GET /users/1/mesapps HTTP/1.0" 500 28609 0.1116
+I, [2015-06-17T11:36:34.612361 #18200]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:36:34.618234 #18200] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:36:34.618492 #18200] ERROR -- : retrying in 0.5 seconds (4 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /users/1/mesapps HTTP/1.0" 200 - 1.4159
+E, [2015-06-17T11:36:35.120800 #18200] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:36:35.121369 #18200] ERROR -- : retrying in 0.5 seconds (3 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0324
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0203
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0222
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0160
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0178
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0114
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0141
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0118
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0124
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0126
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.2090
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0226
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /application.css?body=1 HTTP/1.0" 304 - 0.2285
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0189
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0341
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0188
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0200
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0173
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0271
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0110
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.2723
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0197
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /bootstrap.js?body=1 HTTP/1.0" 304 - 0.0132
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0248
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0283
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0175
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:36:35] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0259
+E, [2015-06-17T11:36:35.622595 #18200] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:36:35.622919 #18200] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:36:36.124281 #18200] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:36:36.124508 #18200] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T11:36:36.625744 #18200] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:36:36.625943 #18200] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:36:37.127279 #18200] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+I, [2015-06-17T11:38:23.222181 #18216]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:38:23.223165 #18216] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:38:23.223225 #18216] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:38:23.725024 #18216] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:38:23.725220 #18216] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:38:24.226989 #18216] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:38:24.227225 #18216] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:38:24.729319 #18216] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:38:24.729556 #18216] ERROR -- : retrying in 0.5 seconds (1 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:24] "GET /users/1/mesapps HTTP/1.0" 200 - 0.5441
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0181
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0101
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0189
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0121
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0168
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0230
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0203
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0353
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0241
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /application.css?body=1 HTTP/1.0" 304 - 0.1063
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0345
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0294
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0343
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.1625
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0336
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0341
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0119
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0255
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0240
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0243
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0204
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0263
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0267
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0257
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /bootstrap.js?body=1 HTTP/1.0" 304 - 0.0219
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0111
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:38:25] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0182
+E, [2015-06-17T11:38:25.230509 #18216] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:38:25.230706 #18216] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:38:25.732520 #18216] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+I, [2015-06-17T11:40:03.931106 #18294]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:40:03.933992 #18294] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:40:03.934092 #18294] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:40:04.435949 #18294] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:40:04.436144 #18294] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-17T11:40:04.937199 #18294] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:40:04.937420 #18294] ERROR -- : retrying in 0.5 seconds (2 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /users/1/mesapps HTTP/1.0" 200 - 0.6554
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0110
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /application.css?body=1 HTTP/1.0" 304 - 0.0127
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0094
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0114
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0355
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0423
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0202
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0187
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0201
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0294
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0298
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0365
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0223
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0231
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0204
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0273
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0252
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0355
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0333
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0218
+E, [2015-06-17T11:40:05.438699 #18294] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:40:05.438915 #18294] ERROR -- : retrying in 0.5 seconds (1 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0335
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0300
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0341
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0127
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0148
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /bootstrap.js?body=1 HTTP/1.0" 304 - 0.0297
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:40:05] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.2633
+E, [2015-06-17T11:40:05.940526 #18294] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:40:05.940874 #18294] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:40:06.442373 #18294] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+I, [2015-06-17T11:41:01.975063 #18303]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-17T11:41:01.976414 #18303] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:41:01.976546 #18303] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-17T11:41:02.477630 #18303] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:41:02.477858 #18303] ERROR -- : retrying in 0.5 seconds (3 tries left)
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /users/1/mesapps HTTP/1.0" 200 - 0.6223
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0116
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0095
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0199
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.0298
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /application.css?body=1 HTTP/1.0" 304 - 0.0305
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0141
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0102
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0272
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0111
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0297
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0226
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0100
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0195
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0092
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0187
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0096
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0307
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0236
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0126
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0274
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0100
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0207
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0285
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /bootstrap.js?body=1 HTTP/1.0" 304 - 0.0192
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0214
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0165
+10.3.3.116, 193.52.209.13 - - [17/Jun/2015 11:41:02] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0157
+E, [2015-06-17T11:41:02.979170 #18303] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:41:02.979432 #18303] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-17T11:41:03.481087 #18303] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:41:03.481378 #18303] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-17T11:41:03.982914 #18303] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-17T11:41:03.983220 #18303] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-17T11:41:04.484418 #18303] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
