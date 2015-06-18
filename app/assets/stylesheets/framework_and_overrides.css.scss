@@ -188,12 +188,6 @@ textarea{
   content: " ";
   display:table;
 }
-.col-md-8 li{
-  width:60px;
-  float:left;
-  list-style:none;
-  display:inline;
-}
 
 .container{
   margin-right: auto;
@@ -209,7 +203,24 @@ textarea{
 .clearfix {
   overflow: auto;
 }
+.col-md-8 li{
+  width:60px;
+  float:left;
+  list-style:none;
+  display:inline;
+}
 
+.custom-card {
+@include card-container(
+$background: #fff, // Background color
+$color: #000, // Text color
+$border: 1px solid #000, // Border
+$radius: 4px, // Border radius
+$shadow: 0 4px 10px black, // Box shadow
+$padding: 1rem,
+$margin: 1rem // Margin bottom
+);
+}
 *{
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
