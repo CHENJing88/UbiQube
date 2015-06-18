@@ -196,7 +196,7 @@ textarea{
   padding-right: 15px;
 }
 //grid
-.container:after,
+.row .container:after,
 .row:after,
 .row:before {
   clear: both;
@@ -206,14 +206,14 @@ textarea{
 }
 .col-md-8 li{
   width:60px;
-  //float:left;
+  float:left;
   list-style:none;
   display:inline;
 }
 
 //card d'APP
 .custom-card {
-  background: #0000CC; // Background color
+  background: #0000FF; // Background color
   color: #FFFFFF; // Text color
   border: 1px solid #003399; // Border
   radius: 10px; // Border radius
@@ -221,7 +221,7 @@ textarea{
   padding: 1rem;
   margin: 1rem; // Margin bottom
   height:45px;
-  width: 90px;
+  width: 150px;
 }
 *{
   -webkit-box-sizing:border-box;
