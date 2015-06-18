@@ -13,7 +13,7 @@ gem 'foundation-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'foundation-icons-sass-rails'
+gem 'foundation-icons-sass-rails' '~>3.0.0'
 gem 'autoprefixer-rails'
 # NOTE: The sass-rails gem is included with new Rails applications by default.
 #Autoprifixer is optional, but recommended. it automatically adds the proper vendor prefixes to your CSS
