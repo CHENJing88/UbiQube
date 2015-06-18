@@ -189,37 +189,6 @@ textarea{
   display:table;
 }
 
-.mesapps, .mesgroupes{
-  display: block;
-  position:absolute;
-  margin: 60px 0;
-  h3{
-    position:absolute;
-    padding: 0 20px 0;
-    margin: 60px 0;
-    left: 0;
-    right: 0;
-    top: 25%;
-  }
-
-}
-
-.card {
-  position:absolute;
-  display: block;
-  padding: 0;
-  margin: 4px 0;
-}
-.mesapps .card h2{
-    color:#fff;
-    position: absolute;
-    left:0;
-    right:0;
-    text-align: center;
-    top: 25%;
-    padding: 0 20px 0;
-}
-
 
 .container{
   margin-right: auto;
@@ -228,14 +197,14 @@ textarea{
   padding-right: 15px;
 }
 //grid
-/*.card:after,
+.card:after,
 .container:after,
 .row:after {
   clear: both;
 }
 .clearfix {
   overflow: auto;
-}*/
+}
 
 *{
   -webkit-box-sizing:border-box;
