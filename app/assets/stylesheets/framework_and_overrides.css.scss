@@ -188,8 +188,11 @@ textarea{
   content: " ";
   display:table;
 }
-ol li{
-  display: inline;
+.col-md-8 li{
+  width:60px;
+  float:left;
+  list-style:none;
+  display:inline;
 }
 
 .container{
