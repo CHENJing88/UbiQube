@@ -191,6 +191,7 @@ textarea{
 
 .mesapps, .mesgroupes{
   display: block;
+  position:absolute;
   margin: 60px 0;
   h3{
     position:absolute;
@@ -216,9 +217,7 @@ textarea{
     right:0;
     text-align: center;
     top: 25%;
-}
- .mesapps .card h2,{
-  padding: 0 20px 0;
+    padding: 0 20px 0;
 }
 
 
@@ -229,6 +228,14 @@ textarea{
   padding-right: 15px;
 }
 //grid
+.container:after,
+.row:after {
+  clear: both;
+}
+.clearfix {
+  overflow: auto;
+}
+
 *{
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
