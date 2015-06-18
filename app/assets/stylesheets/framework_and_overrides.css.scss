@@ -213,15 +213,17 @@ textarea{
 
 //card d'APP
 .custom-card {
-  background: #0000FF; // Background color
-  color: #FFFFFF; // Text color
-  border: 1px solid #003399; // Border
-  radius: 10px; // Border radius
+  background-color: #ddd; // Background color
+  color: #000; // Text color
+  border: 1px solid #ddd; // Border
+  border-radius: 10px; // Border radius
   shadow: 0 8px 20px black; // Box shadow
-  padding: 1rem;
+  padding: 35px 20px;
   margin: 1rem; // Margin bottom
   height:45px;
-  width: 150px;
+  width: 200px;
+  line-height: 1.5em;
+  box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.7);
 }
 *{
   -webkit-box-sizing:border-box;
