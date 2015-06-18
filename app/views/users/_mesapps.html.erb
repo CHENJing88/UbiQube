@@ -1,10 +1,14 @@
-
-  <%= @mesapps.each do |a|%>
+<%= @mesapps.each do |a|%>
   <!--div class="card-section"-->
-    <li class="custom-card">
-      <p>
-        <%= a.nom %>
-        <%= a.niveau %>
-      </p>
-    </li>
+  <li class="custom-card">
+    <p>
+      <%= a.nom %>
+      <%= a.niveau %>
+    </p>
+  </li>
 <% end%>
+<li class="nouvel-card">
+  <p> 
+    Céer une nouvelle App
+  </p>
+</li>
