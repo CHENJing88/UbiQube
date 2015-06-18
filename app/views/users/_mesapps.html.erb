@@ -1,7 +1,8 @@
-<div class="card col-xs-4">
+
   <%= @mesapps.each do |a|%>
   <!--div class="card-section"-->
-    <span><%= a.nom %></span>
-    <span><%= a.niveau %></span>
+    <li>
+      <p><%= a.nom %></p>
+      <p><%= a.niveau %></p>
+    </li>
 <% end%>
-</div>
