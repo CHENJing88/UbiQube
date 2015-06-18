@@ -206,21 +206,22 @@ textarea{
 }
 .col-md-8 li{
   width:60px;
-  float:left;
+  //float:left;
   list-style:none;
   display:inline;
 }
 
 //card d'APP
 .custom-card {
-  background: #003399; // Background color
+  background: #0000CC; // Background color
   color: #FFFFFF; // Text color
   border: 1px solid #003399; // Border
-  radius: 4px; // Border radius
-  shadow: 0 4px 10px black; // Box shadow
+  radius: 10px; // Border radius
+  shadow: 0 8px 20px black; // Box shadow
   padding: 1rem;
   margin: 1rem; // Margin bottom
-
+  height:45px;
+  width: 90px;
 }
 *{
   -webkit-box-sizing:border-box;
