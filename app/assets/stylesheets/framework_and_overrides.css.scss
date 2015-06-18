@@ -204,7 +204,7 @@ textarea{
 //grid
 .container:after,
 .row:after {
-  clear: both;
+  clear: left;
 }
 .clearfix {
   overflow: auto;
