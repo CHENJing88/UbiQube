@@ -188,7 +188,7 @@ textarea{
   content: " ";
   display:table;
 }
-.card li{
+ol li{
   display: inline;
 }
 
@@ -199,7 +199,6 @@ textarea{
   padding-right: 15px;
 }
 //grid
-.card:after,
 .container:after,
 .row:after {
   clear: both;
