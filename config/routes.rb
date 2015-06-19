@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/auth/failure' => 'sessions#failure'
 
   get '/users'=> 'users#index'
-  
+  get '/users/:id/mesapps'=>'users#mesapps',:as=>mesapps
 
 
 end
