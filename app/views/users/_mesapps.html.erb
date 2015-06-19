@@ -1,13 +1,24 @@
 <%= @mesapps.each do |a|%>
   <!--div class="card-section" href="/apps/show" data-reveal-id="myModal" -->
-  <%= link_to app_path(a.apps.id),:class => 'close-reveal-modal', 
+  <%#= link_to app_path(a.apps.id),:class => 'close-reveal-modal',
   :data => { :reveal_id => 'appModal', :"reveal-ajax" => true } do %>
+  <a href="#" data-reveal-id="myModal" >
   <li class="custom-card">
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
-  <%end%>
 
+  <div id="appModal" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
+        aria-hidden="true" role="dialog">
+        <p>show app</p>
+        <h2 id="modalTitle"> <%= @app.nom %> </h2>
+        <p class="lead">Niveau : <%= @app.niveau %></p>
+        <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+
+        <a zf-close="" class="button"> Save </a>
+        <a zf-close="" class="button"> Cancel</a>
+  </div>
+</a>
 <% end%>
 <li class="nouvel-card">
   <p>
