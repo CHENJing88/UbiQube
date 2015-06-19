@@ -21,10 +21,6 @@ class AppsController < ApplicationController
     @app=App.find(params[:id])
   end
 
-  def role
-    @role=App.includes(:roles)
-  end
-
   private
 
     def app_params
