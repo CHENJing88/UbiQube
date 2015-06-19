@@ -22,7 +22,7 @@ class AppsController < ApplicationController
   end
 
   def role
-    return App.includes(:roles)
+    @role=App.includes(:roles)
   end
 
   private
