@@ -27,6 +27,6 @@ r3=Role.create(nom: "Responsable Fonctionnel")
 r4=Role.create(nom: "Responsable Technique")
 
 UserAppRole.create(user_id:2,app_id:1,role_id:1)
-UserAppRole.create(user_id:2,app_id:2,role_id:1)
-UserAppRole.create(user_id:1,app_id:1,role_id:1)
+UserAppRole.create(user_id:2,app_id:2,role_id:2)
+UserAppRole.create(user_id:1,app_id:1,role_id:2)
 UserAppRole.create(user_id:1,app_id:2,role_id:1)
