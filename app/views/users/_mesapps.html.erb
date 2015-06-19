@@ -1,9 +1,12 @@
 <%= @mesapps.each do |a|%>
   <!--div class="card-section"-->
-  <li class="custom-card" href="#" data-reveal-id="myModal">
+
+  <li class="custom-card" href="apps/app" data-reveal-id="myModal">
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
+
+  <% end %>
 <% end%>
 <li class="nouvel-card">
   <p>
