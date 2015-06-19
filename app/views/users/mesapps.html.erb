@@ -4,7 +4,21 @@
     <i class="fi-torso size-72"><h3>Mon APP</h3></i>
       <div class="col-md-8">
         <ol>
-          <%= render mesapps %>
+          <%= #render 'users/mesapps' %>
+          <%= @mesapps.each do |app|%>
+            <!--div class="card-section"-->
+            <li class="custom-card">
+              <p>
+                <%= app.nom %>
+                <%= app.niveau %>
+              </p>
+            </li>
+          <% end%>
+          <li class="nouvel-card">
+            <p>
+              Céer une nouvelle App
+            </p>
+          </li>
         </ol>
       </div>
   </div>
