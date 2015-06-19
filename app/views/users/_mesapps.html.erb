@@ -1,9 +1,9 @@
-<%= @mesapps.each do |a|%>
+<%= @mesapps.each do |app|%>
   <!--div class="card-section"-->
   <li class="custom-card">
     <p>
-      <%= a.nom %>
-      <%= a.niveau %>
+      <%= app.nom %>
+      <%= app.role.nom %>
     </p>
   </li>
 <% end%>
