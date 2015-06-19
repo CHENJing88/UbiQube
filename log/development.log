@@ -23585,3 +23585,106 @@ ActionView::Template::Error (Missing partial user_app_roles/_user_app_role with 
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.4ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-19 15:28:34 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUserAppRole Load (0.3ms)[0m  [1mSELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1[0m
+  [1m[35mApp Load (0.7ms)[0m  SELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)
+  [1m[36mRole Load (0.4ms)[0m  [1mSELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (1)[0m
+  Rendered users/mesapps.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (Missing partial user_app_roles/_user_app_role with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/usr/local/src/ubiQube/rails/app/views"
+  * "/usr/local/rvm/gems/ruby-2.1.3/gems/foundation-rails-5.4.5.0/app/views"
+):
+    4:     <i class="fi-torso size-72"><h3>Mon APP</h3></i>
+    5:       <div class="col-md-8">
+    6:         <ol>
+    7:           <%= render @mesapps %>
+    8: 
+    9:         </ol>
+   10:       </div>
+  app/views/users/mesapps.html.erb:7:in `_app_views_users_mesapps_html_erb___1576719685515146065_65800400'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (31.5ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-19 15:30:17 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUserAppRole Load (0.2ms)[0m  [1mSELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1[0m
+  [1m[35mApp Load (0.1ms)[0m  SELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (1)[0m
+  Rendered users/mesapps.html.erb within layouts/application (77.1ms)
+Completed 500 Internal Server Error in 184ms
+
+ActionView::Template::Error (Missing partial user_app_roles/_user_app_role with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/usr/local/src/ubiQube/rails/app/views"
+  * "/usr/local/rvm/gems/ruby-2.1.3/gems/foundation-rails-5.4.5.0/app/views"
+):
+    4:     <i class="fi-torso size-72"><h3>Mon APP</h3></i>
+    5:       <div class="col-md-8">
+    6:         <ol>
+    7:           <%= render @mesapps %>
+    8: 
+    9:         </ol>
+   10:       </div>
+  app/views/users/mesapps.html.erb:7:in `_app_views_users_mesapps_html_erb__2053876575622188843_34825740'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.1ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-19 15:31:50 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mUserAppRole Load (0.3ms)[0m  [1mSELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1[0m
+  [1m[35mApp Load (0.2ms)[0m  SELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (1)[0m
+  Rendered users/_mesapps.html.erb (110.8ms)
+  Rendered users/mesapps.html.erb within layouts/application (122.4ms)
+  Rendered layouts/_navigation_links.html.erb (2.8ms)
+  Rendered layouts/_navigation.html.erb (9.7ms)
+  Rendered layouts/_messages.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.6ms)
+Completed 200 OK in 6901ms (Views: 6766.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-19 15:49:33 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/_mesapps.html.erb (3.7ms)
+  Rendered users/mesapps.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 158ms
+
+SyntaxError (/usr/local/src/ubiQube/rails/app/views/users/_mesapps.html.erb:23: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/users/_mesapps.html.erb:23: syntax error, unexpected keyword_ensure, expecting end-of-input
+  app/views/users/mesapps.html.erb:7:in `_app_views_users_mesapps_html_erb__2053876575622188843_33948280'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.1ms)
