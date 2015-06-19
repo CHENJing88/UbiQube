@@ -1,7 +1,7 @@
 <%= @mesapps.each do |a|%>
   <!--div class="card-section"-->
 
-  <li class="custom-card" href="apps/app" data-reveal-id="myModal">
+  <li class="custom-card" href="#" data-reveal-id="myModal">
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
@@ -12,7 +12,7 @@
         <p class="lead">Niveau : <%= a.apps.niveau %></p>
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
 
-        <a zf-close="" class="button"> Ok </a>
+        <a zf-close="" class="button"> Save </a>
         <a zf-close="" class="button"> Cancel</a>
   </div>
 
