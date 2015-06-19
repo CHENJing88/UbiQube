@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def mesapps
     @user = User.find(session[:user_id])
-    @mesapps=@user.apps.joins(:roles,:groupe_apps)
+    @mesapps=@user.apps.joins(:roles)
   end
 
 end
