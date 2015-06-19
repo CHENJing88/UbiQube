@@ -1,6 +1,7 @@
 <%= @mesapps.each do |a|%>
   <!--div class="card-section" href="/apps/show" data-reveal-id="myModal" -->
-  <%= link_to app_path(a.apps),:class => 'close-reveal-modal', :data => { :reveal_id => 'appModal' } do %>
+  <%= link_to app_path(a.apps.id),:class => 'close-reveal-modal', 
+  :data => { :reveal_id => 'appModal', :"reveal-ajax" => true } do %>
   <li class="custom-card">
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
