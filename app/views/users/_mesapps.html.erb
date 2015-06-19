@@ -2,12 +2,12 @@
   <!--div class="card-section" href="/apps/show" data-reveal-id="myModal" -->
   <%#= link_to app_path(a.apps.id),:class => 'close-reveal-modal',
   :data => { :reveal_id => 'appModal', :"reveal-ajax" => true } do %>
-  <a href="#" data-reveal-id="myModal" >
-  <li class="custom-card">
+
+  <li class="custom-card" href="#" data-reveal-id="myModal" >
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
-  </a>
+  
   <div id="appModal" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
         aria-hidden="true" role="dialog">
         <p>show app</p>
