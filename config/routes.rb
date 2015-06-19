@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
 
-
+  get '/apps/:id' => "apps#show", :as=>:app
+  get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
+  patch '/apps/:id' => "apps#update"
 end
