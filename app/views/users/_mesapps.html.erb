@@ -6,6 +6,15 @@
     <p><%= a.roles.nom %></p>
   </li>
 
+  <div id="myModal" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
+        aria-hidden="true" role="dialog">
+        <h2 id="modalTitle"> <%= a.apps.nom %> </h2>
+        <p class="lead">Niveau : <%= a.apps.niveau %></p>
+        <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+
+        <a zf-close="" class="button"> Ok </a>
+        <a zf-close="" class="button"> Cancel</a>
+  </div>
 
 <% end%>
 <li class="nouvel-card">
