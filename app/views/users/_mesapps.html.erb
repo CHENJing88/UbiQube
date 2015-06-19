@@ -1,21 +1,12 @@
 <%= @mesapps.each do |a|%>
   <!--div class="card-section"-->
-
-  <li class="custom-card" href="#" data-reveal-id="myModal">
+  <%= link_to app_path(a.apps), :class=>"custom-card" do %>
+  <li data-reveal-id="myModal">
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
-
-  <div id="myModal" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
-        aria-hidden="true" role="dialog">
-        <h2 id="modalTitle"> <%= a.apps.nom %> </h2>
-        <p class="lead">Niveau : <%= a.apps.niveau %></p>
-        <a class="close-reveal-modal" arial-label="Close">&#215;</a>
-
-        <a zf-close="" class="button"> Save </a>
-        <a zf-close="" class="button"> Cancel</a>
-  </div>
-
+  <%end%>
+  
 <% end%>
 <li class="nouvel-card">
   <p>
