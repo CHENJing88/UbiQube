@@ -5,7 +5,7 @@ class AppsController < ApplicationController
   end
 
   def show
-    @app = App.find(params[:id])
+    @app = App.find(params[:id]).includes(:roles)
   end
 
   def new
