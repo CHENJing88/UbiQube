@@ -426,3 +426,26 @@ Exiting
 Exiting
 Exiting
 Exiting
+Exiting
+Exiting
+Exiting
+Exiting
+Exiting
+Exiting
+Exiting
+Exiting
+Exiting
+I, [2015-06-20T19:30:36.858126 #10063]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-20T19:30:41.037551 #10057]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-20T19:31:12.560032 #10060]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-20T19:31:37.623934 #10054]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
+I, [2015-06-22T09:14:44.436294 #10054]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-22T09:14:57.362760 #10063]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
+Exiting
+I, [2015-06-22T11:58:56.073750 #10060]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-22T11:59:13.665417 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-22T12:10:14.282064 #10057]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-22T12:10:14.385623 #10063]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting

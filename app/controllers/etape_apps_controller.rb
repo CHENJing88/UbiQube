@@ -1,0 +1,2 @@
+class EtapeAppsController < ApplicationController
+end

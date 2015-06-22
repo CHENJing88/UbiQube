@@ -1,0 +1,2 @@
+module EtapeAppsHelper
+end
