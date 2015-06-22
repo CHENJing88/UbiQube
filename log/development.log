@@ -27784,3 +27784,265 @@ Migrating to CreateReseaus (20150615125428)
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  INSERT INTO `user_app_roles` (`app_id`, `created_at`, `role_id`, `updated_at`, `user_id`) VALUES (2, '2015-06-22 10:32:21', 1, '2015-06-22 10:32:21', 1)
   [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-22 12:33:40 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+Redirected to http://ubiqube.univ-tours.fr/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 24ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-22 12:33:40 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (27.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered layouts/_navigation_links.html.erb (8.3ms)
+  Rendered layouts/_navigation.html.erb (23.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 608ms (Views: 604.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/signin" for 193.52.209.13 at 2015-06-22 12:33:43 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://ubiqube.univ-tours.fr/auth/cas
+Completed 403 Forbidden in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/cas" for 193.52.209.13 at 2015-06-22 12:33:43 +0200
+
+
+Started GET "/auth/cas/callback?url&ticket=ST-40874-RyqD7eSAMsfL0lbg55i2-cas.univ-tours.fr?url&ticket=ST-40874-RyqD7eSAMsfL0lbg55i2-cas.univ-tours.fr" for 193.52.209.13 at 2015-06-22 12:33:44 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"url"=>nil, "ticket"=>"ST-40874-RyqD7eSAMsfL0lbg55i2-cas.univ-tours.fr", "provider"=>"cas"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`provider` = 'cas' AND `users`.`uid` = 'jchen'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `provider`, `uid`, `updated_at`) VALUES ('2015-06-22 10:33:44', '', 'cas', 'jchen', '2015-06-22 10:33:44')[0m
+  [1m[35m (3.1ms)[0m  COMMIT
+Redirected to http://ubiqube.univ-tours.fr/users/1/mesapps
+Completed 302 Found in 23ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-22 12:33:44 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserAppRole Load (7.6ms)[0m  SELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1
+  [1m[36mApp Load (0.4ms)[0m  [1mSELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (2, 1)
+  Rendered users/_mesapps.html.erb (113.0ms)
+  Rendered users/mesapps.html.erb within layouts/application (114.6ms)
+Completed 500 Internal Server Error in 127ms
+
+ActionView::Template::Error (undefined method `etape_app_id' for #<App:0x00000004e72b20>):
+    18:           </tr>
+    19:           <tr><td>Niveau</td><td><%= a.apps.niveau %></td>
+    20:           </tr>
+    21:           <tr><td>Etape</td><td><%= a.apps.etape_app_id %></td>
+    22:           </tr>
+    23:           <tr><td>Groupe</td><td><%= a.apps.groupe_app_id %></td>
+    24:           </tr>
+  app/views/users/_mesapps.html.erb:21:in `block in _app_views_users__mesapps_html_erb__1173933862557582301_14742540'
+  app/views/users/_mesapps.html.erb:1:in `_app_views_users__mesapps_html_erb__1173933862557582301_14742540'
+  app/views/users/mesapps.html.erb:7:in `_app_views_users_mesapps_html_erb___1612804543050624197_40940020'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.8ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-22 12:34:20 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserAppRole Load (0.5ms)[0m  SELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1
+  [1m[36mApp Load (0.4ms)[0m  [1mSELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)[0m
+  [1m[35mRole Load (0.6ms)[0m  SELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (2, 1)
+  [1m[36mEtapeApp Load (0.9ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1[0m
+  [1m[35mGroupeApp Load (0.5ms)[0m  SELECT  `groupe_apps`.* FROM `groupe_apps`  WHERE `groupe_apps`.`id` = 1 LIMIT 1
+  [1m[36mEtapeApp Load (0.6ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `groupe_apps`.* FROM `groupe_apps`  WHERE `groupe_apps`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered users/_mesapps.html.erb (182.6ms)
+  Rendered users/mesapps.html.erb within layouts/application (184.3ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 600ms (Views: 524.7ms | ActiveRecord: 21.6ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-22 12:34:42 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 572ms (Views: 567.5ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-22 12:41:40 +0200
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  Rendered users/_user.html.erb (2.6ms)
+  Rendered users/index.html.erb within layouts/application (29.1ms)
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 331ms (Views: 309.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1" for 193.52.209.13 at 2015-06-22 12:41:42 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1  [["id", "1"]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 397ms (Views: 391.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-22 12:41:44 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 525ms (Views: 521.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pages/about" for 193.52.209.13 at 2015-06-22 12:41:45 +0200
+Processing by HighVoltage::PagesController#show as HTML
+  Parameters: {"id"=>"about"}
+  Rendered pages/about.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  Rendered layouts/_navigation_links.html.erb (1.2ms)
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 320ms (Views: 318.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-22 12:41:47 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/_user.html.erb (0.8ms)
+  Rendered users/index.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_navigation_links.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 490ms (Views: 486.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-22 12:41:49 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserAppRole Load (0.3ms)[0m  SELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1
+  [1m[36mApp Load (0.3ms)[0m  [1mSELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (2, 1)
+  [1m[36mEtapeApp Load (0.3ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1[0m
+  [1m[35mGroupeApp Load (0.2ms)[0m  SELECT  `groupe_apps`.* FROM `groupe_apps`  WHERE `groupe_apps`.`id` = 1 LIMIT 1
+  [1m[36mEtapeApp Load (0.3ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `groupe_apps`.* FROM `groupe_apps`  WHERE `groupe_apps`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered users/_mesapps.html.erb (125.2ms)
+  Rendered users/mesapps.html.erb within layouts/application (127.9ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 521ms (Views: 491.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-22 13:44:59 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (50.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 478ms (Views: 462.4ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/signin" for 193.52.209.13 at 2015-06-22 13:45:01 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://ubiqube.univ-tours.fr/auth/cas
+Completed 403 Forbidden in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/cas" for 193.52.209.13 at 2015-06-22 13:45:01 +0200
+
+
+Started GET "/auth/cas/callback?url&ticket=ST-49881-CN0QhG6lbRZUTFdseYtZ-cas.univ-tours.fr?url&ticket=ST-49881-CN0QhG6lbRZUTFdseYtZ-cas.univ-tours.fr" for 193.52.209.13 at 2015-06-22 13:45:07 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"url"=>nil, "ticket"=>"ST-49881-CN0QhG6lbRZUTFdseYtZ-cas.univ-tours.fr", "provider"=>"cas"}
+  [1m[36mUser Load (7.2ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`provider` = 'cas' AND `users`.`uid` = 'beuneche'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `provider`, `uid`, `updated_at`) VALUES ('2015-06-22 11:45:07', '', 'cas', 'beuneche', '2015-06-22 11:45:07')[0m
+  [1m[35m (7.5ms)[0m  COMMIT
+Redirected to http://ubiqube.univ-tours.fr/users/2/mesapps
+Completed 302 Found in 32ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/users/2/mesapps" for 193.52.209.13 at 2015-06-22 13:45:07 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1  [["id", 2]]
+  [1m[36mUserAppRole Load (0.9ms)[0m  [1mSELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 2[0m
+  [1m[35mApp Load (0.5ms)[0m  SELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)
+  [1m[36mRole Load (0.6ms)[0m  [1mSELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (1, 2)[0m
+  [1m[35mEtapeApp Load (0.5ms)[0m  SELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1
+  [1m[36mGroupeApp Load (0.4ms)[0m  [1mSELECT  `groupe_apps`.* FROM `groupe_apps`  WHERE `groupe_apps`.`id` = 1 LIMIT 1[0m
+  [1m[35mEtapeApp Load (0.3ms)[0m  SELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `groupe_apps`.* FROM `groupe_apps`  WHERE `groupe_apps`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/_mesapps.html.erb (172.7ms)
+  Rendered users/mesapps.html.erb within layouts/application (174.3ms)
+  Rendered layouts/_navigation_links.html.erb (4.9ms)
+  Rendered layouts/_navigation.html.erb (11.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 1041ms (Views: 994.3ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/signout" for 193.52.209.13 at 2015-06-22 13:45:34 +0200
+Processing by SessionsController#destroy as HTML
+Redirected to https://cas.univ-tours.fr/cas/logout?service=http://ubiqube.univ-tours.fr
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-22 13:45:34 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_navigation_links.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 441ms (Views: 438.7ms | ActiveRecord: 0.7ms)

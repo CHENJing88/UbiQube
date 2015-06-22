@@ -26352,3 +26352,238 @@ E, [2015-06-22T12:10:18.371288 #14554] ERROR -- : adding listener failed addr=/t
 	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
 	from bin/rails:3:in `load'
 	from bin/rails:3:in `<main>'
+I, [2015-06-22T12:33:37.694332 #15022]  INFO -- : listening on addr=0.0.0.0:3000 fd=11
+E, [2015-06-22T12:33:37.695471 #15022] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-22T12:33:37.695534 #15022] ERROR -- : retrying in 0.5 seconds (4 tries left)
+E, [2015-06-22T12:33:38.196889 #15022] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-22T12:33:38.197086 #15022] ERROR -- : retrying in 0.5 seconds (3 tries left)
+E, [2015-06-22T12:33:38.698198 #15022] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-22T12:33:38.698323 #15022] ERROR -- : retrying in 0.5 seconds (2 tries left)
+E, [2015-06-22T12:33:39.199447 #15022] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-22T12:33:39.199572 #15022] ERROR -- : retrying in 0.5 seconds (1 tries left)
+E, [2015-06-22T12:33:39.701326 #15022] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+E, [2015-06-22T12:33:39.701543 #15022] ERROR -- : retrying in 0.5 seconds (0 tries left)
+E, [2015-06-22T12:33:40.203435 #15022] ERROR -- : adding listener failed addr=/tmp/.unicorn.sock (in use)
+/usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `initialize': Address already in use - connect(2) for "/tmp/.unicorn.sock" (Errno::EADDRINUSE)
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `new'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/socket_helper.rb:158:in `bind_listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:242:in `listen'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `block in bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `each'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:809:in `bind_new_listeners!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-4.8.3/lib/unicorn/http_server.rb:138:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/unicorn-rails-2.2.0/lib/unicorn_rails.rb:33:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/rack-1.5.2/lib/rack/server.rb:264:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/server.rb:69:in `start'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/railties-4.1.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `require'
+	from /usr/local/src/ubiQube/rails/bin/rails:8:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /usr/local/rvm/gems/ruby-2.1.3/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `require'
+	from /usr/local/src/ubiQube/rails/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:40] "GET /users/1/mesapps HTTP/1.0" 302 - 0.1201
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET / HTTP/1.0" 200 - 0.6669
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.0340
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0282
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0203
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /application.css?body=1 HTTP/1.0" 304 - 0.0884
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0225
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0154
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0192
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0174
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /etape_apps.css?body=1 HTTP/1.0" 304 - 0.1404
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0208
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.1627
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0218
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0264
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0164
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0114
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0206
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0210
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0142
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0215
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0144
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0175
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0180
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0203
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0214
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0227
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0212
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /etape_apps.js?body=1 HTTP/1.0" 304 - 0.0221
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:41] "GET /logo_ubiqube_grey.jpg HTTP/1.0" 304 - 0.0185
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:42] "GET /application.js?body=1 HTTP/1.0" 304 - 0.3970
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:43] "GET /signin HTTP/1.0" 403 - 0.0411
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:44] "GET /auth/cas HTTP/1.0" 302 - 0.0380
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:44] "GET /auth/cas/callback?url&ticket=ST-40874-RyqD7eSAMsfL0lbg55i2-cas.univ-tours.fr?url&ticket=ST-40874-RyqD7eSAMsfL0lbg55i2-cas.univ-tours.fr HTTP/1.0" 302 - 0.0851
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:33:44] "GET /users/1/mesapps HTTP/1.0" 500 29626 0.1887
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /users/1/mesapps HTTP/1.0" 200 - 0.7082
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0063
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.0043
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0042
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0044
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0047
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0045
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0045
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0042
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0044
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0040
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0046
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0046
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0042
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0045
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0042
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0043
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0089
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /application.css?body=1 HTTP/1.0" 304 - 0.0797
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0066
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /etape_apps.css?body=1 HTTP/1.0" 304 - 0.0933
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0817
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0039
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0100
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0150
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0080
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0108
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:20] "GET /application.js?body=1 HTTP/1.0" 304 - 0.0057
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:21] "GET /etape_apps.js?body=1 HTTP/1.0" 304 - 0.0256
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:34:21] "GET /foundation-icons.woff HTTP/1.0" 304 - 0.0058
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET / HTTP/1.0" 200 - 0.6117
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /apps.css?body=1 HTTP/1.0" 200 - 0.0131
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /turbolinks.js?body=1 HTTP/1.0" 200 24847 0.0128
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.js?body=1 HTTP/1.0" 200 18426 0.0112
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 200 12127 0.0090
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 200 2144 0.0122
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 200 1236 0.0205
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 200 16859 0.0151
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 200 10442 0.0202
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:43] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 200 9228 0.0108
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 200 29980 0.0126
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /jquery_ujs.js?body=1 HTTP/1.0" 200 17510 0.0106
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 200 7028 0.0139
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 200 5807 0.0101
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 200 15318 0.0103
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 200 14108 0.0090
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /application.css?body=1 HTTP/1.0" 200 649 0.0102
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 200 8211 0.0173
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 200 7929 0.0103
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 200 14847 0.0109
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 200 10585 0.0109
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 200 2100 0.0116
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /etape_apps.css?body=1 HTTP/1.0" 200 - 0.0133
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /foundation.js?body=1 HTTP/1.0" 200 17 0.0096
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /apps.js?body=1 HTTP/1.0" 200 31 0.0105
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /etape_apps.js?body=1 HTTP/1.0" 200 31 0.0236
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 200 491267 0.0845
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /jquery.js?body=1 HTTP/1.0" 200 282767 0.0789
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /application.js?body=1 HTTP/1.0" 200 635 0.0921
+80.215.175.253, 193.52.209.13 - - [22/Jun/2015 12:34:44] "GET /logo_ubiqube_grey.jpg HTTP/1.0" 200 17548 0.0206
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:41:40] "GET /users HTTP/1.0" 200 - 0.3557
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:41:42] "GET /users/1 HTTP/1.0" 200 - 0.4125
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:41:45] "GET /pages/about HTTP/1.0" 200 - 0.5952
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:41:45] "GET /pages/about HTTP/1.0" 304 - 0.3311
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:41:48] "GET /users HTTP/1.0" 304 - 0.5001
+10.3.3.116, 193.52.209.13 - - [22/Jun/2015 12:41:49] "GET /users/1/mesapps HTTP/1.0" 200 - 0.5321
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET / HTTP/1.0" 200 - 0.5969
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /apps.css?body=1 HTTP/1.0" 200 - 0.0161
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /jquery_ujs.js?body=1 HTTP/1.0" 200 17510 0.0235
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /etape_apps.css?body=1 HTTP/1.0" 200 - 0.0326
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /application.css?body=1 HTTP/1.0" 200 649 0.0436
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /turbolinks.js?body=1 HTTP/1.0" 200 24847 0.0310
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.js?body=1 HTTP/1.0" 200 18426 0.0254
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /jquery.js?body=1 HTTP/1.0" 200 282767 0.0687
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 200 2144 0.0204
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 200 12127 0.0352
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 200 1236 0.0156
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 200 16859 0.0139
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 200 491267 0.1031
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 200 7028 0.0089
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 200 29980 0.0114
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 200 9228 0.0244
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 200 10442 0.0294
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 200 5807 0.0239
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 200 15318 0.0242
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 200 14108 0.0239
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 200 8211 0.0225
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 200 10585 0.0224
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 200 7929 0.0256
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 200 14847 0.0244
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 200 2100 0.0255
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /foundation.js?body=1 HTTP/1.0" 200 17 0.0237
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /application.js?body=1 HTTP/1.0" 200 635 0.0173
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /etape_apps.js?body=1 HTTP/1.0" 200 31 0.0266
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /apps.js?body=1 HTTP/1.0" 200 31 0.0334
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:00] "GET /logo_ubiqube_grey.jpg HTTP/1.0" 200 17548 0.0273
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:01] "GET /signin HTTP/1.0" 403 - 0.0400
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:01] "GET /auth/cas HTTP/1.0" 302 - 0.0365
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:07] "GET /auth/cas/callback?url&ticket=ST-49881-CN0QhG6lbRZUTFdseYtZ-cas.univ-tours.fr?url&ticket=ST-49881-CN0QhG6lbRZUTFdseYtZ-cas.univ-tours.fr HTTP/1.0" 302 - 0.1140
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /users/2/mesapps HTTP/1.0" 200 - 1.0729
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /etape_apps.css?body=1 HTTP/1.0" 304 - 0.0150
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /application.css?body=1 HTTP/1.0" 304 - 0.0162
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /jquery.js?body=1 HTTP/1.0" 304 - 0.0329
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /apps.css?body=1 HTTP/1.0" 304 - 0.0467
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /jquery_ujs.js?body=1 HTTP/1.0" 304 - 0.0479
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 304 - 0.0322
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.js?body=1 HTTP/1.0" 304 - 0.0245
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /turbolinks.js?body=1 HTTP/1.0" 304 - 0.0349
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 304 - 0.0336
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 304 - 0.0244
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 304 - 0.0347
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 304 - 0.0281
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 304 - 0.0235
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 304 - 0.0252
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 304 - 0.0302
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 304 - 0.0380
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 304 - 0.0332
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 304 - 0.0329
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 304 - 0.0298
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 304 - 0.0233
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 304 - 0.0281
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 304 - 0.0314
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 304 - 0.0284
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 304 - 0.0399
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation.js?body=1 HTTP/1.0" 304 - 0.0334
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /etape_apps.js?body=1 HTTP/1.0" 304 - 0.0198
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /apps.js?body=1 HTTP/1.0" 304 - 0.0311
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /application.js?body=1 HTTP/1.0" 304 - 0.1081
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:08] "GET /foundation-icons.woff HTTP/1.0" 200 32020 0.0342
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:34] "GET /signout HTTP/1.0" 403 - 0.0157
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET / HTTP/1.0" 200 - 0.4567
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /etape_apps.css?body=1 HTTP/1.0" 200 - 0.0123
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /apps.css?body=1 HTTP/1.0" 200 - 0.0271
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /jquery.js?body=1 HTTP/1.0" 200 282767 0.0393
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /jquery_ujs.js?body=1 HTTP/1.0" 200 17510 0.0290
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /turbolinks.js?body=1 HTTP/1.0" 200 24847 0.0215
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.js?body=1 HTTP/1.0" 200 18426 0.0209
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /framework_and_overrides.css?body=1 HTTP/1.0" 200 491267 0.0911
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.accordion.js?body=1 HTTP/1.0" 200 2144 0.0199
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.abide.js?body=1 HTTP/1.0" 200 12127 0.0304
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.clearing.js?body=1 HTTP/1.0" 200 16859 0.0176
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.alert.js?body=1 HTTP/1.0" 200 1236 0.0179
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /application.css?body=1 HTTP/1.0" 200 649 0.1119
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.dropdown.js?body=1 HTTP/1.0" 200 10442 0.0087
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.interchange.js?body=1 HTTP/1.0" 200 9228 0.0165
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.magellan.js?body=1 HTTP/1.0" 200 7028 0.0190
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.offcanvas.js?body=1 HTTP/1.0" 200 5807 0.0216
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.joyride.js?body=1 HTTP/1.0" 200 29980 0.0271
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.orbit.js?body=1 HTTP/1.0" 200 15318 0.0207
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.slider.js?body=1 HTTP/1.0" 200 8211 0.0208
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.reveal.js?body=1 HTTP/1.0" 200 14108 0.0239
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.tooltip.js?body=1 HTTP/1.0" 200 10585 0.0222
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.tab.js?body=1 HTTP/1.0" 200 7929 0.0317
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.equalizer.js?body=1 HTTP/1.0" 200 2100 0.0238
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation/foundation.topbar.js?body=1 HTTP/1.0" 200 14847 0.0269
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /foundation.js?body=1 HTTP/1.0" 200 17 0.0208
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /apps.js?body=1 HTTP/1.0" 200 31 0.0201
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /etape_apps.js?body=1 HTTP/1.0" 200 31 0.0138
+10.3.3.128, 193.52.209.13 - - [22/Jun/2015 13:45:35] "GET /application.js?body=1 HTTP/1.0" 200 635 0.0142
