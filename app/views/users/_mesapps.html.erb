@@ -1,18 +1,29 @@
 <%= @mesapps.each do |a|%>
-  <!--div class="card-section" href="/apps/show" data-reveal-id="myModal" -->
-  <%#= link_to app_path(a.apps.id),:class => 'close-reveal-modal',
-  :data => { :reveal_id => 'appModal', :"reveal-ajax" => true } do %>
+  <!-- c'est la carte de chaque App -->
  <a href="#" data-reveal-id="appModal-<%=a.apps.id%>" >
   <li class="custom-card"  >
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
-
+  <!-- c'est le dialog flottant correspondant en cliquant la carte -->
   <div id="appModal-<%=a.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
         aria-hidden="true" role="dialog">
 
         <h2 id="modalTitle"> <%= a.apps.nom %> </h2>
-        <p class="lead">Niveau : <%= a.apps.niveau %></p>
+        <p class="lead">Gestion Fonctionnel</p>
+        <table >
+          <tr>
+            <th> Title </th>
+            <th> Valeur </th>
+          </tr>
+          <tr><td>Niveau</td><td><%= a.apps.niveau %></td>
+          </tr>
+          <tr><td>Etat</td><td><%= a.apps.etat_apps.nom %></td>
+          </tr>
+          <tr><td>Groupe</td><td><%= a.apps.groupe_apps.nom %></td>
+          </tr>
+
+       </table>
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
 
         <a zf-close="" class="button"> Save </a>
