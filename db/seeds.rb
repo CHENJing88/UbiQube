@@ -17,10 +17,10 @@ ep4=EtapeApp.create(nom:"Refusé")
 ep5=EtapeApp.create(nom:"Archivé")
 
 g1=GroupeUser.create(nom:"DTIC")
-gp1=GroupApp.create(nom:"EDTIC")
+gp1=GroupeApp.create(nom:"EDTIC")
 
-App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_id:ep1.id, groupe_app_id: g1.id)
-App.create(nom:"SSH", niveau:"mid", etat_app_id:e3.id, etape_id:ep2.id, groupe_app_id: g1.id)
+App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_id:ep1.id, groupe_app_id: gp1.id)
+App.create(nom:"SSH", niveau:"mid", etat_app_id:e3.id, etape_id:ep2.id, groupe_app_id: gp1.id)
 
 r1=Role.create(nom: "utilisateur")
 r2=Role.create(nom: "Administrateur")
