@@ -13,8 +13,8 @@ class App < ActiveRecord::Base
   has_many :users, through: :user_app_roles
   has_many :roles, through: :user_app_roles
 
-  has_one :etape_apps,:class_name => "EtapeApp"
-  has_one :etat_apps, :as => :etat_collection, :class_name => "EtatApp"
-  has_one :groupe_apps,:class_name => "GroupeApp"
+  has_one :etape_apps,:class_name => "EtapeApp", :foreign_key => "etape_app_id"
+  has_one :etat_apps, :as => :etat_collection, :class_name => "EtatApp", :foreign_key => "etat_app_id"
+  has_one :groupe_apps,:class_name => "GroupeApp",, :foreign_key => "groupe_app_id"
 
 end
