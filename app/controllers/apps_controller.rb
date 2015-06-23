@@ -23,18 +23,21 @@ class AppsController < ApplicationController
   # POST /apps
   # POST /apps.xml
   def create
-    app_params.permit!
+    #app_params.permit!
 
-    #@app=App.new(app_params)
-    @app= current_user.user_app_roles.apps.build(params[:app])
-
+    @app=App.new(params[:app])
+    #@app= current_user.user_app_roles.apps.build(params[:app])
+    respond_to do |format|
       if @app.save
-        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully created.'
-
+        format.html { redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully created.' }
+        format.xml  { render :xml => @app, :status => :created, :location => @app }
+        format.js
       else
-        render :action => "new"
-
+        format.html { render :action => "new" }
+        format.xml  { render :xml => @app.errors, :status => :unprocessable_entity }
+        format.js
       end
+    end
 
   end
 
@@ -59,7 +62,7 @@ class AppsController < ApplicationController
     @app.destroy
 
     redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully deleted'
-  
+
   end
 
   private

@@ -5,5 +5,5 @@
   console.log('Created');
   $('#dialog-form').dialog('close');
   $('#dialog-form').remove();
-  $('table').append('<%= escape_javascript(render(@mesapps)) %>');
+  $('ol').append('<%= escape_javascript(render(@mesapps)) %>');
 <%- end %>
