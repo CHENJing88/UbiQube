@@ -1,5 +1,5 @@
 <%= form_for(@app, :remote => true) do |f| %>
-<%= render 'layouts/error_messages', object: f.object %>
+<%= render 'layouts/error_message', object: f.object %>
 
   <div class="field">
     <%= f.label :title %><br />
