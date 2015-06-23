@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def mesapps
     @user = User.find(session[:user_id])
     @mesapps=@user.user_app_roles.includes(:apps,:roles)
-    @app= @mesapps.apps.build if user_signed_in?
+    
   end
 
 end
