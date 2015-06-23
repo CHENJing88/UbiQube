@@ -35,7 +35,7 @@ class AppsController < ApplicationController
         render :action => "new"
 
       end
-    end
+
   end
 
   # PUT /articles/1
@@ -44,12 +44,12 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
 
       if @app.update_attributes(params[:app])
-        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully updated.' 
+        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully updated.'
 
       else
         render :action => "edit"
       end
-    end
+
   end
 
   # DELETE /apps/1
@@ -59,7 +59,7 @@ class AppsController < ApplicationController
     @app.destroy
 
     redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully deleted'
-    end
+  
   end
 
   private
