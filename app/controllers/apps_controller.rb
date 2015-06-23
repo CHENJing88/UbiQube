@@ -18,29 +18,22 @@ class AppsController < ApplicationController
   def new
     @app = App.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @app }
-    end
-
   end
 
   # POST /apps
   # POST /apps.xml
   def create
-    params.permit!
+    app_params.permit!
 
-    @app=App.new(app_params)
+    #@app=App.new(app_params)
+    @app= current_user.user_app_roles.apps.build(params[:app])
 
-    respond_to do |format|
       if @app.save
-        format.html { redirect_to(@app, :notice => 'App was successfully created.') }
-        format.xml  { render :xml => @app, :status => :created, :location => @app }
-        format.js
+        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully created.'
+
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @app.errors, :status => :unprocessable_entity }
-        format.js
+        render :action => "new"
+
       end
     end
   end
@@ -51,12 +44,11 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
 
     respond_to do |format|
-      if @app.update_attributes(params[:article])
-        format.html { redirect_to(@app, :notice => 'App was successfully updated.') }
-        format.xml  { head :ok }
+      if @app.update_attributes(params[:app])
+        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully updated.') }
+
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @app.errors, :status => :unprocessable_entity }
+        render :action => "edit"
       end
     end
   end
@@ -67,9 +59,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     @app.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(apps_url) }
-      format.xml  { head :ok }
+    redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully deleted'
     end
   end
 
