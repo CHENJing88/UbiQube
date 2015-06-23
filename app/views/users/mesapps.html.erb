@@ -4,16 +4,7 @@
     <i class="fi-torso size-72"><h3>Mon APP</h3></i>
       <div class="col-md-8">
         <ol>
-          <%= @mesapps.each do |mesapp|%>
-          <%= render :partial => mesapp %>
-          <% end%>
-
-          <li class="nouvel-card">
-            <%= #link_to  'CreateApp', 'apps/create',:popup => ['Create App','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes'] %>
-            <%= link_to 'Céer une nouvelle App', new_app_path, :class=>"nouvel-card",:id => 'create_app' %>
-
-          </li>
-
+          <%= render :partial =>'users/mesapp'%>
         </ol>
       </div>
   </div>

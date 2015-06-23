@@ -1,4 +1,4 @@
-
+<%= @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
  <a href="#" data-reveal-id="appModal-<%=mesapp.apps.id%>" >
   <li class="custom-card"  >
@@ -31,3 +31,8 @@
 
   </div>
 </a>
+<% end %>
+<li class="nouvel-card">
+  <%= link_to 'Créer une nouvelle App', new_app_path,:id=>'create_app'%>
+</li>
+

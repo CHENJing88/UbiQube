@@ -15,5 +15,5 @@ class App < ActiveRecord::Base
   has_many :etat_apps, :as => :etat_collection, :class_name => "EtatApp"
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
-  default_scope order: 'apps.created_at DESC'
+  #default_scope order: 'apps.created_at DESC'
 end
