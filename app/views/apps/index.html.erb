@@ -1,12 +1,12 @@
-<%= @mesapps.each do |a|%>
+<!-- <%= @mesapps.each do |a|%>
   <!-- c'est la carte de chaque App -->
- <a href="#" data-reveal-id="appModal-<%=a.apps.id%>" >
+  <!-- <a href="#" data-reveal-id="appModal-<%=a.apps.id%>" >
   <li class="custom-card"  >
     <p><%= a.apps.nom %></p>
     <p><%= a.roles.nom %></p>
   </li>
   <!-- c'est le dialog flottant correspondant en cliquant la carte -->
-  <div id="appModal-<%=a.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
+  <!-- <div id="appModal-<%=a.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
         aria-hidden="true" role="dialog">
 
         <h2 id="modalTitle"> <%= a.apps.nom %> </h2>
@@ -16,6 +16,7 @@
             <th> Title </th>
             <th> Valeur </th>
           </tr>
+          <%= render :partial => @apps %>
           <tr><td>Niveau</td><td><%= a.apps.niveau %></td>
           </tr>
           <tr><td>Etape</td><td><%= a.apps.etape_app.nom %></td>
@@ -34,10 +35,7 @@
 <% end%>
 
 <li class="nouvel-card">
-  <%= link_to  'CreateApp', 'apps/create',
-  :popup => ['Create App','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes'] %>
+  <%= #link_to  'CreateApp', 'apps/create',:popup => ['Create App','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes'] %>
+  <%= link_to 'Céer une nouvelle App', new_app_path, :class=>"nouvel-card",:id => 'create_app' %>
 
-  <p>
-    Céer une nouvelle App
-  </p>
 </li>

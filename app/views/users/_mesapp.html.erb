@@ -1,0 +1,33 @@
+
+  <!-- c'est la carte de chaque App -->
+ <a href="#" data-reveal-id="appModal-<%=mesapp.apps.id%>" >
+  <li class="custom-card"  >
+    <p><%= mesapp.apps.nom %></p>
+    <p><%= mesapp.roles.nom %></p>
+  </li>
+  <!-- c'est le dialog flottant correspondant en cliquant la carte -->
+  <div id="appModal-<%=mesapp.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
+        aria-hidden="true" role="dialog">
+
+        <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2>
+        <p class="lead">Gestion Fonctionnel</p>
+        <table >
+          <tr>
+            <th> Title </th>
+            <th> Valeur </th>
+          </tr>
+          <tr><td>Niveau</td><td><%= mesapp.apps.niveau %></td>
+          </tr>
+          <tr><td>Etape</td><td><%= mesapp.apps.etape_app.nom %></td>
+          </tr>
+          <tr><td>Groupe</td><td><%= mesapp.apps.groupe_app.nom%></td>
+          </tr>
+
+       </table>
+        <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+
+        <a zf-close="" class="button"> Save </a>
+        <a zf-close="" class="button"> Cancel</a>
+
+  </div>
+</a>
