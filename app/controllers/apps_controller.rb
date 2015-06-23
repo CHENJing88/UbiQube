@@ -43,9 +43,8 @@ class AppsController < ApplicationController
   def update
     @app = App.find(params[:id])
 
-    respond_to do |format|
       if @app.update_attributes(params[:app])
-        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully updated.') }
+        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully updated.' }
 
       else
         render :action => "edit"
