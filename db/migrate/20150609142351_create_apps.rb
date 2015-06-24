@@ -3,7 +3,7 @@ class CreateApps < ActiveRecord::Migration
     create_table :apps do |t|
       t.string :nom
       t.string :niveau
-
+      t.string :description
       t.integer :etat_app_id
       t.integer :etape_id
       t.integer :groupe_app_id

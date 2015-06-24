@@ -17,7 +17,9 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-
+    @user_app_roles=@app.user_app_roles.build
+    @users=@user_app_role.users.build
+    @roles=@user_app_role.roles.build
   end
 
   # POST /apps
@@ -29,7 +31,7 @@ class AppsController < ApplicationController
     #@app= current_user.user_app_roles.apps.build(params[:app])
     respond_to do |format|
       if @app.save
-        format.html { redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully created.' }
+        format.html { redirect_to mesapps_url(session[:user_id]), :notice => 'App was successfully created.' }
         format.xml  { render :xml => @app, :status => :created, :location => @app }
         format.js
       else
@@ -41,8 +43,8 @@ class AppsController < ApplicationController
 
   end
 
-  # PUT /articles/1
-  # PUT /articles/1.xml
+  # PUT /apps/1
+  # PUT /apps/1.xml
   def update
     @app = App.find(params[:id])
 
