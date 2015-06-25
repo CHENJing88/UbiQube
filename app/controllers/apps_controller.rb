@@ -28,7 +28,7 @@ class AppsController < ApplicationController
 
     @app=App.new(params[:app])
 
-    @app= current_user.user_app_roles.apps.build(params[:app])
+    @app= @app.user_app_roles.build(params[:user_app_roles])
     respond_to do |format|
       if @app.save
         format.html { redirect_to mesapps_url(session[:user_id]), :notice => 'App was successfully created.' }
