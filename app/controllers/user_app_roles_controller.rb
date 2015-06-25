@@ -1,6 +1,27 @@
 class UserAppRolesController < ApplicationController
 
+  def index
+    @user_app_roles = UserAppRole.all
+  end
+
+  def show
+    @user_app_role = UserAppRole.find(params[:id])
+
+  end
+
+  def edit
+    @user_app_role=UserAppRole.find(params[:id])
+  end
+
+  # GET /apps/new
+  # GET /apps/new.xml
+  def new
+    @user_app_role = UserAppRole.new
+
+  end
+
   def create
+    @app=UserAppRole.new(params[:app])
     @user_app_role=UserAppRole.find(params[:id])
     @user=@user_app_role.users.build(user_param)
     @role=@user_app_role.roles.build(role_param)
