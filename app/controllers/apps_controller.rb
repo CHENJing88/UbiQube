@@ -17,8 +17,9 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @user_app_roles=@app.user_app_roles.build
-    @user_app_roles.app_id=@app.id
+    @user_app_roles=UserAppRole.new
+
+
   end
 
   # POST /apps
@@ -27,8 +28,10 @@ class AppsController < ApplicationController
     #app_params.permit!
 
     @app=App.new(app_params)
+    @user_app_roles=@app.user_app_roles.build
+    @user_app_roles.app_id=@app.id
 
-    #@app= @app.user_app_roles.build(relation_params)
+
     respond_to do |format|
       if @app.save
         format.html { redirect_to mesapps_url(session[:user_id]), :notice => 'App was successfully created.' }
