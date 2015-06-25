@@ -33,5 +33,10 @@
 </a>
 <% end %>
 <li class="nouvel-card">
-  <%= link_to 'Créer une nouvelle App', new_app_path,:id=>'create_app'%>
+  <%= link_to 'Créer une nouvelle App', new_app_path,:id=>'create_app', data: {toggle: "modal", target: "#content"}%>
 </li>
+
+
+<script type="text/javascript">
+  $(document).ready( new Jquery.createApp());
+</script>
