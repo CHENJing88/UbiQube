@@ -19,8 +19,8 @@ ep5=EtapeApp.create(nom:"Archivé")
 g1=GroupeUser.create(nom:"DTIC")
 gp1=GroupeApp.create(nom:"EDTIC")
 
-App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_id:ep1.id, groupe_app_id: gp1.id,description:"description de lifray")
-App.create(nom:"SSH", niveau:"mid", etat_app_id:e3.id, etape_id:ep2.id, groupe_app_id: gp1.id,description:"description de ssh")
+App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_app_id:ep1.id, groupe_app_id: gp1.id,description:"description de lifray")
+App.create(nom:"SSH", niveau:"mid", etat_app_id:e3.id, etape_app_id:ep2.id, groupe_app_id: gp1.id,description:"description de ssh")
 
 r1=Role.create(nom: "utilisateur")
 r2=Role.create(nom: "Administrateur")
