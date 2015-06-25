@@ -18,8 +18,8 @@ class AppsController < ApplicationController
   def new
     @app = App.new
     @user_app_roles=@app.user_app_roles.build
-    @user=@user_app_role.users.build
-    @role=@user_app_role.roles.build
+    @users=@user_app_roles.users.build
+    @roles=@user_app_roles.roles.build
   end
 
   # POST /apps
