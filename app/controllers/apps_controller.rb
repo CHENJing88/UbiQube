@@ -32,12 +32,12 @@ class AppsController < ApplicationController
     respond_to do |format|
       if @app.save
         format.html { redirect_to mesapps_url(session[:user_id]), :notice => 'App was successfully created.' }
-        format.xml  { render :xml => @app, :status => :created, :location => @app }
-        format.js
+        format.xml  { render :xml => @mesapps, :status => :created, :location => @user }
+        format.js { render :action => 'mesapps', :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @app.errors, :status => :unprocessable_entity }
-        format.js
+        format.js { render :action => @app.errors, :status => :unprocessable_entity }
       end
     end
 
