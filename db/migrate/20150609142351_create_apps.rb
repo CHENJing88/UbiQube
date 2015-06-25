@@ -14,8 +14,8 @@ class CreateApps < ActiveRecord::Migration
   def self.down
     drop_table :apps
   end
-    #add_index :apps , :etat_app_id
-    #add_index :apps , :etape_id
-    #add_index :apps , :groupe_app_id
+    add_index :apps , :etat_app_id
+    add_index :apps , :etape_id
+    add_index :apps , :groupe_app_id
   end
 end
