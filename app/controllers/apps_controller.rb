@@ -26,9 +26,10 @@ class AppsController < ApplicationController
   def create
     #app_params.permit!
 
-    @app=App.new(params[:app])
-
-    @app= @app.user_app_roles.build(params[:user_app_roles])
+    @app=App.new(app_params)
+    params[:user_app_roles][:app_id]=@app.id
+    
+    @app= @app.user_app_roles.build(relation_params)
     respond_to do |format|
       if @app.save
         format.html { redirect_to mesapps_url(session[:user_id]), :notice => 'App was successfully created.' }
@@ -71,8 +72,9 @@ class AppsController < ApplicationController
 
     def app_params
       params.require(:app).permit(:nom,:description)
-
     end
-
+    def relation_params
+      params.require(:user_app_roles).permit(:user_id,:role_id,:app_id)
+    end
 
 end
