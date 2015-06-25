@@ -1,4 +1,4 @@
-<%= form_for(@app, :url=>{:action => "create", :controller => "apps"}, remote:true) do |form_app| %>
+<%= form_for(@app, remote:true) do |form_app| %>
 <%= render 'layouts/error_message', object: form_app.object %>
 
   <div class="field">
