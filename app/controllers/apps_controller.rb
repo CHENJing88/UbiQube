@@ -39,7 +39,7 @@ class AppsController < ApplicationController
     #    format.xml  { render :xml => @app.errors, :status => :unprocessable_entity }
     #    format.js
     #  end
-    end
+    #end
 
   end
 
