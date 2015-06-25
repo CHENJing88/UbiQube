@@ -1,3 +1,3 @@
 class EtatApp < ActiveRecord::Base
-  belongs_to :etat_collection, :polymorphic=>true
+  has_many :apps, :class_name => "App"
 end
