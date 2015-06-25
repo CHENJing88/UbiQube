@@ -23,7 +23,7 @@ $(document).ready(function(){
       var dialog_form=$('<div id="dialog-form">Loading form...</div>').dialog({
             autoOpen: false,
             width:520,
-            modal:false,
+            modal:true,
             open: function(){
               return $(this).load(url+' #content');
             },
