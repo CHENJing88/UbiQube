@@ -32,12 +32,12 @@
   </div>
 </a>
 <% end %>
-<li class="nouvel-card" data-reveal-id="content" href="#">
+<li class="nouvel-card" data-reveal-id="newApp" href="#">
   <% #= link_to 'Créer une nouvelle App', new_app_path,:id=>'create_app', data: {toggle: 'modal', target: '#content'}%>
   <p>Créer une nouvelle App</p>
 </li>
 
-<div data-reveal-id="content" class="modal fade" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+<div data-reveal-id="newApp" class="modal fade" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -45,7 +45,7 @@
         <h4 class="modal-title" id="ModalLabel">Créer App</h4>
       </div>
       <div class="modal-body">
-        <%= render :partial =>new_app_path, modal:false %>
+        <%= render 'apps/new', modal:false %>
       </div>
     </div>
   </div>
