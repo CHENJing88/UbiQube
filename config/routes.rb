@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, :apps
+  resources :users
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
