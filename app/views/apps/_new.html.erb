@@ -4,7 +4,7 @@
   <%#= render 'form' %>
 
   <%#= link_to 'Créer',mesapps_path(current_user[:id]) %>
-  <%= form_for @app, :url=> apps_path do |form_app| %>
+  <%= form_for @app, :url=> new_app_path do |form_app| %>
 <%#= render 'layouts/error_message', object: form_app.object %>
 
   <div class="field">
