@@ -16,14 +16,14 @@
             <th> Title </th>
             <th> Valeur </th>
           </tr>
-          <%= if mesapp.apps.etape_app.id > 2 %>
+          <% if mesapp.apps.etape_app.id > 2 %>
             <tr><td>Niveau</td><td><%= mesapp.apps.niveau %></td>
             </tr>
             <tr><td>Etat</td><td><%= mesapp.apps.etat_app.nom %></td>
             </tr>
             <tr><td>Groupe</td><td><%= mesapp.apps.groupe_app.nom%></td>
             </tr>
-          <%= end %>
+          <% end %>
 
           <tr><td>Description</td><td><%= mesapp.apps.description %></td>
         </tr>
