@@ -28,9 +28,9 @@ class AppsController < ApplicationController
     #app_params.permit!
 
     @app=App.new(app_params)
-    @user_app_roles=@app.user_app_roles.build
-    @user_app_roles.app_id=@app.id
 
+    @user_app_roles.app_id=@app.id
+    @app.user_app_roles＝@user_app_roles
 
     respond_to do |format|
       if @app.save

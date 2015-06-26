@@ -21,8 +21,8 @@ class UserAppRolesController < ApplicationController
   end
 
   def create
-    @app=UserAppRole.new(params[:app])
-    @user_app_role=UserAppRole.find(params[:id])
+    @user_app_role=UserAppRole.new
+    
     @user=@user_app_role.users.build(user_param)
     @role=@user_app_role.roles.build(role_param)
 
