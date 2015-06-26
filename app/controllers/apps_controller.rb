@@ -17,7 +17,7 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @user_app_roles=UserAppRole.new
+    @app.user_app_roles.build
 
 
   end
@@ -75,8 +75,6 @@ class AppsController < ApplicationController
     def app_params
       params.require(:app).permit(:nom,:description)
     end
-    def relation_params
-      #params.require(:user_app_roles).permit(:user_id,:role_id,:app_id)
-    end
+    
 
 end
