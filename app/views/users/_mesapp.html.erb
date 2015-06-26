@@ -9,20 +9,24 @@
   <div id="appModal-<%=mesapp.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
         aria-hidden="true" role="dialog">
 
-        <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2>
+        <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <p>est en <%=mesapp.apps.etape_app.nom%>
         <p class="lead">Gestion Fonctionnel</p>
         <table >
           <tr>
             <th> Title </th>
             <th> Valeur </th>
           </tr>
-          <tr><td>Niveau</td><td><%= mesapp.apps.niveau %></td>
-          </tr>
-          <tr><td>Etape</td><td><%= mesapp.apps.etape_app.nom %></td>
-          </tr>
-          <tr><td>Groupe</td><td><%= mesapp.apps.groupe_app.nom%></td>
-          </tr>
+          <%= if mesapp.apps.etape_app.id > 2 %>
+            <tr><td>Niveau</td><td><%= mesapp.apps.niveau %></td>
+            </tr>
+            <tr><td>Etat</td><td><%= mesapp.apps.etat_app.nom %></td>
+            </tr>
+            <tr><td>Groupe</td><td><%= mesapp.apps.groupe_app.nom%></td>
+            </tr>
+          <%= end %>
 
+          <tr><td>Description</td><td><%= mesapp.apps.description %></td>
+        </tr>
        </table>
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
 
