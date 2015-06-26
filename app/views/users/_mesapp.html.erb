@@ -1,4 +1,4 @@
-<%= @mesapps.each do |mesapp|%>
+<% @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
  <a href="#" data-reveal-id="appModal-<%=mesapp.apps.id%>" >
   <li class="custom-card"  >
@@ -9,7 +9,7 @@
   <div id="appModal-<%=mesapp.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
         aria-hidden="true" role="dialog">
 
-        <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <p>est en <%=mesapp.apps.etape_app.nom%></p>
+        <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5>est en <%=mesapp.apps.etape_app.nom%></h5>
         <p class="lead">Gestion Fonctionnel</p>
         <table >
           <tr>
