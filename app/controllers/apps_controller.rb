@@ -77,7 +77,7 @@ class AppsController < ApplicationController
 
     def app_params
       params.require(:app).permit(:nom,:description,user_app_roles_attributes:[:user_id,:role_id],
-      etape_app_attributes:[:id],)
+      :etape_app_id,:etat_app_id)
     end
 
 
