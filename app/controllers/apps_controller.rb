@@ -17,7 +17,7 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @user_app_roles=UserAppRole.new
+    @user_app_roles=@app.user_app_roles.build
 
 
   end

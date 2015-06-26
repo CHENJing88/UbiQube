@@ -4,7 +4,7 @@
   <%#= render 'form' %>
 
   <%#= link_to 'Créer',mesapps_path(current_user[:id]) %>
-  <%= form_for @app, :url=> new_app_path do |form_app| %>
+  <%= form_for @app, :url=> {:action=>"create",:controller=>"apps_controller"} do |form_app| %>
 <%#= render 'layouts/error_message', object: form_app.object %>
 
   <div class="field">
@@ -16,7 +16,7 @@
     <%= form_app.fields_for :user_app_roles,@app.user_app_roles.build do |relation_fields|%>
       <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
       <%= relation_fields.hidden_field :role_id, :value => 1 %>
-
+      <%= relation_fields.hidden_field :app_id, :value => @app.id %>
     <% end %>
   </div>
 
