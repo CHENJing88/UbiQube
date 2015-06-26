@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
 
-  get '/apps/new' => "apps#new"
+  get '/apps/new' => "apps#new", :as=> :create_app
   #get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
   #patch '/apps/:id' => "apps#update"
 end
