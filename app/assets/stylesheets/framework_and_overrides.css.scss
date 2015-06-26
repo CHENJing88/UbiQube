@@ -201,6 +201,8 @@ textarea{
     font-size: 2.2rem;
     list-style:none;
     display:inline;
+    margin-right: 10px;
+
     h3{
       list-style:none;
       display:inline;
@@ -208,7 +210,7 @@ textarea{
   }
 }
 //grid
-
+.col-md-8:before,
 .row:after,
 .row:before {
   clear: both;
