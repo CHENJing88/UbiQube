@@ -30,7 +30,7 @@ class AppsController < ApplicationController
     @app=App.new(app_params)
 
     #@app.user_app_roles=UserAppRole.new(params[:user_app_roles])
-    @app.user_app_roles.app_id=@app.id
+    @app.user_app_roles.update_attributes(params[:app_id])=@app.id
     #@app.user_app_roles＝@user_app_roles
 
     respond_to do |format|
