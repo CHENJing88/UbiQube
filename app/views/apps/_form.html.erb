@@ -1,4 +1,4 @@
-  <%= form_for :app, :url=> apps_path do |form_app| %>
+  <%= form_for @app, :url=> apps_path do |form_app| %>
 <%#= render 'layouts/error_message', object: form_app.object %>
 
   <div class="field">
@@ -7,7 +7,7 @@
     <%= form_app.label :description %><br/>
     <%= form_app.text_area :description, placeholder: "Description...", :rows => 3  %>
 
-    <%= form_app.fields_for ［:app, :user_app_roles］ do |relation_fields|%>
+    <%= form_app.fields_for ［@app, @user_app_roles］ do |relation_fields|%>
       <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
       <%= relation_fields.hidden_field :role_id, :value => 1 %>
 
