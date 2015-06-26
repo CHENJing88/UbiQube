@@ -16,7 +16,7 @@
             <th> Title </th>
             <th> Valeur </th>
           </tr>
-          <tr><td>Niveau</td><td><% if mesapp.apps.niveau.nil?%><%= mesapp.apps.niveau %></td>
+          <tr><td>Niveau</td><td><%= mesapp.apps.niveau %></td>
           </tr>
           <tr><td>Etape</td><td><%= mesapp.apps.etape_app.nom %></td>
           </tr>
@@ -51,11 +51,5 @@
       <a class="close-reveal-modal" arial-label="Close">&#215;</a>
     </div>
   </div>
-
-
-
-
-
-
   <%#= link_to 'Créer',mesapps_path(current_user[:id]) %>
 </div>
