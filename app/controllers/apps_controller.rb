@@ -17,7 +17,7 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @user_app_roles=@app.user_app_roles.build
+    1.times{@app.user_app_roles.build}
 
 
   end
@@ -29,8 +29,8 @@ class AppsController < ApplicationController
 
     @app=App.new(app_params)
 
-    @user_app_roles.app_id=@app.id
-    @app.user_app_roles＝@user_app_roles
+  #  @user_app_roles.app_id=@app.id
+    #@app.user_app_roles＝@user_app_roles
 
     respond_to do |format|
       if @app.save
