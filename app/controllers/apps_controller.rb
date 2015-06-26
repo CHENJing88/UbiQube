@@ -29,9 +29,13 @@ class AppsController < ApplicationController
 
     @app=App.new(app_params)
 
+    #@app.build(params[:user_app_roles])
     #@app.user_app_roles=UserAppRole.new(params[:user_app_roles])
-    @app.user_app_roles.build(params[:app_id])
+    #@app.user_app_roles.build(params[:app_id])
     #@app.user_app_roles＝@user_app_roles
+    #@app.build(params[:user_app_roles])
+    #@app.build(params[:user_app_roles])
+    #@app.build(params[:user_app_roles])
 
     respond_to do |format|
       if @app.save
@@ -72,7 +76,8 @@ class AppsController < ApplicationController
   private
 
     def app_params
-      params.require(:app).permit(:nom,:description,user_app_roles_attributes:[:user_id,:role_id])
+      params.require(:app).permit(:nom,:description,user_app_roles_attributes:[:user_id,:role_id],
+      etape_app_attributes:[:id],)
     end
 
 

@@ -12,8 +12,9 @@
     <%= form_app.text_field :nom, placeholder: "App Nom...", :size => 30 %><br/>
     <%= form_app.label :description %><br/>
     <%= form_app.text_area :description, placeholder: "Description...", :rows => 3  %>
-    <%= form_app.hidden_field :etape_app_id, :value => 1 %>
-    <%= form_app.hidden_field :etat_app_id, :value => 1 %>
+      <%= form_app.hidden_field :etape_app_id, :value => 1 %>
+      <%= form_app.hidden_field :etat_app_id, :value => 1 %>
+
 
     <%= form_app.fields_for :user_app_roles,@app.user_app_roles.build do |relation_fields|%>
       <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
