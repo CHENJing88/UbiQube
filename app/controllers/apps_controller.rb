@@ -17,7 +17,7 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    1.times {@app.user_app_roles.build}
+    @app.user_app_roles.build
 
 
   end
