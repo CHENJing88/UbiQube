@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20150615125428) do
     t.datetime "updated_at"
   end
 
+  add_index "apps", ["etape_app_id"], name: "index_apps_on_etape_app_id", using: :btree
+  add_index "apps", ["etat_app_id"], name: "index_apps_on_etat_app_id", using: :btree
+  add_index "apps", ["groupe_app_id"], name: "index_apps_on_groupe_app_id", using: :btree
+
   create_table "catalog_droits", force: true do |t|
     t.string   "nom"
     t.datetime "created_at"

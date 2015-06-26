@@ -472,3 +472,9 @@ I, [2015-06-25T12:47:23.908898 #10060]  INFO -- omniauth: (cas) Request phase in
 I, [2015-06-25T12:47:23.984621 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
 I, [2015-06-25T14:31:04.623395 #10057]  INFO -- omniauth: (cas) Request phase initiated.
 I, [2015-06-25T14:31:24.707324 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-26T13:51:11.881609 #10054]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-26T13:51:27.453824 #10054]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-26T14:48:58.782521 #10057]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-26T14:48:58.919488 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-06-26T14:52:37.591644 #10057]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-06-26T14:52:37.714461 #10057]  INFO -- omniauth: (cas) Callback phase initiated.

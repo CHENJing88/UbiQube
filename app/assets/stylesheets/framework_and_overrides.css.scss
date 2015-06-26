@@ -189,27 +189,26 @@ textarea{
 }
 
 .container{
-  margin-top: 30px;
+  margin-top:30px;
   margin-bottom: 30px;
   margin-right: auto;
   margin-left: 80px;
   padding-left: 15px;
   padding-right: 15px;
-  clear: left;
+  padding-bottom:30px;
+  clear:both;
   i {// icon
-    float:left;
     font-size: 2.2rem;
     padding-left: 10px;
 
     h3{
+      margin-left:10px;
       list-style:none;
       display:inline;
     }
   }
 }
 //grid
-.container .col-md-8:before,
-.container .col-md-8:after,
 .row:after,
 .row:before {
   clear: both;
@@ -259,7 +258,7 @@ textarea{
 
 }
 
-.reveal-modal .app-etat{
+.col-md-8 .app-etat{
   list-style:none;
   display:inline;
 }
