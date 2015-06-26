@@ -28,7 +28,7 @@ class AppsController < ApplicationController
     #app_params.permit!
 
     @app=App.new(app_params)
-
+    1.times{@app.user_app_roles.build}
   #  @user_app_roles.app_id=@app.id
     #@app.user_app_roles＝@user_app_roles
 
