@@ -131,7 +131,7 @@ section {
   margin-top: 20px;
   }
 textarea{
-  text-align: center;
+  text-align: left;
   }
 
 // Styles for form views
@@ -192,10 +192,15 @@ textarea{
   margin-top: 30px;
   margin-bottom: 10px;
   margin-right: auto;
-  margin-left: 30px;
+  margin-left: 80px;
   padding-left: 15px;
   padding-right: 15px;
   clear: left;
+  i {// icon
+    font-size: 2.2rem;
+    list-style:none;
+    display:inline;
+  }
 }
 //grid
 
@@ -247,6 +252,16 @@ textarea{
   line-height: 1em;
 
 }
+
+.reveal-modal .app-etat{
+  list-style:none;
+  display:inline;
+}
+
+
+
+
+
 
 *{
   -webkit-box-sizing:border-box;
