@@ -1,9 +1,0 @@
-<%- if @app.errors.any? %>
-  console.log('Error');
-  $('#dialog-form').html('<%= escape_javascript(render('form')) %>');
-<%- else %>
-  console.log('Created');
-  $('#dialog-form').dialog('close');
-  $('#dialog-form').remove();
-  $('ol').append('<%= escape_javascript(render(@mesapps)) %>');
-<%- end %>
