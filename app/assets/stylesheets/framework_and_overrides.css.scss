@@ -190,16 +190,21 @@ textarea{
 
 .container{
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   margin-right: auto;
   margin-left: 80px;
   padding-left: 15px;
   padding-right: 15px;
   clear: left;
   i {// icon
+    float:left;
     font-size: 2.2rem;
     list-style:none;
     display:inline;
+    h3{
+      list-style:none;
+      display:inline;
+    }
   }
 }
 //grid
