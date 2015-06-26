@@ -22,7 +22,7 @@ class UserAppRolesController < ApplicationController
 
   def create
     @user_app_role=UserAppRole.new
-    
+
     @user=@user_app_role.users.build(user_param)
     @role=@user_app_role.roles.build(role_param)
 
