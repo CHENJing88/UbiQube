@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users
+  resources :users,:apps
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
 
 
-  get '/apps/new' => "apps#new", :as=> :create_app
+  #get '/apps/new' => "apps#new", :as=> :create_app
   #get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
   #patch '/apps/:id' => "apps#update"
 end
