@@ -37380,3 +37380,117 @@ Processing by UsersController#mesapps as HTML
   Rendered layouts/_messages.html.erb (0.1ms)
   Rendered layouts/_footer.html.erb (0.3ms)
 Completed 200 OK in 6311ms (Views: 6302.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1/mesapps" for 193.52.209.13 at 2015-06-26 16:33:55 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (37.8ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUserAppRole Load (0.4ms)[0m  SELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 1
+  [1m[36mApp Load (0.2ms)[0m  [1mSELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2, 3, 4)[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (2, 1)
+  [1m[36mEtapeApp Load (0.3ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1[0m
+  [1m[35mEtapeApp Load (0.2ms)[0m  SELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered apps/_new.html.erb (7.0ms)
+  Rendered users/_mesapp.html.erb (40.0ms)
+  Rendered users/mesapps.html.erb within layouts/application (47.5ms)
+  Rendered layouts/_navigation_links.html.erb (1.4ms)
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 1290ms (Views: 1221.3ms | ActiveRecord: 39.7ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-28 23:15:40 +0200
+Processing by VisitorsController#index as HTML
+  [1m[35m (76.1ms)[0m  SELECT COUNT(*) FROM `users`
+  Rendered visitors/index.html.erb within layouts/application (806.8ms)
+  Rendered layouts/_navigation_links.html.erb (26.2ms)
+  Rendered layouts/_navigation.html.erb (34.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 5701ms (Views: 5544.3ms | ActiveRecord: 76.1ms)
+
+
+Started GET "/signin" for 193.52.209.13 at 2015-06-28 23:15:58 +0200
+Processing by SessionsController#new as HTML
+Redirected to http://ubiqube.univ-tours.fr/auth/cas
+Completed 403 Forbidden in 243ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/cas" for 193.52.209.13 at 2015-06-28 23:16:00 +0200
+
+
+Started GET "/auth/cas/callback?url&ticket=ST-43748-EB6dB1cnMp5fm0kdgVgY-cas.univ-tours.fr?url&ticket=ST-43748-EB6dB1cnMp5fm0kdgVgY-cas.univ-tours.fr" for 193.52.209.13 at 2015-06-28 23:16:11 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"url"=>nil, "ticket"=>"ST-43748-EB6dB1cnMp5fm0kdgVgY-cas.univ-tours.fr", "provider"=>"cas"}
+  [1m[36mUser Load (364.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`provider` = 'cas' AND `users`.`uid` = 'beuneche'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  BEGIN
+  [1m[36mSQL (50.5ms)[0m  [1mINSERT INTO `users` (`created_at`, `name`, `provider`, `uid`, `updated_at`) VALUES ('2015-06-28 21:16:23', '', 'cas', 'beuneche', '2015-06-28 21:16:23')[0m
+  [1m[35m (49.9ms)[0m  COMMIT
+Redirected to http://ubiqube.univ-tours.fr/users/2/mesapps
+Completed 302 Found in 1782ms (ActiveRecord: 466.0ms)
+
+
+Started GET "/users/2/mesapps" for 193.52.209.13 at 2015-06-28 23:16:24 +0200
+Processing by UsersController#mesapps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (16.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2]]
+  [1m[35mUserAppRole Load (80.6ms)[0m  SELECT `user_app_roles`.* FROM `user_app_roles`  WHERE `user_app_roles`.`user_id` = 2
+  [1m[36mApp Load (27.5ms)[0m  [1mSELECT `apps`.* FROM `apps`  WHERE `apps`.`id` IN (1, 2)[0m
+  [1m[35mRole Load (26.3ms)[0m  SELECT `roles`.* FROM `roles`  WHERE `roles`.`id` IN (1, 2)
+  [1m[36mEtapeApp Load (0.3ms)[0m  [1mSELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 1 LIMIT 1[0m
+  [1m[35mEtapeApp Load (0.3ms)[0m  SELECT  `etape_apps`.* FROM `etape_apps`  WHERE `etape_apps`.`id` = 2 LIMIT 1
+  Rendered apps/_new.html.erb (11.8ms)
+  Rendered users/_mesapp.html.erb (176.9ms)
+  Rendered users/mesapps.html.erb within layouts/application (197.6ms)
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 812ms (Views: 640.6ms | ActiveRecord: 151.3ms)
+
+
+Started GET "/users" for 193.52.209.13 at 2015-06-28 23:16:44 +0200
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (12.2ms)[0m  SELECT `users`.* FROM `users`
+  Rendered users/_user.html.erb (1.6ms)
+  Rendered users/_user.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (26.2ms)
+Completed 200 OK in 1578ms (Views: 1502.4ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/users/2" for 193.52.209.13 at 2015-06-28 23:16:49 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", "2"]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_navigation_links.html.erb (1.3ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1223ms (Views: 1216.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 193.52.209.13 at 2015-06-29 09:38:16 +0200
+Processing by VisitorsController#index as HTML
+  [1m[36m (118.6ms)[0m  [1mSELECT COUNT(*) FROM `users`[0m
+  Rendered visitors/index.html.erb within layouts/application (197.1ms)
+  Rendered layouts/_navigation_links.html.erb (0.9ms)
+  Rendered layouts/_navigation.html.erb (8.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 1790ms (Views: 1669.4ms | ActiveRecord: 118.6ms)
