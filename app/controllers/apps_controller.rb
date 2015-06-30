@@ -8,6 +8,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     @app.groupe_app.build
     @app.etape_app.build
+    @app.etat_app.build
   end
   end
   end
@@ -16,6 +17,7 @@ class AppsController < ApplicationController
     @app=App.find(params[:id])
     @app.groupe_app.build
     @app.etape_app.build
+    @app.etat_app.build
   end
 
   # GET /apps/new

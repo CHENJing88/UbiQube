@@ -12,7 +12,7 @@ class App < ActiveRecord::Base
   has_many :roles, through: :user_app_roles
 
   belongs_to :etape_app,:class_name => "EtapeApp", foreign_key: "etape_app_id"
-  belongs_to :etat_apps, :class_name => "EtatApp", foreign_key: "etat_app_id"
+  belongs_to :etat_app, :class_name => "EtatApp", foreign_key: "etat_app_id"
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
   #default_scope order: 'apps.created_at DESC'
