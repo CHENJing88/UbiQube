@@ -2,6 +2,3 @@
 <% form_for @app, :url=> {controller=>'apps', :action=> 'show'} do |f| %>
   <%= render partial:'apps/form', :locals=>{ :f=>f, :app=> @app} %>
 <% end %>
-
-<%= #button_to "Edit", edit_app_path(@app) %>
-<%= #button_to "Delete", data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
