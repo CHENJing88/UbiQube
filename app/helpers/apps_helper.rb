@@ -9,6 +9,7 @@ module AppsHelper
       return true
     else
       return false
+    end
   end
 
 
