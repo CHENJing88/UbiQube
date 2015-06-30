@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :users,:apps
+  resources :users do
+    resources :apps, only: [:show, :new, :create, :destroy]
+  end
+  resources :apps
+
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
