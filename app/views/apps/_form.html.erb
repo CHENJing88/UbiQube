@@ -1,13 +1,13 @@
 
 <div class="field">
-  <% if app_valide?(:app)%>
+  <%# if app_valide?(:app)%>
     <p><%= f.label :niveau %><%= f.text_field :niveau %></p>
     </tr>
     <p><%= f.label :etat%><%= f.text_field :app.etat_app.nom %></td>
     </tr>
     <p><%= f.label :groupe %><%= f.text_field :app.groupe_app.nom%></td>
     </tr>
-  <% end %>
+  <%# end %>
 
   <p><%= f.label :description %><%= f.text_field :description %></p>
 </div>
