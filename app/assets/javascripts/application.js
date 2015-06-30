@@ -18,7 +18,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-    $('#create_app').click(function(e){
+    $('#show_app').click(function(e){
       var url=$(this).attr('href');
       var dialog_form=$('<div id="dialog-form">Loading form...</div>').dialog({
             autoOpen: false,

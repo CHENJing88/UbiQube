@@ -1,4 +1,7 @@
-<%= render 'apps/form' %>
+
+<% form_for (@app, :url=> {controller=>'apps', :action=> 'show'}) do |f| %>
+  <%= render 'apps/form', :locals=>{ :f=>f} %>
+<% end %>
 
 <%= button_to "Edit", edit_app_path(@app) %>
 <%= button_to "Delete", data:{:confirm => 'Vous etês sure delete cet App?', disable_with: 'loading..'}, :method => :delete %>
