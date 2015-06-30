@@ -11,27 +11,21 @@
 
         <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5 class="app-etat">est en <%=mesapp.apps.etape_app.nom%></h5>
         <p class="lead">Gestion Fonctionnel</p>
+
         <table >
           <tr>
             <th> Title </th>
             <th> Valeur </th>
           </tr>
-          <% if mesapp.apps.etape_app.id > 2 %>
-            <tr><td>Niveau</td><td><%= mesapp.apps.niveau %></td>
-            </tr>
-            <tr><td>Etat</td><td><%= mesapp.apps.etat_app.nom %></td>
-            </tr>
-            <tr><td>Groupe</td><td><%= mesapp.apps.groupe_app.nom%></td>
-            </tr>
-          <% end %>
+          
+          <% render_app_show(mesapp.apps)%>
 
-          <tr><td>Description</td><td><%= mesapp.apps.description %></td>
-        </tr>
        </table>
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
 
-        <a zf-close="" class="button"> Save </a>
-        <a zf-close="" class="button"> Cancel</a>
+
+        <!--a zf-close="" class="button" > Delete </a>
+        <a zf-close="" class="button"> Cancel</a-->
 
   </div>
 </a>
@@ -44,10 +38,11 @@
 <div data-reveal id="newApp" class="reveal-modal" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
 
+      <div class="modal-header">
         <h4 class="modal-title" id="ModalLabel">Créer App</h4>
       </div>
+
       <div class="modal-body">
         <%= render new_app_path, modal:false %>
       </div>

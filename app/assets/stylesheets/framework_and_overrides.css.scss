@@ -177,6 +177,7 @@ textarea{
   @extend .radius;
   @extend .tiny;
 }
+
 // Users' Apps page
 .row{
   margin-left: -15px;
@@ -263,6 +264,10 @@ textarea{
   display:inline;
 }
 
+#modalTitle{
+  list-style:none;
+  display:inline;
+}
 
 
 
