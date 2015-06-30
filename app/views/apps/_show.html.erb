@@ -1,5 +1,5 @@
 
-<% form_for (@app, :url=> {controller=>'apps', :action=> 'show'}) do |f| %>
+<% form_for @app, :url=> {controller=>'apps', :action=> 'show'} do |f| %>
   <%= render 'apps/form', :locals=>{ :f=>f} %>
 <% end %>
 
