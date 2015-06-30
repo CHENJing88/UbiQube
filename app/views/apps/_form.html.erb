@@ -1,4 +1,4 @@
-<% form_for @app do |f| %>
+<% form_for @app, :remote=>true do |f| %>
 <div class="field">
   <% if @app.etape_app.id > 2 %>
     <p><%= f.label :niveau %><%= f.text_field :niveau %></p>
