@@ -1,5 +1,11 @@
 <h1>Editing App</h1>
 
-<%= render 'apps/form' %>
+<% form_for (@app, :url=> {controller=>'apps', :action=> 'edit'}) do |f| %>
+<%= render 'apps/form', :locals=>{ :f=>f } %>
+<% end %>
+
+<div class="action">
+  <%= f.submit "Update"%>
+</div>
 <%= button_to "Save", @app %>
 <%= button_to "Concel", app_path(@app) %>

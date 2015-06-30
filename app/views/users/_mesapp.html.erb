@@ -18,8 +18,8 @@
             <th> Valeur </th>
           </tr>
 
-          <% render_app_show(@user,mesapp.apps)%>
-
+          <% #render_app_show(@user,mesapp.apps)%>
+          <%= render app_path, modal:false %>
        </table>
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
 
