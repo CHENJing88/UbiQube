@@ -3,10 +3,14 @@
   <%# if app_valide?(:app)%>
     <p><%= f.label :niveau %><%= f.text_field :niveau %></p>
     </tr>
-    <p><%= f.label :etat%><%= f.text_field app.etat_app.nom %></td>
-    </tr>
-    <p><%= f.label :groupe %><%= f.text_field app.groupe_app.nom%></td>
-    </tr>
+    <%= f.fields_for :etat_app,app.etat_app.build do |etat_fields|%>
+      <p><%= etat_fields.label :etat %><%= etat_fields.text_field :nom %></td>
+      </tr>
+    <% end %>
+    <%= f.fields_for :groupe_app, app.groupe_app.build do |groupe_fields|%>
+      <p><%= groupe_fields.label :groupe %><%= groupe_fields.text_field :nom %></td>
+      </tr>
+    <% end %>
   <%# end %>
 
   <p><%= f.label :description %><%= f.text_field :description %></p>
