@@ -33,4 +33,13 @@ class ApplicationController < ActionController::Base
       end
     end
 
+
+    def authorize_admin!
+      authenticate_user!
+      unless current_user.role.nom == "Admin"
+        flash[:alert] = "Vous devez être connecté en tant qu'administrateur pour cet opération"
+        redirect_to root_path
+      end
+    end
+
 end
