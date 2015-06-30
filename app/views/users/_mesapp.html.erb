@@ -8,25 +8,33 @@
   <!-- c'est le dialog flottant correspondant en cliquant la carte -->
   <div id="appModal-<%=mesapp.apps.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
         aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
 
-        <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5 class="app-etat">est en <%=mesapp.apps.etape_app.nom%></h5>
-        <p class="lead">Gestion Fonctionnel</p>
+        <div class="modal-header">
+          <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5 class="app-etat">est en <%=mesapp.apps.etape_app.nom%></h5>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Gestion Fonctionnel</p>
 
-        <table >
-          <tr>
-            <th> Title </th>
-            <th> Valeur </th>
-          </tr>
+          <table >
+            <tr>
+              <th> Title </th>
+              <th> Valeur </th>
+            </tr>
 
-          <% #render_app_show(@user,mesapp.apps)%>
-          <%= render app_path, modal:false %>
-       </table>
+            <% #render_app_show(@user,mesapp.apps)%>
+            <%= render app_path, modal:false %>
+         </table>
+       </div>
+
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
 
 
+      </div>
+    </div>
         <!--a zf-close="" class="button" > Delete </a>
         <a zf-close="" class="button"> Cancel</a-->
-
   </div>
 </a>
 <% end %>
