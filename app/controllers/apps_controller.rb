@@ -23,6 +23,12 @@ class AppsController < ApplicationController
     @app.groupe_app.build
     @app.etape_app.build
     @app.etat_app.build
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @app }
+    end
+
   end
 
   # GET /apps/new
