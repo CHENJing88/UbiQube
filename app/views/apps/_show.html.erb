@@ -1,6 +1,6 @@
 
 <% form_for @app, :url=> {controller=>'apps', :action=> 'show'} do |f| %>
-  <%= render 'apps/form', :locals=>{ :f=>f, :app=> @app} %>
+  <%= render 'apps/form', :locals=>{ :f=>f, app=> @app} %>
 <% end %>
 
 <%= button_to "Edit", edit_app_path(@app) %>
