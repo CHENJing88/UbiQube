@@ -1,6 +1,6 @@
 <% form_for @app do |f| %>
 <div class="field">
-  <% if @app.etape_app_id > 2 %>
+  <% if @app.etape_app.id > 2 %>
     <p><%= f.label :niveau %><%= f.text_field :niveau %></p>
     </tr>
     <%= f.fields_for :etat_app, @app.etat_app.build do |etat_fields|%>
