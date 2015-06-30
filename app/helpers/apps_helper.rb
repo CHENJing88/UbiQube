@@ -5,7 +5,7 @@ module AppsHelper
   end
 
   def app_valide?(app)
-    if app.etape_app_id > 2
+    if app.etape_app.id > 2
       return true
     else
       return false
