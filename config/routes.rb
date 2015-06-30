@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :users do
-    resources :apps, only: [:show, :new, :create, :destroy]
-  end
+  resources :users 
+    #resources :apps, only: [:show, :new, :create, :destroy]
+
   resources :apps
 
 
