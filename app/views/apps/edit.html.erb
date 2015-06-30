@@ -1,7 +1,7 @@
 <h1>Editing App</h1>
 
 <% form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
-<%= render 'apps/form', :locals=>{ :f=>f, app=> @app } %>
+<%= render 'apps/form', :locals=>{ :f=>f, :app=> @app } %>
 <% end %>
 
 <div class="action">
