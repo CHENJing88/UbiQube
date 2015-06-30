@@ -1,0 +1,18 @@
+<% form_for @app do |f| %>
+<div class="field">
+  <% if @app.etape_app.id > 2 %>
+    <p><%= f.label :niveau %><%= f.text_field :niveau %></p>
+    </tr>
+    <p><%= f.label :etat%><%= f.text_field @app.etat_app.nom %></td>
+    </tr>
+    <p><%= f.label :groupe %><%= f.text_field @app.groupe_app.nom%></td>
+    </tr>
+  <% end %>
+
+  <p><%= f.label :description %><%= f.text_field :description %></p>
+</div>
+
+<div class="action">
+  <%= f.submit %>
+
+</div>
