@@ -6,11 +6,16 @@ class AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
-
+    @app.groupe_app.build
+    @app.etape_app.build
+  end
+  end
   end
 
   def edit
     @app=App.find(params[:id])
+    @app.groupe_app.build
+    @app.etape_app.build
   end
 
   # GET /apps/new
@@ -70,6 +75,7 @@ class AppsController < ApplicationController
     redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully deleted'
 
   end
+
 
   private
 
