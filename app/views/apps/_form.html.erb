@@ -1,11 +1,11 @@
 
 <div class="field">
-  <% if @app.etape_app_id > 2 %>
+  <% if app_valide?(:app)%>
     <p><%= f.label :niveau %><%= f.text_field :niveau %></p>
     </tr>
-    <p><%= f.label :etat%><%= f.text_field @app.etat_app.nom %></td>
+    <p><%= f.label :etat%><%= f.text_field :app.etat_app.nom %></td>
     </tr>
-    <p><%= f.label :groupe %><%= f.text_field @app.groupe_app.nom%></td>
+    <p><%= f.label :groupe %><%= f.text_field :app.groupe_app.nom%></td>
     </tr>
   <% end %>
 
