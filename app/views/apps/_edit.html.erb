@@ -5,5 +5,5 @@
 <%= render 'apps/form', :f=> f %>
 
 <%= button_to "Save", @app %>
-<%= button_to "Concel", app_path(@app) %>
+<%= button_to "Concel", mesapp_path(current_user) %>
 <% end %>
