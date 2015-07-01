@@ -16,7 +16,9 @@
 //= require turbolinks
 //= require foundation
 //= require_tree .
-
+$(function() {
+  $(document).foundation();
+  });
 $(document).ready(function(){
     $('#show_app').click(function(e){
       var url=$(this).attr('href');
@@ -35,7 +37,5 @@ $(document).ready(function(){
     e.preventDefautlt();
 });
 
-$(function() {
-  $(document).foundation();
-  });
+
 });
