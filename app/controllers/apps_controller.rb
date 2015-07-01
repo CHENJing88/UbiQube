@@ -6,12 +6,9 @@ class AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
-    @app.groupe_app.build
-    @app.etape_app.build
-    @app.etat_app.build
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render app_path(@app) }
       format.xml  { render :xml => @app }
     end
   end
@@ -23,9 +20,9 @@ class AppsController < ApplicationController
     @app.groupe_app.build
     @app.etape_app.build
     @app.etat_app.build
-    
+
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render edit_app_path(@app) }
       format.xml  { render :xml => @app }
     end
 
@@ -55,7 +52,7 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       if @app.save
-        format.html { redirect_to mesapps_url(session[:user_id]), :notice => 'App was successfully created.' }
+        format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully created.' }
         format.js { render :action => 'mesapps', :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -71,7 +68,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
 
       if @app.update_attributes(params[:app])
-        redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully updated.'
+        redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.'
 
       else
         render :action => "edit"
@@ -85,7 +82,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     @app.destroy
 
-    redirect_to mesapps_url(current_user[:id]), :notice => 'App was successfully deleted'
+    redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'
 
   end
 
