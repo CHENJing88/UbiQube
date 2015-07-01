@@ -4,21 +4,19 @@
 <%# form_for @app do |f| %>
   <%#= render 'apps/form' %>
 <%# end %>
-<%= form_for @app,:url=> {controller=>'apps', :action=> 'show'} do |f| %>
-  <table >
-    <tr>
-      <th> Title </th>
-      <th> Valeur </th>
-    </tr>
+  <%= form_for @app,:url=> {controller=>'apps', :action=> 'show'} do |f| %>
+    <table >
+      <tr>
+        <th> Title </th>
+        <th> Valeur </th>
+      </tr>
 
+      <tr><td>Description</td><td><%= @app.description %></td>
+      </tr>
 
+    </table>
 
-    <tr><td>Description</td><td><%= @app.description %></td>
-    </tr>
-
-  </table>
-
-<% end %>
+  <% end %>
 <%#= link_to "Edit"，edit_app_path(@app) %>
 <%#= link_to "Delete", @app, mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :destroy %>
 

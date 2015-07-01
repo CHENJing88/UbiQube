@@ -32,7 +32,7 @@ class UserAppRolesController < ApplicationController
     else
       render root_url
     end
-    
+
   end
 end
 
