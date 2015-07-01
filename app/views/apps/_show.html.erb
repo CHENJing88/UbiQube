@@ -4,7 +4,7 @@
   <%= render 'apps/form', :f => f %>
 
 
-<%= button_to "Edit", edit_app_path(@app) %>
-<%= button_to "Delete", data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
+<%= Link_to "Edit", edit_app_path(@app) %>
+<%= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
 
 <% end %>
