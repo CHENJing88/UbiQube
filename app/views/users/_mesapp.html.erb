@@ -16,7 +16,7 @@
         </div>
         <div class="modal-body">
           <p class="lead">Gestion Fonctionnel</p>
-          <%= render 'apps/show', app: mesapp.apps %>
+          <%= render 'apps/show', app: mesapp.apps ,modal:false%>
           <%#= render 'apps/edit',app: mesapp.apps%>
           <!--table >
             <tr>
@@ -47,12 +47,13 @@
               </div>
               <div class="modal-body">
                 <p class="lead">Gestion Fonctionnel</p>
-                <%= render partial:'apps/edit',locals:{ :app=> mesapp.apps},modal:true%>
+                <%= render partial:'apps/edit',locals:{ :app=> mesapp.apps},modal:false%>
              </div>
 
               <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+
               <%#= button_to "Save", @app %>
-              <a href="#" data-reveal-id="appModal-<%=mesapp.apps.id%>" class="secondary button"> Edit</a>
+              <a href="#" data-reveal-id="appModal-<%=mesapp.apps.id%>" class="secondary button"> Annuler</a>
             </div>
           </div>
         </div>

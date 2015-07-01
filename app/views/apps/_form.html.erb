@@ -1,11 +1,12 @@
 <% form_for @app do |f| %>
-<div class="field">
+  <div class="field">
 
+    <%= f.label :nom %><%= f.text_field :nom %>
 
-  <p><%= f.label :description %><%= f.text_field :description %></p>
-</div>
+    <%= f.label :description %><%= f.text_area :description %>
+  </div>
 
-<div class="action">
-  <%= f.submit %>
-</div>
+  <div class="action">
+    <%= f.submit %>
+  </div>
 <% end %>
