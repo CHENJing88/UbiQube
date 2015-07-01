@@ -35,8 +35,28 @@
 
       </div>
     </div>
-        <!--a zf-close="" class="button" > Delete </a>
-        <a zf-close="" class="button"> Cancel</a-->
+        <a zf-close="" class="button" > Delete </a>
+        <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
+
+        <div id="editModal" class="reveal-modal" data-reveal arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <div class="modal-header">
+                <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5 class="app-etat">est en <%=mesapp.apps.etape_app.nom%></h5>
+              </div>
+              <div class="modal-body">
+                <p class="lead">Gestion Fonctionnel</p>
+                <%= render render partial:'apps/edit',locals:{ :app=> mesapp.apps},modal:true%>
+             </div>
+
+              <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+            </div>
+          </div>
+        </div>
+
+
+
   </div>
 </a>
 <% end %>
