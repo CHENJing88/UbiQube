@@ -12,8 +12,6 @@ class AppsController < ApplicationController
       format.xml  { render :xml => @app }
     end
   end
-  end
-  end
 
   def edit
     @app=App.find(params[:id])
