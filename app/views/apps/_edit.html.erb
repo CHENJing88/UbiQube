@@ -1,6 +1,6 @@
 <div id="content">
 
-<%= form_for @app, :url=> {controller=>'apps', :action=> 'update', :id=>@app } do |f| %>
+<%= form_for @app, :url=> {controller=>'apps', :action=> 'edit', :id=>@app } do |f| %>
 <%#= form_for @app do |f| %>
   <%= render 'apps/form', :f=>f %>
 <%# end %>
