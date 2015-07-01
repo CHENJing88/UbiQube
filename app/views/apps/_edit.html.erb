@@ -1,10 +1,10 @@
 <div id="content">
 
-<%# form_for @app, :url=> {controller=>'apps', :action=> 'edit'}, remote:true do |f| %>
+<% form_for @app, :url=> {controller=>'apps', :action=> 'update', :id=>@app } do |f| %>
 <%# form_for @app do |f| %>
-  <%= render 'apps/form' %>
+  <%= render 'apps/form', :f=>f %>
 <%# end %>
-
+<% f.submit "Update"%>
 <%#= button_to "Save", @app %>
 <%#= button_to "Concel", mesapps_path(current_user) %>
 </div>

@@ -1,10 +1,10 @@
 <div id="content">
-<%# form_for @app, :url=> {controller=>'apps', :action=> 'show'}, remote:true do |f| %>
+<% form_for @app, :url=> {controller=>'apps', :action=> 'show',:id=>@app}, remote:true do |f| %>
 
 <%# form_for @app do |f| %>
   <%#= render 'apps/form' %>
 <%# end %>
-<% form_for @app do |f| %>
+
 
 <div class="field">
 
