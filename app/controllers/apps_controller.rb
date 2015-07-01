@@ -7,6 +7,9 @@ class AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
+    @app.etat_app.build
+    @app.etape_app.build
+    @app.groupe_app.build
   end
 
   def edit
