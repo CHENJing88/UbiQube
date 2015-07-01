@@ -1,7 +1,7 @@
 <div id="content">
 
-<%#= form_for @app, :url=> {controller=>'apps', :action=> 'edit', :id=>@app } do |f| %>
-<%= form_for @app do |f| %>
+<%= form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
+<%#= form_for @app do |f| %>
   <%= render 'apps/form', :f=>f %>
 <%# end %>
 <%# f.submit "Update"%>
