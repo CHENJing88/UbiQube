@@ -16,15 +16,16 @@
         </div>
         <div class="modal-body">
           <p class="lead">Gestion Fonctionnel</p>
-
+          <%= render app_path(mesapp.apps) %>
           <table >
             <tr>
               <th> Title </th>
               <th> Valeur </th>
             </tr>
 
-            <% #render_app_show(@user,mesapp.apps)%>
-            <%= render partial:'apps/show',locals:{ :app=> mesapp.apps}, modal:false %>
+            <%#render_app_show(@user,mesapp.apps)%>
+            <%#= render partial:'apps/show',locals:{ :app=> mesapp.apps}, modal:false %>
+            <%= render 'apps/show', app: mesapp.apps %>
          </table>
        </div>
 

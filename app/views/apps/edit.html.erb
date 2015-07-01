@@ -1,8 +1,9 @@
 <h1>Editing App</h1>
 
 <%# form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
-<%= render partial:'apps/form', :locals=>{ :app=> @app } %>
-<%# end %>
+<% form_for @app, remote:true do |f| %>
+<%= render 'apps/form', :f=> f } %>
 
 <%= button_to "Save", @app %>
 <%= button_to "Concel", app_path(@app) %>
+<% end %>
