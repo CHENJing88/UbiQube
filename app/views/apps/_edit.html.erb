@@ -1,9 +1,9 @@
 <h1>Editing App</h1>
 
-<%# form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
-<% form_for @app, remote:true do |f| %>
-<%= render 'apps/form', :f=> f %>
+<%# form_for @app, :url=> {controller=>'apps', :action=> 'edit'}, remote:true do |f| %>
+<% form_for @app do |f| %>
+  <%= render 'apps/form', :f=> f %>
+<% end %>
 
 <%= button_to "Save", @app %>
 <%= button_to "Concel", mesapps_path(current_user) %>
-<% end %>
