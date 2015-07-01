@@ -1,8 +1,12 @@
 class AppsController < ApplicationController
 
+  def <=>(other)
+    self.nom <=> other.nom
+  end
+
   def index
     @apps = App.all
-    @apps.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    #@apps.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
   def show
