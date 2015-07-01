@@ -1,1 +1,22 @@
-<% render 'show', app:@app %>
+<div id="content">
+<%# form_for @app, :url=> {controller=>'apps', :action=> 'show'}, remote:true do |f| %>
+
+<%# form_for @app do |f| %>
+  <%#= render 'apps/form' %>
+<%# end %>
+<% form_for @app do |f| %>
+
+<div class="field">
+
+  <%= f.label :nom %><%= f.text_field :nom %>
+  <%= f.label :description %><%= f.text_field :description %>
+</div>
+
+<div class="action">
+  <%= f.submit %>
+</div>
+<% end %>
+<%#= link_to "Edit"，edit_app_path(@app) %>
+<%#= link_to "Delete", @app, mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :destroy %>
+
+</div>
