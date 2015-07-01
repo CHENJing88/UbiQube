@@ -11,7 +11,7 @@
       <th> Valeur </th>
     </tr>
 
-    <% if @app.etape_app_id > 2 %>
+    <% if @app.etape_app.id > 2 %>
       <tr><td>Niveau</td><td><%= @app.niveau %></td>
       </tr>
       <tr><td>Etat</td><td><%= @app.etat_app.nom %></td>
