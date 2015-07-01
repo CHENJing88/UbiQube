@@ -1,10 +1,8 @@
-<%# form_for @app, :url=> {controller=>'apps', :action=> 'show'} do |f| %>
+<%# form_for @app, :url=> {controller=>'apps', :action=> 'show'}, remote:true do |f| %>
 
-<% form_for @app, remote:true do |f| %>
+<% form_for @app do |f| %>
   <%= render 'apps/form', :f => f %>
-
-
-<%= Link_to "Edit", edit_app_path(@app) %>
-<%= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
-
 <% end %>
+
+<%= Link_to "Edit", edit_app_path(:app) %>
+<%= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
