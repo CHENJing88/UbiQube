@@ -54,7 +54,7 @@ class AppsController < ApplicationController
   # PUT /apps/1.xml
   def update
     @app = App.find(params[:id])
-
+    @app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
       if @app.update_attributes(params[:app])
         redirect_to :action=> :show, :id=> @app
 
