@@ -8,7 +8,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
 
     respond_to do |format|
-      format.html { render app_path(@app) }
+      format.html 
       format.xml  { render :xml => @app }
     end
   end
@@ -20,7 +20,7 @@ class AppsController < ApplicationController
     @app.etat_app.build
 
     respond_to do |format|
-      format.html { render edit_app_path(@app) }
+      format.html
       format.xml  { render :xml => @app }
     end
 

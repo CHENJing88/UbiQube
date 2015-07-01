@@ -1,3 +1,4 @@
+<div id="content">
 <%# form_for @app, :url=> {controller=>'apps', :action=> 'show'}, remote:true do |f| %>
 
 <%# form_for @app do |f| %>
@@ -15,5 +16,7 @@
   <%= f.submit %>
 </div>
 <% end %>
+<%= link_to "Edit"，edit_app_path(@app) %>
+<%= link_to "Delete", @app, mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :destroy %>
 
-<%= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
+</div>
