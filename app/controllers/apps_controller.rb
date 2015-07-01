@@ -2,7 +2,7 @@ class AppsController < ApplicationController
 
   def index
     @apps = App.all
-    @app=App.new
+    
   end
 
   def show
