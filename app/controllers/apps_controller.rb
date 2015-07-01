@@ -2,7 +2,7 @@ class AppsController < ApplicationController
 
   def index
     @apps = App.all
-    
+
   end
 
   def show
@@ -53,7 +53,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
 
       if @app.update_attributes(params[:app])
-        redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.'
+        redirect_to :action=> :show, :id=> @app
 
       else
         render :action => "edit"
