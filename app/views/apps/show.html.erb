@@ -1,0 +1,10 @@
+<%# form_for @app, :url=> {controller=>'apps', :action=> 'show'} do |f| %>
+
+<% form_for @app, remote:true do |f| %>
+  <%= render 'apps/form', :f => f %>
+
+
+<%= button_to "Edit", edit_app_path(@app) %>
+<%= button_to "Delete", data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete %>
+
+<% end %>
