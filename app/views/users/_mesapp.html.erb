@@ -18,9 +18,9 @@
           <p class="lead">Gestion Fonctionnel</p>
 
           <%#= render 'apps/show', app: mesapp.apps, modal:false%>
-          <%= render app_path(mesapp.apps)%>
+          <%#= render app_path(mesapp.apps)%>
             <%#render_app_show(@user,mesapp.apps)%>
-            <%#= render partial:'apps/show',locals:{ :app=> mesapp.apps},modal:false%>
+            <%= render partial:'apps/show',locals:{ :app=> mesapp.apps},modal:false%>
         </div>
 
         <a class="close-reveal-modal" arial-label="Close">&#215;</a>
