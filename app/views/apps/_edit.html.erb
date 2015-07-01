@@ -1,10 +1,10 @@
 <div id="content">
 
-<%= form_for @app, :url=> {controller=>'apps', :action=> 'edit', :id=>@app } do |f| %>
-<%#= form_for @app do |f| %>
+<%#= form_for @app, :url=> {controller=>'apps', :action=> 'edit', :id=>@app } do |f| %>
+<%= form_for @app do |f| %>
   <%= render 'apps/form', :f=>f %>
 <%# end %>
-<% f.submit "Update"%>
+<%# f.submit "Update"%>
 <% end %>
 <%#= button_to "Save", @app %>
 <%#= button_to "Concel", mesapps_path(current_user) %>
