@@ -11,19 +11,12 @@
       <th> Valeur </th>
     </tr>
 
-    <% if @app.etape_app.id > 2 %>
-      <tr><td>Niveau</td><td><%= @app.niveau %></td>
-      </tr>
-      <tr><td>Etat</td><td><%= @app.etat_app.nom %></td>
-      </tr>
-      <tr><td>Groupe</td><td><%= @app.groupe_app.nom%></td>
-      </tr>
-    <% end %>
+
 
     <tr><td>Description</td><td><%= @app.description %></td>
     </tr>
 
-  </table-->
+  </table>
 
 <% end %>
 <%#= link_to "Edit"，edit_app_path(@app) %>
