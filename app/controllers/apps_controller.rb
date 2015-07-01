@@ -2,28 +2,15 @@ class AppsController < ApplicationController
 
   def index
     @apps = App.all
+    @app=App.new
   end
 
   def show
     @app = App.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @app }
-    end
   end
 
   def edit
     @app=App.find(params[:id])
-    @app.groupe_app.build
-    @app.etape_app.build
-    @app.etat_app.build
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @app }
-    end
-
   end
 
   # GET /apps/new
