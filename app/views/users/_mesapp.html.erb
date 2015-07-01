@@ -24,8 +24,8 @@
             </tr>
 
             <%#render_app_show(@user,mesapp.apps)%>
-            <%#= render partial:'apps/show',locals:{ :app=> mesapp.apps}, modal:false %>
-            <%= render 'apps/show', app: mesapp.apps %>
+            <%= render partial:'apps/show',locals:{ :app=> mesapp.apps}%>
+            <%#= render 'apps/show', app: mesapp.apps modal:false%>
          </table>
        </div>
 
