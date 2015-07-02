@@ -2,8 +2,7 @@
   <!-- c'est la carte de chaque App -->
   <%#= link_to :url=>{:controller => "apps", :action => "show", :app => mesapp.apps},
     remote: true, onclick: "$('#show_app_modal').modal('show');"do %>
-  <%#= link_to app_path(mesapp.apps), id:"show_app_modal" do%>
-  <a data-reveal-id="show_app_modal" data-reveal-ajax="true">   
+  <%= link_to app_path(mesapp.apps), data: {toggle: "reveal-modal", target: "#show_app_modal"} do%>
     <li class="custom-card">
       <p><%= mesapp.apps.nom %></p>
       <p><%= mesapp.roles.nom %></p>
