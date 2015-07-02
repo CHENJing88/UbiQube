@@ -2,7 +2,7 @@
   <!-- c'est la carte de chaque App -->
   <%#= link_to :url=>{:controller => "apps", :action => "show", :id => mesapp.apps.id},
     remote: true, onclick: "$('#show_app_modal').modal();" do %>
-  <%= link_to app_path(mesapp.apps), remote:true do%>
+  <%= link_to app_path(mesapp.apps), remote:true,remote: true, onclick: "$('#show_app_modal').modal();" do%>
   <%#= link_to app_path(mesapp.apps), id:"show_app_modal" do%>
     <li class="custom-card">
       <p><%= mesapp.apps.nom %></p>
