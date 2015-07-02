@@ -15,6 +15,7 @@
 //= require jquery.min
 //= require turbolinks
 //= require foundation
+//= require bootstrap
 //= require_tree .
 $(function() {
   $(document).foundation();
@@ -28,22 +29,9 @@ $(function() {
 
     clickOnPopupLink();
 
-  });
-
-  $('a.reveal-link').trigger('click');
-  $('a.close-reveal-modal').trigger('click');
-
-// or directly on the modal
-  $('#show_app_modal').foundation('reveal', 'open', {
-    //var menuId = $( this ).attr( "href" );
-    url: app_path,
-    data: {id: '1'}
-    success: function(data) {
-        alert('modal data loaded');
-    },
-    error: function() {
-        alert('failed loading modal');
+    $('#show_app_modal').on('hide.bs.modal', function () {
+        $(this).removeData('bs.modal');
     });
-  $('#show_app_modal').foundation('reveal', 'close');
+
 
   });
