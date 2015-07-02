@@ -32,5 +32,8 @@ $(function() {
         $(this).removeData('bs.modal');
     });
 
+    $('#show_app_modal').on('shown.bs.modal', function (e) {
+      alert('Modal is successfully shown!');
+    });
 
   });
