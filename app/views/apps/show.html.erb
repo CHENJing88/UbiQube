@@ -1,10 +1,10 @@
 <!-- c'est le dialog modal correspondant en cliquant la carte -->
 <p >Show</p>
 <!--div id="show_app_modal" tabindex="-1" class="reveal-modal" data-reveal arial-labelledby="modalTitle"aria-hidden="true" role="dialog"-->
-<div id="show_app_modal" tabindex="-1" class="modal fade" data-reveal arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+<div id="show_app_modal" tabindex="-1" class="modal fade" arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
-
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
       <div class="modal-header">
         <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
       </div><!-- /.modal-header -->
