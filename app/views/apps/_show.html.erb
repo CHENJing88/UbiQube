@@ -1,6 +1,6 @@
 <!-- c'est le dialog modal correspondant en cliquant la carte -->
 <!--div id="show_app_modal" tabindex="-1" class="reveal-modal" data-reveal arial-labelledby="modalTitle"aria-hidden="true" role="dialog"-->
-<div id="show_app_modal" tabindex="-1" class="reveal-modal" data-reveal arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+<div id="show_app_modal" tabindex="-1" class="modal fade" data-reveal arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -24,7 +24,7 @@
               </tr>
             </table>
           <% end %>
-          
+
           <div class="modal-footer">
             <%#= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
             <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
