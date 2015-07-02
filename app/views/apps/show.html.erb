@@ -25,7 +25,7 @@
             </table>
 
             <div class="modal-footer">
-              <%= link_to "Delete", @app, mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
+              <%= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
               <%= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
                 remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
               <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a-->
