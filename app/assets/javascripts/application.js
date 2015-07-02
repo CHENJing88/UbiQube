@@ -30,22 +30,20 @@ $(function() {
 
   });
 
-  $(document).ready(function() {
-    $('#mesapps_modal').click(function(e) {
-      var url = $(this).attr('href');
-      var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
-        autoOpen: false,
-        width: 520,
-        modal: true,
-        open: function() {
-          return $(this).load(url + ' #content');
-        },
-        close: function() {
-          $('#dialog-form').remove();
-        }
-      });
-      dialog_form.dialog('open');
-      e.preventDefault();
+  $('a.reveal-link').trigger('click');
+  $('a.close-reveal-modal').trigger('click');
+
+// or directly on the modal
+  $('#show_app_modal').foundation('reveal', 'open', {
+    //var menuId = $( this ).attr( "href" );
+    url: app_path,
+    data: {id: '1'}
+    success: function(data) {
+        alert('modal data loaded');
+    },
+    error: function() {
+        alert('failed loading modal');
     });
+  $('#show_app_modal').foundation('reveal', 'close');
 
   });
