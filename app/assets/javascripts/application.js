@@ -31,7 +31,7 @@ $(function() {
   });
 
   $(document).ready(function() {
-    $('#show_app_modal').click(function(e) {
+    $('#mesapps_modal').click(function(e) {
       var url = $(this).attr('href');
       var dialog_form = $('<div id="dialog-form">Loading form...</div>').dialog({
         autoOpen: false,
