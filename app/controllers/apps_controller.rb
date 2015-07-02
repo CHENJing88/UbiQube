@@ -8,6 +8,7 @@ class AppsController < ApplicationController
   def show
     @app = App.find(params[:id])
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -15,6 +16,7 @@ class AppsController < ApplicationController
   def edit
     @app=App.find(params[:id])
     respond_to do |format|
+      format.html
       format.js
     end
   end
