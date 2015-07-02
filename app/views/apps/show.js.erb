@@ -1,6 +1,6 @@
-$(".modal").modal("hide");
+$(".reveal-modal").modal("hide");
 
-$('#show_app_modal').html("<%= escape_javascript(render :partial => 'apps/show',:locals => {:app => @app}) %>");
+//$('#show_app_modal').html("<%= escape_javascript(render :partial => 'apps/show',:locals => {:app => @app}) %>");
 
-//$("<%= j render 'apps/show' %>").on("hidden.bs.modal", function() { $(this).remove() })
-//.appendTo(document.body).modal("show");
+$("<%= j render 'apps/show' %>").on("hidden.bs.modal", function() { $(this).remove() })
+.appendTo(document.body).modal('show');
