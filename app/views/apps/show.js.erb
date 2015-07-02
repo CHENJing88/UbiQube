@@ -1,2 +1,4 @@
 //$('#show_app_modal').html("<%= escape_javascript(render :partial => 'apps/show',:locals => {:app => @app}) %>");
-$('#show_app_modal').html("<%= j render("apps/show")%>")
+//$('#show_app_modal').html("<%= j render("apps/show")%>")
+$("#show_app_modal").html("<%= escape_javascript(render 'apps/show') %>")
+$("#show_app_modal").modal("show")
