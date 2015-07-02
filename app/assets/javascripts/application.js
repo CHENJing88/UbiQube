@@ -28,12 +28,12 @@ $(function() {
 
     clickOnPopupLink();
 
-    $('#show_app_modal').on('hide.bs.modal', function () {
-        $(this).removeData('bs.modal');
-    });
 
     $('#show_app_modal').on('shown.bs.modal', function (e) {
       alert('Modal is successfully shown!');
+    });
+    $('#show_app_modal').on('hide.bs.modal', function(e) {
+    	$(this).removeData('bs.modal');
     });
 
   });

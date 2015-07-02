@@ -1,14 +1,29 @@
 <% @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
   <%#= link_to :url=>{:controller => "apps", :action => "show", :app => mesapp.apps},
-    remote: true, onclick: "$('#show_app_modal').modal('show');"do %>
-  <%= link_to app_path(mesapp.apps), data: {toggle: "modal", target: "#show_app_modal"}, remote:true, onclick: "$('#show_app_modal').modal('show');" do%>
+    remote: true, onclick: "$('#show_app_modal').modal('show');"do data-backdrop="static"%>
+  <%= link_to href="#show_app_modal", data: {load:app_path(mesapp.apps), toggle: "modal", target: "#show_app_modal .modal-body"}, remote:true do%>
     <li class="custom-card">
       <p><%= mesapp.apps.nom %></p>
       <p><%= mesapp.roles.nom %></p>
     </li>
   <% end %>
-  <!--div class="modal hide fade" id="show_app_modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">Loading...</div-->
+  <div class="modal hide fade" id="show_app_modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle"  data-keyboard="false">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <div class="modal-header">
+              <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
+      </div><!-- /.modal-header -->
+
+      </div>
+      <div class="modal-body">
+        Loading...
+      </div><!-- /.modal-body -->
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
+      </div><!-- /.modal-footer -->
+  </div>
 <% end %>
 
 <li class="nouvel-card" data-reveal-id="newApp" href="#">
