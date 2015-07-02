@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 #assets
-gem 'bootstrap-sass', '~> 2.3.2'
+gem 'bootstrap-sass', '~>3.2.0'
 gem 'bootstrap'
 gem 'foundation-rails'
 gem 'sass-rails', '~> 4.0.3'
