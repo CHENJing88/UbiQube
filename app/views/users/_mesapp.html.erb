@@ -2,10 +2,11 @@
   <!-- c'est la carte de chaque App -->
 
   <li class="custom-card"  >
-    <p><%= mesapp.apps.nom %></p>
-    <p><%= mesapp.roles.nom %></p>
     <%= link_to "edit",:url=>{:controller => "apps", :action => "show", :id => mesapp.apps.id},
       remote: true, onclick: "$('#show_app_modal').modal();"%>
+    <p><%= mesapp.apps.nom %></p>
+    <p><%= mesapp.roles.nom %></p>
+
   </li>
 
 
