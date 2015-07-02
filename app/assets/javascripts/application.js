@@ -15,7 +15,6 @@
 //= require jquery.min
 //= require turbolinks
 //= require foundation
-//= require bootstrap-sprockets
 //= require_tree .
 $(function() {
   $(document).foundation();
