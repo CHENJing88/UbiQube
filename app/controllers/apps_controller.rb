@@ -7,10 +7,16 @@ class AppsController < ApplicationController
 
   def show
     @app = App.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   def edit
     @app=App.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /apps/new

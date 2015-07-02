@@ -11,6 +11,6 @@ class CreateUserAppRoles < ActiveRecord::Migration
     add_index :user_app_roles, :user_id
     add_index :user_app_roles, :app_id
     add_index :user_app_roles, :role_id
-    add_index :user_app_roles, [:user_id, :app_id, :role_id], unique:true
+    add_index :user_app_roles, [:user_id, :app_id], unique:true
   end
 end
