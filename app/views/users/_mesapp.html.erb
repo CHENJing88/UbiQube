@@ -14,21 +14,3 @@
   <% #= link_to 'Créer une nouvelle App', new_app_path,:id=>'create_app', data: {toggle: 'modal', target: '#content'}%>
   <p>Créer une nouvelle App</p>
 </li>
-
-<div data-reveal id="newApp" class="reveal-modal" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h4 class="modal-title" id="ModalLabel">Créer App</h4>
-      </div>
-
-      <div class="modal-body">
-        <%#= render new_app_path, modal:false %>
-      </div>
-
-      <a class="close-reveal-modal" arial-label="Close">&#215;</a>
-    </div>
-  </div>
-  <%#= link_to 'Créer',mesapps_path(current_user[:id]) %>
-</div>
