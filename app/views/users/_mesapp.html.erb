@@ -1,60 +1,15 @@
 <% @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
- <a href="#" data-reveal-id="appModal-<%=mesapp.id%>" >
+  <%= link_to {:controller => "apps", :action => "show", :id => mesapp.apps.id,},
+    remote: true, onclick: "$('#show_app_modal').modal();"  do%>
+
   <li class="custom-card"  >
     <p><%= mesapp.apps.nom %></p>
     <p><%= mesapp.roles.nom %></p>
   </li>
-  <!-- c'est le dialog flottant correspondant en cliquant la carte -->
-  <div id="appModal-<%=mesapp.id%>" class="reveal-modal" data-reveal arial-labelledby="modalTitle"
-        aria-hidden="true" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5 class="app-etat">est en <%=mesapp.apps.etape_app.nom%></h5>
-        </div>
-        <div class="modal-body">
-          <p class="lead">Gestion Fonctionnel</p>
-
-          <%#= render 'apps/show', app: mesapp.apps, modal:false%>
-          <%#= render app_path(mesapp.apps)%>
-            <%#render_app_show(@user,mesapp.apps)%>
-            <%#= render partial:'apps/show',locals:{ :app=> mesapp.apps},modal:false%>
-        </div>
-
-        <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+  <% end %>
 
 
-      </div>
-    </div>
-        <a zf-close="" class="button" > Delete </a>
-        <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
-
-        <div id="editModal" class="reveal-modal" data-reveal arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
-          <div class="modal-dialog">
-            <div class="modal-content">
-
-              <div class="modal-header">
-                <h2 id="modalTitle"> <%= mesapp.apps.nom %> </h2> <h5 class="app-etat">est en <%=mesapp.apps.etape_app.nom%></h5>
-              </div>
-              <div class="modal-body">
-                <p class="lead">Gestion Fonctionnel</p>
-                <%#= render partial:'apps/edit',locals:{ :app=> mesapp.apps}, modal:false%>
-             </div>
-
-              <a class="close-reveal-modal" arial-label="Close">&#215;</a>
-
-              <%#= button_to "Save", @app %>
-              <a href="#" data-reveal-id="appModal-<%=mesapp.apps.id%>" class="secondary button"> Annuler</a>
-            </div>
-          </div>
-        </div>
-
-
-
-  </div>
-</a>
 <% end %>
 
 <li class="nouvel-card" data-reveal-id="newApp" href="#">
@@ -71,7 +26,7 @@
       </div>
 
       <div class="modal-body">
-        <%= render new_app_path, app: App.new, modal:false %>
+        <%= render new_app_path, modal:false %>
       </div>
 
       <a class="close-reveal-modal" arial-label="Close">&#215;</a>
