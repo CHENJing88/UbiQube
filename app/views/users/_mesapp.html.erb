@@ -1,13 +1,14 @@
 <% @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
-  <%= link_to :url=>{:controller => "apps", :action => "show", :id => mesapp.apps.id},
+  <%#= link_to :url=>{:controller => "apps", :action => "show", :id => mesapp.apps.id},
     remote: true, onclick: "$('#show_app_modal').modal();" do %>
+  <%= link_to app_path(mesapp.apps.id)},remote:true,class: 'static-popup-link' do%>
     <li class="custom-card">
       <p><%= mesapp.apps.nom %></p>
       <p><%= mesapp.roles.nom %></p>
     </li>
   <%end%>
-
+  <div class="modal hide fade" id="show_app_modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">Loading...</div>
 <% end %>
 
 <li class="nouvel-card" data-reveal-id="newApp" href="#">
