@@ -1,3 +1,5 @@
 
-$('#edit_app_modal').html("<%= escape_javascript(render :partial => "apps/edit",
-:locals => {:app => @app}) %>");
+//$('#edit_app_modal').html("<%= escape_javascript(render :partial => "apps/edit",:locals => {:app => @app}) %>");
+$(".modal").modal("hide");
+$('#edit_app_modal').html("<%= j render('apps/edit')%>")
+.modal("show");
