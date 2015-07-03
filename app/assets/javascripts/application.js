@@ -20,7 +20,10 @@
 $(function() {
   $(document).foundation();
 
-  
+  $('a.delete_post').live('click', function(){
+    _target = $(this).data('id');
+    $('#YOUR_MODAL_LAYER .primary').attr('href', '/posts/' + _target);
+});
 
 
   });

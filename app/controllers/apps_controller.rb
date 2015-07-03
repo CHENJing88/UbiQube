@@ -75,7 +75,11 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     @app.destroy
 
-    redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'
+    respond_to do |format|
+      format.html redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'
+      format.js { render :content_type => 'text/javascript' }
+    end
+
 
   end
 
