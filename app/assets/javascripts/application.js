@@ -24,9 +24,13 @@ $(function() {
     $('#show_app_modal').on('hide.bs.modal', function(e) {
     	$(this).removeData('bs.modal');
     });
-    $('#show_app_modal').modal({
-      backdrop:true;
-    });
+    $('#show_app_modal').dialog({
+      modal:true;
+      buttons:{
+        Annuler:function(){
+          $(this).dialog("close");
+        }
+      }
     });
 
   });
