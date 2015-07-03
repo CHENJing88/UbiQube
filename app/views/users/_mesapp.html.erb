@@ -12,15 +12,20 @@
   <div class="modal fade" id="show_app_modal" tabindex="-1" role="dialog"
             aria-labelledby="modalTitle" data-keyboard="false">
     <div class="modal-dialog">
-      <div class="modal-content">
-
-      </div>
+      <div class="modal-content"></div>
     </div>
   </div>
 
 <% end %>
 
-<li class="nouvel-card" data-reveal-id="newApp" href="#">
-  <% #= link_to 'Créer une nouvelle App', new_app_path,:id=>'create_app', data: {toggle: 'modal', target: '#content'}%>
+<%= link_to new_app_path, data:{remote:true, traget:"#new_app_modal"} do%>
+<li class="nouvel-card" >
   <p>Créer une nouvelle App</p>
 </li>
+<% end %>
+
+<div id="new_app_modal" class="modal fade" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"></div>
+  </div>
+</div>
