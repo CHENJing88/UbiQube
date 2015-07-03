@@ -7,12 +7,9 @@
 .top-bar .top-bar-section{
   font-size: 100%;
   float:right;
-  &:hover{
-    color: #dcdcdc;
-    text-decoration: none;
-   }
   a {
     font-size: 70%;
+    text-decoration:none;
   }
 }
 
