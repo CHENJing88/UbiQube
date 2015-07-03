@@ -1,4 +1,8 @@
 //$('#show_app_modal').html("<%= escape_javascript(render :partial => 'apps/show',:locals => {:app => @app}) %>");
+$(".modal").modal("hide");
 $('#show_app_modal').html("<%= j render('apps/show')%>")
+.on("hidden.bs.modal", function() { $(this).remove() })
+.appendTo(document.body)
+.modal("show");
 //$('#show_app_modal').html("<%= escape_javascript(render 'apps/show') %>")
-$('#show_app_modal').modal('show')
+//$('#show_app_modal').modal('show')
