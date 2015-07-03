@@ -17,7 +17,7 @@ class AppsController < ApplicationController
     @app=App.find(params[:id])
     respond_to do |format|
       format.html
-      format.js
+      format.js{ render :layout => false }
     end
   end
 
