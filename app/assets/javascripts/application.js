@@ -20,29 +20,9 @@
 $(function() {
   $(document).foundation();
 
-  $(document).ready(function(){
-    var clickOnPopupLink = function(){
-      $('body').on('click', '.static-popup-link', function(){
-        $('#show_app_modal').modal('show');
-      });
-    }
 
-    clickOnPopupLink();
-
-    $('#show_app_modal').on('shown.bs.modal', function (e) {
-      alert('Modal is successfully shown!');
-    });
     $('#show_app_modal').on('hide.bs.modal', function(e) {
     	$(this).removeData('bs.modal');
-    });
-
-    $('[data-load-remote]').on('click',function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var remote = $this.data('load-remote');
-    if(remote) {
-        $($this.data('remote-target')).load(remote);
-    }
     });
 
   });
