@@ -32,10 +32,10 @@
         </div><!-- /.modal-body -->
         <div class="modal-footer">
           <%#= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
-          <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
+          <%= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
             remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <button  href="#" data-reveal-id="editModal" class="secondary button"> Edit</button >
+          <!--button  href="#" data-reveal-id="editModal" class="secondary button"> Edit</button -->
 
         </div><!-- /.modal-footer -->
 
