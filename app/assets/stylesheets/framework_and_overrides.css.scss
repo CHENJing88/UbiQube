@@ -5,8 +5,11 @@
 
 // override for the 'Home' navigation link
 .top-bar .top-bar-section{
-  font-size: 150%;
+  font-size: 100%;
   float:right;
+  li{
+    font-size: 150%;
+  }
 }
 
 .top-bar .name {
@@ -64,7 +67,7 @@ h1 {
 }
 
 p{
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.7em;
 }
 
