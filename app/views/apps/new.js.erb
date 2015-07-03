@@ -1,0 +1,4 @@
+$(".modal").modal("hide");
+$('#new_app_modal').html("<%= j render('apps/new')%>")
+.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
+.modal("show");
