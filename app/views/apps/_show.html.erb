@@ -38,7 +38,7 @@
           <%#= button_to "Delete", {:controller => :apps, :action => 'destroy', :id => @app.id ,data:{confirm :'Are you sure?',disable_with:'Loading..'} , class="btn-danger" %>
 
           <%#=link_to "Edit", edit_app_path(@app), data:{remote:true, toggle:"modal",traget:"#edit_app_modal"}, class="secondary button"%>
-          <%= link_to "Delete", post_path(0),
+          <%= link_to "Delete", app_path(@app.id),
              :method => :delete,
              :class => "btn primary closeModal",
              :remote => true  %>
