@@ -39,10 +39,12 @@
   letter-spacing: -1px;
   padding-top: 7px;
   font-weight: bold;
+  text-decoration: none;
   &:hover{
     color: #dcdcdc;
     text-decoration: none;
    }
+   a{ text-decoration: none; }
 }
 
 #logo-index{

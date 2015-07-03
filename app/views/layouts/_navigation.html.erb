@@ -1,7 +1,7 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <nav class="top-bar" data-topbar>
   <% if user_signed_in? %>
-    <%= link_to "UbiQube", mesapps_path(current_user),id: "logo" %>
+    <%= link_to "UbiQube", mesapps_path(current_user), id: "logo" %>
   <% else %>
     <%= link_to "UbiQube", root_path, id: "logo"%>
   <% end %>
@@ -19,7 +19,7 @@
             <a href="#" class="alert button expand">Search</a>
           </div>
         </div>
-      </li> 
+      </li>
     </ul>
 
     <div class="top-bar-section">
