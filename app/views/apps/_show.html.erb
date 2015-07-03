@@ -7,7 +7,7 @@
       <div class="modal-header">
         <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
       </div><!-- /.modal-header -->
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+      <a class="close-reveal-modal" arial-label="Close">&#215;</a>
       <div class="modal-body">
         <p> _show </p>
         <p class="lead">Gestion Fonctionnel</p>
@@ -30,12 +30,14 @@
             <%#= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
             <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
               remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
           </div><!-- /.modal-footer -->
+          
         </div><!-- /.content -->
       </div><!-- /.modal-body -->
 
-      <a class="close-reveal-modal" arial-label="Close">&#215;</a>
+
 
     <!--/div>< /.modal-content -->
   <!--/div>< /.modal-dialog -->
