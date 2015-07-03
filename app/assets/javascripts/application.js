@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.min
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap.min
 //= require foundation
 //= require_tree .
 $(function() {
