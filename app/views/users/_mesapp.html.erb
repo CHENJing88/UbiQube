@@ -11,16 +11,16 @@
 
   <div class="modal fade" id="show_app_modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
     <div class="modal-dialog">
-      <div class="modal-content"><div class="modal-body"></div></div>
+      <div class="modal-content"></div>
     </div>
   </div>
 
 <% end %>
 
 <%= link_to new_app_path, data:{remote:true, traget:"#new_app_modal"} do%>
-<li class="nouvel-card" >
-  <p>Créer une nouvelle App</p>
-</li>
+  <li class="nouvel-card" >
+    <p>Créer une nouvelle App</p>
+  </li>
 <% end %>
 
 <div id="new_app_modal" class="modal fade" role="dialog"  aria-labelledby="ModalLabel" data-keyboard="false" aria-hidden="true">
