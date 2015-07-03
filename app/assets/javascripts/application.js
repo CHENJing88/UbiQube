@@ -20,10 +20,7 @@
 $(function() {
   $(document).foundation();
 
-
-    $('#show_app_modal').on('hide.bs.modal', function(e) {
-    	$(this).removeData('bs.modal');
-    });
+  
 
 
   });
