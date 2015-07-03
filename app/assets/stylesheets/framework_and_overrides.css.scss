@@ -7,8 +7,8 @@
 .top-bar .top-bar-section{
   font-size: 100%;
   float:right;
-  li{
-    font-size: 1.7em;
+  a {
+    font-size: 150%;
   }
 }
 
@@ -19,7 +19,9 @@
 .top-bar .name a {
   font-weight: normal;
   color: white;
-  padding: 0 15px; }
+  padding: 0 15px;
+
+  }
 
 
 
