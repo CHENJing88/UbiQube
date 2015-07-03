@@ -1,1 +1,3 @@
-$("div#post-<%= params[:id] %>").fadeOut();
+$('.btn-danger').bind('ajax:success', function() {  
+        $(this).closest('tr').fadeOut();
+});
