@@ -6,7 +6,7 @@
 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
+        <h2 class="modal-tile" id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
       </div><!-- /.modal-header -->
 
       <div class="modal-body">
@@ -26,17 +26,17 @@
             </table>
           <% end %>
 
-          <div class="modal-footer">
-            <%#= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
-            <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
-              remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
-            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-            <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
-          </div><!-- /.modal-footer -->
+
 
         </div><!-- /.content -->
       </div><!-- /.modal-body -->
-
+      <div class="modal-footer">
+        <%#= link_to "Delete", mesapps_url(current_user) ,data:{:confirm => 'Vous etês sure delete cet App?'}, :method => :delete,class="button" %>
+        <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
+          remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
+      </div><!-- /.modal-footer -->
 
 
     <!--/div>< /.modal-content -->
