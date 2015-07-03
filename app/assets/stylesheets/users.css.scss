@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // Users' Apps page
+@import "bootstrap";
+
 .row{
   margin-left: -15px;
   margin-right: -15px;
@@ -24,7 +26,7 @@
   i {// icon
     font-size: 2.2rem;
     padding-left: 10px;
-
+    clear: both;
     h3{
       margin-left:10px;
       list-style:none;
@@ -33,8 +35,6 @@
   }
 }
 //grid
-.container i:before,
-.container i:after,
 .row:after,
 .row:before {
   clear: both;
