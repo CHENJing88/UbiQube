@@ -1,8 +1,8 @@
 <% @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
   <%#= link_to :url=>{:controller => "apps", :action => "show", :app => mesapp.apps},
-    remote: true, onclick: "$('#show_app_modal').modal('show');"do data-backdrop="static"%>
-  <%= link_to href="#show_app_modal", data: { toggle: "modal"},'data-remote-target'=> "#show_app_modal", 'data-load-remote'=> app_path(mesapp.apps),remote:true do%>
+    remote: true, onclick: "$('#show_app_modal').modal('show');"do data-backdrop="static" ,remote:true%>
+  <%= link_to href="#show_app_modal", data: { toggle: "modal"},'data-remote-target'=> "#show_app_modal", 'data-load-remote'=> app_path(mesapp.apps) do%>
     <li class="custom-card">
       <p><%= mesapp.apps.nom %></p>
       <p><%= mesapp.roles.nom %></p>
@@ -10,9 +10,6 @@
   <% end %>
 
   <div class="modal hide fade" id="show_app_modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle"  data-keyboard="false">
-
-
-
   </div>
 
 <% end %>
