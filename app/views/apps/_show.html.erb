@@ -1,8 +1,8 @@
 <!-- c'est le dialog modal correspondant en cliquant la carte -->
 <!--div id="show_app_modal" tabindex="-1" class="reveal-modal" data-reveal arial-labelledby="modalTitle"aria-hidden="true" role="dialog"-->
-<!--div id="show_app_modal" tabindex="-1" class="modal fade" arial-labelledby="modalTitle" aria-hidden="true" role="dialog"-->
-  <!--div class="modal-dialog">
-    <div class="modal-content"-->
+<div id="show_app_modal" tabindex="-1" class="modal fade" arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
       <div class="modal-header">
         <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
@@ -33,12 +33,12 @@
             <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
             <a href="#" data-reveal-id="editModal" class="secondary button"> Edit</a>
           </div><!-- /.modal-footer -->
-          
+
         </div><!-- /.content -->
       </div><!-- /.modal-body -->
 
 
 
-    <!--/div>< /.modal-content -->
-  <!--/div>< /.modal-dialog -->
-<!--/div>< /.show_app_modal -->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.show_app_modal -->
