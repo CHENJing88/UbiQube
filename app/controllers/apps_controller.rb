@@ -48,7 +48,7 @@ class AppsController < ApplicationController
         format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully created.' }
         format.js { render :action => 'mesapps', :status => :created, :location => @user }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => 'new' }
         format.js { render :action => @app.errors, :status => :unprocessable_entity }
       end
     end
@@ -79,10 +79,10 @@ class AppsController < ApplicationController
       format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
       format.js {  render :action => 'mesapps', :status => :destroy, :location => @user}
     else
-      format.html { render :action => "show" }
+      format.html { render :action => 'show' }
       format.js { render :action => @app.errors, :status => :unprocessable_entity }
     end
-    
+
 
 
   end
