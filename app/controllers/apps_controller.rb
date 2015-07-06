@@ -77,7 +77,7 @@ class AppsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
-      format.js {  render :action => 'mesapps', :status => :destroy, :location => @user}
+      format.js {  render :layout=>false}
     end
 
 

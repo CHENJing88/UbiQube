@@ -36,8 +36,8 @@
             remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
             <%=link_to "Edit", edit_app_path(@app), data:{remote:true, toggle:"modal",traget:"#edit_app_modal"}, :class=>"secondary button"%>
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-          <%#= button_to "Delete", {:controller => :apps, :action => 'destroy', :id => @app.id ,data:{confirm :'Are you sure?',disable_with:'Loading..'} , class="btn-danger" %>        
-          <%= link_to 'Delete', @app, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'btn-danger btn' %>
+          <%#= button_to "Delete", {:controller => :apps, :action => 'destroy', :id => @app.id ,data:{confirm :'Are you sure?',disable_with:'Loading..'} , class="btn-danger" %>
+          <%= link_to 'Delete', @app, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'btn-danger btn closeModal' %>
           <%#= link_to "Delete", app_path(@app.id),
              :method => :delete,
              :class => "btn primary closeModal",
