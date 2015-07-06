@@ -1,2 +1,3 @@
 $('il#<%= @app.id %>').fadeOut();
+$('.ol').html("<%= render :partial=> mesapps_url(current_user)%>");
 $(".modal").modal("hide");
