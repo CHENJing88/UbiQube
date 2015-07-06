@@ -15,14 +15,14 @@
 
 .top-bar .name {
   font-size: rem-calc(25);
-  line-height: 45px; }
-
-.top-bar .name a {
+  line-height: 45px;
+  a {
   font-weight: normal;
   color: white;
   padding: 0 15px;
 
   }
+}
 
 
 
@@ -136,6 +136,7 @@ footer{
 main {
   @include twelve-columns;
   background-color: #eee;
+  a{ text-decoration: none; }
   }
 
 section {
