@@ -20,7 +20,7 @@
 $(function() {
   $(document).foundation();
 
-  $('a.delete_app').live('click', function(){
+  $('a.delete_apps').live('click', function(){
     _target = $(this).data('id');
     $('#show_app_modal .primary').attr('href', '/apps/' + _target);
 });
