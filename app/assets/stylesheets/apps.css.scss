@@ -38,7 +38,7 @@
 
 i {// icon
   font-size: 1.0rem;
-  padding-left: 10px;
+  padding-left: 5px;
   float: left;
   p{
     margin-left:10px;
@@ -54,9 +54,9 @@ i {// icon
 }
 #technique{
   display:inline;
-  margin-left:10px;
+  padding-left:15px;
 }
-i::after,
+i:after,
 .modal-footer{
   clear: both;
 }
