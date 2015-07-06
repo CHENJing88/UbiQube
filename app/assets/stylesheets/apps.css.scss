@@ -60,6 +60,9 @@ i:after,
 .modal-footer{
   clear: both;
 }
-.select{
+select{
   height: 30px;
+}
+textarea{
+  max-width: 40%;
 }
