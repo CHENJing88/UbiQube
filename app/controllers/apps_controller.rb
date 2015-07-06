@@ -61,7 +61,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     @app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
       if @app.update_attributes(params[:app])
-        redirect_to :action=> :show, :id=> @app
+        format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.' }
 
       else
         render :action => "edit"
@@ -73,11 +73,11 @@ class AppsController < ApplicationController
   # DELETE /apps/1.xml
   def destroy
     @app = App.find(params[:id])
-    @app.destroy
-
-    respond_to do |format|
-      format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
-      format.js { render :layout=>false,template:'apps/destroy.js.erb'}
+    if @app.destroy then
+      respond_to do |format|
+        format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
+        #format.js { render :layout=>false,template:'apps/destroy.js.erb'}
+      end
     end
 
 
