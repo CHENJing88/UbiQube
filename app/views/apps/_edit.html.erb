@@ -16,8 +16,7 @@
 
             <div class = "actions">
               <% f.submit "Update", class: "btn btn-primary"%>
-              <%#=link_to "Annuler",app_path(@app), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" }, :class=>"secondary button"%>
-              <a href="#" aria-label="Close" data-dismiss="modal", reveal-modal-id="#show_app_modal", class="secondary button"> Annuler</a>
+
             </div>
 
           <% end %>
@@ -26,6 +25,8 @@
      </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
     <div class="modal-footer">
+      <%#=link_to "Annuler",app_path(@app), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" }, :class=>"secondary button"%>
+      <a href="#", data-reveal-id="show_app_modal", class="secondary button"> Annuler</a>
     </div><!-- /.modal-footer -->
   </div><!-- /.modal-dialog -->
 <!--/div>< /.modal -->
