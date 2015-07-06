@@ -38,7 +38,7 @@
         <div class="modal-footer">
           <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
             remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
-          <%=link_to "Edit", edit_app_path(@app), data:{remote:true, toggle:"modal",traget:"#edit_app_modal"}, :class=>"secondary button"%>
+          <%=link_to "Edit", edit_app_path(@app), data:{remote:true, toggle:"modal",traget:"#edit_app_modal", dismiss:"modal"},:class=>"secondary button"%>
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
           <%= link_to 'Delete', app_path(@app), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn-danger btn' %>
         </div><!-- /.modal-footer -->

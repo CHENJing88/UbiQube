@@ -16,8 +16,8 @@
 
             <div class = "actions">
               <% f.submit "Update", class: "btn btn-primary"%>
-              <%=link_to "Annuler",app_path(@app), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" }, :class=>"secondary button"%>
-              <!--a href="#" aria-label="Close" class="secondary button"> Annuler</a-->
+              <%#=link_to "Annuler",app_path(@app), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" }, :class=>"secondary button"%>
+              <a href="#" aria-label="Close" data-dismiss="modal", reveal-modal-id="#show_app_modal", class="secondary button"> Annuler</a>
             </div>
 
           <% end %>
