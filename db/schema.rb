@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615125428) do
+ActiveRecord::Schema.define(version: 20150629080718) do
+
+  create_table "applications", force: true do |t|
+    t.string   "nom"
+    t.float    "version",    limit: 24
+    t.string   "uid_admin"
+    t.integer  "etat_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "applications", ["etat_id"], name: "index_applications_on_etat_id", using: :btree
 
   create_table "apps", force: true do |t|
     t.string   "nom"
@@ -124,7 +135,7 @@ ActiveRecord::Schema.define(version: 20150615125428) do
 
   add_index "user_app_roles", ["app_id"], name: "index_user_app_roles_on_app_id", using: :btree
   add_index "user_app_roles", ["role_id"], name: "index_user_app_roles_on_role_id", using: :btree
-  add_index "user_app_roles", ["user_id", "app_id", "role_id"], name: "index_user_app_roles_on_user_id_and_app_id_and_role_id", unique: true, using: :btree
+  add_index "user_app_roles", ["user_id", "app_id"], name: "index_user_app_roles_on_user_id_and_app_id", unique: true, using: :btree
   add_index "user_app_roles", ["user_id"], name: "index_user_app_roles_on_user_id", using: :btree
 
   create_table "user_groupe_users", force: true do |t|
