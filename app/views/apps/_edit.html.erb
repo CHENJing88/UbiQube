@@ -6,11 +6,10 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
       </div>
-      <div class="modal-body">
-        <p class="lead">Gestion Fonctionnel</p>
-        <%#= render partial:'apps/edit',locals:{ :app=> @app}, modal:false%>
-        <div id="fonctionnel">
 
+      <div class="modal-body">
+        <div id="fonctionnel">
+          <i class=".fi-list"><p>Gestion Fonctionnel</p></i>
           <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
             <%= render 'apps/form_fonc', :f=>f %>
 
@@ -23,13 +22,13 @@
         </div><!-- /.content -->
 
         <div id="technique">
-          <i  class="fi-results"><p class="lead">Architecture</p></i>
+          <i class="fi-results"><p>Architecture</p></i>
         </div>
 
       </div><!-- /.modal-body -->
       <div class="modal-footer">
         <%=link_to "Annuler",app_path(@app), data:{ toggle:"modal",traget:"#show_app_modal"},remote:true, :class=>"secondary button"%>
-        <%=link_to "Technique Zone",app_tech_path(@app), data:{ toggle:"modal",traget:"#edit_tech_app_modal"},remote:true, :class=>"secondary button"%>
+        <%=link_to "Technique Zone",app_tech_path(@app), data:{ toggle:"modal",traget:"#edit_tech_app_modal"},remote:true, :class=>"button"%>
         <!--a href="#", data-traget="#show_app_modal", aria-hidden="true", class="secondary button"> Annuler</a-->
       </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->
