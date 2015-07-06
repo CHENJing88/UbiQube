@@ -19,12 +19,14 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
 <!-- c'est la carte de créer nouvelle App -->
 <%= link_to new_app_path, data:{ remote:true, toggle:"modal",traget:"#new_app_modal" } do%>
   <li class="nouvel-card" >
     <p>Créer une nouvelle App</p>
   </li>
 <% end %>
+
 <!-- c'est le modal dialog de créer nouvelle App -->
 <div id="new_app_modal" class="modal" role="dialog"  backdrop="static" aria-labelledby="ModalLabel" data-keyboard="false" aria-hidden="true">
   <div class="modal-dialog">
