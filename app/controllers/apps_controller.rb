@@ -76,7 +76,7 @@ class AppsController < ApplicationController
     if @app.destroy then
       respond_to do |format|
         format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
-        #format.js { render :layout=>false,template:'apps/destroy.js.erb'}
+        format.js { render :layout=>false,template:'apps/destroy.js.erb'}
       end
     end
 
