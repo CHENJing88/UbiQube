@@ -13,6 +13,12 @@
     <div class="modal-content"></div>
   </div>
 </div>
+<div id="edit_app_modal" class="modal"  arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- c'est la carte de créer nouvelle App -->
 <%= link_to new_app_path, data:{ remote:true, toggle:"modal",traget:"#new_app_modal" } do%>
   <li class="nouvel-card" >
