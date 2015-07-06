@@ -21,6 +21,14 @@ class AppsController < ApplicationController
     end
   end
 
+  def edit_tech
+    @app=App.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js{ render :layout => false }
+    end
+  end
+
   # GET /apps/new
   # GET /apps/new.xml
   def new
