@@ -13,16 +13,16 @@
 
           <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
             <%= render 'apps/form', :f=>f %>
-
-            <div class="modal-footer">
-                <% f.submit "Update",class: "btn btn-default"%>
-                <a href="#" data-traget="#show_app_modal" class="secondary button"> Annuler</a>
-            </div><!-- /.modal-footer -->
-
           <% end %>
 
         </div><!-- /.content -->
      </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
+
+    <div class="modal-footer">
+        <% f.submit "Update", class: "btn"%>
+        <a href="#" data-traget="#show_app_modal" class="secondary button close"> Annuler</a>
+    </div><!-- /.modal-footer -->
+
   </div><!-- /.modal-dialog -->
 <!--/div>< /.modal -->
