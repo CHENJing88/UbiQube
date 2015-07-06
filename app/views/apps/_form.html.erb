@@ -2,7 +2,8 @@
   <div class="field">
 
     <%= f.label :nom %><%= f.text_field :nom, :size => 30  %>
-    <%= f.label :niveau %><%= f.select(:niveau_id, Niveau.all.map { |niveau| [niveau.nom, niveau.id] }, :prompt => true) %>
+    <%#= f.label :niveau %><%#= f.select(:niveau_id, Niveau.all.map { |niveau| [niveau.nom, niveau.id] }, :prompt => true) %>
+    <%= f.label :niveau %><%= f.text_field :niveau, :size => 30%>
 
     <%= f.label :etat %><%= f.select(:etat_app_id, Niveau.all.map { |etat_app| [etat_app.nom, etat_app.id] }, :prompt => true) %>
     <%= f.label :etape %><%= f.select(:etape_app_id, Niveau.all.map { |etape_app| [etape_app.nom, etape_app.id] }, :prompt => true) %>
