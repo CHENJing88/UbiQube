@@ -49,11 +49,16 @@ i {// icon
 }
 #fonctionnel{
   float: left;
-  width: 50%;
+  width: 40%;
+  margin-bottom: 5px;
 }
 #technique{
   display:inline;
+  margin-left:10px;
 }
 .modal-footer{
   clear: both;
+}
+.select{
+  height: 30px;
 }
