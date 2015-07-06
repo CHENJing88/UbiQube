@@ -3,6 +3,7 @@
     <div class="modal-content">
 
       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
       </div>
       <div class="modal-body">
@@ -15,15 +16,13 @@
 
             <div class="modal-footer">
                 <% f.submit "Update",class: "btn btn-default"%>
-                <a href="#" data-reveal-id="show_app_modal" class="secondary button"> Annuler</a>
+                <a href="#" data-traget="edit_app_modal" class="secondary button"> Annuler</a>
             </div><!-- /.modal-footer -->
 
           <% end %>
 
         </div><!-- /.content -->
      </div><!-- /.modal-body -->
-
-     <a class="close-reveal-modal" arial-label="Close">&#215;</a>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 <!--/div>< /.modal -->
