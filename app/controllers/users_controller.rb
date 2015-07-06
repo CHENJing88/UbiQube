@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
 private
-  user_param
+  def user_param
     params.require(:user).permit(:uid, mesapps_attributes[:user_id,:app_id,:role_id])
   end
 
