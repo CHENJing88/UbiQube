@@ -1,24 +1,25 @@
 <% @mesapps.each do |mesapp|%>
   <!-- c'est la carte de chaque App -->
-  <%= link_to app_path(mesapp.apps), data:{remote:true, toggle:"modal",traget:"#show_app_modal"} do%>
+  <%= link_to app_path(mesapp.apps), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
     <li class="custom-card" id="app-<%=mesapp.apps.id%>">
       <p><%= mesapp.apps.nom %></p>
       <p><%= mesapp.roles.nom %></p>
     </li>
   <% end %>
 <% end %>
+<!-- c'est le modal dialog d'afficher App -->
 <div class="modal" id="show_app_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
   <div class="modal-dialog">
     <div class="modal-content"></div>
   </div>
 </div>
 <!-- c'est la carte de créer nouvelle App -->
-<%= link_to new_app_path, data:{remote:true, toggle:"modal",traget:"#new_app_modal"} do%>
+<%= link_to new_app_path, data:{ remote:true, toggle:"modal",traget:"#new_app_modal" } do%>
   <li class="nouvel-card" >
     <p>Créer une nouvelle App</p>
   </li>
 <% end %>
-
+<!-- c'est le modal dialog de créer nouvelle App -->
 <div id="new_app_modal" class="modal" role="dialog"  backdrop="static" aria-labelledby="ModalLabel" data-keyboard="false" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content"></div>
