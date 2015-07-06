@@ -82,7 +82,7 @@ class AppsController < ApplicationController
       format.html { render :action => "show" }
       format.js { render :action => @app.errors, :status => :unprocessable_entity }
     end
-    end
+    
 
 
   end
