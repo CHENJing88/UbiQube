@@ -1,2 +1,3 @@
 <h3>User</h3>
 <p>uid: <%= @user.uid if @user.uid %></p>
+<%=ldap_filtre("uid", current_user[:uid] ) %>
