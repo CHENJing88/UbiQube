@@ -26,6 +26,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-cas'
 gem 'eriko-omniauth-cas'
+gem 'net-ldap'
 gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'

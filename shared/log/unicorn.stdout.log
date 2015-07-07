@@ -514,3 +514,780 @@ I, [2015-07-06T15:34:27.619414 #10063]  INFO -- omniauth: (cas) Request phase in
 I, [2015-07-06T15:34:34.702114 #10063]  INFO -- omniauth: (cas) Callback phase initiated.
 I, [2015-07-06T18:40:27.948245 #10060]  INFO -- omniauth: (cas) Request phase initiated.
 I, [2015-07-06T18:40:36.859093 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T09:42:30.237030 #10054]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T09:42:36.781103 #10057]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T10:32:59.552780 #10054]  INFO -- omniauth: (cas) Callback phase initiated.
+E, [2015-07-07T10:33:00.001857 #10054] ERROR -- omniauth: (cas) Authentication failure! invalid_ticket: OmniAuth::Strategies::CAS::InvalidCASTicket, Invalid CAS Ticket
+I, [2015-07-07T10:35:22.521940 #10057]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T10:35:32.249681 #10057]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T10:38:18.838085 #10057]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T10:38:24.145194 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T10:39:06.159332 #12952]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T10:39:12.328572 #10060]  INFO -- omniauth: (cas) Callback phase initiated.
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+#<OpenStruct code=11, error_message="", matched_dn="", message="Admin Limit Exceeded">
+mail: ["laurent.beuneche@univ-tours.fr"]
+   dn:
+      --->uid=beuneche,ou=people,dc=univ-tours,dc=fr
+   objectclass:
+      --->top
+      --->person
+      --->organizationalPerson
+      --->inetOrgPerson
+      --->eduPerson
+      --->supannPerson
+      --->UFRPerson
+      --->UFRclassMail
+      --->sambaSamAccount
+   supannorganisme:
+      --->{EES}0370800U
+   mailaddress:
+      --->laurent.beuneche@univ-tours.fr
+      --->lb@univ-tours.fr
+      --->lol@univ-tours.fr
+      --->jahb@univ-tours.fr
+      --->josephine@univ-tours.fr
+      --->l@univ-tours.fr
+      --->lb@med.univ-tours.fr
+      --->kako.taloche@univ-tours.fr
+      --->beuneche@univ-tours.fr
+      --->lolo@univ-tours.fr
+      --->ktaloche@univ-tours.fr
+      --->lg@univ-tours.fr
+      --->gonzague.lejardinier@univ-tours.fr
+      --->tch1@univ-tours.fr
+      --->tch2@univ-tours.fr
+      --->utilisateur@univ-tours.fr
+      --->utilisateur2@univ-tours.fr
+      --->achat@univ-tours.fr
+      --->nepasrepondre@univ-tours.fr
+      --->assistance@univ-tours.fr
+      --->newtina@univ-tours.fr
+      --->mapamat@univ-tours.fr
+      --->helpdeskadmin@univ-tours.fr
+      --->pca@univ-tours.fr
+      --->laurent.beneche@univ-tours.fr
+      --->laurent.beunche@univ-tours.fr
+      --->neneche@univ-tours.fr
+      --->instadublin@univ-tours.fr
+      --->azerty@univ-tours.fr
+   alias:
+      --->laurent.beuneche
+      --->lb
+      --->lol
+      --->jahb
+      --->josephine
+      --->l
+      --->kako.taloche
+      --->beuneche
+      --->lolo
+      --->ktaloche
+      --->lg
+      --->gonzague.lejardinier
+      --->tch1
+      --->tch2
+      --->utilisateur
+      --->utilisateur2
+      --->achat
+      --->nepasrepondre
+      --->assistance
+      --->newtina
+      --->mapamat
+      --->helpdeskadmin
+      --->pca
+      --->laurent.beneche
+      --->laurent.beunche
+      --->neneche
+      --->instadublin
+      --->azerty
+   uid:
+      --->beuneche
+   supanncivilite:
+      --->M.
+   sn:
+      --->Beuneche
+   givenname:
+      --->Laurent
+   cn:
+      --->Beuneche Laurent
+   displayname:
+      --->Laurent Beuneche
+   edupersonprimaryaffiliation:
+      --->employee
+   supannaffectation:
+      --->Pôle Système, réseaux et télécommunications
+   ufrcodeaffectation:
+      --->USI02
+   ufrcomposante:
+      --->DTIC
+   ufrcodecomposante:
+      --->USIR
+   edupersonaffiliation:
+      --->employee
+   ufrtypepopulation:
+      --->ITARF
+   ufrqualite:
+      --->Fonctionnaire
+   ufrfamille:
+      --->BIATOSS
+   ufrsite:
+      --->Site Plat d'Etain
+   street:
+      --->60, Rue   du Plat d'Etain
+   postalcode:
+      --->37020
+   l:
+      --->TOURS CEDEX 1
+   telephonenumber:
+      --->0247367326
+   ufrbatiment:
+      --->D
+   ufretage:
+      --->RDJ
+   ufrlocalisation:
+      --->Plat d'Etain bâtiment D étage RDJ
+   mail:
+      --->laurent.beuneche@univ-tours.fr
+#<OpenStruct code=0, error_message="", matched_dn="", message="Success">
+mail: ["laurent.beuneche@univ-tours.fr"]
+   dn:
+      --->uid=beuneche,ou=people,dc=univ-tours,dc=fr
+   objectclass:
+      --->top
+      --->person
+      --->organizationalPerson
+      --->inetOrgPerson
+      --->eduPerson
+      --->supannPerson
+      --->UFRPerson
+      --->UFRclassMail
+      --->sambaSamAccount
+   supannorganisme:
+      --->{EES}0370800U
+   mailaddress:
+      --->laurent.beuneche@univ-tours.fr
+      --->lb@univ-tours.fr
+      --->lol@univ-tours.fr
+      --->jahb@univ-tours.fr
+      --->josephine@univ-tours.fr
+      --->l@univ-tours.fr
+      --->lb@med.univ-tours.fr
+      --->kako.taloche@univ-tours.fr
+      --->beuneche@univ-tours.fr
+      --->lolo@univ-tours.fr
+      --->ktaloche@univ-tours.fr
+      --->lg@univ-tours.fr
+      --->gonzague.lejardinier@univ-tours.fr
+      --->tch1@univ-tours.fr
+      --->tch2@univ-tours.fr
+      --->utilisateur@univ-tours.fr
+      --->utilisateur2@univ-tours.fr
+      --->achat@univ-tours.fr
+      --->nepasrepondre@univ-tours.fr
+      --->assistance@univ-tours.fr
+      --->newtina@univ-tours.fr
+      --->mapamat@univ-tours.fr
+      --->helpdeskadmin@univ-tours.fr
+      --->pca@univ-tours.fr
+      --->laurent.beneche@univ-tours.fr
+      --->laurent.beunche@univ-tours.fr
+      --->neneche@univ-tours.fr
+      --->instadublin@univ-tours.fr
+      --->azerty@univ-tours.fr
+   alias:
+      --->laurent.beuneche
+      --->lb
+      --->lol
+      --->jahb
+      --->josephine
+      --->l
+      --->kako.taloche
+      --->beuneche
+      --->lolo
+      --->ktaloche
+      --->lg
+      --->gonzague.lejardinier
+      --->tch1
+      --->tch2
+      --->utilisateur
+      --->utilisateur2
+      --->achat
+      --->nepasrepondre
+      --->assistance
+      --->newtina
+      --->mapamat
+      --->helpdeskadmin
+      --->pca
+      --->laurent.beneche
+      --->laurent.beunche
+      --->neneche
+      --->instadublin
+      --->azerty
+   uid:
+      --->beuneche
+   supanncivilite:
+      --->M.
+   sn:
+      --->Beuneche
+   givenname:
+      --->Laurent
+   cn:
+      --->Beuneche Laurent
+   displayname:
+      --->Laurent Beuneche
+   edupersonprimaryaffiliation:
+      --->employee
+   supannaffectation:
+      --->Pôle Système, réseaux et télécommunications
+   ufrcodeaffectation:
+      --->USI02
+   ufrcomposante:
+      --->DTIC
+   ufrcodecomposante:
+      --->USIR
+   edupersonaffiliation:
+      --->employee
+   ufrtypepopulation:
+      --->ITARF
+   ufrqualite:
+      --->Fonctionnaire
+   ufrfamille:
+      --->BIATOSS
+   ufrsite:
+      --->Site Plat d'Etain
+   street:
+      --->60, Rue   du Plat d'Etain
+   postalcode:
+      --->37020
+   l:
+      --->TOURS CEDEX 1
+   telephonenumber:
+      --->0247367326
+   ufrbatiment:
+      --->D
+   ufretage:
+      --->RDJ
+   ufrlocalisation:
+      --->Plat d'Etain bâtiment D étage RDJ
+   mail:
+      --->laurent.beuneche@univ-tours.fr
+mail: ["laurent.beuneche@univ-tours.fr"]
+   dn:
+      --->uid=beuneche,ou=people,dc=univ-tours,dc=fr
+   objectclass:
+      --->top
+      --->person
+      --->organizationalPerson
+      --->inetOrgPerson
+      --->eduPerson
+      --->supannPerson
+      --->UFRPerson
+      --->UFRclassMail
+      --->sambaSamAccount
+   supannorganisme:
+      --->{EES}0370800U
+   mailaddress:
+      --->laurent.beuneche@univ-tours.fr
+      --->lb@univ-tours.fr
+      --->lol@univ-tours.fr
+      --->jahb@univ-tours.fr
+      --->josephine@univ-tours.fr
+      --->l@univ-tours.fr
+      --->lb@med.univ-tours.fr
+      --->kako.taloche@univ-tours.fr
+      --->beuneche@univ-tours.fr
+      --->lolo@univ-tours.fr
+      --->ktaloche@univ-tours.fr
+      --->lg@univ-tours.fr
+      --->gonzague.lejardinier@univ-tours.fr
+      --->tch1@univ-tours.fr
+      --->tch2@univ-tours.fr
+      --->utilisateur@univ-tours.fr
+      --->utilisateur2@univ-tours.fr
+      --->achat@univ-tours.fr
+      --->nepasrepondre@univ-tours.fr
+      --->assistance@univ-tours.fr
+      --->newtina@univ-tours.fr
+      --->mapamat@univ-tours.fr
+      --->helpdeskadmin@univ-tours.fr
+      --->pca@univ-tours.fr
+      --->laurent.beneche@univ-tours.fr
+      --->laurent.beunche@univ-tours.fr
+      --->neneche@univ-tours.fr
+      --->instadublin@univ-tours.fr
+      --->azerty@univ-tours.fr
+   alias:
+      --->laurent.beuneche
+      --->lb
+      --->lol
+      --->jahb
+      --->josephine
+      --->l
+      --->kako.taloche
+      --->beuneche
+      --->lolo
+      --->ktaloche
+      --->lg
+      --->gonzague.lejardinier
+      --->tch1
+      --->tch2
+      --->utilisateur
+      --->utilisateur2
+      --->achat
+      --->nepasrepondre
+      --->assistance
+      --->newtina
+      --->mapamat
+      --->helpdeskadmin
+      --->pca
+      --->laurent.beneche
+      --->laurent.beunche
+      --->neneche
+      --->instadublin
+      --->azerty
+   uid:
+      --->beuneche
+   supanncivilite:
+      --->M.
+   sn:
+      --->Beuneche
+   givenname:
+      --->Laurent
+   cn:
+      --->Beuneche Laurent
+   displayname:
+      --->Laurent Beuneche
+   edupersonprimaryaffiliation:
+      --->employee
+   supannaffectation:
+      --->Pôle Système, réseaux et télécommunications
+   ufrcodeaffectation:
+      --->USI02
+   ufrcomposante:
+      --->DTIC
+   ufrcodecomposante:
+      --->USIR
+   edupersonaffiliation:
+      --->employee
+   ufrtypepopulation:
+      --->ITARF
+   ufrqualite:
+      --->Fonctionnaire
+   ufrfamille:
+      --->BIATOSS
+   ufrsite:
+      --->Site Plat d'Etain
+   street:
+      --->60, Rue   du Plat d'Etain
+   postalcode:
+      --->37020
+   l:
+      --->TOURS CEDEX 1
+   telephonenumber:
+      --->0247367326
+   ufrbatiment:
+      --->D
+   ufretage:
+      --->RDJ
+   ufrlocalisation:
+      --->Plat d'Etain bâtiment D étage RDJ
+   mail:
+      --->laurent.beuneche@univ-tours.fr
+mail: ["laurent.beuneche@univ-tours.fr"]
+   dn:
+      --->uid=beuneche,ou=people,dc=univ-tours,dc=fr
+   objectclass:
+      --->top
+      --->person
+      --->organizationalPerson
+      --->inetOrgPerson
+      --->eduPerson
+      --->supannPerson
+      --->UFRPerson
+      --->UFRclassMail
+      --->sambaSamAccount
+   supannorganisme:
+      --->{EES}0370800U
+   mailaddress:
+      --->laurent.beuneche@univ-tours.fr
+      --->lb@univ-tours.fr
+      --->lol@univ-tours.fr
+      --->jahb@univ-tours.fr
+      --->josephine@univ-tours.fr
+      --->l@univ-tours.fr
+      --->lb@med.univ-tours.fr
+      --->kako.taloche@univ-tours.fr
+      --->beuneche@univ-tours.fr
+      --->lolo@univ-tours.fr
+      --->ktaloche@univ-tours.fr
+      --->lg@univ-tours.fr
+      --->gonzague.lejardinier@univ-tours.fr
+      --->tch1@univ-tours.fr
+      --->tch2@univ-tours.fr
+      --->utilisateur@univ-tours.fr
+      --->utilisateur2@univ-tours.fr
+      --->achat@univ-tours.fr
+      --->nepasrepondre@univ-tours.fr
+      --->assistance@univ-tours.fr
+      --->newtina@univ-tours.fr
+      --->mapamat@univ-tours.fr
+      --->helpdeskadmin@univ-tours.fr
+      --->pca@univ-tours.fr
+      --->laurent.beneche@univ-tours.fr
+      --->laurent.beunche@univ-tours.fr
+      --->neneche@univ-tours.fr
+      --->instadublin@univ-tours.fr
+      --->azerty@univ-tours.fr
+   alias:
+      --->laurent.beuneche
+      --->lb
+      --->lol
+      --->jahb
+      --->josephine
+      --->l
+      --->kako.taloche
+      --->beuneche
+      --->lolo
+      --->ktaloche
+      --->lg
+      --->gonzague.lejardinier
+      --->tch1
+      --->tch2
+      --->utilisateur
+      --->utilisateur2
+      --->achat
+      --->nepasrepondre
+      --->assistance
+      --->newtina
+      --->mapamat
+      --->helpdeskadmin
+      --->pca
+      --->laurent.beneche
+      --->laurent.beunche
+      --->neneche
+      --->instadublin
+      --->azerty
+   uid:
+      --->beuneche
+   supanncivilite:
+      --->M.
+   sn:
+      --->Beuneche
+   givenname:
+      --->Laurent
+   cn:
+      --->Beuneche Laurent
+   displayname:
+      --->Laurent Beuneche
+   edupersonprimaryaffiliation:
+      --->employee
+   supannaffectation:
+      --->Pôle Système, réseaux et télécommunications
+   ufrcodeaffectation:
+      --->USI02
+   ufrcomposante:
+      --->DTIC
+   ufrcodecomposante:
+      --->USIR
+   edupersonaffiliation:
+      --->employee
+   ufrtypepopulation:
+      --->ITARF
+   ufrqualite:
+      --->Fonctionnaire
+   ufrfamille:
+      --->BIATOSS
+   ufrsite:
+      --->Site Plat d'Etain
+   street:
+      --->60, Rue   du Plat d'Etain
+   postalcode:
+      --->37020
+   l:
+      --->TOURS CEDEX 1
+   telephonenumber:
+      --->0247367326
+   ufrbatiment:
+      --->D
+   ufretage:
+      --->RDJ
+   ufrlocalisation:
+      --->Plat d'Etain bâtiment D étage RDJ
+   mail:
+      --->laurent.beuneche@univ-tours.fr
+mail: ["laurent.beuneche@univ-tours.fr"]
+   dn:
+      --->uid=beuneche,ou=people,dc=univ-tours,dc=fr
+   objectclass:
+      --->top
+      --->person
+      --->organizationalPerson
+      --->inetOrgPerson
+      --->eduPerson
+      --->supannPerson
+      --->UFRPerson
+      --->UFRclassMail
+      --->sambaSamAccount
+   supannorganisme:
+      --->{EES}0370800U
+   mailaddress:
+      --->laurent.beuneche@univ-tours.fr
+      --->lb@univ-tours.fr
+      --->lol@univ-tours.fr
+      --->jahb@univ-tours.fr
+      --->josephine@univ-tours.fr
+      --->l@univ-tours.fr
+      --->lb@med.univ-tours.fr
+      --->kako.taloche@univ-tours.fr
+      --->beuneche@univ-tours.fr
+      --->lolo@univ-tours.fr
+      --->ktaloche@univ-tours.fr
+      --->lg@univ-tours.fr
+      --->gonzague.lejardinier@univ-tours.fr
+      --->tch1@univ-tours.fr
+      --->tch2@univ-tours.fr
+      --->utilisateur@univ-tours.fr
+      --->utilisateur2@univ-tours.fr
+      --->achat@univ-tours.fr
+      --->nepasrepondre@univ-tours.fr
+      --->assistance@univ-tours.fr
+      --->newtina@univ-tours.fr
+      --->mapamat@univ-tours.fr
+      --->helpdeskadmin@univ-tours.fr
+      --->pca@univ-tours.fr
+      --->laurent.beneche@univ-tours.fr
+      --->laurent.beunche@univ-tours.fr
+      --->neneche@univ-tours.fr
+      --->instadublin@univ-tours.fr
+      --->azerty@univ-tours.fr
+   alias:
+      --->laurent.beuneche
+      --->lb
+      --->lol
+      --->jahb
+      --->josephine
+      --->l
+      --->kako.taloche
+      --->beuneche
+      --->lolo
+      --->ktaloche
+      --->lg
+      --->gonzague.lejardinier
+      --->tch1
+      --->tch2
+      --->utilisateur
+      --->utilisateur2
+      --->achat
+      --->nepasrepondre
+      --->assistance
+      --->newtina
+      --->mapamat
+      --->helpdeskadmin
+      --->pca
+      --->laurent.beneche
+      --->laurent.beunche
+      --->neneche
+      --->instadublin
+      --->azerty
+   uid:
+      --->beuneche
+   supanncivilite:
+      --->M.
+   sn:
+      --->Beuneche
+   givenname:
+      --->Laurent
+   cn:
+      --->Beuneche Laurent
+   displayname:
+      --->Laurent Beuneche
+   edupersonprimaryaffiliation:
+      --->employee
+   supannaffectation:
+      --->Pôle Système, réseaux et télécommunications
+   ufrcodeaffectation:
+      --->USI02
+   ufrcomposante:
+      --->DTIC
+   ufrcodecomposante:
+      --->USIR
+   edupersonaffiliation:
+      --->employee
+   ufrtypepopulation:
+      --->ITARF
+   ufrqualite:
+      --->Fonctionnaire
+   ufrfamille:
+      --->BIATOSS
+   ufrsite:
+      --->Site Plat d'Etain
+   street:
+      --->60, Rue   du Plat d'Etain
+   postalcode:
+      --->37020
+   l:
+      --->TOURS CEDEX 1
+   telephonenumber:
+      --->0247367326
+   ufrbatiment:
+      --->D
+   ufretage:
+      --->RDJ
+   ufrlocalisation:
+      --->Plat d'Etain bâtiment D étage RDJ
+   mail:
+      --->laurent.beuneche@univ-tours.fr
+mail: ["laurent.beuneche@univ-tours.fr"]
+   dn:
+      --->uid=beuneche,ou=people,dc=univ-tours,dc=fr
+   objectclass:
+      --->top
+      --->person
+      --->organizationalPerson
+      --->inetOrgPerson
+      --->eduPerson
+      --->supannPerson
+      --->UFRPerson
+      --->UFRclassMail
+      --->sambaSamAccount
+   supannorganisme:
+      --->{EES}0370800U
+   mailaddress:
+      --->laurent.beuneche@univ-tours.fr
+      --->lb@univ-tours.fr
+      --->lol@univ-tours.fr
+      --->jahb@univ-tours.fr
+      --->josephine@univ-tours.fr
+      --->l@univ-tours.fr
+      --->lb@med.univ-tours.fr
+      --->kako.taloche@univ-tours.fr
+      --->beuneche@univ-tours.fr
+      --->lolo@univ-tours.fr
+      --->ktaloche@univ-tours.fr
+      --->lg@univ-tours.fr
+      --->gonzague.lejardinier@univ-tours.fr
+      --->tch1@univ-tours.fr
+      --->tch2@univ-tours.fr
+      --->utilisateur@univ-tours.fr
+      --->utilisateur2@univ-tours.fr
+      --->achat@univ-tours.fr
+      --->nepasrepondre@univ-tours.fr
+      --->assistance@univ-tours.fr
+      --->newtina@univ-tours.fr
+      --->mapamat@univ-tours.fr
+      --->helpdeskadmin@univ-tours.fr
+      --->pca@univ-tours.fr
+      --->laurent.beneche@univ-tours.fr
+      --->laurent.beunche@univ-tours.fr
+      --->neneche@univ-tours.fr
+      --->instadublin@univ-tours.fr
+      --->azerty@univ-tours.fr
+   alias:
+      --->laurent.beuneche
+      --->lb
+      --->lol
+      --->jahb
+      --->josephine
+      --->l
+      --->kako.taloche
+      --->beuneche
+      --->lolo
+      --->ktaloche
+      --->lg
+      --->gonzague.lejardinier
+      --->tch1
+      --->tch2
+      --->utilisateur
+      --->utilisateur2
+      --->achat
+      --->nepasrepondre
+      --->assistance
+      --->newtina
+      --->mapamat
+      --->helpdeskadmin
+      --->pca
+      --->laurent.beneche
+      --->laurent.beunche
+      --->neneche
+      --->instadublin
+      --->azerty
+   uid:
+      --->beuneche
+   supanncivilite:
+      --->M.
+   sn:
+      --->Beuneche
+   givenname:
+      --->Laurent
+   cn:
+      --->Beuneche Laurent
+   displayname:
+      --->Laurent Beuneche
+   edupersonprimaryaffiliation:
+      --->employee
+   supannaffectation:
+      --->Pôle Système, réseaux et télécommunications
+   ufrcodeaffectation:
+      --->USI02
+   ufrcomposante:
+      --->DTIC
+   ufrcodecomposante:
+      --->USIR
+   edupersonaffiliation:
+      --->employee
+   ufrtypepopulation:
+      --->ITARF
+   ufrqualite:
+      --->Fonctionnaire
+   ufrfamille:
+      --->BIATOSS
+   ufrsite:
+      --->Site Plat d'Etain
+   street:
+      --->60, Rue   du Plat d'Etain
+   postalcode:
+      --->37020
+   l:
+      --->TOURS CEDEX 1
+   telephonenumber:
+      --->0247367326
+   ufrbatiment:
+      --->D
+   ufretage:
+      --->RDJ
+   ufrlocalisation:
+      --->Plat d'Etain bâtiment D étage RDJ
+   mail:
+      --->laurent.beuneche@univ-tours.fr
+I, [2015-07-07T12:32:58.685269 #1103]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T12:33:04.304531 #1103]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T12:34:15.783795 #1112]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T12:34:22.774235 #1103]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T12:35:16.304805 #1108]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T12:35:40.123897 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
