@@ -30,7 +30,7 @@
         </div>
 
         <div class = "actions">
-          <%= form_app.submit "Créer", disable_with: 'Loading...', class: 'btn btn-large btn-primary' %>
+          <%= form_app.submit "Créer", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary' %>
         </div>
 
       <% end %>
