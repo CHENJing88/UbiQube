@@ -7,18 +7,6 @@
     </li>
   <% end %>
 <% end %>
-<!-- c'est le modal dialog d'afficher App -->
-<div class="modal" id="show_app_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
-  <div class="modal-dialog">
-    <div class="modal-content"></div>
-  </div>
-</div>
-<div id="edit_app_modal" class="modal fade"  arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content"></div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 
 <!-- c'est la carte de créer nouvelle App -->
 <%= link_to new_app_path, data:{ remote:true, toggle:"modal",traget:"#new_app_modal" } do%>
@@ -27,7 +15,30 @@
   </li>
 <% end %>
 
-<!-- c'est le modal dialog de créer nouvelle App -->
+<!--****** Section du modal dialog ******-->
+
+<!-- c'est le modal dialog d'afficher information d'App -->
+<div class="modal" id="show_app_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- c'est le modal dialog de rédiger gestion fonctionnel d'App -->
+<div id="edit_app_modal" class="modal fade"  arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- c'est le modal dialog de rédiger gestion technique d'App -->
+<div id="edit_tech_app_modal" class="modal fade"  arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- c'est le modal dialog de créer une nouvelle App -->
 <div id="new_app_modal" class="modal" role="dialog"  backdrop="static" aria-labelledby="ModalLabel" data-keyboard="false" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content"></div>
