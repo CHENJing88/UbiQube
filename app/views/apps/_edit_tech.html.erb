@@ -1,0 +1,26 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h2 id="modalTitle"> <%= @app.nom %> </h2> <h5 class="app-etat">est en <%=@app.etape_app.nom%></h5>
+    </div>
+
+    <div class="modal-body">
+      <div id="fonctionnel">
+        <i class="fi-list"><p class="lead">Gestion Technique</p></i>
+
+        <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit_tech'} do |f| %>
+          <%= render 'apps/form_tech', :f=>f %>
+          <div class="modal-footer">
+            <div class = "actions">
+              <%= f.submit "Save", class: 'btn btn-large btn-primary'%>
+              <%=link_to "Annuler",edit_app_path(@app), data:{ toggle:"modal",traget:"#edit_app_modal"},remote:true, :class=>"secondary button"%>
+            </div>
+          </div><!-- /.modal-footer -->
+        <% end %>
+
+      </div><!-- /.content -->
+    </div><!-- /.modal-body -->
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
