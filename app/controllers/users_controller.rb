@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @ldap_info=ldap_filtre("uid", current_user[:uid] )
   end
 
   def mesapps
