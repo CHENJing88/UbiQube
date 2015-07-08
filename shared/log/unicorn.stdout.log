@@ -1291,3 +1291,11 @@ I, [2015-07-07T12:34:15.783795 #1112]  INFO -- omniauth: (cas) Request phase ini
 I, [2015-07-07T12:34:22.774235 #1103]  INFO -- omniauth: (cas) Callback phase initiated.
 I, [2015-07-07T12:35:16.304805 #1108]  INFO -- omniauth: (cas) Request phase initiated.
 I, [2015-07-07T12:35:40.123897 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T15:34:58.690371 #1106]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T15:35:04.545728 #1106]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T16:26:36.459090 #1106]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T16:26:36.536330 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T17:25:36.897100 #1112]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T17:25:42.971346 #1112]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-07T21:45:47.184336 #1108]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-07T21:46:03.977644 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
