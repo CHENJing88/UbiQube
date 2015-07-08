@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20150708094810) do
     t.datetime "updated_at"
   end
 
-  add_index "applications", ["etat_id"], name: "index_applications_on_etat_id", using: :btree
-
   create_table "apps", force: true do |t|
     t.string   "nom"
     t.string   "niveau"
@@ -89,16 +87,23 @@ ActiveRecord::Schema.define(version: 20150708094810) do
   end
 
   create_table "ips", force: true do |t|
+    t.integer  "ip_addr"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "reseau_services", force: true do |t|
+    t.integer  "reseau_id"
+    t.integer  "service_in_app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "reseau_services", ["reseau_id", "service_in_app_id"], name: "index_reseau_services_on_reseau_id_and_service_in_app_id", unique: true, using: :btree
+
   create_table "reseaus", force: true do |t|
+    t.string   "nom"
+    t.integer  "ip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -121,16 +126,29 @@ ActiveRecord::Schema.define(version: 20150708094810) do
   end
 
   create_table "service_in_apps", force: true do |t|
+    t.integer  "app_id"
+    t.integer  "service_id"
+    t.integer  "port"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "service_in_apps", ["app_id", "service_id"], name: "index_service_in_apps_on_app_id_and_service_id", unique: true, using: :btree
 
   create_table "service_out_apps", force: true do |t|
+    t.integer  "app_id"
+    t.integer  "service_in_app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "service_out_apps", ["app_id", "service_in_app_id"], name: "index_service_out_apps_on_app_id_and_service_in_app_id", unique: true, using: :btree
+
   create_table "services", force: true do |t|
+    t.string   "nom"
+    t.integer  "port_defaut"
+    t.string   "protocole"
+    t.boolean  "is_defaut",   default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -143,10 +161,7 @@ ActiveRecord::Schema.define(version: 20150708094810) do
     t.datetime "updated_at"
   end
 
-  add_index "user_app_roles", ["app_id"], name: "index_user_app_roles_on_app_id", using: :btree
-  add_index "user_app_roles", ["role_id"], name: "index_user_app_roles_on_role_id", using: :btree
   add_index "user_app_roles", ["user_id", "app_id"], name: "index_user_app_roles_on_user_id_and_app_id", unique: true, using: :btree
-  add_index "user_app_roles", ["user_id"], name: "index_user_app_roles_on_user_id", using: :btree
 
   create_table "user_groupe_users", force: true do |t|
     t.integer  "groupe_user_id"
@@ -168,11 +183,20 @@ ActiveRecord::Schema.define(version: 20150708094810) do
   end
 
   create_table "vm_install_service_ins", force: true do |t|
+    t.integer  "service_in_app_id"
+    t.integer  "vm_id"
+    t.integer  "ip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "vm_install_service_ins", ["service_in_app_id", "vm_id"], name: "index_vm_install_service_ins_on_service_in_app_id_and_vm_id", unique: true, using: :btree
+
   create_table "vms", force: true do |t|
+    t.string   "nom"
+    t.string   "ip_defaut"
+    t.string   "template"
+    t.integer  "etat_app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

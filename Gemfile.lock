@@ -69,6 +69,7 @@ GEM
     high_voltage (2.2.1)
     hike (1.2.3)
     i18n (0.6.11)
+    ipaddress (0.8.0)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -193,6 +194,7 @@ DEPENDENCIES
   foundation-icons-sass-rails (~> 3.0.0)
   foundation-rails
   high_voltage
+  ipaddress (~> 0.8.0)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
