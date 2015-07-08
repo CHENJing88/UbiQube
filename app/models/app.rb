@@ -11,10 +11,14 @@ class App < ActiveRecord::Base
   has_many :users, through: :user_app_roles
   has_many :roles, through: :user_app_roles
 
-  belongs_to :etape_app,:class_name => "EtapeApp", foreign_key: "etape_app_id"
-  belongs_to :etat_app, :class_name => "EtatApp", foreign_key: "etat_app_id"
+  has_many :service_out_apps, foreign_key: "app_id", dependent: :destroy
+  has_many :service_in_apps, foreign_key: "app_id", dependent: :destroy
+  has_many :services, through: :service_in_apps
+
+  belongs_to :etape_app,:class_name => "EtapeApp", foreign_key:"etape_app_id"
+  belongs_to :etat_app, :class_name => "EtatApp", foreign_key:"etat_app_id"
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
   #default_scope order: 'apps.created_at DESC'
-  accepts_nested_attributes_for :user_app_roles
+  accepts_nested_attributes_for :user_app_roles,:service_in_apps
 end

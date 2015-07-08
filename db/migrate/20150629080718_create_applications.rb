@@ -4,11 +4,11 @@ class CreateApplications < ActiveRecord::Migration
       t.string :nom
       t.float :version
       t.string :uid_admin
-      t.integer :etat_id
+      t.integer :etat_id,index:true
 
       t.timestamps
     end
-    add_index :applications , :etat_id
+    
   end
 
 
