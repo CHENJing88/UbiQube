@@ -9,7 +9,7 @@
 
       <div class="modal-body">
         <div id="fonctionnel">
-          <i class="fi-list"><h4 class="lead">Gestion Fonctionnel</h4></i>
+          <i class="fi-list"><h5 class="lead">Gestion Fonctionnel</h5></i>
           <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
             <%= render 'apps/form_fonc', :f=>f %>
 
@@ -22,7 +22,7 @@
         </div><!-- /.content -->
 
         <div id="technique">
-          <i class="fi-results"><p class="lead">Architecture</p></i>
+          <i class="fi-results"><h5 class="lead">Architecture</h5></i>
         </div>
 
       </div><!-- /.modal-body -->
