@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'ipaddress','~> 0.8.0' #for ip addresse
 #assets
+gem 'bootstrap-multiselect-rails'
 gem 'bootstrap-sass', '~>3.2.0'
 gem 'bootstrap'
 gem 'foundation-rails'

@@ -15,12 +15,13 @@
 //= require jquery.min
 //= require turbolinks
 //= require bootstrap.min
+//= require bootstrap-multiselect
 //= require foundation
 //= require_tree .
 $(function() {
   $(document).foundation();
 
-  
+
 
 
   });
