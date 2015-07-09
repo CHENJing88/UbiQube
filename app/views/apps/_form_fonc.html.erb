@@ -8,7 +8,7 @@
     <%= f.label :etat %><%= f.select :etat_app_id, EtatApp.all.map { |etat_app| [etat_app.nom, etat_app.id] }, {:prompt => true}, {:class=>'input-sm'}%>
     <%= f.label :etape %><%= f.select :etape_app_id, EtapeApp.all.map { |etape_app| [etape_app.nom, etape_app.id] }, {:prompt => true}, {:class=>'input-sm'}%>
     <%= f.label :groupe %><%#= f.select :groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'input-sm'}%>
-    <%= f.select :groupe_app_id, EtatApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'multiselect input-sm', multiple:true}%>
+    <%= f.select :groupe_app_id, EtatApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'multiselect input-sm', multiple:'multiple',enableFiltering:true}%>
 
     <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |relation_fields|%>
       <%#= relation_fields.hidden_field :user_id, :value => current_user.id %>
