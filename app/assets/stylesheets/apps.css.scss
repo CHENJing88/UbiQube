@@ -53,15 +53,18 @@ i {// icon
   width: 40%;
   margin-bottom: 5px;
 }
+
 #technique{
   display:inline;
-  padding-left:15px;
+  padding-left:35px;
 }
 .field,
 .modal-footer{
   clear: both;
 }
-
+select{
+  font-size: 1.0rem;
+}
 textarea{
   max-width: 100%;
   max-height: 60px;
