@@ -5,9 +5,9 @@
     <%#= f.label :niveau %><%#= f.select(:niveau_id, Niveau.all.map { |niveau| [niveau.nom, niveau.id] }, :prompt => true) %>
     <%= f.label :niveau %><%= f.text_field :niveau, :size => 30%>
 
-    <%= f.label :etat %><%= f.select(:etat_app_id, EtatApp.all.map { |etat_app| [etat_app.nom, etat_app.id] }, :prompt => true, :class=>"input-lg")%>
-    <%= f.label :etape %><%= f.select(:etape_app_id, EtapeApp.all.map { |etape_app| [etape_app.nom, etape_app.id] }, :prompt => true, :class=>"input-lg")%>
-    <%= f.label :groupe %><%= f.select(:groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, :prompt => true, :class=>"input-lg")%>
+    <%= f.label :etat %><%= f.select(:etat_app_id, EtatApp.all.map { |etat_app| [etat_app.nom, etat_app.id] }, :prompt => true, :class=>"form-control")%>
+    <%= f.label :etape %><%= f.select(:etape_app_id, EtapeApp.all.map { |etape_app| [etape_app.nom, etape_app.id] }, :prompt => true, :class=>"form-control")%>
+    <%= f.label :groupe %><%= f.select(:groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, :prompt => true, :class=>"form-control")%>
 
     <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |relation_fields|%>
       <%#= relation_fields.hidden_field :user_id, :value => current_user.id %>

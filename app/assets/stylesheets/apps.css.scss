@@ -40,7 +40,7 @@ i {// icon
   font-size: 1.0rem;
   padding-left: 5px;
   float: left;
-  clear: both;
+
   p{
     margin-left:10px;
     list-style:none;
@@ -57,14 +57,12 @@ i {// icon
   display:inline;
   padding-left:15px;
 }
-ß
+.field,
 .modal-footer{
   clear: both;
 }
-select{
-  height: 30px;
-}
+
 textarea{
-  max-width: 90%;
+  max-width: 100%;
   max-height: 60px;
 }
