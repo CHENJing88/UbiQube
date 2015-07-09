@@ -36,6 +36,7 @@
   }
 }
 //grid
+
 .col-md-8,
 .row:after,
 .row:before {
@@ -107,7 +108,13 @@
 }
 
 table tr th, table tr td{
-  font-size: 1.7rem;
+  font-size: 1.5rem;
+}
+a{
+  text-decoration:none;
+}
+#content{
+  clear: both;
 }
 
 *{
