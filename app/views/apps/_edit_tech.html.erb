@@ -11,7 +11,7 @@
         <i class="fi-list"><p class="lead">Gestion Technique</p></i>
 
         <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit_tech'} do |f| %>
-          <%= render 'apps/form_tech', :f=>f %>
+          <%= render 'service_in_apps/form_tech', :f=>f %>
           <div class="modal-footer">
             <div class = "actions">
               <%= f.submit "Save", class: 'btn btn-large btn-primary'%>

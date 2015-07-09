@@ -1,5 +1,20 @@
 <div class="field">
   <div id="vm-conf">
+  <h3>VM Configuration</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Template</th>
+        <th>Etat</th>
+        <th>IP Adresse</th>
+      </tr>
+    </thead>
+  </table>
+  <tbody>
+    <tr><td>Etat</td><td><%= @.etat_app.nom %></td>
+  </tr>
+  </tbody>
   <%= f.label :nom %><%= f.text_field :nom, :size => 30  %>
   <%#= f.label :niveau %><%#= f.select(:niveau_id, Niveau.all.map { |niveau| [niveau.nom, niveau.id] }, :prompt => true) %>
   <%= f.label :niveau %><%= f.text_field :niveau, :size => 30%>
@@ -17,7 +32,7 @@
 </div>
 
 <div id="serv-conf">
-
+  <h3>Service-IN Configuration</h3>
 </div>
 
 
