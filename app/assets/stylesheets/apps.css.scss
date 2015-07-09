@@ -64,10 +64,11 @@ i {// icon
 }
 select{
   padding-top: 0px;
+  .input-sm{
+    margin-top: 0px;
+  }
 }
-.input-sm{
-  margin-top: 0px;
-}
+
 textarea{
   max-width: 100%;
   max-height: 60px;
