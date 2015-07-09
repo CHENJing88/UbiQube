@@ -1,0 +1,44 @@
+<div class="field">
+  <div id="vm-conf">
+  <h3>VM Configuration</h3>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Template</th>
+        <th>Etat</th>
+        <th>IP Adresse</th>
+      </tr>
+    </thead>
+  </table>
+  <tbody>
+    <tr>
+      <td><%= %></td><td><%= %></td><td><%= %></td><td><%= %></td>
+    </tr>
+  </tbody>
+
+  <%= fields_for @vm_install_service_in, @vm_install_service_in.vms.build do |vs|%>
+    <div class="field">
+      <%= vm.label "VM" %><%= f.select  ,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect input-sm', multiple:'multiple',enableFiltering:true}%>
+
+    </div>
+    <%#= relation_fields.hidden_field :user_id, :value => current_user.id %>
+    <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+  <% end %>
+
+  <%= f.label :description %><%= f.text_area :description %>
+</div>
+
+<div id="serv-conf">
+  <h3>Service-IN Configuration</h3>
+
+
+
+
+
+</div>
+
+
+
+
+</div>
