@@ -8,7 +8,7 @@
 
     <div class="modal-body">
       <div id="fonctionnel">
-        <i class="fi-list"><p class="lead">Gestion Technique</p></i>
+        <i class="fi-list"><h4 class="lead">Gestion Technique</h4></i>
 
         <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit_tech'} do |f| %>
           <%= render 'service_in_apps/form_tech', :f=>f %>
