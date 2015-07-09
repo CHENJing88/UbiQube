@@ -3,7 +3,7 @@ class CreateVms < ActiveRecord::Migration
   def self.up
     create_table :vms do |t|
       t.string :nom
-      t.string :ip_defaut
+      t.integer :ip_defaut
       t.string :template
       t.integer :etat_app_id,:index=>true
 
