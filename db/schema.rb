@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708094810) do
+ActiveRecord::Schema.define(version: 20150708151858) do
 
   create_table "applications", force: true do |t|
     t.string   "nom"
@@ -39,6 +39,11 @@ ActiveRecord::Schema.define(version: 20150708094810) do
 
   create_table "catalog_droits", force: true do |t|
     t.string   "nom"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "catalog_services", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -121,6 +126,11 @@ ActiveRecord::Schema.define(version: 20150708094810) do
 
   create_table "roles", force: true do |t|
     t.string   "nom"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "service_catalogservices", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

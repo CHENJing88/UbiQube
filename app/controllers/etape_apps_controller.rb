@@ -1,2 +1,0 @@
-class EtapeAppsController < ApplicationController
-end

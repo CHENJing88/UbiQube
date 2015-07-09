@@ -1,0 +1,2 @@
+class ServiceInAppController < ApplicationController
+end
