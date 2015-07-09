@@ -191,6 +191,11 @@ textarea{
   @extend .tiny;
 }
 
+.input-sm {
+  padding: 0px 5px;
+}
+
+
 *{
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
