@@ -7,19 +7,15 @@
     </div>
 
     <div class="modal-body">
-      <%#= render new_app_path, modal:false %>
       <div id="content">
-        <%#= render 'form' %>
-
-        <%#= link_to 'Créer',mesapps_path(current_user[:id]) %>
         <%= form_for @app do |form_app| %>
-        <%#= render 'layouts/error_message', object: form_app.object %>
+        <%= render 'layouts/error_message', object: @app %>
 
         <div class="field">
           <%= form_app.label :nom %><br/>
-          <%= form_app.text_field :nom, placeholder: "App Nom...", :size => 30 %><br/>
+          <%= form_app.text_field :nom, placeholder: "App Nom...", :size => 30 , class:'form-control'%><br/>
           <%= form_app.label :description %><br/>
-          <%= form_app.text_area :description, placeholder: "Description...", :rows => 3  %>
+          <%= form_app.text_area :description, placeholder: "Description...", :rows => 3, class:'form-control'  %>
             <%= form_app.hidden_field :etape_app_id, :value => 1 %>
             <%= form_app.hidden_field :etat_app_id, :value => 1 %>
 
@@ -28,11 +24,11 @@
             <%= relation_fields.hidden_field :role_id, :value => 1 %>
           <% end %>
         </div>
-
-        <div class = "actions">
-          <%= form_app.submit "Créer", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary' %>
+        <div class="modal-footer">
+          <div class = "actions">
+            <%= form_app.submit "Créer", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary' %>
+          </div>
         </div>
-
       <% end %>
       </div>
 

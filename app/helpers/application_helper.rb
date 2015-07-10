@@ -1,3 +1,5 @@
+require 'net/ldap'
+
 module ApplicationHelper
 
   #def admins_only(&block)
@@ -5,7 +7,6 @@ module ApplicationHelper
   #  nil
   #end
   def ldap
-    require 'net/ldap'
     @ldap = Net::LDAP.new :host => "ldap.univ-tours.fr",
      :port => 389,
      :auth => {
@@ -13,8 +14,6 @@ module ApplicationHelper
            :username => "cn=rails_conn,ou=applis,dc=univ-tours,dc=fr",
            :password => "s4cor;7Xvk2qSdrq"
     }
-
-
   end
 
   def ldap_filtre(titre, var)
@@ -27,8 +26,8 @@ module ApplicationHelper
       return @results
     else
         # authentication failed
-         logger.debug("authentication failed")
+         logger.debug("ldap authentication failed")
     end
   end
-  
+
 end

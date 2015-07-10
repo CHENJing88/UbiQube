@@ -7,6 +7,8 @@ class AppsController < ApplicationController
     #@apps.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
+  # GET /apps/1
+  # GET /apps/1.xml
   def show
     @app = App.find(params[:id])
     respond_to do |format|
@@ -15,6 +17,8 @@ class AppsController < ApplicationController
     end
   end
 
+  # GET /apps/1/edit
+  # GET /apps/1/edit.xml
   def edit
     @app=App.find(params[:id])
     respond_to do |format|
@@ -76,11 +80,11 @@ class AppsController < ApplicationController
   def update
     @app = App.find(params[:id])
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-      if @app.update_attributes(params[:app])
-        format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.' }
-
+      if @app.update_attributes(params[app_params])
+        format.html { redirect_to app_path(@app), :notice => 'App was successfully updated.' }
+        format.js{ render :action => @app.errors, :status => :unprocessable_entity}
       else
-        render :action => "edit"
+        format.html { render :action => "edit" }
       end
 
   end

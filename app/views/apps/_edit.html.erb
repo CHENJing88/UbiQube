@@ -11,6 +11,7 @@
         <div id="fonctionnel">
           <i class="fi-list"><h5>Gestion Fonctionnel</h5></i>
           <%= form_for @app, :url=> {controller=>'apps', :action=> 'edit'} do |f| %>
+          <%= render 'layouts/error_message', object: @app %>
             <%= render 'apps/form_fonc', :f=>f %>
 
             <div class = "actions">
