@@ -13,13 +13,14 @@
   </table>
   <tbody>
     <tr>
+      <%= render :partial=> @vms %>
       <td><%= %></td><td><%= %></td><td><%= %></td><td><%= %></td>
     </tr>
   </tbody>
 
   <%= fields_for @vm_install_service_in, @vm_install_service_in.vms.build do |vs|%>
     <div class="field">
-      <%= vm.label "VM" %><%= f.select  ,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect input-sm', multiple:'multiple',enableFiltering:true}%>
+      <%= vm.label "VM" %><%= f.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%>
 
     </div>
     <%#= relation_fields.hidden_field :user_id, :value => current_user.id %>

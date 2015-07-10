@@ -35,7 +35,13 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @app.user_app_roles.build
+    @user_app_role=@app.user_app_roles.build
+    @all_users=User.all
+    respond_to do |format|
+      format.html
+      format.json {render json: @app}
+      format.js{ render :layout => false }
+    end
   end
 
   # POST /apps
@@ -69,7 +75,7 @@ class AppsController < ApplicationController
   # PUT /apps/1.xml
   def update
     @app = App.find(params[:id])
-    @app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
       if @app.update_attributes(params[:app])
         format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.' }
 

@@ -33,7 +33,7 @@ class ServiceInAppController < ApplicationController
   # GET /ServiceInApps/new.xml
   def new
     @service_in_app = ServiceInApp.new
-    @service_in_app.user_app_roles.build
+
   end
 
   # POST /ServiceInApps
@@ -95,7 +95,7 @@ class ServiceInAppController < ApplicationController
   def edit_tech
     @service_in_app=ServiceInApp.find(params[:id])
     @vm_install_service_in=@service_in_app.vm_install_service_ins.build
-    @app=App.find(params[:id])
+    @vms=Vm.all
 
     respond_to do |format|
       format.html
