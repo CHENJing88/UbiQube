@@ -12,7 +12,7 @@
     <%= f.fields_for :user_app_roles,@app.user_app_roles.build do |uar|%>
     <div class="field">
       <%= uar.hidden_field :role_id, :value => 4 %>
-      <%= uar.label "Responsable Technique" %><%= uar.select :user_id, User.all.map { |user| [user.nom, user.id] }, {:prompt => true}, {:class=>'input-sm'}%>
+      <%= uar.label "Responsable Technique" %><%= uar.select :user_id, User.all.map { |user| [user.name, user.id] }, {:prompt => true}, {:class=>'input-sm'}%>
     <%#collection_select(:user_app_roles,:user_id, @all_users, :id,:nom,{:prompt => true},{multiple:true} )%>
     </div>
     <% end %>
