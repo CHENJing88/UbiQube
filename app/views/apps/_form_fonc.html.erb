@@ -9,7 +9,7 @@
     <%= f.label :etape %><%= f.select :etape_app_id, EtapeApp.all.map { |etape_app| [etape_app.nom, etape_app.id] }, {:prompt => true}, {:class=>'input-sm'}%>
     <%= f.label :groupe %><%= f.select :groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'input-sm'}%>
 
-    <%= f.fields_for @user_app_role do |uar|%>
+    <%= f.fields_for :user_app_roles,@app.user_app_roles.build do |uar|%>
     <div class="field">
       <%= uar.hidden_field :role_id, :value => 4 %>
       <%= uar.label "Responsable Technique" %><%= collection_select(:user_app_roles,:user_id, @all_users, :id,:nom,{:prompt => true},{multiple:true} )%>
