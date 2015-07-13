@@ -1,16 +1,16 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <nav id="top-bar" class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-header">
+  <div class="navbar-header navbar-right">
     <% if user_signed_in? %>
       <%= link_to "UbiQube", mesapps_path(current_user), id: "logo" %>
     <% else %>
       <%= link_to "UbiQube", root_path, id: "logo"%>
     <% end %>
   </div>
-    <ul class="title-area">
-      <!--li class="name"--><%#= link_to 'Home', root_path %><!--/li-->
+    <!--ul class="title-area">
+      <li class="name"--><%#= link_to 'Home', root_path %><!--/li-->
       <!--li class="toggle-topbar menu-icon"><a href="#">Menu</a></li-->
-      <li class="has-form">
+      <!--li class="has-form">
         <div class="large-8 small-9 columns">
           <input type="text" placeholder="Find App">
         </div>
@@ -18,7 +18,7 @@
           <a href="#" class="info button expand">Search</a>
         </div>
       </li>
-    </ul>
+    </ul-->
 
     <div class="nav navbar-nav navbar-right">
       <ul>
