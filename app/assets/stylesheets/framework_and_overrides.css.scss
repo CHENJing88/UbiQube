@@ -1,10 +1,10 @@
 // import the CSS framework
-@import "foundation";
+//@import "foundation";
 @import 'foundation-icons';
 @import "bootstrap";
 
 // override for the 'Home' navigation link
-.top-bar .top-bar-section{
+#top-bar-section{
   font-size: 100%;
   float:right;
   a {
@@ -13,7 +13,7 @@
   }
 }
 
-.top-bar .name {
+#top-bar .name {
   font-size: rem-calc(25);
   line-height: 45px;
   a {
