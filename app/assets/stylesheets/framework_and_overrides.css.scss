@@ -14,15 +14,21 @@
   }
 }
 
-.navbar .name {
+.navbar {
   font-size: rem-calc(25);
   line-height: 45px;
-  a {
-  font-weight: normal;
-  color: white;
-  padding: 0 15px;
-
+  margin-bottom: 0px;
+  border-radius: 1px;
+  
+  ul il{
+    display: inline;
+    a {
+    font-weight: normal;
+    color: white;
+    padding: 0 15px;
+    }
   }
+
 }
 
 
