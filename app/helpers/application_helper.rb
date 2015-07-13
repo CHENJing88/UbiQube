@@ -2,6 +2,14 @@ require 'net/ldap'
 
 module ApplicationHelper
 
+  def flash_class(level)
+    case level.to_sym
+    when :notice then "alert alert-info"
+    when :success then "alert alert-success"
+    when :error then "alert alert-error"
+    when :alert then "alert alert-error"
+    end
+  end
   #def admins_only(&block)
   #  block.call if current_user.role.nom == "Admin"
   #  nil
