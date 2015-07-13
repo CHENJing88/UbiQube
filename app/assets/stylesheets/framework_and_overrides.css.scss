@@ -122,7 +122,7 @@ footer{
   @include six-columns-centered;
   }
 .form {
-  @include make-sm-column(6);
+  @include six-columns;
   }
 .form-centered {
   @include six-columns-centered;
