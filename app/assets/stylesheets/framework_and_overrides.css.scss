@@ -10,7 +10,7 @@
   float:right;
   a {
     font-size: 70%;
-    text-decoration:none;
+
   }
 }
 
@@ -19,18 +19,19 @@
   line-height: 45px;
   margin-bottom: 0px;
   border-radius: 1px;
-  .nav{
-    ul il{
-      display: inline;
-      a {
-      font-weight: normal;
-      color: white;
-      padding: 0 15px;
-      }
+
+}
+.navbar .nav{
+   il{
+    display: inline;
+    a {
+    font-weight: normal;
+    color: white;
+    padding: 0 15px;
+    text-decoration:none;
     }
   }
 }
-
 
 
 #logo {
