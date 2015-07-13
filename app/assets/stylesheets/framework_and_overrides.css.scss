@@ -46,7 +46,7 @@
   float: left;
   margin-left: 5px;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.9em;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -65,7 +65,10 @@
   margin-right: auto;
   display: block;
 }
-
+#logo-menu{
+  text-align:center;
+  opacity: 0.8;
+}
 //typography
 h1,h2,h3,h4,h5,h6{
   font-weight: 700;

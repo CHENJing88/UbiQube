@@ -19,8 +19,8 @@
 
 //= require_tree .
 $(function() {
-  $(document).foundation();
-  // require foundation
+  // require foundation $(document).foundation();
+
 
 
 
