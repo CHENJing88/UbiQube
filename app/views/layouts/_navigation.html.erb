@@ -11,16 +11,12 @@
       </li>
       <!--li class="name"--><%#= link_to 'Home', root_path %><!--/li-->
       <!--li class="toggle-topbar menu-icon"><a href="#">Menu</a></li-->
-      <li class="has-form">
-        <div class="large-8 small-9 columns">
-          <input type="text" placeholder="Find App">
+      <form class="navbar-form" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Find App">
         </div>
-      </li>
-      <li>
-        <div class="large-4 small-3 columns">
-          <a href="#" class="btn">Search</a>
-        </div>
-      </li>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
     </ul>
   </div>
 
