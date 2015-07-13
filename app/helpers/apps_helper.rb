@@ -1,3 +1,5 @@
+include ApplicationHelper
+
 module AppsHelper
 
   def app_valide?(app)
