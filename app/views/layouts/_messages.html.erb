@@ -3,8 +3,9 @@
   <% if msg.is_a?(String) %>
     <!--div data-alert class="alert round <%= name.to_s == 'notice' ? 'success' : 'alert' %>"-->
     <div class="<%=flash_class(name)%> fade in">
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
       <%= content_tag :div, msg , :id=>"flash_#{name}"%>
-      <a href="#" class="close" 'data-dismiss'="alert">&times;</a>
+
     </div>
   <% end %>
 <% end %>
