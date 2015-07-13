@@ -122,6 +122,7 @@ footer{
   @extend .small-12;
   @extend .columns;
   }
+
 @mixin six-columns-centered {
   @extend .small-6;
   @extend .columns;
@@ -133,7 +134,8 @@ footer{
   @include six-columns-centered;
   }
 .form {
-  @include grid-column(6);
+  //@include grid-column(6);
+  @include six-columns-centered;
   }
 .form-centered {
   @include six-columns-centered;
