@@ -39,7 +39,8 @@
 }
 .inverse-dropdown{
   background-color: #222;
-  border-color: #080808;
+  border-color: #000;
+  border: 1px
   &>li>a{
     color: #999;
     &:hover{
@@ -47,7 +48,7 @@
       background-color: #000;
     }
     &>.divider{
-      background-color: #fff;
+      background-color: white;
     }
   }
 }
