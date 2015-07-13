@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.min
 //= require turbolinks
-//= require bootstrap.min
+//= require bootstrap
 //= require bootstrap-multiselect
 
 //= require_tree .
