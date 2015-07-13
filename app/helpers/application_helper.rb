@@ -2,12 +2,13 @@ require 'net/ldap'
 
 module ApplicationHelper
 
-  def flash_class(level)
-    case level.to_sym
-    when :notice then "alert alert-info"
-    when :success then "alert alert-success"
-    when :error then "alert alert-error"
-    when :alert then "alert alert-error"
+  def flash_class(flash_type)
+    {
+      :notice => "alert alert-info",
+      :success => "alert alert-success",
+      :error => "alert alert-error",
+      :alert => "alert alert-block",
+     }[flash_type.to_sym] || flash_type.to_s
     end
   end
   #def admins_only(&block)
