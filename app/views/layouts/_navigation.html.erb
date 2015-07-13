@@ -1,6 +1,6 @@
 <%# navigation styled for Zurb Foundation 5 %>
 <nav id="top-bar" class="navbar navbar-inverse" role="navigation">
-  <div class="navbar-header navbar-right">
+  <div class="navbar-header navbar-left">
     <% if user_signed_in? %>
       <%= link_to "UbiQube", mesapps_path(current_user), id: "logo" %>
     <% else %>
