@@ -157,7 +157,7 @@ textarea{
   margin: 0 auto;
 }
 .authform form {
-  @include panel-variant();
+  @extend .panel;
   padding-bottom: 60px;
 }
 .authform form a {
@@ -176,7 +176,8 @@ textarea{
   // for Bootstrap, not used for Foundation
 }
 .authform fieldset {
-  @include panel();
+  //@include panel();
+  @extend .panel;
 }
 .authform #error_explanation {
   @extend .alert-box;
