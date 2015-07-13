@@ -122,7 +122,7 @@ footer{
   @include six-columns-centered;
   }
 .form {
-  //@include grid-column(6);
+  @include make-lg-column(6);
   }
 .form-centered {
   @include six-columns-centered;
@@ -157,7 +157,7 @@ textarea{
   margin: 0 auto;
 }
 .authform form {
-  @include panel();
+  @include panel-variant();
   padding-bottom: 60px;
 }
 .authform form a {
