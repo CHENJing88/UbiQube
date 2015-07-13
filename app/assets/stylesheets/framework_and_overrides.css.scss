@@ -67,8 +67,11 @@
 }
 #logo-menu{
   text-align:center;
-  opacity: 0.5;
-  height: inherit;
+  opacity: 1;
+  height:35px;
+  display: block;
+  vertical-align:top;
+
 }
 //typography
 h1,h2,h3,h4,h5,h6{
