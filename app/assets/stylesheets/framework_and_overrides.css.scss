@@ -121,7 +121,7 @@ footer{
   @include six-columns-centered;
   }
 .form {
-  @include grid-column(6);
+  @include col-md-6;
   }
 .form-centered {
   @include six-columns-centered;
