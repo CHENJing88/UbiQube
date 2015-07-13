@@ -22,14 +22,18 @@
 
 }
 .nav{
-  
-   li{
-    display: inline;
-    a {
-    font-weight: normal;
-    color: white;
-    padding: 0 15px;
-    text-decoration:none;
+  ul{
+     padding-left: 5px;
+     padding-right: 5px;
+     margin-bottom: 0px;
+     li{
+      display: inline;
+      a {
+        font-weight: normal;
+        color: white;
+        padding: 0 15px;
+        text-decoration:none;
+      }
     }
   }
 }
