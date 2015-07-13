@@ -82,9 +82,10 @@ class AppsController < ApplicationController
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
       if @app.update_attributes(params[app_params])
         format.html { redirect_to app_path(@app), :notice => 'App was successfully updated.' }
-        format.js{ render :action => @app.errors, :status => :unprocessable_entity}
+        format.json { render :action => "show", :status => :updated, :location => @app }
       else
         format.html { render :action => "edit" }
+        format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
       end
 
   end
