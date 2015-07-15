@@ -52,7 +52,7 @@
           <tr>
             <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
             <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%></td>
-            <td><%= check_box_tag , s.is_defaut %></td>
+            <td><%#= check_box_tag , s.is_defaut %></td>
             <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
           </tr>
         <% end %>
