@@ -24,11 +24,11 @@
       </tbody>
     </table>
 
-    <%= fields_for :vm_install_service_in, @service_in_app.vm_install_service_ins.build do |vs|%>
+    <%= fields_for @vm_install_service_in do |vs|%>
       <div class="field">
         <%= vs.label "VM" %><%= vs.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true},
         {:class=>'multiselect', multiple:'multiple',id:"VM-multselect"}%>
-        <%= vs.hidden_field :user_id, :value => current_user.id %>
+        <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
       </div>
     <% end %>
@@ -63,14 +63,7 @@
       </tbody>
     </table>
 
-    <%= fields_for @vm_install_service_in do |vs|%>
-      <div class="field">
-        <%= vs.label "VM" %><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%>
-        <%= vs.hidden_field :user_id, :value => current_user.id %>
-        <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-      </div>
-    <% end %>
-    <%= link_to "New VM", "#" %>
+
   </div>
 
 
