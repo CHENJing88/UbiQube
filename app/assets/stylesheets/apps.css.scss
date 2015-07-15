@@ -55,7 +55,7 @@ i {// icon
 }
 #fonctionnel{
   float: left;
-  width: 50%;
+  width: 100%;
   margin-bottom: 5px;
   margin-right: 10px;
 }
@@ -68,7 +68,9 @@ i {// icon
 .modal-footer{
   clear: both;
 }
-
+h5 .app-etat{
+  display: inline;
+}
 textarea{
   font-size: 12px;
   max-width: 100%;

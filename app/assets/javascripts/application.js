@@ -25,6 +25,6 @@ $(document).ready(function() {
         enableClickableOptGroups: true,
         includeSelectAllOption: true,
         enableFiltering: true,
-        maxHeight: 20
+        maxHeight: 200
       });
     });
