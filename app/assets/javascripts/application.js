@@ -18,16 +18,13 @@
 //= require bootstrap-multiselect
 
 //= require_tree .
-$(function() {
   // require foundation $(document).foundation();
 
-  $(document).ready(function() {
-          $('#VM-multselect').multiselect();
-          enableClickableOptGroups: true,
-          includeSelectAllOption: true,
-          enableFiltering: true,
-          maxHeight: 200,
+$(document).ready(function() {
+        $('#VM-multselect').multiselect({
+        enableClickableOptGroups: true,
+        includeSelectAllOption: true,
+        enableFiltering: true,
+        maxHeight: 200
       });
-
-
-  });
+    });
