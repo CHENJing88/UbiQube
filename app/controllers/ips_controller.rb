@@ -1,5 +1,5 @@
-require 'ipaddr'
 class IpController < ApplicationController
+  require 'ipaddr'
   before_save :convert_ip
 
   def self.find_by_ip(value)
