@@ -10,7 +10,7 @@
       <div id="fonctionnel">
         <i class="fi-list"><h4 class="lead">Gestion Technique</h4></i>
 
-        <%= form_for [@app,@service_in_apps] :url=> {controller=>'service_in_apps', :action=> 'edit_tech'} do |f| %>
+        <%= form_for [@app,@service_in_apps], :url=> {controller=>'service_in_apps', :action=> 'edit_tech'} do |f| %>
           <%= render 'service_in_apps/form_tech', :f=>f %>
           <div class="modal-footer">
             <div class = "actions">
