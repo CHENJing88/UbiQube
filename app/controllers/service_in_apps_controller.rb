@@ -3,7 +3,7 @@ class ServiceInAppsController < ApplicationController
   def index
     @app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
-    @service_in_apps .sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    @service_in_apps.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
   def show
