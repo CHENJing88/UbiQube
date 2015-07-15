@@ -27,6 +27,7 @@ class ServiceInAppsController < ApplicationController
   def new
     @app=App.find(params[:app_id])
     @service_in_app= ServiceInApp.new
+    respond_with(@app,@service_in_app)
   end
 
   # POST /ServiceInApps
