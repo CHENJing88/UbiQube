@@ -28,8 +28,8 @@
 
       </div><!-- /.modal-body -->
       <div class="modal-footer">
-        <%=link_to "Annuler",app_path(@app), data:{ toggle:"modal",traget:"#show_app_modal"},remote:true, :class=>"secondary button"%>
-        <%=link_to "Gestion Technique",app_service_in_apps_path(@app), data:{ toggle:"modal",traget:"#edit_tech_app_modal"},remote:true, :class=>"btn"%>
+        <%=link_to "Annuler",app_path(@app), data:{ toggle:"modal",traget:"#show_app_modal"},remote:true, :class=>"btn-secondary"%>
+        <%=link_to "Gestion Technique",app_service_in_apps_path(@app), data:{ toggle:"modal",traget:"#edit_tech_app_modal"}, remote:true, :class=>"btn"%>
         <!--a href="#", data-traget="#show_app_modal", aria-hidden="true", class="secondary button"> Annuler</a-->
       </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->

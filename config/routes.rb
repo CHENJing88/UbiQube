@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users,:apps
+  resources :users
   resources :apps do
     resources :service_in_apps
   end
@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
 
-
-  get '/apps/:app_id/edit-tech' => "service_in_apps#edit_tech", :as=> :app_tech
   #get '/apps/new' => "apps#new", :as=> :create_app
   #get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
   #patch '/apps/:id' => "apps#update"
