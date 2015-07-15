@@ -1,5 +1,5 @@
 class ServiceInAppsController < ApplicationController
-before_action: :set_app
+before_action :set_app
   def index
     @app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
