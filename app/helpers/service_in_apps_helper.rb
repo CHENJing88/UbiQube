@@ -1,2 +1,2 @@
-module ServiceInAppHelper
+module ServiceInAppsHelper
 end

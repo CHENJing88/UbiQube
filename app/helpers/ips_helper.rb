@@ -1,2 +1,2 @@
-module IpHelper
+module IpsHelper
 end

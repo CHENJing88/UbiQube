@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ServiceInAppControllerTest < ActionController::TestCase
+class ServiceInAppsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

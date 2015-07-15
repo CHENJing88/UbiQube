@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class IpHelperTest < ActionView::TestCase
+class IpsHelperTest < ActionView::TestCase
 end

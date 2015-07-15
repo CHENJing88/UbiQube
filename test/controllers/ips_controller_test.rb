@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class IpControllerTest < ActionController::TestCase
+class IpsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
