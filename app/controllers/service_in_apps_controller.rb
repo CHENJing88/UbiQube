@@ -1,5 +1,5 @@
 class ServiceInAppsController < ApplicationController
-
+before_action: :set_app
   def index
     @app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
@@ -95,8 +95,13 @@ class ServiceInAppsController < ApplicationController
  def <=>(other)
    to_array<=>other.to_array
  end
+
 private
   def serIN_params
     params.require(:service_in_app).permit(:port, apps_attributes[:id])
+  end
+
+  def set_app
+    @app=App.find(params[:app_id])
   end
 end
