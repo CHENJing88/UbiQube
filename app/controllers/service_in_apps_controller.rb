@@ -3,7 +3,7 @@ class ServiceInAppsController < ApplicationController
   def index
     @app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
-
+    @service_in_apps .sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
   def show
@@ -92,6 +92,6 @@ class ServiceInAppsController < ApplicationController
 
 private
   def serIN_params
-    params.require(:service_in_app).permit(:port, apps_attributes[:id])
+    params.require(:service_in_app).permit(:port, apps_attributes[:id],vm_install_service_ins_attributes[:vm_id,:service_in_id])
   end
 end
