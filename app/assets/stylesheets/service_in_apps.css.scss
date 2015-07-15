@@ -12,10 +12,11 @@
     display: inline;
   }
 }
-.btn{
+.btn-new-vm{
   display: inline;
   float: right;
   font-size: 1.7rem;
+  padding: 3px 6px;
 }
 i{
   font-size: 1.7rem;
@@ -23,7 +24,7 @@ i{
     text-decoration: none;
    }
   a{
-    padding-left: 2px;
+    padding-left: 6px;
     text-decoration: none;
     font-size: 8px;
    }
