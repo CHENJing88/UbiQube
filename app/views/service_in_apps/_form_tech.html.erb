@@ -1,43 +1,78 @@
 <div class="field">
   <div id="vm-conf">
-  <h3>VM Configuration</h3>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Template</th>
-        <th>Etat</th>
-        <th>IP Adresse</th>
-      </tr>
-    </thead>
-  </table>
-  <tbody>
-    <tr>
-      <%= render :partial=> @vms %>
-      <td><%= %></td><td><%= %></td><td><%= %></td><td><%= %></td>
-    </tr>
-  </tbody>
+    <h3>VM Configuration</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Template</th>
+          <th>Etat</th>
+          <th>IP Adresse</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
 
-  <%= fields_for @vm_install_service_in, @vm_install_service_in.vms.build do |vs|%>
-    <div class="field">
-      <%= vm.label "VM" %><%= f.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%>
+      <tbody>
+        <% @vm_installs.each do |vis| %>
+          <tr>
+            <td><%= vis.vm.nom%></td><td><%=vis.vm.template %></td><td><%= vis.vm.etat_app.nom %></td><td><%= vis.ip_defaut %></td>
+            <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-    </div>
-    <%#= relation_fields.hidden_field :user_id, :value => current_user.id %>
-    <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-  <% end %>
+    <%= fields_for :vm_install_service_in, @service_in_app.vm_install_service_ins.build do |vs|%>
+      <div class="field">
+        <%= vs.label "VM" %><%= vs.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true},
+        {:class=>'multiselect', multiple:'multiple',id:"VM-multselect"}%>
+        <%= vs.hidden_field :user_id, :value => current_user.id %>
+        <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+      </div>
+    <% end %>
+    <%= link_to "New VM", "#" %>
+  </div>
 
-  <%= f.label :description %><%= f.text_area :description %>
-</div>
+  <div id="serv-conf">
+    <h3>Service-IN Configuration</h3>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Service IN</th>
+          <th>Port</th>
+          <th>Protocole</th>
+          <th>VM</th>
+          <th>Install par defaut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
 
-<div id="serv-conf">
-  <h3>Service-IN Configuration</h3>
+      <tbody>
+        <% @service_ins.each do |s| %>
+          <tr>
+            <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
+            <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%></td>
+            <td><%= check_box_tag , s.is_defaut %></td>
+            <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= fields_for :vm_install_service_in, @service_in_app.vm_install_service_ins.build do |vs|%>
+      <div class="field">
+        <%= vs.label "VM" %><%= vs.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%>
+        <%= vs.hidden_field :user_id, :value => current_user.id %>
+        <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+      </div>
+    <% end %>
+    <%= link_to "New VM", "#" %>
+  </div>
 
 
 
 
-
-</div>
+  </div>
 
 
 

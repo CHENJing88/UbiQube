@@ -1,5 +1,8 @@
-<% @mesapps.each do |mesapp|%>
-  <!-- c'est la carte de chaque App -->
+<!-- ====== c'est des cartes de 'Mes App' ===== -->
+<% if @mesapps.empty? %>
+ <p> Non App maintenant. </p>
+<% else %>
+  <% @mesapps.each do |mesapp|%>
   <%= link_to app_path(mesapp.apps), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
     <li class="custom-card" id="app-<%=mesapp.apps.id%>">
       <p><%= mesapp.apps.nom %></p>
@@ -8,14 +11,14 @@
   <% end %>
 <% end %>
 
-<!-- c'est la carte de créer nouvelle App -->
+<!-- ===== c'est la carte de créer nouvelle App ==== -->
 <%= link_to new_app_path, data:{ remote:true, toggle:"modal",traget:"#new_app_modal" } do%>
   <li class="nouvel-card" >
     <p>Créer une nouvelle App</p>
   </li>
 <% end %>
 
-<!--****** Section du modal dialog ******-->
+<!--****** Section du modal dialog template ******-->
 
 <!-- c'est le modal dialog d'afficher information d'App -->
 <div class="modal" id="show_app_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
