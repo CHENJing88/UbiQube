@@ -96,6 +96,6 @@ class ServiceInAppsController < ApplicationController
  end
 private
   def serIN_params
-    params.require(:service_in_app).permit(:port, apps_attributes[:id],vm_install_service_ins_attributes[:vm_id,:service_in_id])
+    params.require(:service_in_app).permit(:port, apps_attributes[:id])
   end
 end
