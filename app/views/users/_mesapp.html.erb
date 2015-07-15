@@ -1,16 +1,16 @@
 <!-- ====== c'est des cartes de 'Mes App' ===== -->
-<%# if @mesapps.empty? %>
-
-
+<% if @mesapps.empty? %>
+ <p> Non App maintenant. </p>
+<% else %>
   <% @mesapps.each do |mesapp|%>
-  <%= link_to app_path(mesapp.apps), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
-    <li class="custom-card" id="app-<%=mesapp.apps.id%>">
-      <p><%= mesapp.apps.nom %></p>
-      <p><%= mesapp.roles.nom %></p>
-    </li>
+    <%= link_to app_path(mesapp.apps), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
+      <li class="custom-card" id="app-<%=mesapp.apps.id%>">
+        <p><%= mesapp.apps.nom %></p>
+        <p><%= mesapp.roles.nom %></p>
+      </li>
+    <% end %>
   <% end %>
-
-
+<% end %>
 <!-- ===== c'est la carte de créer nouvelle App ==== -->
 <%= link_to new_app_path, data:{ remote:true, toggle:"modal",traget:"#new_app_modal" } do%>
   <li class="nouvel-card" >
