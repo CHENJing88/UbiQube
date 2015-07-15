@@ -24,9 +24,9 @@
       </tbody>
     </table>
 
-    <%= fields_for @vm_installs do |vs|%>
+    <%= fields_for @vms do |vs|%>
       <div class="field">
-        <%= vs.label "VM" %><%= vs.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true},
+        <%= vs.label "VM" %><%= vs.select :id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true},
         {:class=>'multiselect', multiple:'multiple',id:"VM-multselect"}%>
         <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
