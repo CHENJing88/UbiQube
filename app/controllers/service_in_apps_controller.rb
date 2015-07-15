@@ -83,6 +83,7 @@ class ServiceInAppsController < ApplicationController
     #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
     @service_ins=@service_in_apps.services.build
     @vms=@service_in_apps.vms.build
+    @service_ins.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
 
     respond_to do |format|
       format.html
