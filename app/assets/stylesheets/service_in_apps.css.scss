@@ -1,3 +1,11 @@
 // Place all the styles related to the service_in_app controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.field{
+  padding: 5px;
+}
+#serv-conf, #vm-conf{
+  padding-bottom: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: #eaeaea;
+}

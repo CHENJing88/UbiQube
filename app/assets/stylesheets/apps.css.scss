@@ -40,19 +40,6 @@
   list-style: square;
 }
 
-
-i {// icon
-  font-size: 1.0rem;
-  padding-left: 5px;
-  float: left;
-
-  h5{
-    margin-left:10px;
-    list-style:none;
-    display:inline;
-    font-weight: bold;
-  }
-}
 #fonctionnel{
   float: left;
   width: 100%;
@@ -69,10 +56,6 @@ i {// icon
   clear: both;
 }
 
-.lead,
-h5 .app-etat{
-  display: inline;
-}
 
 textarea{
   font-size: 12px;

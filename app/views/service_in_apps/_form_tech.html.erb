@@ -1,6 +1,7 @@
 <div class="field">
   <div id="vm-conf">
     <h5>VM Configuration</h5>
+    <%= link_to "New VM", "#" , class: 'btn btn-large btn-primary'%>
     <table class="table table-hover">
       <thead>
         <tr>
@@ -26,11 +27,11 @@
 
     <%= fields_for :vms do |vs|%>
       <div class="field">
-        <%= vs.label "Selection VMs: " %><%= vs.select :id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true},
+        <%= vs.label "Selection VMs: " %><%= vs.select :id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
         {:class=>'multiselect', multiple:'multiple',id:"VM-multselect"}%><button type="submit" class="btn btn-default">Add</button>
         <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-        <%= link_to "New VM", "#" ,class: 'btn btn-large btn-default'%>
+
       </div>
     <% end %>
 
@@ -55,7 +56,7 @@
           <% @service_ins.each do |s| %>
             <tr>
               <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
-              <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%></td>
+              <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, {:class=>'multiselect', multiple:'multiple'}%></td>
               <td><%#= check_box_tag , s.is_defaut %></td>
               <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
             </tr>

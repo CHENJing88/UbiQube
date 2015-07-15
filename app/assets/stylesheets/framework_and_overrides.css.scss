@@ -232,10 +232,30 @@ textarea{
   @extend .tiny;
 }
 
+
+
+//====== App pages =======
+.lead{
+  display: inline;
+}
+h5 .app-etat{
+  display: inline;
+}
+i {// icon
+  font-size: 1.0rem;
+  padding-left: 5px;
+  float: left;
+
+  h5{
+    margin-left:10px;
+    list-style:none;
+    display:inline;
+    font-weight: bold;
+  }
+}
 .input-sm {
   padding: 0px 5px;
 }
-//App pages
 
 
 *{
