@@ -26,7 +26,7 @@ class ServiceInAppsController < ApplicationController
   # GET /ServiceInApps/new.xml
   def new
     @app=App.find(params[:app_id])
-    @service_in_app= @app.service_in_apps.build
+    @service_in_app= ServiceInApp.new
   end
 
   # POST /ServiceInApps
