@@ -21,7 +21,7 @@ class AppsController < ApplicationController
   # GET /apps/1/edit.xml
   def edit
     @app=App.find(params[:id])
-    @service_in_apps = @app.service_in_apps
+
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -35,6 +35,7 @@ class AppsController < ApplicationController
   def new
     @app = App.new
     @user_app_role=@app.user_app_roles.build
+    @service_in_apps = @app.service_in_apps.build
     @all_users=User.all
     respond_to do |format|
       format.html
