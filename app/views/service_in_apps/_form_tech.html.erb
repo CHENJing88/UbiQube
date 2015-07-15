@@ -24,7 +24,7 @@
       </tbody>
     </table>
 
-    <%= fields_for @vms do |vs|%>
+    <%= fields_for :vms do |vs|%>
       <div class="field">
         <%= vs.label "VM" %><%= vs.select :id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true},
         {:class=>'multiselect', multiple:'multiple',id:"VM-multselect"}%>
