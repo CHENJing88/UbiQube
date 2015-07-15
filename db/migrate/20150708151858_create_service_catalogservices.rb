@@ -9,5 +9,5 @@ class CreateServiceCatalogservices < ActiveRecord::Migration
 
     add_index :service_catalogservices, [:service_id, :catalogservice_id], unique:true
     end
-  end
+  
 end
