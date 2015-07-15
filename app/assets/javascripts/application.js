@@ -21,7 +21,13 @@
 $(function() {
   // require foundation $(document).foundation();
 
-
+  $(document).ready(function() {
+          $('#VM-multselect').multiselect();
+          enableClickableOptGroups: true,
+          includeSelectAllOption: true,
+          enableFiltering: true,
+          maxHeight: 200,
+      });
 
 
   });

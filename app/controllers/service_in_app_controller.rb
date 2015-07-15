@@ -1,8 +1,8 @@
 class ServiceInAppController < ApplicationController
 
   def index
-    @service_in_apps = ServiceInApp.all
-    #@apps.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    @app=App.find(params[:app_id])
+    @service_in_apps = @app.service_in_apps
   end
 
   def show
@@ -21,39 +21,23 @@ class ServiceInAppController < ApplicationController
     end
   end
 
-  def edit_tech
-    @service_in_app=ServiceInApp.find(params[:id])
-    respond_to do |format|
-      format.html
-      format.js{ render :layout => false }
-    end
-  end
-
   # GET /ServiceInApps/new
   # GET /ServiceInApps/new.xml
   def new
-    @service_in_app = ServiceInApp.new
-
+    @app=App.find(params[:app_id])
+    @service_in_app= @app.service_in_apps.build
   end
 
   # POST /ServiceInApps
   # POST /ServiceInApps.xml
   def create
     #app_params.permit!
-
-    @service_in_app=ServiceInApp.new(serIN_params)
-
-    #@app.build(params[:user_app_roles])
-    #@app.user_app_roles=UserAppRole.new(params[:user_app_roles])
-    #@app.user_app_roles.build(params[:app_id])
-    #@app.user_app_roles＝@user_app_roles
-    #@app.build(params[:user_app_roles])
-    #@app.build(params[:user_app_roles])
-    #@app.build(params[:user_app_roles])
+    @app=App.find(params[:app_id])
+    @service_in_app = @app.service_in_apps.build(serIN_params)
 
     respond_to do |format|
       if @service_in_app.save
-        format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully created.' }
+        format.html { redirect_to app_url(@service_in_app.app_id), :notice => 'App Service was successfully created.' }
         format.js { render :action => 'mesapps', :status => :created, :location => @user }
       else
         format.html { render :action => 'new' }
@@ -67,7 +51,7 @@ class ServiceInAppController < ApplicationController
   # PUT /ServiceInApps/1.xml
   def update
     @service_in_app = ServiceInApp.find(params[:id])
-    @service_in_app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+
       if @service_in_app.update_attributes(params[:app])
         format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.' }
 
@@ -93,9 +77,10 @@ class ServiceInAppController < ApplicationController
   end
 
   def edit_tech
-    @service_in_app=ServiceInApp.find(params[:id])
-    @vm_install_service_in=@service_in_app.vm_install_service_ins.build
-    @vms=Vm.all
+    @service_in_app= ServiceInApp.find(params[:id])
+    @vm_install_service_in= @service_in_app.vm_install_service_ins.build
+    @service_ins=@service_in_app.services.build
+    @vm_installs=@service_in_app.vms.build
 
     respond_to do |format|
       format.html

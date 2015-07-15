@@ -4,15 +4,13 @@ class CreateApps < ActiveRecord::Migration
       t.string :nom
       t.string :niveau
       t.string :description
-      t.integer :etat_app_id
-      t.integer :etape_app_id
-      t.integer :groupe_app_id
+      t.integer :etat_app_id,:index=>true
+      t.integer :etape_app_id,:index=>true
+      t.integer :groupe_app_id,:index=>true
 
       t.timestamps
     end
-    add_index :apps , :etat_app_id
-    add_index :apps , :etape_app_id
-    add_index :apps , :groupe_app_id
+
   end
 
   def self.down
