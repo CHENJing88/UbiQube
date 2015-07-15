@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
 
 
-  get '/apps/:id/edit-tech' => "service_in_apps#edit_tech", :as=> :app_tech
+  get '/apps/:app_id/edit-tech' => "service_in_apps#edit_tech", :as=> :app_tech
   #get '/apps/new' => "apps#new", :as=> :create_app
   #get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
   #patch '/apps/:id' => "apps#update"
