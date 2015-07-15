@@ -8,8 +8,18 @@
   padding: 10px 5px;
   border-style: solid;
   border-color: #eaeaea;
+  h5{
+    display: inline;
+  }
 }
 button .btn-new-vm{
   display: inline;
-
+  float: right;
+  i{
+    padding-right: 2px;
+    a{
+      text-decoration: none;
+      font-size: 8px;
+     }
+  }
 }
