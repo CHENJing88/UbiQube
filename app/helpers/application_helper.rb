@@ -9,7 +9,7 @@ module ApplicationHelper
       :error => "alert alert-error",
       :alert => "alert alert-block",
      }[flash_type.to_sym] || flash_type.to_s
-    
+
   end
   #def admins_only(&block)
   #  block.call if current_user.role.nom == "Admin"
