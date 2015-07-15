@@ -29,6 +29,10 @@ class AppsController < ApplicationController
 
   def edit_tech
     @app=App.find(params[:id])
+    @service_in_app= @app.service_in_apps.build
+    @vm_install_service_in= @service_in_app.vm_install_service_ins.build
+    @service_ins=@service_in_app.services.build
+    @vm_installs=@service_in_app.vms.build
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -54,14 +58,6 @@ class AppsController < ApplicationController
     #app_params.permit!
 
     @app=App.new(app_params)
-
-    #@app.build(params[:user_app_roles])
-    #@app.user_app_roles=UserAppRole.new(params[:user_app_roles])
-    #@app.user_app_roles.build(params[:app_id])
-    #@app.user_app_roles＝@user_app_roles
-    #@app.build(params[:user_app_roles])
-    #@app.build(params[:user_app_roles])
-    #@app.build(params[:user_app_roles])
 
     respond_to do |format|
       if @app.save
