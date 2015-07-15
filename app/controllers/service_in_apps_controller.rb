@@ -79,10 +79,10 @@ class ServiceInAppsController < ApplicationController
 
   def edit_tech
     @app=App.find(params[:app_id])
-    @service_in_app= ServiceInApp.find(params[:id])
-    @vm_install_service_in= @service_in_app.vm_install_service_ins.build
-    @service_ins=@service_in_app.services.build
-    @vm_installs=@service_in_app.vms.build
+    #@service_in_app= ServiceInApp.find(params[:id])
+    #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
+    @service_ins=@service_in_apps.services.build
+    @vm_installs=@service_in_apps.vms.build
 
     respond_to do |format|
       format.html
