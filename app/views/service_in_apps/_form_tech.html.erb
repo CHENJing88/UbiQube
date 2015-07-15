@@ -13,11 +13,13 @@
       </thead>
 
       <tbody>
-        <% @vm_installs.each do |vis| %>
-          <tr>
-            <td><%= vis.vm.nom%></td><td><%=vis.vm.template %></td><td><%= vis.vm.etat_app.nom %></td><td><%= vis.ip_defaut %></td>
-            <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
-          </tr>
+        <% if @service_ins.present? %>
+          <% @vm_installs.each do |vis| %>
+            <tr>
+              <td><%= vis.vm.nom%></td><td><%=vis.vm.template %></td><td><%= vis.vm.etat_app.nom %></td><td><%= vis.ip_defaut %></td>
+              <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
@@ -48,8 +50,7 @@
       </thead>
 
       <tbody>
-        <% if @service_ins.empty? %>
-        <%else%>
+        <% if @service_ins.present? %>
           <% @service_ins.each do |s| %>
             <tr>
               <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
