@@ -3,6 +3,7 @@ class ServiceInAppController < ApplicationController
   def index
     @app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
+    
   end
 
   def show

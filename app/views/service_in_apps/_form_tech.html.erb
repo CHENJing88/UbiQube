@@ -48,20 +48,23 @@
       </thead>
 
       <tbody>
-        <% @service_ins.each do |s| %>
-          <tr>
-            <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
-            <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%></td>
-            <td><%#= check_box_tag , s.is_defaut %></td>
-            <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
-          </tr>
+        <% if @service_ins.empty? %>
+        <%else%>
+          <% @service_ins.each do |s| %>
+            <tr>
+              <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
+              <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%></td>
+              <td><%#= check_box_tag , s.is_defaut %></td>
+              <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
 
     <%= fields_for :vm_install_service_in, @service_in_app.vm_install_service_ins.build do |vs|%>
       <div class="field">
-        <%= vs.label "VM" %><%= vs.select :vm_id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%>
+        <%= vs.label "VM" %><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => true}, {:class=>'multiselect', multiple:'multiple',enableFiltering:true}%>
         <%= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
       </div>

@@ -27,17 +27,7 @@ class AppsController < ApplicationController
     end
   end
 
-  def edit_tech
-    @app=App.find(params[:id])
-    @service_in_app= @app.service_in_apps.build
-    @vm_install_service_in= @service_in_app.vm_install_service_ins.build
-    @service_ins=@service_in_app.services.build
-    @vm_installs=@service_in_app.vms.build
-    respond_to do |format|
-      format.html
-      format.js{ render :layout => false }
-    end
-  end
+  
 
   # GET /apps/new
   # GET /apps/new.xml
