@@ -41,5 +41,5 @@ vm2=Vm.create(nom:"Prod", ip_defaut:180552305, template:"Sabayon", etat_app_id:e
 
 s1=Service.create(nom:"SSH", port_defaut:22, protocole:"TCP", install_defaut:true)
 
-sIN1=ServiceInApp.create(app_id:2, service_id:si.id, port:s1.port_defaut)
+sIN1=ServiceInApp.create(app_id:2, service_id:s1.id, port:s1.port_defaut)
 VmInstallServiceIn.create(service_id:sIN1.id, vm_id:vm1.id, ip_id:ip2.id)
