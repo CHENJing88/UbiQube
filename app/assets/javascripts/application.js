@@ -21,7 +21,7 @@
   // require foundation $(document).foundation();
 
 $(document).ready(function() {
-        $('#VM-multselect').multiselect({
+        $('#VM-multiselect').multiselect({
         enableClickableOptGroups: true,
         includeSelectAllOption: true,
         enableFiltering: true,
