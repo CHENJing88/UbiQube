@@ -42,7 +42,7 @@
 
 #fonctionnel{
   float: left;
-  width: 100%;
+  width: 50%;
   margin-bottom: 5px;
   margin-right: 10px;
 }
@@ -55,10 +55,14 @@
 .modal-footer{
   clear: both;
 }
-
+h5 .app-etat{
+  display: inline;
+}
 
 textarea{
+  display: block;
   font-size: 12px;
+  width: 100%;
   max-width: 100%;
   max-height: 60px;
 }
