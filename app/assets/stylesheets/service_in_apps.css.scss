@@ -4,6 +4,9 @@
 .field{
   padding: 5px;
 }
+#edit-tech{
+  width: 100%;
+}
 #serv-conf, #vm-conf{
   padding: 10px 5px;
   border-style: solid;
@@ -18,6 +21,10 @@
   font-size: 1.3rem;
   padding: 3px 6px;
   i{display: inline;}
+}
+h5 {
+  display: inline;
+  padding-left: 10px;
 }
 i{
   font-size: 1.3rem;
