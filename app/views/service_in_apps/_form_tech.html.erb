@@ -69,7 +69,7 @@
     <%= fields_for :servics do |s|%>
       <div class="field">
         <%= s.label "Selection Services : " %><%= s.select :id,Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
-        {:class=>'multiselect', multiple:'multiple',id:"Serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
+        {:class=>'multiselect', multiple:'multiple',id:"serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
         <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
 

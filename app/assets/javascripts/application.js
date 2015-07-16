@@ -26,5 +26,10 @@ $(document).ready(function() {
         includeSelectAllOption: true,
         enableFiltering: true,
         maxHeight: 200
+        });
+        $('#serv-multiselect').multiselect({
+        includeSelectAllOption: true,
+        enableFiltering: true,
+        maxHeight: 200
       });
     });
