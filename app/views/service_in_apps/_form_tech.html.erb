@@ -1,10 +1,10 @@
 <div class="field">
   <div id="vm-conf">
-    <h5>VM Configuration</h5>
-    <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
-      <i class="fi-plus"> New VM</i>
-    <%end%>
     <table class="table table-hover">
+      <caption>VM Configuration</caption>
+      <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
+        <i class="fi-plus"> New VM</i>
+      <%end%>
       <thead>
         <tr>
           <th>Nom</th>
@@ -16,32 +16,31 @@
       </thead>
 
       <tbody>
-        <% if @service_ins.present? %>
-          <% @vm_installs.each do |vis| %>
-            <tr>
-              <td><%= vis.vm.nom%></td><td><%=vis.vm.template %></td><td><%= vis.vm.etat_app.nom %></td><td><%= vis.ip_defaut %></td>
-              <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
-            </tr>
-          <% end %>
+        <% if @vm_installs.present? %>
+            <% @vm_installs.each do |vis| %>
+              <tr>
+                <td><%= vis.vm.nom%></td><td><%=vis.vm.template %></td><td><%= vis.vm.etat_app.nom %></td><td><%= vis.ip_defaut %></td>
+                <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+              </tr>
+            <% end %>
         <% end %>
       </tbody>
     </table>
-
-    <%= fields_for :vms do |vs|%>
+    <%= form_for @vm_installs, :url=> {controller=>'service_in_apps', :action=> 'vm_add'} do |f| %>
       <div class="field">
         <%= vs.label "Selection VMs : " %><%= vs.select :id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
-        {:class=>'multiselect', multiple:'multiple',id:"VM-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
+        {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
         <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-
       </div>
     <% end %>
+
 
   </div>
 
   <div id="serv-conf">
-    <h5>Service-IN Configuration</h5>
     <table class="table table-hover">
+      <caption>Service-IN Configuration</caption>
       <thead>
         <tr>
           <th>Service IN</th>

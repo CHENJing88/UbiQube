@@ -11,9 +11,7 @@
   padding: 10px 5px;
   border-style: solid;
   border-color: #eaeaea;
-  h5{
-    display: inline;
-  }
+
 }
 .btn-new-vm{
   display: inline;
@@ -22,9 +20,9 @@
   padding: 3px 6px;
   i{display: inline;}
 }
-h5 {
-  display: inline;
-  padding-left: 10px;
+caption { 
+    display: table-caption;
+    text-align: center;
 }
 i{
   font-size: 1.3rem;

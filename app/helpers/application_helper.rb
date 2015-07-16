@@ -8,6 +8,7 @@ module ApplicationHelper
       :success => "alert alert-success",
       :error => "alert alert-error",
       :alert => "alert alert-block",
+      :warning=>"alert alert-warning"
      }[flash_type.to_sym] || flash_type.to_s
 
   end
