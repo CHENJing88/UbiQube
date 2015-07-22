@@ -24,13 +24,13 @@ class ApplicationController < ActionController::Base
     def correct_user?
       @user = User.find(params[:id])
       unless current_user == @user
-        redirect_to root_url, :error => "Access denied."
+        redirect_to root_url, :error => "Accès refussè."
       end
     end
 
     def authenticate_user!
       if !current_user
-        redirect_to root_url, :alert => 'You need to sign in for access to this page.'
+        redirect_to root_url, :notice => 'Vous avez besoin de se connecter pour accèder à cette page.'
       end
     end
 
@@ -42,14 +42,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def required_role(need_role)
-    role = current_user.role
-    role_name = [role.name]
 
-    unless (need_role & role_name) == role_name
-
-      redirect_to root_path,:error=>"Non Permission"
-    end
   end
 
 end
