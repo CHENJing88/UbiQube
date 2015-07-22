@@ -34,9 +34,9 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @user_app_role=@app.user_app_roles.build
+    2.times { @app.user_app_roles.build }
     @service_in_app = @app.service_in_apps.build
-    @all_users=User.all
+
     respond_to do |format|
       format.html
       format.json {render json: @app}
@@ -89,16 +89,12 @@ class AppsController < ApplicationController
       end
     end
 
-
-
   end
-
 
   private
 
     def app_params
       params.require(:app).permit(:nom,:description,:etape_app_id,:etat_app_id,user_app_roles_attributes:[:user_id,:role_id])
     end
-
 
 end

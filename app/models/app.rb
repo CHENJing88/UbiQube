@@ -21,4 +21,13 @@ class App < ActiveRecord::Base
 
   #default_scope order: 'apps.created_at DESC'
   accepts_nested_attributes_for :user_app_roles,:service_in_apps
+
+  scope :is_envoye, -> { where(is_envoye: true) }
+
+  def user_app_role_attributes=(user_app_role_attributes)
+    user_app_role_attributes.each do |attributes|
+      user_app_roles.build(attributes)
+    end
+  end
+
 end
