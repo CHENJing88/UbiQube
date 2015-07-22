@@ -72,9 +72,9 @@ class AppsController < ApplicationController
       if @app.update_attributes(app_params)
         format.html { redirect_to app_path(@app), :notice => 'App was successfully updated.' }
         format.json { render :action => "show", :status => :updated, :location => @app }
-      else
-        format.html { redirect_to edit_app_path(@app) }
-        format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
+      #else
+      #  format.html { redirect_to edit_app_path(@app) }
+      #  format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
       end
 
   end
