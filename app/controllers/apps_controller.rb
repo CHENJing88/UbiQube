@@ -68,13 +68,16 @@ class AppsController < ApplicationController
   # PUT /apps/1.xml
   def update
     @app = App.find(params[:id])
+    @app.merge(app_params)
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-      if @app.update_attributes(app_params)
+    #@app.update_attributes(app_params)
+      if @app.valid?
+        @app.update_attributes(app_params)
         format.html { redirect_to app_path(@app), :notice => 'App was successfully updated.' }
         format.json { render :action => "show", :status => :updated, :location => @app }
-      #else
-      #  format.html { redirect_to edit_app_path(@app) }
-      #  format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
+      else
+        format.html { redirect_to edit_app_path(@app) }
+        format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
       end
 
   end
