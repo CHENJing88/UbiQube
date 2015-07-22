@@ -22,7 +22,8 @@
       <%#= f.fields_for 'uar[2]',uar do |uar_rt_f|%>
       <div class="field">
         <%= uar_rt_f.hidden_field :role_id, :value => 3 %>
-        <%= uar_rt_f.label "Responsable Technique" %><%= uar_rt_f.select :user_id, User.all.map { |user| [user.uid, user.id] }, {:prompt => false},
+        <%= uar_rt_f.label "Responsable Technique" %><%= uar_rt_f.select :user_id, User.all.map { |user| [user.uid, user.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
+        <%#= uar_rt_f.select :user_id, User.all.map { |user| [user.uid, user.id] }, {:prompt => false},
         {:class=>'multiselect form-control input-sm', multiple:'multiple', id:"rt-multiselect"}%>
       </div>
       <% end %>
