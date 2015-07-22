@@ -16,6 +16,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'ipaddress','~> 0.8.0' #for ip addresse
+
+#CanCan is an authorization library for Ruby on Rails. Read more: https://github.com/CanCanCommunity/cancancan
+gem 'cancancan', '~> 1.10'
+
 # Use in the folder assets
 # Use plugin bootstrap-multiselect-rails for multiselect
 gem 'bootstrap-multiselect-rails'
@@ -52,4 +56,7 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
+end
+group :test do
+  gem 'test-unit', '~> 3.1.2'
 end
