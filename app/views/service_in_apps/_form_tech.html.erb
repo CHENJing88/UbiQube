@@ -1,6 +1,7 @@
 <div class="field">
+  <%= fields_for @service_in_app, :url=> {controller=>'service_in_apps', :action=> 'update'} do |siv_fields| %>
   <div id="vm-conf">
-    <table class="table table-hover">
+    <table class="table table-hover" id="vm-table">
       <caption>VM Configuration</caption>
       <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
         <i class="fi-plus"> New VM</i>
@@ -17,72 +18,76 @@
 
       <tbody>
         <% if @vm_installs.present? %>
-            <% @vm_installs.each do |vis| %>
+            <% @vm_installs.each do |vi| %>
               <tr>
-                <td><%= vis.vm.nom%></td><td><%=vis.vm.template %></td><td><%= vis.vm.etat_app.nom %></td><td><%= vis.ip_defaut %></td>
-                <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+                <td><%= vi.vm.nom%></td><td><%=vi.vm.template %></td><td><%= vi.vm.etat_app.nom %></td><td><%= vi.ip_defaut %></td>
+                <td><%= link_to 'Destroy', vi, :confirm => 'Are you sure?', :method => :delete %>
+                <%= link_to_function "remove", "$(this).up('.tr').remove()" %></td>
               </tr>
             <% end %>
         <% end %>
       </tbody>
     </table>
-    <%= form_for @vm_installs, :url=> {controller=>'service_in_apps', :action=> 'vm_add'} do |f| %>
-      <div class="field">
-        <%= vs.label "Selection VMs : " %><%= vs.select :id,Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
-        {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
-        <%#= vs.hidden_field :user_id, :value => current_user.id %>
-        <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-      </div>
-    <% end %>
+
+      <%=fields_for @vm_installs do |vi|%>
+        <div class="field">
+          <%= vi.label "Selection VMs : " %><%= vi.select :ids, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
+          {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
+          <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, class: 'btn btn-default' %>
+          <%#= link_to_add_vms "Add Question", , :questions, :answers %>
+          <%#= vs.hidden_field :user_id, :value => current_user.id %>
+          <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+        </div>
+      <% end %>
+
 
 
   </div>
 
-  <div id="serv-conf">
-    <table class="table table-hover">
-      <caption>Service-IN Configuration</caption>
-      <thead>
-        <tr>
-          <th>Service IN</th>
-          <th>Port</th>
-          <th>Protocole</th>
-          <th>VM</th>
-          <th>Install par defaut</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
+    <div id="serv-conf">
+      <table class="table table-hover">
+        <caption>Service-IN Configuration</caption>
+        <thead>
+          <tr>
+            <th>Service IN</th>
+            <th>Port</th>
+            <th>Protocole</th>
+            <th>VM</th>
+            <th>Install par defaut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <% if @service_ins.present? %>
-          <% @service_ins.each do |s| %>
-            <tr>
-              <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
-              <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, {:class=>'multiselect', multiple:'multiple'}%></td>
-              <td><%#= check_box_tag , s.is_defaut %></td>
-              <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
-            </tr>
+        <tbody>
+          <% if @service_ins.present? %>
+            <% @service_ins.each do |s| %>
+              <tr>
+                <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
+                <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, {:class=>'multiselect', multiple:'multiple'}%></td>
+                <td><%#= check_box_tag , s.is_defaut %></td>
+                <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+              </tr>
+            <% end %>
           <% end %>
-        <% end %>
-      </tbody>
-    </table>
-    <%= fields_for :servics do |s|%>
-      <div class="field">
-        <%= s.label "Selection Services : " %><%= s.select :id,Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
-        {:class=>'multiselect', multiple:'multiple',id:"serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
-        <%#= vs.hidden_field :user_id, :value => current_user.id %>
-        <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+        </tbody>
+      </table>
+      <%= fields_for :servics do |s|%>
+        <div class="field">
+          <%= s.label "Selection Services : " %><%= s.select :id,Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
+          {:class=>'multiselect', multiple:'multiple',id:"serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
+          <%#= vs.hidden_field :user_id, :value => current_user.id %>
+          <%#= relation_fields.hidden_field :role_id, :value => 1 %>
 
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="modal-footer">
+      <div class = "actions">
+        <%= siv.submit "Save", class: 'btn btn-large btn-primary'%>
+        <%=link_to "Annuler",edit_app_path(@app), data:{ toggle:"modal",traget:"#edit_app_modal"},remote:true, :class=>"btn btn-default"%>
       </div>
-    <% end %>
-
-  </div>
-
-
-
-
-  </div>
-
-
-
-
-</div>
+    </div><!-- /.modal-footer , {:controller=>'service_in_apps', :action=> 'edit_tech'}-->
+  <% end %><!--form_for service_in_app-->
+</div><!--field -->

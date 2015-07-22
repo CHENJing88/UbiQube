@@ -10,14 +10,9 @@
       <div id="edit-tech">
         <i class="fi-list"><h4 class="lead">Gestion Technique</h4></i>
 
-        <%= form_for @app,:url=> app_service_in_apps_path(@app) do |f| %>
+        <%= form_for @app, :url=> app_service_in_apps_path(@app) do |f| %>
           <%= render 'service_in_apps/form_tech', :f=>f %>
-          <div class="modal-footer">
-            <div class = "actions">
-              <%= f.submit "Save", class: 'btn btn-large btn-primary'%>
-              <%=link_to "Annuler",edit_app_path(@app), data:{ toggle:"modal",traget:"#edit_app_modal"},remote:true, :class=>"btn btn-default"%>
-            </div>
-          </div><!-- /.modal-footer , {:controller=>'service_in_apps', :action=> 'edit_tech'}-->
+
         <% end %>
       </div><!-- /.content -->
     </div><!-- /.modal-body -->
