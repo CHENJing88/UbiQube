@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   before_filter :correct_user?, :except => [:index]
 
-
-
   def index
     @users = User.all
   end
@@ -16,6 +14,12 @@ class UsersController < ApplicationController
   def mesapps
     @user = User.find(session[:user_id])
     @mesapps=@user.user_app_roles.includes(:apps,:roles)
+
+  end
+
+  def dsi
+    @user = User.find(session[:user_id])
+    @apps_envoye=App.is_envoye
 
   end
 
