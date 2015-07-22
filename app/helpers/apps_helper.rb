@@ -11,7 +11,7 @@ module AppsHelper
   end
 
   def find_role(nom)
-    Role.where(nom: nom).first
+    Role.where(nom: nom).first.id
   end
 
 end
