@@ -10,5 +10,8 @@ module AppsHelper
     end
   end
 
+  def find_role(nom)
+    Role.where(nom: nom).first
+  end
 
 end
