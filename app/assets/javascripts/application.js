@@ -24,7 +24,7 @@ $(document).ready(function() {
       $('#rt-multiselect').multiselect({
       //enableClickableOptGroups: true,
       //includeSelectAllOption: true,
-      enableFiltering: true,
+      //enableFiltering: true,
       maxHeight: 200
       });
 
