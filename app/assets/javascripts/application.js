@@ -41,32 +41,5 @@ $(document).ready(function() {
         maxHeight: 200
       });
 
-      $('#add_vm').on('click', function() {
-
-        var selected_vms = [];
-        $('#serv-multiselect option:selected').each(function() {
-            selected_vms.push($(this).val());
-        });
-
-        selected_vms.sort(function(a,b)){
-          return a[0]-b[0];
-        });
-
-        $.ajax({
-          url: '/posts/',
-          type: 'POST',
-          dataType: 'JSON',
-          data:{
-                title:$('#title_d').val(),
-                body:$('#body_d').val(),
-                author:$('#author_d').val()
-                }
-          success:function(data){
-            alert("dfdf");
-            $("#vm-table").append('<tr><td>data.title</td>
-                                    <td>data.body</td>
-                                    <td>data.author</td></tr>');
-          }
-        });
-
+    
     });
