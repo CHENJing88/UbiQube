@@ -73,7 +73,7 @@ class AppsController < ApplicationController
         format.html { redirect_to app_path(@app), :notice => 'App was successfully updated.' }
         format.json { render :action => "show", :status => :updated, :location => @app }
       else
-        format.html { render :action => "edit", :location => @app }
+        format.html { render :action => "edit", , :status => :edited, :location => @app }
         format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
       end
 
