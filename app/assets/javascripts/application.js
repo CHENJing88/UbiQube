@@ -22,7 +22,7 @@
 
 $(document).ready(function() {
       $('#rt-multiselect').multiselect({
-      enableClickableOptGroups: true,
+      //enableClickableOptGroups: true,
       includeSelectAllOption: true,
       enableFiltering: true,
       maxHeight: 200
@@ -41,5 +41,5 @@ $(document).ready(function() {
         maxHeight: 200
       });
 
-    
+
     });
