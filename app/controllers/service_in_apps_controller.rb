@@ -1,9 +1,11 @@
 class ServiceInAppsController < ApplicationController
 before_action :set_app
+
   def index
-    @app=App.find(params[:app_id])
+    #@app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    @vm_installs = @service_in_apps.vms.build
   end
 
   def show
@@ -25,7 +27,7 @@ before_action :set_app
   # GET /ServiceInApps/new
   # GET /ServiceInApps/new.xml
   def new
-    @app=App.find(params[:app_id])
+    #@app=App.find(params[:app_id])
     @service_in_app= ServiceInApp.new
     respond_with(@app,@service_in_app)
   end
@@ -34,7 +36,7 @@ before_action :set_app
   # POST /ServiceInApps.xml
   def create
     #app_params.permit!
-    @app=App.find(params[:app_id])
+    #@app=App.find(params[:app_id])
     @service_in_app = @app.service_in_apps.build(serIN_params)
 
     respond_to do |format|
@@ -55,7 +57,7 @@ before_action :set_app
     @service_in_app = ServiceInApp.find(params[:id])
 
       if @service_in_app.update_attributes(params[:app])
-        format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully updated.' }
+        format.html {redirect_to mesapps_url(current_user), :notice => 'Data of App Technique was successfully updated.' }
 
       else
         render :action => "edit"
@@ -69,7 +71,7 @@ before_action :set_app
     @service_in_app = ServiceInApp.find(params[:id])
     if @service_in_app.destroy then
       respond_to do |format|
-        format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
+        format.html {redirect_to mesapps_url(current_user), :notice => 'App Technique was successfully deleted'}
         format.js { render :layout=>false,template:'service_in_apps/destroy.js.erb'}
       end
     end
@@ -78,13 +80,13 @@ before_action :set_app
 
   end
 
-  def edit_tech
-    @app=App.find(params[:app_id])
+  def add_vm
+    #@app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
     #@service_in_app= ServiceInApp.find(params[:id])
     #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
     @service_ins=@service_in_apps.services.build
-    @vms=@service_in_apps.vms.build
+    @vm_installs=@service_in_apps.vms.build
     @vms.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
 
     respond_to do |format|
@@ -92,6 +94,8 @@ before_action :set_app
       format.js{ render :layout => false }
     end
   end
+
+
  def <=>(other)
    to_array<=>other.to_array
  end
