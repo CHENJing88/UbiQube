@@ -10,12 +10,13 @@
       <div class="modal-body">
         <div id="fonctionnel">
           <i class="fi-list"><h5>Gestion Fonctionnel</h5></i>
+
           <%= form_for @app, :url=> {controller=>'apps', :action=> 'update'} do |f| %>
           <%= render 'layouts/error_message', object: @app %>
             <%= render 'apps/form_fonc', :f=>f %>
 
             <div class = "actions">
-              <%= f.submit "Update", class: 'btn btn-large btn-primary'%>
+              <%= f.submit "Update", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary'%>
             </div>
 
           <% end %>
@@ -26,12 +27,13 @@
           <i class="fi-results"><h5 >Architecture</h5></i>
         </div>
 
+        <div class="modal-footer">
+          <%=link_to "Annuler",app_path(@app), data:{ toggle:"modal",traget:"#show_app_modal"},remote:true, :class=>"btn btn-default"%>
+          <%=link_to "Gestion Technique",app_service_in_apps_path(@app), data:{ toggle:"modal",traget:"#edit_tech_app_modal"}, remote:true, :class=>"btn btn-primary"%>
+          <!--a href="#", data-traget="#show_app_modal", aria-hidden="true", class="secondary button"> Annuler</a-->
+        </div><!-- /.modal-footer -->
       </div><!-- /.modal-body -->
     </div><!-- /.modal-content -->
-    <div class="modal-footer">
-      <%=link_to "Annuler",app_path(@app), data:{ toggle:"modal",traget:"#show_app_modal"},remote:true, :class=>"btn btn-default"%>
-      <%=link_to "Gestion Technique",app_service_in_apps_path(@app), data:{ toggle:"modal",traget:"#edit_tech_app_modal"}, remote:true, :class=>"btn btn-primary"%>
-      <!--a href="#", data-traget="#show_app_modal", aria-hidden="true", class="secondary button"> Annuler</a-->
-    </div><!-- /.modal-footer -->
+
   </div><!-- /.modal-dialog -->
 <!--/div>< /.modal -->
