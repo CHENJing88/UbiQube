@@ -1304,3 +1304,24 @@ I, [2015-07-08T16:05:58.751932 #1103]  INFO -- omniauth: (cas) Request phase ini
 I, [2015-07-08T16:06:13.509042 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
 I, [2015-07-09T10:01:53.623441 #1112]  INFO -- omniauth: (cas) Request phase initiated.
 I, [2015-07-09T10:01:59.851717 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
+I, [2015-07-10T07:11:25.271886 #1108]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-10T07:11:34.995011 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-10T09:15:34.839087 #1106]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-10T09:15:51.607343 #1106]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-10T10:22:18.213547 #1103]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-10T10:22:43.093642 #1103]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-10T10:25:09.433015 #1103]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-10T10:25:21.502228 #1106]  INFO -- omniauth: (cas) Callback phase initiated.
+Exiting
+I, [2015-07-13T15:00:45.390043 #1112]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-13T15:16:20.834250 #1103]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-13T15:16:36.563845 #1103]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-13T17:37:23.652856 #1103]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-13T17:37:39.868271 #1103]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-15T14:22:26.438361 #1106]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-15T14:22:42.657194 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-22T15:24:19.400235 #1112]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-22T15:24:36.232678 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-07-22T16:21:40.918117 #1108]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-07-22T16:21:41.034562 #1108]  INFO -- omniauth: (cas) Callback phase initiated.
