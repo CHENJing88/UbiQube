@@ -1,11 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  provider: MyString
-  uid: MyString
+jing:
+  name: Jing CHEN
+  provider: CAS
+  uid: jchen
 
-two:
-  name: MyString
-  provider: MyString
-  uid: MyString
+laurent:
+  name: Laurent BENECHE
+  provider: CAS
+  uid: beneche
+
+jame:
+  name: Jame Green
+  provider: CAS
+  uid: jgreen
+
+katy:
+  name: Katy Coco
+  provider: CAS
+  uid: kcoco

@@ -4,8 +4,15 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
+  service_in_app: ssh
+  vm: vm_dtic
 # column: value
 #
-two: {}
-#  column: value
+two:
+  service_in_app: ssh
+  vm: vm_prod
+
+two:
+  service_in_app: http
+  vm: vm_prod

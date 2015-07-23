@@ -4,8 +4,34 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+http:
+    nom: HTTP
+    niveau: Font
+    description: Web HTTP request
+    etat_app: normal # key etrangere defini dans fichier etat_app.yml
+    etape_app: brouillion # key etrangere
+    groupe_app: dtic # key etrangere
+
+ssh:
+  nom: SSH
+  niveau: Mid
+  description: SSH request
+  etat_app: normal
+  etape_app: valide
+  groupe_app: dtic
+
+tomcat:
+  nom: Tomcat
+  niveau: Mid
+  description: Tomcat server
+  etat_app: normal
+  etape_app: validation
+  groupe_app: prod
+
+mysql:
+  nom: Mysql
+  niveau: BD
+  description: base de donnee
+  etat_app: maintenance
+  etape_app: valide
+  groupe_app: prod

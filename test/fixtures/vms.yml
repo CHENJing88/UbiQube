@@ -4,8 +4,16 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+vm_dtic:
+ nom: dtic
+ ip_defaut: 0
+ template: ubantu 10
+ etat_app: normal
 # column: value
 #
-two: {}
+vm_prod:
+   nom: prod
+   ip_defaut: 127000
+   template: windows2010
+   etat_app: panne
 #  column: value
