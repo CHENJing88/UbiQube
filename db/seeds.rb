@@ -9,7 +9,7 @@ e1=EtatApp.create(nom:"Normal")
 e2=EtatApp.create(nom:"En panne")
 e3=EtatApp.create(nom:"Maintenance")
 
-Application.create(nom:"Ubiqube",version:"1.0",uid_admin:"jchen",uid_dsi:"jchen"etat_id:e1.id)
+Application.create(nom:"Ubiqube",version:"1.0",uid_admin:"jchen",uid_dsi:"jchen",etat_id:e1.id)
 
 ep1=EtapeApp.create(nom:"Brouillion")
 ep2=EtapeApp.create(nom:"cours de validation")
