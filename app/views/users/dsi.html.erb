@@ -1,0 +1,30 @@
+<div class="row">
+  <!--Apps envoies list-->
+  <div class="container">
+    <i class="fi-torso size-72"><h3>APPs</h3></i>
+      <div class="col-md-8">
+        <ol>
+          <!-- ====== c'est des cartes de 'Mes App' ===== -->
+          <% if @apps_envoye.empty? %>
+           <p> Non App envoyé. </p>
+          <% else %>
+            <% @apps_envoye.each do |app|%>
+              <%= link_to edit_app_path(app), data:{ remote:true, toggle:"modal",traget:"#dsi_app_modal" } do%>
+                <li class="custom-card" id="app-<%=app.id%>">
+                  <p><%= app.nom %><%= app.etape.nom %></p>
+                  <p><%= app.create_at %></p>
+                </li>
+              <% end %>
+            <% end %>
+          <% end %>
+        </ol>
+      </div><!-- /.col -->
+  </div><!-- /.container -->
+</div><!-- /.row -->
+
+<!-- c'est le modal dialog d'afficher information d'App -->
+<div class="modal" id="dsi_app_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

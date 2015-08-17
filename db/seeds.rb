@@ -5,11 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-e1=EtatApp.create(nom:"Bon")
+e1=EtatApp.create(nom:"Normal")
 e2=EtatApp.create(nom:"En panne")
 e3=EtatApp.create(nom:"Maintenance")
 
-Application.create(nom:"Ubiqube",version:"1.0",uid_admin:"jchen",etat_id:e1.id)
+Application.create(nom:"Ubiqube",version:"1.0",uid_admin:"jchen",uid_dsi:"jchen"etat_id:e1.id)
 
 ep1=EtapeApp.create(nom:"Brouillion")
 ep2=EtapeApp.create(nom:"cours de validation")
@@ -30,8 +30,8 @@ r4=Role.create(nom: "RT")
 
 UserAppRole.create(user_id:2, app_id:1, role_id:1)
 UserAppRole.create(user_id:2, app_id:2, role_id:3)
-UserAppRole.create(user_id:1, app_id:2, role_id:4)
-UserAppRole.create(user_id:1, app_id:1, role_id:4)
+UserAppRole.create(user_id:1, app_id:2, role_id:1)
+UserAppRole.create(user_id:1, app_id:1, role_id:1)
 
 ip1=Ip.create(ip_addr:167969652)#ip:10.3.3.116
 ip2=Ip.create(ip_addr:180552305)#ip:10.195.2.113
