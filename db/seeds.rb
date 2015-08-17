@@ -21,8 +21,8 @@ g1=GroupeUser.create(nom:"DTIC")
 gp1=GroupeApp.create(nom:"EDTIC")
 
 App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_app_id:ep1.id, groupe_app_id: gp1.id,description:"description de lifray")
-App.create(nom:"SSH", niveau:"mid", etat_app_id:e3.id, etape_app_id:ep2.id, groupe_app_id: gp1.id,description:"description de ssh")
-
+App.create(nom:"SSH", niveau:"mid", etat_app_id:e2.id, etape_app_id:ep2.id, groupe_app_id: gp1.id,description:"description de ssh")
+App.create(nom:"HTTP", niveau:"mid", etat_app_id:e1.id, etape_app_id:ep3.id, groupe_app_id: gp1.id,description:"description de HTTP")
 r1=Role.create(nom: "User")
 r2=Role.create(nom: "Admin")
 r3=Role.create(nom: "RF")
@@ -30,9 +30,9 @@ r4=Role.create(nom: "RT")
 
 UserAppRole.create(user_id:2, app_id:1, role_id:1)
 UserAppRole.create(user_id:2, app_id:2, role_id:3)
-UserAppRole.create(user_id:1, app_id:2, role_id:1)
+UserAppRole.create(user_id:1, app_id:2, role_id:3)
+UserAppRole.create(user_id:1, app_id:3, role_id:4)
 UserAppRole.create(user_id:1, app_id:1, role_id:1)
-
 ip1=Ip.create(ip_addr:167969652)#ip:10.3.3.116
 ip2=Ip.create(ip_addr:180552305)#ip:10.195.2.113
 
