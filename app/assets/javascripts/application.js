@@ -33,12 +33,36 @@ $(document).ready(function() {
       includeSelectAllOption: true,
       enableFiltering: true,
       maxHeight: 200
+      onChange: function(element, checked) {
+        var brands = $('#VM-multiselect option:selected');
+        var selected = [];
+        $(brands).each(function(index, brand){
+            selected.push([$(this).val()]);
+        });
+
+        console.log(selected);
+      }
+
       });
 
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
         enableFiltering: true,
         maxHeight: 200
+      });
+
+      $('#add_vm').click({
+        var brands = $('#VM-multiselect option:selected');
+        var selected = [];
+        $(brands).each(function(index, brand){
+            selected.push([$(this).val()]);
+            //$('#vm-table tr:last').after().html("<%= escape_javascript(render(:partial => 'vms/vm')) %>");
+            //('<tr></tr><tr></tr>');
+        });
+      $("#remCF").on('click',function(){
+		       $(this).parent().parent().remove();
+	    });
+      
       });
 
 
