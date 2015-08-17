@@ -4,7 +4,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :nom
       t.integer :port_defaut
       t.string :protocole
-      t.boolean :install_defaut, :defaut => true
+      t.boolean :install_default, :default => true
       t.timestamps
     end
   end
