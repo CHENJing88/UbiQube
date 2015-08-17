@@ -29,7 +29,7 @@
       </tbody>
     </table>
 
-      <%#=fields_for @vm_installs do |vi|%>
+      <%=fields_for :vm_install do |vi|%>
         <div class="field">
           <%= vi.label "Selection VMs : " %><%= vi.select :ids, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
           {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
@@ -38,7 +38,7 @@
           <%#= vs.hidden_field :user_id, :value => current_user.id %>
           <%#= relation_fields.hidden_field :role_id, :value => 1 %>
         </div>
-      <%# end %>
+      <% end %>
 
 
 
