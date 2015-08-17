@@ -1,14 +1,17 @@
 class Ability
   include CanCan::Ability
-  can :valider_app, User if params[:application][:uid_dsi]
+  can :valider_app, @user if params[:application][:uid_dsi]
   def initialize(user)
-    can :manage, App
+    user ||= User.new
+    can :read, :create, :destroy, App
     # assign super user: admin
     if user.uid == Appliaction.uid_admin
       can :manage, :all
+    elsif user.id == UserAppRole.user_id & UserAppRole.role_id == 3
+      can :edit, :update, App, etape_app_id: 3
     end
 
-    
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

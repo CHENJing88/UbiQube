@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :apps do
     resources :service_in_apps
   end
+  
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
 
+  get '/users/:id/dsi' =>'users#dsi', :as=>:dsi
   #get '/apps/new' => "apps#new", :as=> :create_app
   #get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
   #patch '/apps/:id' => "apps#update"
