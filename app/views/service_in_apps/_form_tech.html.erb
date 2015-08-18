@@ -17,28 +17,29 @@
       </thead>
 
       <tbody>
-        <% if @vm_installs.present? %>
-            <% @vm_installs.each do |vi| %>
-              <tr>
-                <td><%= vi.vm.nom%></td><td><%=vi.vm.template %></td><td><%= vi.vm.etat_app.nom %></td><td><%= vi.ip_defaut %></td>
-                <td><%= link_to 'Destroy', vi, :confirm => 'Are you sure?', :method => :delete %>
-                <%= link_to_function "remove", "$(this).up('.tr').remove()" %></td>
+        <% f.fields_for :vms, :wrapper => false do |vms_form|  %>
+
+              <tr class="fields">
+                <td><%= vms_form.nom%></td><td><%=vms_form.template %></td><td><%= vms_form.etat_app.nom %></td><td><%= vms_form.ip_default %></td>
+                <td><%= link_to_remove_fields "Remove", vi %></td>
               </tr>
-            <% end %>
+
         <% end %>
+
+        <p><%= link_to_add_fields "Add VM", f, :vms %></p>
+          <%=fields_for :vm_install do |vi|%>
+            <div class="field">
+              <%= vi.label "Selection VMs : " %><%= vi.select :ids, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
+              {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
+              <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"btn btn-default" %>
+              <%#= link_to_add_vms "Add Question", , :questions, :answers %>
+              <%#= vs.hidden_field :user_id, :value => current_user.id %>
+              <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+            </div>
+          <% end %>
       </tbody>
     </table>
 
-      <%=fields_for :vm_install do |vi|%>
-        <div class="field">
-          <%= vi.label "Selection VMs : " %><%= vi.select :ids, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
-          {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
-          <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, class: 'btn btn-default' %>
-          <%#= link_to_add_vms "Add Question", , :questions, :answers %>
-          <%#= vs.hidden_field :user_id, :value => current_user.id %>
-          <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-        </div>
-      <% end %>
 
 
 
@@ -53,7 +54,7 @@
             <th>Port</th>
             <th>Protocole</th>
             <th>VM</th>
-            <th>Install par defaut</th>
+            <th>Install par default</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -64,7 +65,7 @@
               <tr>
                 <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
                 <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, {:class=>'multiselect', multiple:'multiple'}%></td>
-                <td><%#= check_box_tag , s.is_defaut %></td>
+                <td><%#= check_box_tag , s.is_default %></td>
                 <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
               </tr>
             <% end %>

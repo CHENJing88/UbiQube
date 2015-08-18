@@ -5,10 +5,10 @@
       <div class="col-md-8">
         <ol>
           <!-- ====== c'est des cartes de 'Mes App' ===== -->
-          <% if @apps_envoye.empty? %>
+          <% if @apps_envois.empty? %>
            <p> Non App envoyé. </p>
           <% else %>
-            <% @apps_envoye.each do |app|%>
+            <% @apps_envois.each do |app|%>
               <%= link_to edit_app_path(app), data:{ remote:true, toggle:"modal",traget:"#dsi_app_modal" } do%>
                 <li class="custom-card" id="app-<%=app.id%>">
                   <p><%= app.nom %><%= app.etape.nom %></p>
