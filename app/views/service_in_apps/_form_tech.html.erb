@@ -20,7 +20,7 @@
         <% f.fields_for :vms, :wrapper => false do |vms_form|  %>
 
               <tr class="fields">
-                <td><%= vms_form.nom%></td><td><%=vms_form.template %></td><td><%= vms_form.etat_app.nom %></td><td><%= vms_form.ip_default %></td>
+                <td><%= vms_form.nom%></td><td><%=vms_form.template %></td><td><%= vms_form.ip_default %></td>
                 <td><%= link_to_remove_fields "Remove", vi %></td>
               </tr>
 
