@@ -1,4 +1,4 @@
 <p id="notice"><%= notice %></p>
-<td><%=h @vm.name %></td><td><%=h @vm.template %></td><td><%=h @vm.etat_app.nom %></td><td><%=h @vm.ip.ip_addr %></td>
+<td><%=h @vm.nom %></td><td><%=h @vm.template %></td><td><%=h @vm.etat_app.nom %></td><td><%=h @vm.ip.ip_addr %></td>
 <%= link_to 'Edit', edit_vm_path(@vm) %> |
 <%= link_to 'Back', vms_path %>
