@@ -16,7 +16,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 gem 'ipaddress','~> 0.8.0' #for ip addresse
-
 #CanCan is an authorization library for Ruby on Rails. Read more: https://github.com/CanCanCommunity/cancancan
 gem 'cancancan', '~> 1.10'
 

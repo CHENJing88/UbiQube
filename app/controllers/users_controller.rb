@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def dsi
     @user = User.find(session[:user_id])
-    @apps_envoye=App.is_envoye
+    @apps_envois=App.where(:envoie=>true)
 
   end
 
