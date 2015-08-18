@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :vms
+
   resources :users
   resources :apps do
     resources :service_in_apps
