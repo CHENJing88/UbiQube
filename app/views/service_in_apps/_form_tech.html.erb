@@ -23,21 +23,21 @@
                 <td><%= link_to_remove_fields "Remove", vms_form %></td>
               </tr>
         <% end %>
-
-        <p><%#= link_to_add_fields "Add VM", f, :vms %></p>
-          <%#=fields_for :vm_install do |vi|%>
-            <div class="field">
-              <%= f.label "Selection VMs : " %><%= f.select :id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
-              {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
-              <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"btn btn-default" %>
-              <%#= link_to_add_vms "Add Question", , :questions, :answers %>
-              <%#= vs.hidden_field :user_id, :value => current_user.id %>
-              <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-            </div>
-          <%# end %>
       </tbody>
     </table>
+    <p><%#= link_to_add_fields "Add VM", f, :vms %></p>
+      <%#=fields_for :vm_install do |vi|%>
 
+      <%# end %>
+    <div class="field">
+      <%= f.label "Selection VMs : " %><%= f.select :id,
+      options_from_collection_for_select(Vm.all, :id, :nom, @miniset.scales.map(&:id))
+      , {:prompt => false},{:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
+      <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"btn btn-default" %>
+      <%#Vm.all.map { |vm| [vm.nom, vm.id] }= link_to_add_vms "Add Question", , :questions, :answers %>
+      <%#= vs.hidden_field :user_id, :value => current_user.id %>
+      <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+    </div>
 
 
 
