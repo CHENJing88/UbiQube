@@ -24,7 +24,7 @@
               </tr>
         <% end %>
 
-        <p><%= link_to_add_fields "Add VM", f, :vms %></p>
+        <p><%#= link_to_add_fields "Add VM", f, :vms %></p>
           <%=fields_for :vm_install do |vi|%>
             <div class="field">
               <%= vi.label "Selection VMs : " %><%= vi.select :ids, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false},
