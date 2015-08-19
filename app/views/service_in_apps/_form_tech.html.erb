@@ -30,10 +30,8 @@
 
       <%# end %>
     <div class="field">
-      <%= f.label "Selection VMs : " %><%= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
-      <%#= f.select :id,
-      options_from_collection_for_select(Vm.all, :id, :nom, @miniset.vms.map(&:id)),
-      {:prompt => false}, {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
+      <%= f.label "Selection VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
+      <%= f.select :id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, {:class=>'multiselect multiselect-container', multiple:'multiple', id:"VM-multiselect"}%>
       <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"btn btn-default" %>
       <%#Vm.all.map { |vm| [vm.nom, vm.id] }= link_to_add_vms "Add Question", , :questions, :answers %>
       <%#= vs.hidden_field :user_id, :value => current_user.id %>
