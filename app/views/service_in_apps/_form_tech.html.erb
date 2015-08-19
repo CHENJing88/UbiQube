@@ -31,7 +31,7 @@
       <%# end %>
     <div class="field">
       <%= f.label "Selection VMs : " %><%= f.select :id,
-      options_from_collection_for_select(Vm.all, :id, :nom, @miniset.scales.map(&:id)),
+      options_from_collection_for_select(Vm.all, :id, :nom, @miniset.vms.map(&:id)),
       {:prompt => false}, {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
       <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"btn btn-default" %>
       <%#Vm.all.map { |vm| [vm.nom, vm.id] }= link_to_add_vms "Add Question", , :questions, :answers %>
