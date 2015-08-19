@@ -1,3 +1,43 @@
+$(document).ready(function() {
+  //====== button =======
+      $('#add_vm').click({
+        var brands = $('#VM-multiselect option:selected');
+        var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
+        var selected = [];
+        $(brands).each(function(index, brand){
+            selected.push([$(this).val()]);
+            //$('#vm-table tr:last').after().html("<%= escape_javascript(render(:partial => 'vms/vm')) %>");
+            //('<tr></tr><tr></tr>');
+        });
+        onChange: function(element, checked) {
+          var brands = $('#VM-multiselect option:selected');
+          var selected = [];
+          $(brands).each(function(index, brand){
+              selected.push([$(this).val()]);
+          });
+
+          console.log(selected);
+        }
+
+        $("#remCF").on('click',function(){
+  		       $(this).parent().parent().remove();
+  	    });
+
+      });
+  });
+
+function remove_fields(link) {
+$(link).previous("input[type=hidden]").value = "1";
+$(link).up(".fields").hide();
+}
+
+function add_fields(link, association, content) {
+var new_id = new Date().getTime();
+var regexp = new RegExp("new_" + association, "g")
+$(link).up().insert({
+before: content.replace(regexp, new_id)
+});
+}
 
 var rowBuilder = function() {
     // Private property that define the default <TR> element text.
