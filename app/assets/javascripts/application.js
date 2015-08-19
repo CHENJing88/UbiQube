@@ -33,7 +33,7 @@ $(document).ready(function() {
       });
 
       $('#VM-multiselect').multiselect({
-        enableClickableOptGroups: true,
+        //enableClickableOptGroups: true,
         includeSelectAllOption: true,
         enableFiltering: true,
         selectedClass: 'multiselect-selected'
