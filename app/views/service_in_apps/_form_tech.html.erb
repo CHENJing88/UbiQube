@@ -17,7 +17,7 @@
       </thead>
 
       <tbody>
-        <% f.fields_for :vms do |vms_form|  %>
+        <%= f.fields_for :vms do |vms_form|  %>
               <tr class="fields">
                 <td><%= vms_form.text_field :nom%></td><td><%=vms_form.text_field :template %></td><td><%= vms_form.text_field :ip_default %></td>
                 <td><%= link_to_remove_fields "Remove", vms_form %></td>
