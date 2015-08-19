@@ -36,12 +36,14 @@ $(document).ready(function() {
         enableClickableOptGroups: true,
         includeSelectAllOption: true,
         enableFiltering: true,
+        selectedClass: 'multiselect-selected'
       });
 
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
         enableFiltering: true,
-        maxHeight: 200
+        maxHeight: 200,
+        selectedClass: 'multiselect-selected'
       });
 
     });
