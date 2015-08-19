@@ -42,7 +42,7 @@ $(document).ready(function() {
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
         enableFiltering: true,
-        maxHeight: 200,
+        //maxHeight: 200,
         selectedClass: 'multiselect-selected'
       });
 

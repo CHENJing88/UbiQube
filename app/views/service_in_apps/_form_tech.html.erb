@@ -19,25 +19,25 @@
       <tbody>
         <%= f.fields_for :vms do |vms_form|  %>
               <tr class="fields">
-                <td><%= vms_form.text_field :nom%></td><td><%=vms_form.text_field :template %></td><td><%= vms_form.text_field :ip_default %></td>
+                <td><%= vms_form.text_field :nom%></td><td><%=vms_form.text_field :template %></td><td><%= vms_form.text_field :etat_id %></td><td><%= vms_form.text_field :ip_default %></td>
                 <td><%= link_to_remove_fields "Remove", vms_form %></td>
               </tr>
 
-              <div class="field">
-                <%= vms_form.label "Selection VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
-                <%= vms_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:class=>'multiselect', multiple:'multiple',id:"VM-multiselect"},{:prompt => false}%>
-                <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"button btn-default" %>
-                <%#Vm.all.map { |vm| [vm.nom, vm.id] }= link_to_add_vms "Add Question", , :questions, :answers %>
-                <%#= vs.hidden_field :user_id, :value => current_user.id %>
-                <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-              </div>
+
         <% end %>
       </tbody>
     </table>
     <p><%#= link_to_add_fields "Add VM", f, :vms %></p>
-      <%#=fields_for :vm_install do |vi|%>
-
-      <%# end %>
+      <%=fields_for :vms do |vi_form|%>
+      <div class="field">
+        <%= vi_form.label "Selection VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
+        <%= vi_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:class=>'multiselect', multiple:'multiple',id:"VM-multiselect"},{:prompt => false}%>
+        <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"button btn-default" %>
+        <%#Vm.all.map { |vm| [vm.nom, vm.id] }= link_to_add_vms "Add Question", , :questions, :answers %>
+        <%#= vs.hidden_field :user_id, :value => current_user.id %>
+        <%#= relation_fields.hidden_field :role_id, :value => 1 %>
+      </div>
+      <% end %>
 
 
 
@@ -60,7 +60,7 @@
 
         <tbody>
           <% if @service_ins.present? %>
-            <% @service_ins.each do |s| %>
+            <%= @service_ins.each do |s| %>
               <tr>
                 <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
                 <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, {:class=>'multiselect', multiple:'multiple'}%></td>
@@ -73,7 +73,7 @@
       </table>
       <%= fields_for :servics do |s|%>
         <div class="field">
-          <%= s.label "Selection Services : " %><%= s.select :id,Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
+          <%= s.label "Selection Services : " %><%= s.select :id, Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
           {:class=>'multiselect', multiple:'multiple',id:"serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
           <%#= vs.hidden_field :user_id, :value => current_user.id %>
           <%#= relation_fields.hidden_field :role_id, :value => 1 %>
