@@ -7,7 +7,7 @@ var rowBuilder = function() {
     var link = $('<a>', {
         href: '#',
         onclick: 'remove_fields(this); return false;',
-        title: 'Delete this Pilot.'
+        title: 'Delete this VM.'
     }).append($('<i>', { class: 'icon-remove' }));
 
     // A private method for building a <TR> w/the required data.
@@ -34,3 +34,37 @@ var rowBuilder = function() {
         link: link
     }
 }();
+
+var addVMFieldsUI = {
+    init: function() {
+        $('#add_vm').on('click', function() {
+            vmFormHandler.appendFields();
+            vmFormHandler.hideForm();
+        });
+    }
+};
+
+var vmFormHandler = {
+    // Public method for adding a new row to the table.
+    appendFields: function() {
+        // Get a handle on all the input fields in the form and detach them from the DOM (we will attach them later).
+        var inputFields = $(cfg.formId + ' ' + cfg.inputFieldClassSelector);
+        inputFields.detach();
+
+        // Build the row and add it to the end of the table.
+        rowBuilder.addRow(cfg.getTBodySelector(), inputFields);
+
+        // Add the "Remove" link to the last cell.
+        rowBuilder.link.appendTo($('tr:last td:last'));
+    },
+
+};
+
+var cfg = {
+    formId: '#new-pilot-fields',
+    tableId: '#vm-table',
+    inputFieldClassSelector: '.field',
+    getTBodySelector: function() {
+        return this.tableId + ' tbody';
+    }
+};

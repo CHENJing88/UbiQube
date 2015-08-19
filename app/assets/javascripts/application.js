@@ -33,15 +33,7 @@ $(document).ready(function() {
       includeSelectAllOption: true,
       enableFiltering: true,
       maxHeight: 200
-      onChange: function(element, checked) {
-        var brands = $('#VM-multiselect option:selected');
-        var selected = [];
-        $(brands).each(function(index, brand){
-            selected.push([$(this).val()]);
-        });
 
-        console.log(selected);
-      }
 
       });
 
@@ -59,14 +51,21 @@ $(document).ready(function() {
             //$('#vm-table tr:last').after().html("<%= escape_javascript(render(:partial => 'vms/vm')) %>");
             //('<tr></tr><tr></tr>');
         });
+        onChange: function(element, checked) {
+          var brands = $('#VM-multiselect option:selected');
+          var selected = [];
+          $(brands).each(function(index, brand){
+              selected.push([$(this).val()]);
+          });
+
+          console.log(selected);
+        }
+
         $("#remCF").on('click',function(){
   		       $(this).parent().parent().remove();
   	    });
 
-      });
-
-
-
+      });    
     });
 
     function remove_fields(link) {
