@@ -30,7 +30,8 @@
 
       <%# end %>
     <div class="field">
-      <%= f.label "Selection VMs : " %><%= f.select :id,
+      <%= f.label "Selection VMs : " %><%= select_tag "vm_install[]", options_for_select(@vms.collect{|u| [u.nom,u.id]}),{:class=>'multiselect',:multiple=>'multiple'}%>
+      <%#= f.select :id,
       options_from_collection_for_select(Vm.all, :id, :nom, @miniset.vms.map(&:id)),
       {:prompt => false}, {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
       <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"btn btn-default" %>
