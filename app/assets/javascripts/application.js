@@ -33,10 +33,9 @@ $(document).ready(function() {
       });
 
       $('#VM-multiselect').multiselect({
-      enableClickableOptGroups: true,
-      includeSelectAllOption: true,
-      enableFiltering: true,
-      maxHeight: 200
+        enableClickableOptGroups: true,
+        includeSelectAllOption: true,
+        enableFiltering: true,
       });
 
       $('#serv-multiselect').multiselect({
@@ -44,31 +43,7 @@ $(document).ready(function() {
         enableFiltering: true,
         maxHeight: 200
       });
-//====== button =======
-      $('#add_vm').click({
-        var brands = $('#VM-multiselect option:selected');
-        var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
-        var selected = [];
-        $(brands).each(function(index, brand){
-            selected.push([$(this).val()]);
-            //$('#vm-table tr:last').after().html("<%= escape_javascript(render(:partial => 'vms/vm')) %>");
-            //('<tr></tr><tr></tr>');
-        });
-        onChange: function(element, checked) {
-          var brands = $('#VM-multiselect option:selected');
-          var selected = [];
-          $(brands).each(function(index, brand){
-              selected.push([$(this).val()]);
-          });
 
-          console.log(selected);
-        }
-
-        $("#remCF").on('click',function(){
-  		       $(this).parent().parent().remove();
-  	    });
-
-      });
     });
 
     function remove_fields(link) {
