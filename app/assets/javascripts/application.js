@@ -21,6 +21,8 @@
   // require foundation $(document).foundation();
 
 $(document).ready(function() {
+
+  // ======= multiselect =======
       $('#rt-multiselect').multiselect({
       //enableClickableOptGroups: true,
       //includeSelectAllOption: true,
@@ -33,8 +35,6 @@ $(document).ready(function() {
       includeSelectAllOption: true,
       enableFiltering: true,
       maxHeight: 200
-
-
       });
 
       $('#serv-multiselect').multiselect({
@@ -42,9 +42,10 @@ $(document).ready(function() {
         enableFiltering: true,
         maxHeight: 200
       });
-
+//====== button =======
       $('#add_vm').click({
         var brands = $('#VM-multiselect option:selected');
+        var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
         var selected = [];
         $(brands).each(function(index, brand){
             selected.push([$(this).val()]);
@@ -65,7 +66,7 @@ $(document).ready(function() {
   		       $(this).parent().parent().remove();
   	    });
 
-      });    
+      });
     });
 
     function remove_fields(link) {
