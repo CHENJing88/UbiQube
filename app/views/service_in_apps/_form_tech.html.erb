@@ -30,7 +30,7 @@
 
       <%# end %>
     <div class="field">
-      <%= f.label "Selection VMs : " %><%= select_tag "vm_install[]", options_for_select(@vms.collect{|u| [u.nom,u.id]}),{:class=>'multiselect',:multiple=>'multiple'}%>
+      <%= f.label "Selection VMs : " %><%= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
       <%#= f.select :id,
       options_from_collection_for_select(Vm.all, :id, :nom, @miniset.vms.map(&:id)),
       {:prompt => false}, {:class=>'multiselect', multiple:'multiple', id:"VM-multiselect"}%>
