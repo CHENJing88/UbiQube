@@ -20,7 +20,7 @@ module RailsOmniauth
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     # assets Pipleline for the sources
-    config.assets.enabled = true
+    #config.assets.enabled = true
     # For Foundation 5
     config.assets.precompile += %w( vendor/modernizr )
 
