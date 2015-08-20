@@ -34,7 +34,7 @@
         <%= vms_form.label "Selection VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
         <%= vms_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] },{:prompt => false},{:class=>'multiselect', :multiple=>'multiple', :id=>"VM-multiselect"}%>
         <%= link_to_add_fields "Add", f, :vms, :data => { :"disable-with"=> "Loading..."}, :id=>"add_vm",:class=>"button btn btn-default" %>
-        <%#= link_to_add_vms "Add Question", , :questions, :answers %>
+  
         <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
       </div>
