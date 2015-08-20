@@ -36,7 +36,7 @@ $(document).ready(function() {
         //enableClickableOptGroups: true,
         includeSelectAllOption: true,
         enableFiltering: true,
-        selectedClass: 'multiselect-selected'
+        //selectedClass: 'multiselect-selected'
       });
 
       $('#serv-multiselect').multiselect({

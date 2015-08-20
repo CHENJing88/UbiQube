@@ -1,6 +1,7 @@
 <div class="field">
   <%#= fields_for @service_in_app, :url=> {controller=>'service_in_apps', :action=> 'update'} do |siv_fields| %>
   <div id="vm-conf">
+    <%= f.fields_for :vms do |vms_form|  %>
     <table class="table table-hover" id="vm-table">
       <caption>VM Configuration</caption>
       <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
@@ -17,28 +18,29 @@
       </thead>
 
       <tbody>
-        <%= f.fields_for :vms do |vms_form|  %>
-              <tr class="fields">
-                <td><%= vms_form.text_field :nom%></td><td><%=vms_form.text_field :template %></td><td><%= vms_form.text_field :etat_id %></td><td><%= vms_form.text_field :ip_default %></td>
-                <td><%= link_to_remove_fields "remove", vms_form %></td>
-              </tr>
+
+        <tr class="fields">
+          <td><%= vms_form.text_field :nom%></td><td><%=vms_form.text_field :template %></td><td><%= vms_form.text_field :etat_id %></td><td><%= vms_form.text_field :ip_default %></td>
+          <td><%= link_to_remove_fields "remove", vms_form %></td>
+        </tr>
 
 
-        <% end %>
+
       </tbody>
     </table>
     <p><%#= link_to_add_fields "Add VM", f, :vms %></p>
-      <%=fields_for :vms do |vi_form|%>
+      <%#=fields_for :vms do |vi_form|%>
       <div class="field">
         <%= vi_form.label "Selection VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
-        <%= vi_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:class=>'multiselect', multiple:'multiple',id:"VM-multiselect"},{:prompt => false}%>
-        <%= link_to "Add", :data => { :"disable-with"=> "Loading..."}, id: "add_vm", :remote => true, :class=>"button btn-default" %>
+        <%= vi_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] },{:prompt => false}, 
+        {:class=>'multiselect', :multiple=>'multiple', :id=>"VM-multiselect"}%>
+        <%= link_to_add_fields "Add", f, :vms, :data => { :"disable-with"=> "Loading..."}, {:id=>"add_vm",:class=>"button btn btn-default"} %>
         <%#Vm.all.map { |vm| [vm.nom, vm.id] }= link_to_add_vms "Add Question", , :questions, :answers %>
         <%#= vs.hidden_field :user_id, :value => current_user.id %>
         <%#= relation_fields.hidden_field :role_id, :value => 1 %>
       </div>
+      <%# end %>
       <% end %>
-
 
 
 
