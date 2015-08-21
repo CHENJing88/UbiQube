@@ -32,12 +32,12 @@ $(document).ready(function() {
       maxHeight: 200
       });
 
-      $('#VM-multiselect').multiselect({
+      $('#VM-multiselect').multiselect();
         //enableClickableOptGroups: true,
-        includeSelectAllOption: true,
-        enableFiltering: true,
+        //includeSelectAllOption: true,
+        //enableFiltering: true,
         //selectedClass: 'multiselect-selected'
-      });
+    
 
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
