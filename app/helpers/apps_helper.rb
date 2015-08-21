@@ -15,6 +15,7 @@ module AppsHelper
   end
 
   def find_role_name_by_id(role_id)
-    Role.where(id: role_id).first.nom
+    role=Role.where(id: role_id)
+    role.new.nom
   end
 end
