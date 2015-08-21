@@ -1,4 +1,5 @@
 class Role < ActiveRecord::Base
+  validates_presence_of :nom
   #Role est dans la relation many to many (user-role-app).
   #Role peut appartenir aux plusieurs Apps et users.
   #si un role est supprimée, on va supprimer tous les records dans user_app_roles
