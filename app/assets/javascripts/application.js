@@ -12,11 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
-//= require jquery.min
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap-sprockets
 //= require bootstrap-multiselect
 
 //= require_tree .
@@ -37,7 +34,7 @@ $(document).ready(function() {
         //includeSelectAllOption: true,
         //enableFiltering: true,
         //selectedClass: 'multiselect-selected'
-    
+
 
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
