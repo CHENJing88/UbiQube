@@ -14,7 +14,7 @@
       <%= f.fields_for "uar[]",uar do |uar_rf_f|%>
       <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
       <div class="field">
-        <%= uar_rf_f.hidden_field :role_id, :value => find_role("RF") %><br/>
+        <%#= uar_rf_f.hidden_field :role_id, :value => find_role("RF") %>
         <%= uar_rf_f.label find_role_name_by_id(uar.role_id) %><%= uar_rf_f.select :user_id, User.all.map { |user| [user.uid, user.id] }, {:prompt => true}, {multiple:'multiple',:class=>'form-control input-sm'}%>
       </div>
       <% end %>
