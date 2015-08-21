@@ -17,9 +17,9 @@ class UserAppRolesController < ApplicationController
   # GET /apps/new.xml
   def new
     @user_app_role = UserAppRole.new
-    @user_app_role.apps.build
-    @user_app_role.users.build
-    @user_app_role.roles.build
+    @app=@user_app_role.apps.build
+    @user=@user_app_role.users.build
+    @role=@user_app_role.roles.build
   end
 
   def create
