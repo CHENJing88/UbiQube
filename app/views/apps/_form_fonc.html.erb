@@ -10,7 +10,7 @@
     <%= f.label :groupe %><%= f.select :groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
 
 
-    <%= @user_app_roles.each do |uar| %>
+    <%= @app.user_app_roles.each do |uar| %>
       <%= f.fields_for "uar[1]",uar do |uar_rf_f|%>
       <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
       <div class="field">
