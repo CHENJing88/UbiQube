@@ -4,9 +4,9 @@ class VmTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test "should not save vm without nom" do
-    vm = Vm.new
-    assert_not vm.save, "Saved the vm without a title"
+  test "should save vm with a nom" do
+    vm = Vm.new(nom: "example vm")
+    assert vm.save, "Saved the vm with a title"
   end
 
 end
