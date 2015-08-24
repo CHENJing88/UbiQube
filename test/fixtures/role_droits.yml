@@ -5,13 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  role: user
-  droit: read
+#  role: user
+#  droit: read
 
 two:
-  role: user
-  droit: delete
+#  role: user
+#  droit: delete
 
 three:
-  role: rt
-  droit: write
+#  role: rt
+#  droit: write
