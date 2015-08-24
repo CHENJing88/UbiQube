@@ -8,4 +8,5 @@ ubiqube:
   nom: Ubiqube
   version: 1.0
   uid_admin: jchen
+  uid_dsi: jchen
   etat_id: normal
