@@ -5,13 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 read:
-  nom: Read
+  nom: "Read"
 
 write:
-  nom: Write
+  nom: "Write"
 
 delete:
-  nom: Delete
+  nom: "Delete"
 
 create:
-  nom: Create
+  nom: "Create"

@@ -5,8 +5,8 @@
 # below each fixture, per the syntax in the comments below
 #
 app:
-  nom: Droits sur App
+  nom: "Droits sur App"
 
 
 user:
-  nom: Droits sur User
+  nom: "Droits sur User"
