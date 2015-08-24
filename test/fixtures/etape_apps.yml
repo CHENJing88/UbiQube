@@ -5,16 +5,16 @@
 # below each fixture, per the syntax in the comments below
 #
 brouillion:
-  nom: Brouillion
+  nom: "Brouillion"
 
 validation:
-  nom: cours de validation
+  nom: "cours de validation"
 
 valide:
-  nom: Validé
+  nom: "Validé"
 
 refuse:
-  nom: Refusé
+  nom: "Refusé"
 
 archive:
-  nom: Archivé
+  nom: "Archivé"

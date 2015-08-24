@@ -5,8 +5,8 @@
 # below each fixture, per the syntax in the comments below
 #
 reseau:
-  nom: reseau
+  nom: "reseau"
 
 
 outil:
-  nom: outils
+  nom: "outils"

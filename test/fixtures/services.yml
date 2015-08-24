@@ -7,5 +7,5 @@
 ssh:
   nom: ssh
   port_defaut: 22
-  protocole: TCP
+  protocole: "TCP"
   install_default: true
