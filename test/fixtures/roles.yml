@@ -5,10 +5,10 @@
 # below each fixture, per the syntax in the comments below
 #
 user:
-  nom: "User"
+  nom: User
 
 rt:
-  nom: "RT"
+  nom: RT
 
 rf:
-  nom: "RF"
+  nom: RF
