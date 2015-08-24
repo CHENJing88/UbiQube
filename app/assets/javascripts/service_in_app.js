@@ -1,7 +1,7 @@
 $(function() {
   //====== button =======
       $('#add_vm').click({
-        
+        var brands=$('#VM-multiselect option:selected')
         var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
         console.log(selected);
         var selected = [];
