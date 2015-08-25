@@ -1,8 +1,8 @@
 module UserAppRolesHelper
-  def resp_fonc?(uars, app)
+  def resp_fonc?(app)
     @app=app
      #uar.role_id == 3 ? true : false
-     uars.each do |uar|
+     @app.user_app_roles.each do |uar|
        if uar.role_id == 3
          return uar
        end
