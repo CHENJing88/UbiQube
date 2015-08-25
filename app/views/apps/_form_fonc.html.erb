@@ -11,7 +11,7 @@
 
 
     <%= @app.user_app_roles.each do |uar| %>
-      <% respfonc?(uar)%>
+      <% if uar.role_id == 3 %>
         <%#= f.fields_for "uar[]", uar do |uar_rf_f|%>
           <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
           <div class="field">
@@ -21,15 +21,15 @@
             {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
           </div>
         <%# end %>
-      <% else %><% end %>
-
-      <% resptech?(uar)%>
+      <% elsif  uar.role_id == 4%>
           <div class="field">
             <%= uar.label "Technique" %>
             <%= uar.select :user_id, User.all.map { |user| [user.uid, user.id] },
             {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
           </div>
-      <% else %><% end %>
+      <%else %>
+      
+      <% end %>
       <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
       <%#= f.fields_for @user_app_roles do |uar_rt_f|%>
     <% end %>
