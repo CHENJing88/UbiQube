@@ -19,21 +19,26 @@ module AppsHelper
     return role.new.nom
   end
 
-  def respfonc?(uar)
+  def resp_fonc?(uars)
      #uar.role_id == 3 ? true : false
-     if uar.role_id == 3
-       return true
-     else
-       return false
+     uars.each do |uar|
+       if uar.role_id == 3
+         return uar
+       end
      end
+
+     return UserAppRoles.create(role_id: 3, user_id: uars[1].user_id, app_id: uars[1].app_id)
+
   end
 
-  def resptech?(uar)
-    if uar.role_id == 4
-      return true
-    else
-      return false
+  def resp_tech?(uars)
+    uars.each do |uar|
+      if uar.role_id == 4
+        return uar
+      end
     end
+
+    return UserAppRoles.create(role_id: 3, user_id: uars[1].user_id, app_id: uars[1].app_id)
   end
 
 end
