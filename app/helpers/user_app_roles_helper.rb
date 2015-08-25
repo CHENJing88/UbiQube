@@ -14,9 +14,9 @@ module UserAppRolesHelper
 
   end
 
-  def resp_tech?(uars, app)
+  def resp_tech?( app)
     @app=app
-    uars.each do |uar|
+    @app.user_app_roles.each do |uar|
       if uar.role_id == 4
         return uar
       end
