@@ -10,8 +10,8 @@
     <%= f.label :groupe %><%= f.select :groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
 
 
-    <% @app.user_app_roles.each do |uar| %>
-      <% if uar.role_id == 3 ? true : false%>
+    <%= @app.user_app_roles.each do |uar| %>
+      <%= if uar.role_id == 3 ? true : false%>
         <%#= f.fields_for "uar[]", uar do |uar_rf_f|%>
           <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
           <div class="field">
