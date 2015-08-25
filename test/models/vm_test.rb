@@ -5,7 +5,7 @@ class VmTest < ActiveSupport::TestCase
   #   assert true
   # end
   test "should save vm with a nom" do
-    vm = Vm.new(nom: "example vm")
+    vm = Vm.create(nom: "example vm")
     assert vm.save, "Saved the vm with a title"
   end
 
