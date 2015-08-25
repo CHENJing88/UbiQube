@@ -35,7 +35,12 @@ $(document).ready(function() {
         enableFiltering: true,
         selectedClass: 'multiselect-selected'
       });
-
+      $('#uar-multiselect').multiselect({
+        //enableClickableOptGroups: true,
+        //includeSelectAllOption: true,
+        enableFiltering: true,
+        selectedClass: 'multiselect-selected'
+      });
 
 
       $('#serv-multiselect').multiselect({
