@@ -11,7 +11,7 @@
 
 
     <%=f.fields_for @app.user_app_roles do |uars| %>
-      <% uar=resp_fonc?(uars) %>
+      <% uar=resp_fonc?(uars,@app) %>
         <%= f.fields_for uar do |uar_f|%>
           <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
           <div class="field">
@@ -22,7 +22,7 @@
           </div>
       <% end %>
 
-      <% uar=resp_tech?(uars)%>
+      <% uar=resp_tech?(uars,@app)%>
       <%= f.fields_for uar do |uar_t|%>
           <div class="field">
             <%= uar_t.label "Technique" %>
