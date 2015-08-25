@@ -22,8 +22,8 @@ module UserAppRolesHelper
       end
     end
     #new_uar=UserAppRoles.create(role_id: 4, user_id: uars[1].user_id, app_id: uars[1].app_id)
-    @app.user_app_roles.build(role_id: 4)
+    @user_app_role=@app.user_app_roles.build(role_id: 4)
 
-    return new_uar
+    return @user_app_role
   end
 end
