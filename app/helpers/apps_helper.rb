@@ -20,11 +20,18 @@ module AppsHelper
   end
 
   def respfonc?(uar)
-     uar.role_id == 3 ? true : false
+     #uar.role_id == 3 ? true : false
+     if uar.role_id == 3
+       return true
+     else
+       return false
   end
 
   def resptech?(uar)
-    uar.role_id == 4 ? true : false
+    if uar.role_id == 4
+      return true
+    else
+      return false
   end
 
 end
