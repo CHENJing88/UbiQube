@@ -18,4 +18,12 @@ module AppsHelper
     role=Role.where(id: role_id).first.name
     return role.new.nom
   end
+
+  def respfonc?(uar)
+    uar.role_id == 3 ? true : false
+  end
+
+  def resptech?(uar)
+    uar.role_id === 4 ? true : false
+  end
 end

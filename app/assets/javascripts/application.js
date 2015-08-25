@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-multiselect
-
 //= require_tree .
   // require foundation $(document).foundation();
 
@@ -35,13 +34,18 @@ $(document).ready(function() {
         enableFiltering: true,
         selectedClass: 'multiselect-selected'
       });
-      $('#uar-multiselect').multiselect({
+
+      $('#uar_fonc_multi').multiselect({
         //enableClickableOptGroups: true,
         //includeSelectAllOption: true,
         enableFiltering: true,
         selectedClass: 'multiselect-selected'
       });
 
+      $('#uar_tech_multi').multiselect({
+        enableFiltering: true,
+        selectedClass: 'multiselect-selected'
+      });
 
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
