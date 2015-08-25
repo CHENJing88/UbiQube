@@ -11,7 +11,7 @@
 
 
     <%= @app.user_app_roles.each do |uar| %>
-      <% respfonc?(uar)%>
+      <% uar.role_id == 3 ? true : false %>
         <%#= f.fields_for "uar[]", uar do |uar_rf_f|%>
           <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
           <div class="field">
@@ -21,14 +21,13 @@
         <%# end %>
       <% end %>
 
-      <% resptech?(uar)%>
+      <% uar.role_id == 3 ? true : false %>
           <div class="field">
             <%= uar.label "Responsable Technique" %><%= uar.select :user_id, User.all.map { |user| [user.uid, user.id] }, {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
           </div>
       <% end %>
       <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
       <%#= f.fields_for @user_app_roles do |uar_rt_f|%>
-    <% end %>
     <% end %>
 
     <%= f.label :description %><%= f.text_area :description %>

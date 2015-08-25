@@ -26,4 +26,5 @@ module AppsHelper
   def resptech?(uar)
     uar.role_id == 4 ? true : false
   end
+
 end
