@@ -11,7 +11,7 @@
 
 
     <%=f.fields_for @user_app_roles do |uars| %>
-      <%= debug resp_fonc?(uars,@app) %>
+      <%= debug resp_fonc?(@app) %>
 
       <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
       <%#= f.fields_for @user_app_roles do |uar_rt_f|%>
