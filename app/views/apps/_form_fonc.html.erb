@@ -23,8 +23,8 @@
           </div>
       <% end %>
 
-      <% uar=resp_tech?(@app)%>
-      <%= f.fields_for uar do |uar_t|%>
+      <%# uar=resp_tech?(@app)%>
+      <%= f.fields_for resp_tech?(@app) do |uar_t|%>
           <div class="field">
             <%= uar_t.label "Technique" %>
             <%= uar_t.select :user_id, User.all.map { |user| [user.uid, user.id] },
