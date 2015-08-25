@@ -20,6 +20,7 @@
           </div>
         <%# end %>
       <% end %>
+
       <% resptech?(uar)%>
           <div class="field">
             <%= uar.label "Responsable Technique" %><%= uar.select :user_id, User.all.map { |user| [user.uid, user.id] }, {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
