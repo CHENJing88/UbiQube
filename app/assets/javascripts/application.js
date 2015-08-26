@@ -18,20 +18,6 @@
 //= require_tree .
   // require foundation $(document).foundation();
 
-  function triggettechmultiselect(){
-    $('#uar_fonc_multi').multiselect({
-      //enableClickableOptGroups: true,
-      //includeSelectAllOption: true,
-      enableFiltering: true,
-      selectedClass: 'multiselect-selected'
-    });
-
-    $('#uar_tech_multi').multiselect({
-      enableFiltering: true,
-      selectedClass: 'multiselect-selected'
-    });
-  }
-
 
 
 $(document).ready(function() {
@@ -51,14 +37,11 @@ $(document).ready(function() {
         selectedClass: 'multiselect-selected'
       });
 
-      $('#edit_app_modal').on('show', function(){
+      $('#edit_app_modal').live('show', function(){
               triggettechmultiselect();
           });
 
-      $('a.delete_post').live('click', function(){
-    _target = $(this).data('id');
-    $('#YOUR_MODAL_LAYER .primary').attr('href', '/posts/' + _target);
-});
+
 
 
 
