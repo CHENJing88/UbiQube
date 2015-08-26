@@ -51,14 +51,11 @@ $(document).ready(function() {
         selectedClass: 'multiselect-selected'
       });
 
-      $('#edit_app_modal').on('show', function(){
+      $('#edit_app_modal').live('show', function(){
               triggettechmultiselect();
           });
 
-      $('a.delete_post').live('click', function(){
-    _target = $(this).data('id');
-    $('#YOUR_MODAL_LAYER .primary').attr('href', '/posts/' + _target);
-});
+      
 
 
 
