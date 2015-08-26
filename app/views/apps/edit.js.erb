@@ -1,7 +1,22 @@
 
 //$('#edit_app_modal').html("<%= escape_javascript(render :partial => "apps/edit",:locals => {:app => @app}) %>");
 //$(".modal").modal("hide");$('#show_app_modal').modal("hide");
+function triggettechmultiselect(){
+  $('#uar_fonc_multi').multiselect({
+    //enableClickableOptGroups: true,
+    //includeSelectAllOption: true,
+    enableFiltering: true,
+    selectedClass: 'multiselect-selected'
+  });
+
+  $('#uar_tech_multi').multiselect({
+    enableFiltering: true,
+    selectedClass: 'multiselect-selected'
+  });
+}
 
 $('#edit_app_modal').html("<%= j render('apps/edit')%>")
 //.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
-.modal("show");
+.modal("show", function(){
+        triggettechmultiselect();
+    });
