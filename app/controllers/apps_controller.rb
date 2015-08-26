@@ -71,7 +71,7 @@ class AppsController < ApplicationController
   def update
     @app = App.find(params[:id])
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-    #respond_to do |format|
+    respond_to do |format|
       if App.new(app_params).valid?
         @app.update_attributes(app_params)
           format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
@@ -82,7 +82,7 @@ class AppsController < ApplicationController
           format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
           format.js { render :layout=>false,template:'apps/edit.js.erb'}
         end
-    #end
+    end
   end
 
   # DELETE /apps/1
