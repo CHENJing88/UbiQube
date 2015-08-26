@@ -72,12 +72,13 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
     respond_to do |format|
-      if @app.update_attributes(app_params)
+      if App.new(app_params).valid?
+        @app.update_attributes(app_params)
           format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
           format.json { render :action => "show", :status => :updated, :location => @app }
           format.js
         else
-          format.html { redirect_to edit_app_path(@app) }
+          format.html { redirect_to mesapps_url(current_user), :notice => 'App was failed updated' }
           format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
           format.js { render :layout=>false,template:'apps/edit.js.erb'}
         end
@@ -100,7 +101,7 @@ class AppsController < ApplicationController
   private
 
     def app_params
-      params.require(:app).permit(:nom,:description,:etape_app_id,:etat_app_id,user_app_roles_attributes:[:user_id,:role_id])
+      params.require(:app).permit(:nom,:description,:etape_app_id,:etat_app_id,user_app_roles_attributes:[:app_id,:role_id])
     end
 
 end
