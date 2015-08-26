@@ -18,8 +18,10 @@
           <div class="field">
             <%#= uar_rf_f.hidden_field :role_id, :value => find_role("RF") %>
             <%= uar_f.label "Fonctionnel" %>
+            <div class="multiselect-container">
             <%= uar_f.select :user_id, User.all.map { |user| [user.uid, user.id] },
             {:prompt => true}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
+            </div>
           </div>
       <% end %>
 
@@ -27,8 +29,10 @@
       <%= f.fields_for resp_tech?(@app) do |uar_t|%>
           <div class="field">
             <%= uar_t.label "Technique" %>
+            <div class="multiselect-container">
             <%= uar_t.select :user_id, User.all.map { |user| [user.uid, user.id] },
             {:prompt => true}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
+            </div>
           </div>
       <% end %>
       <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
