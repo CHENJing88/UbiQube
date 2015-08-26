@@ -29,7 +29,6 @@
       <%= f.fields_for :user_app_roles, resp_tech?(@app) do |uar_t|%>
           <div class="field">
             <%= uar_t.label "Responsable Technique" %>
-
             <%= uar_t.select :user_id, User.all.map { |user| [user.uid, user.id] },
             {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
             <%= uar_t.hidden_field :app_id, :value => @app.id %>
