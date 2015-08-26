@@ -17,6 +17,7 @@
 //= require bootstrap-multiselect
 //= require_tree .
   // require foundation $(document).foundation();
+
   function triggettechmultiselect(){
     $('#uar_fonc_multi').multiselect({
       //enableClickableOptGroups: true,
@@ -30,6 +31,8 @@
       selectedClass: 'multiselect-selected'
     });
   }
+
+
 
 $(document).ready(function() {
 
@@ -52,6 +55,10 @@ $(document).ready(function() {
               triggettechmultiselect();
           });
 
+      $('a.delete_post').live('click', function(){
+    _target = $(this).data('id');
+    $('#YOUR_MODAL_LAYER .primary').attr('href', '/posts/' + _target);
+});
 
 
 
