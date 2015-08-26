@@ -32,7 +32,7 @@
             <%= uar_t.select :user_id, User.all.map { |user| [user.uid, user.id] },
             {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
             <%= uar_t.hidden_field :app_id, :value => @app.id %>
-            <%= uar_t.hidden_field :role_id, :value => find_role("TF")%>
+            <%= uar_t.hidden_field :role_id, :value => find_role("RT")%>
           </div>
       <% end %>
       <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
