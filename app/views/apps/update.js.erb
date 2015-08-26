@@ -1,4 +1,5 @@
-document.getElementById("#edit_app_<%= @app.id %>").submit();
+//document.getElementById("#edit_app_<%= @app.id %>").submit();
+$('form').submit();
 $('#edit_app_modal')
 .modal("hide");
 $('#show_app_modal').html("<%= j render('apps/show', @app)%>")
