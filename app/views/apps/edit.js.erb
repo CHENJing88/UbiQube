@@ -1,7 +1,7 @@
 
 //$('#edit_app_modal').html("<%= escape_javascript(render :partial => "apps/edit",:locals => {:app => @app}) %>");
 //$(".modal").modal("hide");$('#show_app_modal').modal("hide");
-function triggettechmultiselect(){
+function triggetfoncmultiselect(){
   $('#uar_fonc_multi').multiselect({
     //enableClickableOptGroups: true,
     //includeSelectAllOption: true,
@@ -18,4 +18,4 @@ function triggettechmultiselect(){
 $('#edit_app_modal').html("<%= j render('apps/edit')%>")
 //.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
 .modal("show");
-triggettechmultiselect();
+triggetfoncmultiselect();
