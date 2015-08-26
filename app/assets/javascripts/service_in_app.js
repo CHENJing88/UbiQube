@@ -2,7 +2,7 @@
 $(function() {
   //====== button =======
       $('#add_vm').click({
-        var brands=$('#VM-multiselect option:selected')
+        //var brands=$('#VM-multiselect option:selected')
         var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
         console.log(selected);
         var selected = [];
@@ -27,22 +27,9 @@ $(function() {
 
       });
 
-      triggettechmultiselect();
 
   });
-function triggettechmultiselect(){
-    $('#uar_fonc_multi').multiselect({
-      //enableClickableOptGroups: true,
-      //includeSelectAllOption: true,
-      enableFiltering: true,
-      selectedClass: 'multiselect-selected'
-    });
 
-    $('#uar_tech_multi').multiselect({
-      enableFiltering: true,
-      selectedClass: 'multiselect-selected'
-    });
-  }
 
 function remove_fields(link) {
 $(link).previous("input[type=hidden]").value = "1";
