@@ -17,6 +17,5 @@ function triggettechmultiselect(){
 
 $('#edit_app_modal').html("<%= j render('apps/edit')%>")
 //.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
-.modal("show", function(){
-        triggettechmultiselect();
-    });
+.modal("show");
+triggettechmultiselect();
