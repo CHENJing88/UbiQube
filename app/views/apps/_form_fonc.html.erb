@@ -19,7 +19,7 @@
             <%= uar_f.label "Responsable Fonctionnel" %>
 
             <%= uar_f.select :user_id, User.all.map { |user| [user.uid, user.id] },
-            {:prompt => false,:include_hidden=> true}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
+            {:prompt => false}, {multiple:'multiple',:include_hidden => true,:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
             <%= uar_f.hidden_field :app_id, :value => @app.id %>
             <%= uar_f.hidden_field :role_id, :value => find_role("RF")%>
           </div>
@@ -30,7 +30,7 @@
           <div class="field">
             <%= uar_t.label "Responsable Technique" %>
             <%= uar_t.select :user_id, User.all.map { |user| [user.uid, user.id] },
-            {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
+            {:prompt => false}, {multiple:'multiple',:include_hidden => true,:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
             <%= uar_t.hidden_field :app_id, :value => @app.id %>
             <%= uar_t.hidden_field :role_id, :value => find_role("RT")%>
           </div>
