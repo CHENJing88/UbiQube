@@ -41,10 +41,6 @@ $(document).ready(function() {
               triggettechmultiselect();
           });
 
-
-
-
-
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
         enableFiltering: true,
