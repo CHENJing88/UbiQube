@@ -19,7 +19,7 @@
             <%= uar_f.label "Responsable Fonctionnel" %>
 
             <%= uar_f.select :user_id, User.all.map { |user| [user.uid, user.id] },
-            {:prompt => false}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
+            {:prompt => false,:include_hidden=> true}, {multiple:'multiple',:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
             <%= uar_f.hidden_field :app_id, :value => @app.id %>
             <%= uar_f.hidden_field :role_id, :value => find_role("RF")%>
           </div>

@@ -1,6 +1,6 @@
 class App < ActiveRecord::Base
   before_validation do |model|
-    model.subset_array.reject!(&:blank?) if model.subset_array
+    #model.subset_array.reject!(&:blank?) if model.subset_array
   end
   #les attributs modifable
   #attr_accessible :nom, :niveau, :etat_id, :etape_id, :groupe_app_id
