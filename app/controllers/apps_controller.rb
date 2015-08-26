@@ -2,6 +2,8 @@ class AppsController < ApplicationController
   before_filter :authenticate_user!
   #before_filter :correct_user?, :except => [:index]
 
+  # GET /apps
+  # GET /apps
   def index
     @apps = App.all
     @apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
@@ -73,7 +75,7 @@ class AppsController < ApplicationController
       if @app.update_attributes(app_params)
           format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
           format.json { render :action => "show", :status => :updated, :location => @app }
-          format.js 
+          format.js
         else
           format.html { redirect_to edit_app_path(@app) }
           format.json { render :action => @app.errors.full_messages, :status => :unprocessable_entity}
