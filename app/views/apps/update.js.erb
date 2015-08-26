@@ -1,6 +1,6 @@
 $('#edit_app_modal')
 .modal("hide");
 alert("updated");
-$('#show_app_modal').html("<%= j render('apps/show')%>")
+$('#show_app_modal').html("<%= j render('apps/show', @app)%>")
 //.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') }
 .modal("show");
