@@ -16,8 +16,8 @@
             <%= render 'apps/form_fonc', :f=>f %>
 
             <div class = "actions">
-              <%#= link_to "Update", app_path(@app), :data => { :"disable-with"=> "Loading...",toggle:"modal",traget:"#show_app_modal"},remote:true, class: 'btn btn-large btn-primary'%>
-              <%= f.submit "Save changes", :data => { :"disable-with"=> "Loading...",toggle:"modal",traget:"#show_app_modal"},remote:true, class: 'btn btn-large btn-primary' %>
+              <%= link_to "Update", app_path(@app), :data => { :"disable-with"=> "Loading...",toggle:"modal",traget:"#show_app_modal"},remote:true, class: 'btn btn-large btn-primary'%>
+              <%#= f.submit "Save changes", :data => { :"disable-with"=> "Loading...",toggle:"modal",traget:"#show_app_modal"},remote:true, class: 'btn btn-large btn-primary' %>
             </div>
 
           <% end %>
