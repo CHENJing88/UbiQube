@@ -17,8 +17,19 @@
 //= require bootstrap-multiselect
 //= require_tree .
   // require foundation $(document).foundation();
+  function triggettechmultiselect(){
+      $('#uar_fonc_multi').multiselect({
+        //enableClickableOptGroups: true,
+        //includeSelectAllOption: true,
+        enableFiltering: true,
+        selectedClass: 'multiselect-selected'
+      });
 
-
+      $('#uar_tech_multi').multiselect({
+        enableFiltering: true,
+        selectedClass: 'multiselect-selected'
+      });
+    }
 
 $(document).ready(function() {
 
@@ -37,7 +48,10 @@ $(document).ready(function() {
         selectedClass: 'multiselect-selected'
       });
 
-      
+      $('#edit_app_modal').on('show', function(){
+              triggettechmultiselect();
+          });
+
       $('#serv-multiselect').multiselect({
         includeSelectAllOption: true,
         enableFiltering: true,
