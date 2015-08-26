@@ -14,7 +14,13 @@
     color:red;
   }
 }
-
+.field {
+width: 500px;
+overflow-x: auto;
+overflow-y: hidden;
+border: 1px solid #dddddd;
+margin: 10px 0 !important;
+}
 #error_explanation {
   width: 450px;
   border: 2px solid red;
