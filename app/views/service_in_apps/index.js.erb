@@ -1,3 +1,22 @@
+function triggettechmultiselect(){
+  $('#vm-multiselect').multiselect({
+    enableClickableOptGroups: true,
+    includeSelectAllOption: true,
+    enableFiltering: true,
+    selectedClass: 'multiselect-selected'
+  });
+
+  $('#serv-multiselect').multiselect({
+    enableClickableOptGroups: true,
+    includeSelectAllOption: true,
+    enableFiltering: true,
+    maxHeight: 200,
+    selectedClass: 'multiselect-selected'
+  });
+}
+
+
 $('#edit_tech_app_modal').html("<%= j render('service_in_apps/index')%>")
 //.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
 .modal("show");
+triggettechmultiselect();
