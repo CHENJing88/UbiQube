@@ -12,7 +12,7 @@
           <div id="content">
           <%# form_for @app, :url=> {controller=>'apps', :action=> 'show'}, remote:true do |f| %>
           <%# form_for @app do |f| %>
-            <%= form_for @app, :url=> {controller=>'apps', :action=> 'show'} do |f| %>
+            <%= form_for @app, :url=> {:controller=>'apps', :action=> 'show'} do |f| %>
               <table >
                 <tr>
                   <th> Title </th>
