@@ -70,7 +70,7 @@ class AppsController < ApplicationController
     @app = App.find(params[:id])
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
     if @app.update_attributes(app_params)
-        format.html { render "#{show_app_modal}" }
+        format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
         format.json { render :action => "show", :status => :updated, :location => @app }
       else
         format.html { redirect_to edit_app_path(@app) }
