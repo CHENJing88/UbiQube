@@ -4,7 +4,7 @@ before_action :set_app
   def index
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-    
+
   end
 
   def show
@@ -101,7 +101,7 @@ before_action :set_app
 
 private
   def serIN_params
-    params.require(:service_in_app).permit(:port, apps_attributes[:id])
+    params.require(:service_in_app).permit(:port, apps_attributes:[:id])
   end
 
   def set_app
