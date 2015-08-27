@@ -19,10 +19,10 @@
             <%= form_app.hidden_field :etape_app_id, :value => find_etape_id("Brouillion")%>
             <%= form_app.hidden_field :etat_app_id, :value => find_etat_id("Normal") %>
 
-          <%= form_app.fields_for :user_app_roles, @app.user_app_roles.build do |relation_fields|%>
+          <%= form_app.fields_for :user_app_roles do |relation_fields|%>
             <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
             <%= relation_fields.hidden_field :role_id, :value => find_role("User") %>
-            <%= relation_fields.hidden_field :app_id, :value => @app.id %>
+
           <% end %>
         </div>
         <div class="modal-footer">
