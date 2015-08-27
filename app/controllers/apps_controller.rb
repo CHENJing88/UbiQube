@@ -49,7 +49,7 @@ class AppsController < ApplicationController
   # POST /apps
   # POST /apps.xml
   def create
-    #app_params.permit!
+    app_params.permit!
 
     @app=App.new(app_params)
 
