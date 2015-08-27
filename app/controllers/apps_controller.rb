@@ -39,7 +39,7 @@ class AppsController < ApplicationController
     @app.user_app_roles.build
     #2.times { @app.user_app_roles.build }
     #@service_in_apps = @app.service_in_apps.build
-    end
+    
   end
 
   # POST /apps
