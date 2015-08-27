@@ -6,7 +6,16 @@ function triggetfoncmultiselect(){
     //enableClickableOptGroups: true,
     //includeSelectAllOption: true,
     enableFiltering: true,
-    selectedClass: 'multiselect-selected'
+    selectedClass: 'multiselect-selected',
+    onChange: function(element, checked) {
+        var brands = $('#multiselect1 option:selected');
+        var selected = [];
+        $(brands).each(function(index, brand){
+            selected.push([$(this).val()]);
+        });
+
+        console.log(selected);
+    }
   });
 
   $('#uar_tech_multi').multiselect({
