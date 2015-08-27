@@ -75,6 +75,6 @@ end
 
 private
   def relation_param
-    #params.require(:user_app_role).permit(:app_id,:role_id)
-    params[:id]
+    params.require(:user_app_role).permit(:user_id,:app_id,:role_id)
+    #params[:id]
   end
