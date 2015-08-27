@@ -39,10 +39,6 @@ class AppsController < ApplicationController
     @app.user_app_roles.build
     #2.times { @app.user_app_roles.build }
     #@service_in_apps = @app.service_in_apps.build
-    respond_to do |format|
-      format.html
-      format.json {render json: @app}
-      format.js{ render :layout => false }
     end
   end
 
