@@ -27,6 +27,7 @@ r1=Role.create(nom: "User")
 r2=Role.create(nom: "Admin")
 r3=Role.create(nom: "RF")
 r4=Role.create(nom: "RT")
+r4=Role.create(nom: "DSI")
 
 UserAppRole.create(user_id:2, app_id:1, role_id:1)
 UserAppRole.create(user_id:2, app_id:2, role_id:3)

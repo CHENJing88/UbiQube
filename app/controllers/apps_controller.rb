@@ -54,7 +54,7 @@ class AppsController < ApplicationController
 
     @app=App.new(app_params)
 
-    respond_to do |format|
+    #respond_to do |format|
       if @app.save
         format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully created.' }
         format.js { render :action => 'mesapps', :status => :created, :location => @user }
@@ -62,7 +62,7 @@ class AppsController < ApplicationController
         format.html { redirect_to mesapps_url(current_user), :notice => 'App was failed created.' }
         format.js { render :action => @app.errors, :status => :unprocessable_entity }
       end
-    end
+    #end
 
   end
 
