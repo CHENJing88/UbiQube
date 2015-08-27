@@ -14,5 +14,8 @@ module AppsHelper
     Role.where(nom: nom).first.id
   end
 
+  def find_etape(nom)
+    EtapeApp.where(nom: nom).first.id
+  end
 
 end
