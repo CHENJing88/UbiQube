@@ -39,7 +39,7 @@ class AppsController < ApplicationController
     @app.user_app_roles.build
     #2.times { @app.user_app_roles.build }
     #@service_in_apps = @app.service_in_apps.build
-    
+
   end
 
   # POST /apps
@@ -96,7 +96,8 @@ class AppsController < ApplicationController
   private
 
     def app_params
-      params.require(:app).permit(:nom,:description,:etape_app_id,:etat_app_id,user_app_roles_attributes:[:user_id,:app_id,:role_id])
+      params.require(:app).permit(:nom,:description,:niveau, :groupe_app_id, :envoie, 
+      :etape_app_id,:etat_app_id,user_app_roles_attributes:[:user_id,:app_id,:role_id])
     end
 
 end
