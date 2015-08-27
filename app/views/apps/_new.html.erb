@@ -16,12 +16,12 @@
           <%= form_app.text_field :nom, placeholder: "App Nom...", :size => 30 , class:'form-control'%><br/>
           <%= form_app.label :description %><br/>
           <%= form_app.text_area :description, placeholder: "Description...", :rows => 3, class:'form-control'  %>
-            <%= form_app.hidden_field :etape_app_id, :value => find_etape("Brouillion")%>
-            <%= form_app.hidden_field :etat_app_id, :value => find_role("User") %>
+            <%= form_app.hidden_field :etape_app_id, :value => find_etape_id("Brouillion")%>
+            <%= form_app.hidden_field :etat_app_id, :value => find_etat_id("Normal") %>
 
           <%= form_app.fields_for :user_app_roles, @app.user_app_roles.build do |relation_fields|%>
             <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
-            <%= relation_fields.hidden_field :role_id, :value => 1 %>
+            <%= relation_fields.hidden_field :role_id, :value => find_role("User") %>
           <% end %>
         </div>
         <div class="modal-footer">
