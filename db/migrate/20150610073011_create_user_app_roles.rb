@@ -1,9 +1,9 @@
 class CreateUserAppRoles < ActiveRecord::Migration
   def change
     create_table :user_app_roles do |t|
-      t.integer :user_id,:index=>true
+      t.integer :user_id
       t.integer :app_id,:index=>true
-      t.integer :role_id,:index=>true
+      t.integer :role_id
 
       t.timestamps
     end
