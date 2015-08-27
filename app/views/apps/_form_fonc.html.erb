@@ -13,7 +13,7 @@
     <%=f.fields_for @user_app_roles do |uars| %>
       <%#= debug resp_fonc?(@app) %>
       <%# uar=resp_fonc?(@app) %>
-        <%= f.fields_for :user_app_roles, resp_fonc?(@app) do |uar_f|%>
+        <%= f.fields_for :user_app_roles_attributes, resp_fonc?(@app) do |uar_f|%>
           <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
           <div class="field">
             <%= uar_f.label "Responsable Fonctionnel" %>
@@ -26,7 +26,7 @@
       <% end %>
 
       <%# uar=resp_tech?(@app)%>
-      <%= f.fields_for :user_app_roles, resp_tech?(@app) do |uar_t|%>
+      <%= f.fields_for :user_app_roles_attributes, resp_tech?(@app) do |uar_t|%>
           <div class="field">
             <%= uar_t.label "Responsable Technique" %>
             <%= uar_t.select :user_id, User.all.map { |user| [user.uid, user.id] },
