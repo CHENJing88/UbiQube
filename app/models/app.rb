@@ -2,7 +2,7 @@ class App < ActiveRecord::Base
   #les attributs modifable
   #attr_accessible :nom, :niveau, :etat_id, :etape_id, :groupe_app_id
   #validation d'existance
-  validates_presence_of :nom
+  validates_presence_of :nom, :on => :save
 
   #relation d'APP
   #si une App est supprimée, on va supprimer tous les records dans user_app_roles
