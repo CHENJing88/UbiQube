@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
 //= require bootstrap-multiselect
 //= require_tree .
   // require foundation $(document).foundation();
