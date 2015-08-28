@@ -18,9 +18,15 @@ class App < ActiveRecord::Base
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
   #default_scope order: 'apps.created_at DESC'
-  accepts_nested_attributes_for :user_app_roles,:service_in_apps, allow_destroy: true
+  accepts_nested_attributes_for :user_app_roles, allow_destroy: true, :reject_uars
+  accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
 
   scope :envoie, -> { where(is_envoye: true) }
+
+  def reject_uars(attributed)
+    attributed['user_id'].blank? || attributed['app_id'].blank? || attributed['role_id'].blank?
+  end
+
 
   def user_app_role_attributes=(user_app_role_attributes)
     user_app_role_attributes.each do |attributes|

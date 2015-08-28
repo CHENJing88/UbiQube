@@ -96,7 +96,7 @@ class AppsController < ApplicationController
   private
 
     def app_params
-      params.require(:app).permit(:nom,:description,:niveau, :groupe_app_id, :envoie,:etape_app_id,:etat_app_id,user_app_roles_attributes:[:id, :user_id,:app_id,:role_id])
+      params.require(:app).permit(:nom,:niveau, :description,:envoie,:groupe_app_id, :etape_app_id,:etat_app_id, user_app_roles_attributes:[:id, :user_id,:app_id,:role_id])
     end
 
 end
