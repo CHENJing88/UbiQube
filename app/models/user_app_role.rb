@@ -1,5 +1,5 @@
 class UserAppRole < ActiveRecord::Base
-  #validates_presence_of :app_id, :role_id
+  validates_presence_of :app_id, :role_id,:user_id
   before_validation do |model|
     #model.user_id.reject!(&:blank?) if model.user_id
   end

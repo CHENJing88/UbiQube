@@ -1,6 +1,4 @@
 class App < ActiveRecord::Base
-  #les attributs modifable
-  #attr_accessible :nom, :niveau, :etat_id, :etape_id, :groupe_app_id
   #validation d'existance
   validates_presence_of :nom, :on => :save
 
@@ -20,9 +18,9 @@ class App < ActiveRecord::Base
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
   #default_scope order: 'apps.created_at DESC'
-  accepts_nested_attributes_for :user_app_roles,:service_in_apps
+  accepts_nested_attributes_for :user_app_roles,:service_in_apps, allow_destroy: true
 
-  scope :is_envoye, -> { where(is_envoye: true) }
+  scope :envoie, -> { where(is_envoye: true) }
 
   def user_app_role_attributes=(user_app_role_attributes)
     user_app_role_attributes.each do |attributes|
