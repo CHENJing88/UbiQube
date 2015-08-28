@@ -27,11 +27,13 @@ class App < ActiveRecord::Base
     attributed['user_id'].blank? || attributed['app_id'].blank? || attributed['role_id'].blank?
   end
 
-
-  def user_app_role_attributes=(user_app_role_attributes)
-    user_app_role_attributes.each do |attributes|
-      user_app_roles.build(attributes)
-    end
+  def user_app_roles_attributes=(user_app_role_attributes)
+    #user_app_role_attributes.each do |attributes|
+      if user_app_role_attributes['id'].present?
+        self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
+      end
+      #user_app_roles.build(attributes)
+    #end
   end
 
 end
