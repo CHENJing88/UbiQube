@@ -18,7 +18,16 @@
       </thead>
 
       <tbody>
-
+        <% if @vm_install.any? %>
+          <%= @vm_install.each do |s| %>
+            <tr>
+              <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
+              <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
+              <td><%#= check_box_tag , s.is_default %></td>
+              <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+            </tr>
+          <% end %>
+        <% end %>
         <tr class="fields">
           <td><%= vms_form.text_field :nom%></td><td><%=vms_form.text_field :template %></td><td><%= vms_form.text_field :etat_id %></td><td><%= vms_form.text_field :ip_default %></td>
           <td><%= link_to_remove_fields "remove", vms_form %></td>
@@ -60,7 +69,7 @@
         </thead>
 
         <tbody>
-          <% if @service_ins.present? %>
+          <% if @service_ins.any? %>
             <%= @service_ins.each do |s| %>
               <tr>
                 <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
