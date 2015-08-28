@@ -18,7 +18,7 @@
                   <th> Title </th>
                   <th> Valeur </th>
                 </tr>
-                <% app_valide?(@app) %>
+                <%= app_valide?(@app) %>
                   <%= show_non_blank_field "Niveau", @app.niveau %>
                   <%= show_non_blank_field "Etat", @app.etat_app.nom %>
                   <%= show_non_blank_field "Etape", @app.etape_app.nom %>
