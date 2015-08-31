@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150708151858) do
     t.string   "nom"
     t.float    "version",    limit: 24
     t.string   "uid_admin"
+    t.string   "uid_dsi"
     t.integer  "etat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -26,16 +27,13 @@ ActiveRecord::Schema.define(version: 20150708151858) do
     t.string   "nom"
     t.string   "niveau"
     t.string   "description"
+    t.boolean  "envoie",        default: false
     t.integer  "etat_app_id"
     t.integer  "etape_app_id"
     t.integer  "groupe_app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "apps", ["etape_app_id"], name: "index_apps_on_etape_app_id", using: :btree
-  add_index "apps", ["etat_app_id"], name: "index_apps_on_etat_app_id", using: :btree
-  add_index "apps", ["groupe_app_id"], name: "index_apps_on_groupe_app_id", using: :btree
 
   create_table "catalog_droits", force: true do |t|
     t.string   "nom"
@@ -44,20 +42,19 @@ ActiveRecord::Schema.define(version: 20150708151858) do
   end
 
   create_table "catalog_services", force: true do |t|
+    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "droit_catalogdroits", force: true do |t|
-    t.integer  "role_id"
+    t.integer  "droit_id"
     t.integer  "catalogdroit_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "droit_catalogdroits", ["catalogdroit_id"], name: "index_droit_catalogdroits_on_catalogdroit_id", using: :btree
-  add_index "droit_catalogdroits", ["role_id", "catalogdroit_id"], name: "index_droit_catalogdroits_on_role_id_and_catalogdroit_id", unique: true, using: :btree
-  add_index "droit_catalogdroits", ["role_id"], name: "index_droit_catalogdroits_on_role_id", using: :btree
+  add_index "droit_catalogdroits", ["droit_id", "catalogdroit_id"], name: "index_droit_catalogdroits_on_droit_id_and_catalogdroit_id", unique: true, using: :btree
 
   create_table "droits", force: true do |t|
     t.string   "nom"
@@ -73,8 +70,6 @@ ActiveRecord::Schema.define(version: 20150708151858) do
 
   create_table "etat_apps", force: true do |t|
     t.string   "nom"
-    t.integer  "etat_collection_id"
-    t.string   "etat_collection_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -131,9 +126,13 @@ ActiveRecord::Schema.define(version: 20150708151858) do
   end
 
   create_table "service_catalogservices", force: true do |t|
+    t.integer  "serv_id"
+    t.integer  "catalogserv_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "service_catalogservices", ["serv_id", "catalogserv_id"], name: "index_service_catalogservices_on_serv_id_and_catalogserv_id", unique: true, using: :btree
 
   create_table "service_in_apps", force: true do |t|
     t.integer  "app_id"
@@ -156,9 +155,9 @@ ActiveRecord::Schema.define(version: 20150708151858) do
 
   create_table "services", force: true do |t|
     t.string   "nom"
-    t.integer  "port_defaut"
+    t.integer  "port_default"
     t.string   "protocole"
-    t.boolean  "is_defaut",   default: true
+    t.boolean  "install_default", default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -171,7 +170,7 @@ ActiveRecord::Schema.define(version: 20150708151858) do
     t.datetime "updated_at"
   end
 
-  add_index "user_app_roles", ["user_id", "app_id"], name: "index_user_app_roles_on_user_id_and_app_id", unique: true, using: :btree
+  add_index "user_app_roles", ["user_id", "app_id", "role_id"], name: "index_user_app_roles_on_user_id_and_app_id_and_role_id", unique: true, using: :btree
 
   create_table "user_groupe_users", force: true do |t|
     t.integer  "groupe_user_id"
@@ -204,7 +203,7 @@ ActiveRecord::Schema.define(version: 20150708151858) do
 
   create_table "vms", force: true do |t|
     t.string   "nom"
-    t.string   "ip_defaut"
+    t.integer  "ip_default"
     t.string   "template"
     t.integer  "etat_app_id"
     t.datetime "created_at"
