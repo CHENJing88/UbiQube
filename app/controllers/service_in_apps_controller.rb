@@ -29,6 +29,7 @@ before_action :set_app
     #@app=App.find(params[:app_id])
     @service_in_app= ServiceInApp.new
     @vm_installs=@service_in_apps.vms.build
+    @service_in_apps.services.build
     #respond_with(@app,@service_in_app)
   end
 
@@ -81,6 +82,7 @@ before_action :set_app
   def vm_installs
       @vm_installs=@service_in_apps.vms.build
   end
+  
   def add_vm
     #@app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
