@@ -7,12 +7,12 @@
 ssh:
   id: 1
   nom: ssh
-  port_defaut: 22
+  port_default: 22
   protocole: TCP
   install_default: true
 http:
   id: 2
   nom: http
-  port_defaut: 8806
+  port_default: 8806
   protocole: TCP
   install_default: true
