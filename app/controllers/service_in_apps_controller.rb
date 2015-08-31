@@ -4,7 +4,6 @@ before_action :set_app
   def index
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-    @vm_installs=@service_in_app.vms.build
   end
 
   def show
@@ -28,8 +27,8 @@ before_action :set_app
   def new
     #@app=App.find(params[:app_id])
     @service_in_app= ServiceInApp.new
-    @vm_installs=@service_in_apps.vms.build
-    @service_in_apps.services.build
+    @vm_installs=@service_in_app.vms.build
+    @service_in_app.services.build
     #respond_with(@app,@service_in_app)
   end
 
@@ -80,17 +79,18 @@ before_action :set_app
   end
 
   def vm_installs
-      @vm_installs=@service_in_apps.vms.build
+      @vm_installs=ServiceInApps.vm_install_service_ins.includes(:vms).uniq.plunk(:id)
+  end
+
+  def service_ins
+      @service_ins=ServiceInApps.services.uniq.plunk(:id)
   end
 
   def add_vm
-    #@app=App.find(params[:app_id])
-    @service_in_apps = @app.service_in_apps
-    #@service_in_app= ServiceInApp.find(params[:id])
+    @service_in_app= ServiceInApp.find(params[:id])
     #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
-    @service_ins=@service_in_apps.services.build
-    @vm_installs=@service_in_apps.vms.build
-    @vms.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    @service_ins=@service_in_app.services.build
+    @vm_installs=@service_in_app.vms.build
 
     respond_to do |format|
       format.html
@@ -98,14 +98,9 @@ before_action :set_app
     end
   end
 
-
- def <=>(other)
-   to_array<=>other.to_array
- end
-
 private
   def serIN_params
-    params.require(:service_in_app).permit(:port, apps_attributes:[:id])
+    params.require(:service_in_app).permit(:port, apps_attributes:[:id],:vm_install_service_ins_attributes:[:id,:service_in_app_id,:vm_id])
   end
 
   def set_app

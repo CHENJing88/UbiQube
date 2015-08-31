@@ -18,8 +18,8 @@
       </thead>
 
       <tbody>
-        <% if @vm_installs.any? %>
-          <%= @vm_installs.each do |s| %>
+        <% if vm_installs.any? %>
+          <%= vm_installs.each do |s| %>
             <tr>
               <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
               <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
@@ -69,8 +69,8 @@
         </thead>
 
         <tbody>
-          <% if @service_ins.any? %>
-            <%= @service_ins.each do |s| %>
+          <% if service_ins.any? %>
+            <%= service_ins.each do |s| %>
               <tr>
                 <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
                 <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
