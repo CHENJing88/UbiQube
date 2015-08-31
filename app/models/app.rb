@@ -1,7 +1,7 @@
 class App < ActiveRecord::Base
   #validation d'existance
-  validates :nom,:description, presence:true, :on => :save
-
+  validates :nom, presence:true, :on => :save
+  validates :description, presence:true, :on => :save
   #relation d'APP
   #si une App est supprimée, on va supprimer tous les records dans user_app_roles
   has_many :user_app_roles, foreign_key: "app_id", dependent: :destroy
