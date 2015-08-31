@@ -4,6 +4,10 @@ class AppTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end
+  def setup
+    @app = posts(:http)
+  end
+
   test "should not save app without nom and description" do
     app = App.new
     assert_not app.save, "Saved the app without a title and description"
