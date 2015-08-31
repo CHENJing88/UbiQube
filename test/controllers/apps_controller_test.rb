@@ -1,11 +1,6 @@
 require 'test_helper'
 
 class AppsControllerTest < ActionController::TestCase
-  # test controller
-  def setup
-    @app = posts(:http)
-  end
-
   # Routing test
   test "should route to app" do
     assert_routing '/apps/1', {controller: "apps", action: "show", id: "1"}
