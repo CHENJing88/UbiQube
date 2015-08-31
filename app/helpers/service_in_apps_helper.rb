@@ -1,4 +1,13 @@
 module ServiceInAppsHelper
+
+  def vm_installs
+      ServiceInApps.vm_install_service_ins.includes(:vms).uniq.plunk(:id)
+  end
+
+  def service_ins
+      ServiceInApps.services.uniq.plunk(:id)
+  end
+
   def add_vm_link(name)
     link_to_function name do |page|
       page.insert_html :bottom, :tasks, :partial => 'task', :object => Task.new

@@ -78,13 +78,7 @@ before_action :set_app
 
   end
 
-  def vm_installs
-      @vm_installs=ServiceInApps.vm_install_service_ins.includes(:vms).uniq.plunk(:id)
-  end
 
-  def service_ins
-      @service_ins=ServiceInApps.services.uniq.plunk(:id)
-  end
 
   def add_vm
     @service_in_app= ServiceInApp.find(params[:id])
