@@ -3,7 +3,7 @@ class ServiceInApp < ActiveRecord::Base
   has_many :reseaus, through: :reseau_services
 
   has_many :vm_install_service_ins
-  has_many :vms, through: :vm_install_service_ins, :uniq=>true
+  has_many :vms, through: :vm_install_service_ins
 
   has_many :service_out_apps
 
