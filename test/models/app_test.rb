@@ -1,6 +1,6 @@
 require File.expand_path("../../test_helper", __FILE__)
 
-class AppTest < ActiveSupport::TestCase
+class AppTest < ActiveController::TestCase
   # test "the truth" do
   #   assert true
   # end

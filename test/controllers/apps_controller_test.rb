@@ -22,7 +22,7 @@ class AppsControllerTest < ActionController::TestCase
       post :create, app: {  }
     end
 
-    assert_redirected_to portfolio_path(assigns(:app))
+    assert_redirected_to mesapps_path(assigns(:app))
   end
 
   test "should show app" do
