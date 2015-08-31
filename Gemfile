@@ -55,6 +55,8 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
+  #class diagramme generateur
+  gem 'railroady'
 end
 group :test do
   gem 'test-unit', '~> 3.1.2'

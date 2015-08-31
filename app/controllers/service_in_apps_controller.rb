@@ -75,10 +75,11 @@ before_action :set_app
       end
     end
 
-
-
   end
 
+  def vm_installs
+      @vm_installs=@service_in_apps.vms.build
+  end
   def add_vm
     #@app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
