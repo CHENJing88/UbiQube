@@ -4,7 +4,7 @@ before_action :set_app
   def index
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-    @vm_installs=@service_in_apps.vms.build
+    @vm_installs=@service_in_app.vms.build
   end
 
   def show
@@ -82,7 +82,7 @@ before_action :set_app
   def vm_installs
       @vm_installs=@service_in_apps.vms.build
   end
-  
+
   def add_vm
     #@app=App.find(params[:app_id])
     @service_in_apps = @app.service_in_apps
