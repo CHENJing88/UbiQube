@@ -13,8 +13,6 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 gem 'ipaddress','~> 0.8.0' #for ip addresse
 #CanCan is an authorization library for Ruby on Rails. Read more: https://github.com/CanCanCommunity/cancancan
 gem 'cancancan', '~> 1.10'
@@ -51,6 +49,8 @@ gem 'therubyracer', :platform=>:ruby
 gem 'unicorn'
 gem 'unicorn-rails'
 group :development do
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
