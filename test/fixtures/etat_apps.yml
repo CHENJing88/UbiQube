@@ -5,10 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #column: value
 normal:
+  id: 1
   nom: Normal
 
 maintenance:
+  id: 2
   nom: Maintenance
 
 panne:
+  id: 3
   nom: Panne

@@ -5,15 +5,18 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  id: 1
   user: jing
   groupe_user: Infra
 # column: value
 #
 two:
+  id: 2
   user: laurent
   groupe_user: Infra
 
 three:
+  id: 3
   user: jame
   groupe_user: prod
 #  column: value

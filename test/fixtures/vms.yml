@@ -5,10 +5,12 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  id: 1
   nom: dtic-1
 # column: value
 #
 two:
+  id: 2
   nom: ditic-2
 
 

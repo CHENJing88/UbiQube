@@ -5,10 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 user:
+  id: 1
   nom: User
 
 rt:
+  id: 2
   nom: RT
 
 rf:
+  id: 3
   nom: RF

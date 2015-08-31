@@ -5,12 +5,14 @@
 # below each fixture, per the syntax in the comments below
 #
 ssh:
+  id: 1
   app: ssh
   service: ssh
   port: 22
 # column: value
 #
 http:
+  id: 2
   app: http
   service: http
   port: 22

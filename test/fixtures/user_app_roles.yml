@@ -5,12 +5,14 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  id: 1
   user: jing
   app: ssh
   role: user
 # column: value
 #
 two:
+  id: 2
   user: jing
   app: http
   role: rf

@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 ubiqube:
+  id: 1
   nom: Ubiqube
   version: 1.0
   uid_admin: jchen

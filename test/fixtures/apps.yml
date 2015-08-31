@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 http:
+    id: 1
     nom : HTTP
     niveau : Font
     description : Web HTTP request
@@ -13,6 +14,7 @@ http:
     groupe_app : dtic # key etrangere
 
 ssh:
+  id: 2
   nom : SSH
   niveau : Mid
   description : SSH request
@@ -21,6 +23,7 @@ ssh:
   groupe_app : dtic
 
 tomcat:
+  id: 3
   nom : Tomcat
   niveau : Mid
   description : Tomcat server
@@ -29,6 +32,7 @@ tomcat:
   groupe_app : prod
 
 mysql:
+  id: 4
   nom : Mysql
   niveau : BD
   description : base de donnee

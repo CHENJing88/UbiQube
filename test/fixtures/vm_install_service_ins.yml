@@ -5,14 +5,17 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  id: 1
   service_in_app: ssh
   vm: vm_dtic
 # column: value
 #
 two:
+  id: 2
   service_in_app: ssh
   vm: vm_prod
 
 two:
+  id: 3
   service_in_app: http
   vm: vm_prod

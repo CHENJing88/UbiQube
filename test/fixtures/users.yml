@@ -1,21 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 jing:
+  id: 1
   name : Jing CHEN
   provider : CAS
   uid : jchen
 
 laurent:
+  id: 2
   name : Laurent BENECHE
   provider: CAS
   uid: beneche
 
 jame:
+  id: 3
   name : Jame Green
   provider : CAS
   uid : jgreen
 
 katy:
+  id: 4
   name : Katy Coco
   provider : CAS
   uid : kcoco

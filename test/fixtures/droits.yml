@@ -5,13 +5,17 @@
 # below each fixture, per the syntax in the comments below
 #
 read:
+  id: 1
   nom: Read
 
 write:
+  id: 2
   nom: Write
 
 delete:
+  id: 3
   nom: Delete
 
 create:
+  id: 4
   nom: Create

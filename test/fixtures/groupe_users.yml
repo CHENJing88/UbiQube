@@ -5,10 +5,13 @@
 # below each fixture, per the syntax in the comments below
 #
 prod:
+  id: 1
   nom: Prod
 
 preprod:
+  id: 2
   nom: Preprod
 
 Infra:
+  id: 3
   nom: Infra
