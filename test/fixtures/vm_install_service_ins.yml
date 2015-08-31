@@ -6,16 +6,16 @@
 #
 one:
   id: 1
-  service_in_app: ssh
-  vm: vm_dtic
+  service_in_app_id: 1
+  vm_id: 1
 # column: value
 #
 two:
   id: 2
-  service_in_app: ssh
-  vm: vm_prod
+  service_in_app_id: 1
+  vm_id: 2
 
 two:
   id: 3
-  service_in_app: http
-  vm: vm_prod
+  service_in_app_id: 2
+  vm_id: 2

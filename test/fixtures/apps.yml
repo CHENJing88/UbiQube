@@ -9,33 +9,33 @@ http:
     nom : HTTP
     niveau : Font
     description : Web HTTP request
-    etat_app : normal # key etrangere defini dans fichier etat_app.yml
-    etape_app : brouillion # key etrangere
-    groupe_app : dtic # key etrangere
+    etat_app_id : normal # key etrangere defini dans fichier etat_app.yml
+    etape_app_id : brouillion # key etrangere
+    groupe_app_id : dtic # key etrangere
 
 ssh:
   id: 2
   nom : SSH
   niveau : Mid
   description : SSH request
-  etat_app : normal
-  etape_app  : valide
-  groupe_app : dtic
+  etat_app_id : 1
+  etape_app_id  : 3
+  groupe_app_id : 1
 
 tomcat:
   id: 3
   nom : Tomcat
   niveau : Mid
   description : Tomcat server
-  etat_app : normal
-  etape_app : valide
-  groupe_app : prod
+  etat_app_id : 1
+  etape_app_id : 2
+  groupe_app_id : 2
 
 mysql:
   id: 4
   nom : Mysql
   niveau : BD
   description : base de donnee
-  etat_app : maintenance
-  etape_app : valide
-  groupe_app : prod
+  etat_app_id : 2
+  etape_app_id : 1
+  groupe_app_id : 3

@@ -6,12 +6,12 @@
 #
 one:
   id: 1
-  droit: read
-  catalogdroit: app
+  droit_id: 1
+  catalogdroit_id: 1
 # column: value
 #
 two:
   id: 2
-  droit: delete
-  catalogdroit: user
+  droit_id: 2
+  catalogdroit_id: 2
 #  column: value

@@ -6,17 +6,17 @@
 #
 one:
   id: 1
-  user: jing
-  groupe_user: Infra
+  user_id: 1
+  groupe_user_id: 3
 # column: value
 #
 two:
   id: 2
-  user: laurent
-  groupe_user: Infra
+  user_id: 2
+  groupe_user_id: 2
 
 three:
   id: 3
-  user: jame
-  groupe_user: prod
+  user_id: 3
+  groupe_user_id: 1
 #  column: value

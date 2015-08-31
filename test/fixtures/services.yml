@@ -10,3 +10,9 @@ ssh:
   port_defaut: 22
   protocole: TCP
   install_default: true
+http:
+  id: 2
+  nom: http
+  port_defaut: 8806
+  protocole: TCP
+  install_default: true

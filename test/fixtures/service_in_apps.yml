@@ -6,14 +6,14 @@
 #
 ssh:
   id: 1
-  app: ssh
-  service: ssh
+  app_id: 2
+  service_id: 1
   port: 22
 # column: value
 #
 http:
   id: 2
-  app: http
-  service: http
+  app_id: 1
+  service_id: 2
   port: 22
 #  column: value

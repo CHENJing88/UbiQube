@@ -6,14 +6,14 @@
 #
 one:
   id: 1
-  user: jing
-  app: ssh
-  role: user
+  user_id: 1
+  app_id: 1
+  role_id: 1
 # column: value
 #
 two:
   id: 2
-  user: jing
-  app: http
-  role: rf
+  user_id: 1
+  app_id: 2
+  role_id: 2
 #  column: value
