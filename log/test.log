@@ -63,3 +63,262 @@
   [1m[35m (10.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610073011')
   [1m[36m (4.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145020')[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (253.9ms)[0m  [1mCREATE TABLE `applications` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `version` float(24), `uid_admin` varchar(255), `uid_dsi` varchar(255), `etat_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (32.7ms)[0m  CREATE TABLE `apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `niveau` varchar(255), `description` varchar(255), `envoie` tinyint(1) DEFAULT 0, `etat_app_id` int(11), `etape_app_id` int(11), `groupe_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (68.3ms)[0m  [1mCREATE TABLE `catalog_droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (49.8ms)[0m  CREATE TABLE `catalog_services` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (76.6ms)[0m  [1mCREATE TABLE `droit_catalogdroits` (`id` int(11) auto_increment PRIMARY KEY, `droit_id` int(11), `catalogdroit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (121.9ms)[0m  CREATE UNIQUE INDEX `index_droit_catalogdroits_on_droit_id_and_catalogdroit_id` USING btree ON `droit_catalogdroits` (`droit_id`, `catalogdroit_id`) 
+  [1m[36m (27.7ms)[0m  [1mCREATE TABLE `droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (31.9ms)[0m  CREATE TABLE `etape_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (39.1ms)[0m  [1mCREATE TABLE `etat_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (32.4ms)[0m  CREATE TABLE `groupe_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (17.6ms)[0m  [1mCREATE TABLE `groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (68.9ms)[0m  CREATE TABLE `ips` (`id` int(11) auto_increment PRIMARY KEY, `ip_addr` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (13.1ms)[0m  [1mCREATE TABLE `reseau_services` (`id` int(11) auto_increment PRIMARY KEY, `reseau_id` int(11), `service_in_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (58.8ms)[0m  CREATE UNIQUE INDEX `index_reseau_services_on_reseau_id_and_service_in_app_id` USING btree ON `reseau_services` (`reseau_id`, `service_in_app_id`) 
+  [1m[36m (37.3ms)[0m  [1mCREATE TABLE `reseaus` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `ip_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (18.2ms)[0m  CREATE TABLE `role_droits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `droit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (52.4ms)[0m  [1mCREATE  INDEX `index_role_droits_on_droit_id` USING btree ON `role_droits` (`droit_id`) [0m
+  [1m[35m (45.0ms)[0m  CREATE UNIQUE INDEX `index_role_droits_on_role_id_and_droit_id` USING btree ON `role_droits` (`role_id`, `droit_id`) 
+  [1m[36m (42.7ms)[0m  [1mCREATE  INDEX `index_role_droits_on_role_id` USING btree ON `role_droits` (`role_id`) [0m
+  [1m[35m (24.0ms)[0m  CREATE TABLE `roles` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (31.6ms)[0m  [1mCREATE TABLE `service_catalogservices` (`id` int(11) auto_increment PRIMARY KEY, `serv_id` int(11), `catalogserv_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (36.0ms)[0m  CREATE UNIQUE INDEX `index_service_catalogservices_on_serv_id_and_catalogserv_id` USING btree ON `service_catalogservices` (`serv_id`, `catalogserv_id`) 
+  [1m[36m (22.8ms)[0m  [1mCREATE TABLE `service_in_apps` (`id` int(11) auto_increment PRIMARY KEY, `app_id` int(11), `service_id` int(11), `port` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (59.5ms)[0m  CREATE UNIQUE INDEX `index_service_in_apps_on_app_id_and_service_id` USING btree ON `service_in_apps` (`app_id`, `service_id`) 
+  [1m[36m (27.7ms)[0m  [1mCREATE TABLE `service_out_apps` (`id` int(11) auto_increment PRIMARY KEY, `app_id` int(11), `service_in_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (63.9ms)[0m  CREATE UNIQUE INDEX `index_service_out_apps_on_app_id_and_service_in_app_id` USING btree ON `service_out_apps` (`app_id`, `service_in_app_id`) 
+  [1m[36m (20.4ms)[0m  [1mCREATE TABLE `services` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `port_default` int(11), `protocole` varchar(255), `install_default` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (73.4ms)[0m  CREATE TABLE `user_app_roles` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `app_id` int(11), `role_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (59.5ms)[0m  [1mCREATE UNIQUE INDEX `index_user_app_roles_on_user_id_and_app_id_and_role_id` USING btree ON `user_app_roles` (`user_id`, `app_id`, `role_id`) [0m
+  [1m[35m (34.4ms)[0m  CREATE TABLE `user_groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `groupe_user_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (45.0ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_groupe_user_id` USING btree ON `user_groupe_users` (`groupe_user_id`) [0m
+  [1m[35m (26.1ms)[0m  CREATE UNIQUE INDEX `index_user_groupe_users_on_user_id_and_groupe_user_id` USING btree ON `user_groupe_users` (`user_id`, `groupe_user_id`) 
+  [1m[36m (44.2ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_user_id` USING btree ON `user_groupe_users` (`user_id`) [0m
+  [1m[35m (33.5ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `provider` varchar(255), `uid` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (15.9ms)[0m  [1mCREATE TABLE `vm_install_service_ins` (`id` int(11) auto_increment PRIMARY KEY, `service_in_app_id` int(11), `vm_id` int(11), `ip_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (32.4ms)[0m  CREATE UNIQUE INDEX `index_vm_install_service_ins_on_service_in_app_id_and_vm_id` USING btree ON `vm_install_service_ins` (`service_in_app_id`, `vm_id`) 
+  [1m[36m (13.6ms)[0m  [1mCREATE TABLE `vms` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `ip_default` int(11), `template` varchar(255), `etat_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (84.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (7.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (36.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150708151858')[0m
+  [1m[35m (19.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150629080718')
+  [1m[36m (8.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143809')[0m
+  [1m[35m (5.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20141117153044')
+  [1m[36m (8.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143757')[0m
+  [1m[35m (8.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143544')
+  [1m[36m (12.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150707072028')[0m
+  [1m[35m (7.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145813')
+  [1m[36m (7.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150609142351')[0m
+  [1m[35m (8.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145738')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143658')[0m
+  [1m[35m (19.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150708151830')
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145709')[0m
+  [1m[35m (4.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610101811')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610101736')[0m
+  [1m[35m (2.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610072317')
+  [1m[36m (1.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143715')[0m
+  [1m[35m (10.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143516')
+  [1m[36m (11.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150615125428')[0m
+  [1m[35m (2.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150708094810')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145725')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145550')
+  [1m[36m (16.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610073011')[0m
+  [1m[35m (4.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145020')
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (12.6ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (10.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.6ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.7ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.7ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.7ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mFixture Delete (22.2ms)[0m  [1mDELETE FROM `etat_apps`[0m
+  [1m[35mFixture Insert (10.4ms)[0m  INSERT INTO `etat_apps` (`nom`, `created_at`, `updated_at`, `id`) VALUES ('Normal', '2015-08-24 15:04:18', '2015-08-24 15:04:18', 562391268)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `etat_apps` (`nom`, `created_at`, `updated_at`, `id`) VALUES ('Maintenance', '2015-08-24 15:04:18', '2015-08-24 15:04:18', 797243625)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etat_apps` (`nom`, `created_at`, `updated_at`, `id`) VALUES ('Panne', '2015-08-24 15:04:18', '2015-08-24 15:04:18', 948286048)
+  [1m[36mFixture Delete (3.6ms)[0m  [1mDELETE FROM `role_droits`[0m
+  [1m[35mFixture Insert (0.8ms)[0m  INSERT INTO `role_droits` (`role`, `droit`, `created_at`, `updated_at`, `id`) VALUES ('user', 'read', '2015-08-24 15:04:18', '2015-08-24 15:04:18', 980190962)
+Mysql2::Error: Unknown column 'role' in 'field list': INSERT INTO `role_droits` (`role`, `droit`, `created_at`, `updated_at`, `id`) VALUES ('user', 'read', '2015-08-24 15:04:18', '2015-08-24 15:04:18', 980190962)
+  [1m[36m (3.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
