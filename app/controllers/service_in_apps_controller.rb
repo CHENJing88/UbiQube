@@ -4,6 +4,8 @@ before_action :set_app
   def index
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
+    @vm_installs=ServiceInApp.vm_install_service_ins.includes(:vms).uniq.plunk(:id)
+    @service_ins=ServiceInApp.services.uniq.plunk(:id)
   end
 
   def show
