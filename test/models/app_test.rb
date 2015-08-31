@@ -12,12 +12,12 @@ class AppTest < ActiveSupport::TestCase
 
   test "should not save app without nom" do
     app = App.create(description: 'App description')
-    assert app.valid?, "App not valided"
+    assert_not app.valid?, "App not valided"
   end
 
   test "should not save app without description" do
     app = App.create(nom: 'App title')
-    assert app.valid?, "App not valided"
+    assert_not app.valid?, "App not valided"
   end
 
 end
