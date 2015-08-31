@@ -24,6 +24,7 @@ class AppsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to mesapps_path(assigns(:app))
+    assert_equal 'App was successfully created.', flash[:notice]
   end
 
   test "should show app" do
