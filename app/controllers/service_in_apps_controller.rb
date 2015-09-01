@@ -84,6 +84,12 @@ before_action :set_app
       end
   end
 
+  def service_ins
+    @service_in_apps.each do |sia|
+      @service_ins.push(sia.services)
+    end
+  end
+
   def add_vm
     @service_in_app= ServiceInApp.find(params[:id])
     #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
