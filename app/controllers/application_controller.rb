@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     def correct_user?
       @user = User.find(params[:id])
       unless current_user == @user
-        redirect_to root_url, :error => "Accès refussè."
+        redirect_to root_url, :error => "Accès refussè. Login, s'il vous plaît."
       end
     end
 
@@ -36,8 +36,8 @@ class ApplicationController < ActionController::Base
 
     def authorize_admin!
       authenticate_user!
-      unless current_user.uid == Application.find(:uid_admin)
-        redirect_to root_path, :error => "Vous devez être connecté en tant qu'administrateur pour cet opération"
+      unless current_user.uid == Application.find(params[:uid_admin])
+        redirect_to root_path, :error => "Vous devez être connecté en tant que l'administrateur pour cet opération"
       end
     end
 

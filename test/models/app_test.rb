@@ -4,6 +4,10 @@ class AppTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  test "should save app with nom and description" do
+    app = App.create(:http)
+    assert app.save, "Saved the app with a title and a description"
+  end
 
   test "should not save app without nom and description" do
     app = App.new

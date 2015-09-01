@@ -14,7 +14,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'ipaddress','~> 0.8.0' #for ip addresse
-#CanCan is an authorization library for Ruby on Rails. Read more: https://github.com/CanCanCommunity/cancancan
+# CanCan is an authorization library for Ruby on Rails. Read more: https://github.com/CanCanCommunity/cancancan
 gem 'cancancan', '~> 1.10'
 
 # Use in the folder assets
@@ -34,7 +34,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # NOTE: The sass-rails gem is included with new Rails applications by default.
-#Autoprifixer is optional, but recommended. it automatically adds the proper vendor prefixes to your CSS
+# Autoprifixer is optional, but recommended. it automatically adds the proper vendor prefixes to your CSS
 gem 'autoprefixer-rails'
 
 gem 'high_voltage'
@@ -48,16 +48,17 @@ gem 'therubyracer', :platform=>:ruby
 # Use Unicorn as the app server
 gem 'unicorn'
 gem 'unicorn-rails'
-group :development do
+group :development,:test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
-  #class diagramme generateur
+  # class diagramme generateur
   gem 'railroady'
-end
-group :test do
+  # test gem
   gem 'test-unit', '~> 3.1.2'
+  #gem 'rspec-rails', '~> 3.0'
+
 end

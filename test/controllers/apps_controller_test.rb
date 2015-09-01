@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class AppsControllerTest < ActionController::TestCase
+fixtures :users
 
+  setup do |variable|
+    @currentuser
+    @app= posts(:ssh)
+  end
   # Routing test
   test "should route to app" do
     assert_routing '/apps/1', {controller: "apps", action: "show", id: "1"}
@@ -20,7 +25,7 @@ class AppsControllerTest < ActionController::TestCase
 
   test "should create app" do
     assert_difference('App.count') do
-      post :create, app: {  }
+      post :create, app: { nom: @app.nom, description: @app.description }
     end
 
     assert_redirected_to mesapps_path(assigns(:app))
