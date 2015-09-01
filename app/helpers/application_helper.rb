@@ -12,10 +12,7 @@ module ApplicationHelper
      }[flash_type.to_sym] || flash_type.to_s
 
   end
-  #def admins_only(&block)
-  #  block.call if current_user.role.nom == "Admin"
-  #  nil
-  #end
+  # Limit le lecture d'info d'user 
   def ldap_filtre(titre, var)
     if ldap.bind
       #filter = Net::LDAP::Filter.eq( "uid", current_user[:uid] )
@@ -26,7 +23,7 @@ module ApplicationHelper
       return @results
     else
         # authentication failed
-         logger.debug("ldap authentication failed")
+         logger.debug("ldap authentication filter failed")
     end
   end
 
