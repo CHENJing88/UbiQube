@@ -1,6 +1,6 @@
 class ServiceInAppsController < ApplicationController
 before_action :set_app
-
+helper_method :vm_installs, :service_ins
   def index
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
