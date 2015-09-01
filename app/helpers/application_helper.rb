@@ -12,7 +12,7 @@ module ApplicationHelper
      }[flash_type.to_sym] || flash_type.to_s
 
   end
-  # Limit le lecture d'info d'user 
+  # Limit le lecture d'info d'user
   def ldap_filtre(titre, var)
     if ldap.bind
       #filter = Net::LDAP::Filter.eq( "uid", current_user[:uid] )
@@ -24,6 +24,19 @@ module ApplicationHelper
     else
         # authentication failed
          logger.debug("ldap authentication filter failed")
+    end
+  end
+
+  def ldap_auth(uid)
+    if ldap.bind
+      filter = Net::LDAP::Filter.eq( "uid", uid)
+      filter = Net::LDAP::Filter.eq( "UFRcomposante", "DTIC" )
+      treebase = "ou=people,dc=univ-tours,dc=fr"
+      @results = ldap.search( :base => treebase, :filter => filter )
+      return @results
+    else
+        # authentication failed
+         logger.debug("ldap authentication failed")
     end
   end
 
