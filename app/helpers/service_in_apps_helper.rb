@@ -1,11 +1,11 @@
 module ServiceInAppsHelper
 
   def vm_installs
-      ServiceInApp.vm_install_service_ins.includes(:vms).uniq.plunk(:id)
+      @vm_installs=ServiceInApp.vm_install_service_ins.includes(:vms).uniq.plunk(:id)
   end
 
   def service_ins
-      ServiceInApp.services.uniq.plunk(:id)
+      @vm_installs=ServiceInApp.services.uniq.plunk(:id)
   end
 
   def add_vm_link(name)

@@ -30,7 +30,7 @@ module ApplicationHelper
   def ldap_auth(uid)
     if ldap.bind
       filter = Net::LDAP::Filter.eq( "uid", uid)
-      filter = Net::LDAP::Filter.eq( "UFRcomposante", "DTIC" )
+      filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
       return ldap.search( :base => treebase, :filter => filter, :return_result => false )
     else
