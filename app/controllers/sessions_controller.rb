@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
       auth = request.env["omniauth.auth"]
-      if auth['info']['ufrcomposante']=="DTIC"
+      #if auth['info']['ufrcomposante']=="DTIC"
         user = User.where(:provider => auth['provider'],
                           :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
         reset_session
@@ -14,11 +14,11 @@ class SessionsController < ApplicationController
         #redirect_to root_url, :notice => 'Signed in!'
         #redirect à la page de mes Apps
         redirect_to mesapps_url(user.id), :notice => 'Signed in!'
-      else
-         flash.keep
-         flash[:notice] ="Authentication error: que les personnelles du DTIC authorisées"
-         redirect_to signout_url
-      end
+      #else
+      #   flash.keep
+      #   flash[:notice] ="Authentication error: que les personnelles du DTIC authorisées"
+      #   redirect_to signout_url
+      #end
 
   end
 
