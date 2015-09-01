@@ -51,17 +51,5 @@ class ApplicationController < ActionController::Base
       }
     end
 
-    def ldap_filtre(titre, var)
-      if ldap.bind
-        #filter = Net::LDAP::Filter.eq( "uid", current_user[:uid] )
-        #filter = Net::LDAP::Filter.eq( "UFRComposante", "DTIC" )
-        filter = Net::LDAP::Filter.eq( titre, var )
-        treebase = "ou=people,dc=univ-tours,dc=fr"
-        @results = ldap.search( :base => treebase, :filter => filter )
-        return @results
-      else
-          # authentication failed
-           logger.debug("ldap authentication failed")
-      end
-    end
+    
 end
