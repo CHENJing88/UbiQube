@@ -1,5 +1,7 @@
 <h3>User</h3>
 <p>uid: <%= @user.uid if @user.uid %></p>
-<p>Email: <%#= @ldap_info.mail%></p>
+<p>Email: <%= @user.email if @user.email%></p>
 <p>UFRComposante: <%#= @ldap_info.UFRComposante%></p>
+<%=@user %>
+
 <%=@ldap_info %>
