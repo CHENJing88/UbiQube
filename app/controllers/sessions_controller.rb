@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         #redirect à la page de mes Apps
         redirect_to mesapps_url(user.id), :notice => 'Signed in!'
       else
-        render :action=>"failure"
+          redirect_to sessions_failure_path
       end
 
   end

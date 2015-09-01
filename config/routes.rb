@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   resources :apps do
     resources :service_in_apps
   end
-  
+
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin
   get '/signout' => 'sessions#destroy', :as => :signout
-  get '/auth/failure' => 'sessions#failure'
+  get '/auth/failure' => 'sessions#failure', :as=> :sessions_failure
 
   get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
