@@ -18,7 +18,11 @@
       </thead>
 
       <tbody>
-        <% if @vm_installs.any? %>
+        <% if @vm_installs.empty? %>
+        <tr>
+          There is no VM
+        </tr>
+        <% else %>
           <%= @vm_installs.each do |s| %>
             <tr>
               <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
@@ -69,7 +73,9 @@
         </thead>
 
         <tbody>
-          <% if service_ins.any? %>
+          <% if service_ins.empty? %>
+            There is no Service
+          <% else %>
             <%= service_ins.each do |s| %>
               <tr>
                 <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
