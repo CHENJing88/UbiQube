@@ -1,11 +1,6 @@
 module ServiceInAppsHelper
 
-  def vm_installs(app)
-      @app.service_in_apps.each do |sia|
-        @vm_installs.push(sia.vm_install_service_ins.includes(:vms).uniq.plunk(:id))
-      end
-
-  end
+  
 
   def service_ins
       @vm_installs=ServiceInApp.services.uniq.plunk(:id)

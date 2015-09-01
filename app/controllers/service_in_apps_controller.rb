@@ -79,7 +79,11 @@ before_action :set_app
 
   end
 
-
+  def vm_installs
+      @app.service_in_apps.each do |sia|
+        @vm_installs.push(sia.vm_install_service_ins.includes(:vms).uniq.plunk(:id))
+      end
+  end
 
   def add_vm
     @service_in_app= ServiceInApp.find(params[:id])
