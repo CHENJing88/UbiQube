@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         #redirect à la page de mes Apps
         redirect_to mesapps_url(user.id), :notice => 'Signed in!'
       else
-          redirect_to root_url, :error => "Authentication error: que les personnelles du DTIC authorisées}"
+          redirect_to root_url, :error => "Authentication error: que les personnelles du DTIC authorisées"
       end
 
   end
