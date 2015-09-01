@@ -6,12 +6,11 @@ class SessionsController < ApplicationController
 
   def create
       auth = request.env["omniauth.auth"]
-      ldap_user=ldap_auth(auth['uid'])
-      if ldap_user
+
+      if ldap_auth(auth['uid'])
         user = User.where(:provider => auth['provider'],
                           :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
-        user.name=ldap_user.displayname.to_s.strip
-        user.email=ldap_user.mail.to_s.strip
+        
         reset_session
         session[:user_id] = user.id
         #redirect_to root_url, :notice => 'Signed in!'
