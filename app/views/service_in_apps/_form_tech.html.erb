@@ -18,12 +18,12 @@
       </thead>
 
       <tbody>
-        <% if @vm_installs.empty? %>
+        <% if vm_installs.empty? %>
         <tr>
           There is no VM
         </tr>
         <% else %>
-          <%= @vm_installs.each do |s| %>
+          <%= vm_installs.each do |s| %>
             <tr>
               <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
               <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
