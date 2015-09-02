@@ -81,7 +81,7 @@ helper_method :vm_installs, :service_ins
 
   def vm_installs
       @app.service_in_apps.each do |sia|
-        @vm_installs.push(sia.vm_install_service_ins.includes(:vms).uniq.plunk(:id))
+        @vm_installs.push(sia.vm_install_service_ins.includes(:vms))
       end
   end
 
