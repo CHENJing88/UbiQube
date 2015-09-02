@@ -187,6 +187,7 @@ ActiveRecord::Schema.define(version: 20150708151858) do
     t.string   "name"
     t.string   "provider"
     t.string   "uid"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -194,7 +195,6 @@ ActiveRecord::Schema.define(version: 20150708151858) do
   create_table "vm_install_service_ins", force: true do |t|
     t.integer  "service_in_app_id"
     t.integer  "vm_id"
-    t.integer  "ip_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
