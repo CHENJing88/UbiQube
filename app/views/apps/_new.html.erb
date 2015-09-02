@@ -8,7 +8,7 @@
 
     <div class="modal-body">
       <div id="content">
-        <%= form_for @app do |form_app| %>
+        <%= form_for @app,:url=> {:controller=>'apps', :action=> 'new'} do |form_app| %>
         <%= render 'layouts/error_message', object: @app %>
 
         <div class="field">
