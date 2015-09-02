@@ -31,9 +31,9 @@ class App < ActiveRecord::Base
     if user_app_role_attributes['id'].present?
       self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
     end
-    user_app_role_attributes.each do |attributes|
-      user_app_roles.build(attributes)
-    end
+    #user_app_role_attributes.each do |attributes|
+    #  user_app_roles.build(attributes)
+    #end
   end
 
 end
