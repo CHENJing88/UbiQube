@@ -3,9 +3,8 @@ require 'test_helper'
 class AppsControllerTest < ActionController::TestCase
 fixtures :users
 
-  setup do |variable|
-    @currentuser
-    @app= posts(:ssh)
+  setup do
+    @app= apps(:ssh)
   end
   # Routing test
   test "should route to app" do

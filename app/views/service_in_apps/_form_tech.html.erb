@@ -1,7 +1,7 @@
 <div class="field">
   <%#= fields_for @service_in_app, :url=> {controller=>'service_in_apps', :action=> 'update'} do |siv_fields| %>
   <div id="vm-conf">
-    <%= f.fields_for :vms do |vms_form|  %>
+    <%= f.fields_for :vm_installs do |vms_form|  %>
     <table class="table table-hover" id="vm-table">
       <caption>VM Configuration</caption>
       <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
@@ -19,13 +19,13 @@
 
       <tbody>
         <% if vm_installs.empty? %>
-        <tr>
+        <tr class="fields">
           There is no VM
         </tr>
         <% else %>
           <%= vm_installs.each do |s| %>
-            <tr>
-              <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
+            <tr class="fields">
+              <td><%= s.nom%></td><td><%=s.template %></td><td><%= s.etat.nom %></td>
               <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
               <td><%#= check_box_tag , s.is_default %></td>
               <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
