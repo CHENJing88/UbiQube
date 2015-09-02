@@ -35,7 +35,7 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @app.user_app_roles.build
+    @user_app_roles=@app.user_app_roles.build
     #2.times { @app.user_app_roles.build }
     #@service_in_apps = @app.service_in_apps.build
   end
@@ -44,7 +44,6 @@ class AppsController < ApplicationController
   # POST /apps.xml
   def create
     #app_params.permit!
-
     @app=App.new(app_params)
 
     respond_to do |format|
