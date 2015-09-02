@@ -52,7 +52,7 @@ class AppsController < ApplicationController
         format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully created.' }
         format.js { render :action => 'mesapps', :status => :created, :location => @user }
       else
-        format.html { redirect_to mesapps_url(current_user), :notice => 'App was failed created.' }
+        format.html { redirect_to mesapps_url(current_user), :notice => 'Create App was failed.' }
         format.js { render :action => @app.errors, :status => :unprocessable_entity }
       end
     end
