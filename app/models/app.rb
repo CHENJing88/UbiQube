@@ -17,7 +17,7 @@ class App < ActiveRecord::Base
   belongs_to :etat_app, :class_name => "EtatApp", foreign_key:"etat_app_id"
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
-  accepts_nested_attributes_for :user_app_roles , allow_destroy: true , reject_if: :reject_uars
+  accepts_nested_attributes_for :user_app_roles #, allow_destroy: true , reject_if: :reject_uars
   #accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
 
   scope :envoie, -> { where(is_envoye: true) }
