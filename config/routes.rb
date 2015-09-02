@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
 
+
+  # pages ZONE: DSI, ADMIN
+  get '/users/:id/dsi' =>'users#dsi', :as=>:admin
   get '/users/:id/dsi' =>'users#dsi', :as=>:dsi
-  #get '/apps/new' => "apps#new", :as=> :create_app
-  #get '/apps/:id/edit' => "apps#edit", :as=>:edit_app
-  #patch '/apps/:id' => "apps#update"
 end

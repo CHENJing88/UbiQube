@@ -5,10 +5,10 @@ class Ability
     user ||= User.new
     can :read, :create, :destroy, App
     # assign super user: admin
-    if user.uid == Appliaction.uid_admin
+    if user.uid == Appliaction.find(param[:uid_admin])
       can :manage, :all
-    elsif user.id == UserAppRole.user_id & UserAppRole.role_id == 3
-      can :edit, :update, App, etape_app_id: 3
+    #elsif user.id == UserAppRole.user_id & UserAppRole.role_id == 3
+    #  can :edit, :update, App, etape_app_id: 3
     end
 
 

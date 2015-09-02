@@ -3,6 +3,9 @@
 <% if user_signed_in? %>
 
   <li><%= link_to 'Users', users_path %></li>
+  <% admin? %>
+    <li><%= link_to 'Admin Zone', admin_path %></li>
+  <% end %>
   <!-- DSI Zone -->
   <% if can? :valider_app, @user %>
     <li><%= link_to 'DSI Zone', dsi_path %></li>
