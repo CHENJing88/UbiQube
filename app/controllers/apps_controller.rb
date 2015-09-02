@@ -6,7 +6,6 @@ class AppsController < ApplicationController
   # GET /apps
   def index
     @apps = App.all
-    @apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
   # GET /apps/1
@@ -36,7 +35,7 @@ class AppsController < ApplicationController
   # GET /apps/new.xml
   def new
     @app = App.new
-    @user_app_roles=@app.user_app_roles.build
+    @user_app_role=@app.user_app_roles.build
     #2.times { @app.user_app_roles.build }
     #@service_in_apps = @app.service_in_apps.build
 

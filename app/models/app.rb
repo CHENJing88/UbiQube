@@ -26,13 +26,14 @@ class App < ActiveRecord::Base
     attributed['user_id'].blank? || attributed['app_id'].blank? || attributed['role_id'].blank?
   end
 
+  # pour "accepts_nested_attributes_for" quand il faut transmettre des attributes d'autre model
   def user_app_roles_attributes=(user_app_role_attributes)
-    #user_app_role_attributes.each do |attributes|
-      if user_app_role_attributes['id'].present?
-        self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
-      end
-      #user_app_roles.build(attributes)
-    #end
+    if user_app_role_attributes['id'].present?
+      self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
+    end
+    user_app_role_attributes.each do |attributes|
+      user_app_roles.build(attributes)
+    end
   end
 
 end
