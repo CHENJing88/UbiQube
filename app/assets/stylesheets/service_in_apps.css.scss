@@ -24,6 +24,7 @@
 caption {
     display: table-caption;
     text-align: center;
+    font-size: 1.5rem;
 }
 i{
   font-size: 1.3rem;
@@ -36,15 +37,15 @@ i{
     font-size: 12px;
    }
 }
-input#app_vms_nom{
+input#app_vms_installs_nom{
   width: 80px;
 }
-input#app_vms_template{
+input#app_vms_installs_template{
   width: 100px;
 }
-input#app_vms_etat_id{
+input#app_vms_installs_etat_id{
   width: 60px;
 }
-input#app_vms_ip_default{
+input#app_vms_installs_ip_default{
   width: 150px;
 }
