@@ -21,11 +21,11 @@
                 <% if @app.etape_app.id > 2 %>
                   <tr><td>Niveau</td><td><%= @app.niveau %></td>
                   </tr>
-                  <tr><td>Etat</td><td><%= @app.etat_app.nom %></td>
+                  <tr><td>Etat</td><td><%= @app.etat_app.nom if @app.etat_app %></td>
                   </tr>
-                  <tr><td>Etape</td><td><%= @app.etape_app.nom%></td>
+                  <tr><td>Etape</td><td><%= @app.etape_app.nom if @app.etape_app %></td>
                   </tr>
-                  <tr><td>Groupe</td><td><%= @app.groupe_app.nom%></td>
+                  <tr><td>Groupe</td><td><%= @app.groupe_app.nom if @app.groupe_app%></td>
                   </tr>
                 <%#= app_valide?(@app) %>
                   <%#= show_non_blank_field "Niveau", @app.niveau %>
@@ -33,7 +33,7 @@
                   <%#= show_non_blank_field "Etape", @app.etape_app.nom %>
                   <%#= show_non_blank_field "Groupe", @app.groupe_app.nom %>
                 <% end %>
-                
+
                 <tr><td>Description</td><td><%= @app.description %></td>
                 </tr>
               </table>
