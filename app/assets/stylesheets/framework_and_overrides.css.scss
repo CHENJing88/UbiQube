@@ -82,12 +82,13 @@
 #logo-menu{
   position: absolute;
   padding: 0px;
-  margin-left: 0px;
+  margin-top: -18px;
   text-align:center;
   opacity: 1;
-  height:35px;
+  height:36px;
   display: block;
-  vertical-align:top;
+  top: 50%;
+  vertical-align:middle;
   //width: 10%;
 }
 //typography
