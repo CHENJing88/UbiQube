@@ -1,6 +1,6 @@
 class App < ActiveRecord::Base
   #validation d'existance
-  validates_presence_of :nom,:description
+  validates_presence_of :nom, :description
 
   #relation d'APP
   #si une App est supprimée, on va supprimer tous les records dans user_app_roles
@@ -27,13 +27,13 @@ class App < ActiveRecord::Base
   end
 
   # pour "accepts_nested_attributes_for" quand il faut transmettre des attributes d'autre model
-  #def user_app_roles_attributes=(user_app_role_attributes)
+  def user_app_roles_attributes=(user_app_role_attributes)
   #  if user_app_role_attributes['id'].present?
   #    self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
   #  end
-    #user_app_role_attributes.each do |attributes|
-    #  user_app_roles.build(attributes)
-    #end
-#  end
+    user_app_role_attributes.each do |attributes|
+      user_app_roles.build(attributes)
+    end
+  end
 
 end
