@@ -17,7 +17,7 @@ class App < ActiveRecord::Base
   belongs_to :etat_app, :class_name => "EtatApp", foreign_key:"etat_app_id"
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
-  accepts_nested_attributes_for :user_app_roles, allow_destroy: true , reject_if: :reject_uars
+  accepts_nested_attributes_for :user_app_roles #, allow_destroy: true , reject_if: :reject_uars
   #accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
 
   scope :envoie, -> { where(is_envoye: true) }
@@ -27,13 +27,13 @@ class App < ActiveRecord::Base
   end
 
   # pour "accepts_nested_attributes_for" quand il faut transmettre des attributes d'autre model
-  def user_app_roles_attributes=(user_app_role_attributes)
+  #def user_app_roles_attributes=(user_app_role_attributes)
   #  if user_app_role_attributes['id'].present?
   #    self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
   #  end
-    user_app_role_attributes.each do |attributes|
-      user_app_roles.build(attributes)
-    end
-  end
+  #  user_app_role_attributes.each do |attributes|
+  #    user_app_roles.build(attributes)
+  #  end
+  #end
 
 end
