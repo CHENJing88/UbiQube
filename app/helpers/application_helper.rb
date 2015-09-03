@@ -30,11 +30,11 @@ module ApplicationHelper
   def ldap_query(valeur)
     result=nil
     if ldap.bind
-      filter = Net::LDAP::Filter.eq( "uid", current_user.uid)
-      filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
+      filter = Net::LDAP::Filter.eq( "uid", current_user[:uid])
+      #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
       ldap.search( :base => treebase, :filter => filter ) do |object|
-        result=object.mail
+        result=object.mail.to_s
       end
     else
         # authentication failed
