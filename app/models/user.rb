@@ -17,15 +17,15 @@ class User < ActiveRecord::Base
       user.provider = auth['provider']
       user.uid = auth['uid']
       if auth['info']
-         user.name = auth['info']['displayname'] || ""
-         user.email = auth['info']['mail'] || ""
+         user.name = auth['info']['name'] || ""
+         user.email = auth['info']['email'] || ""
       else
         if ldap.bind
           filter = Net::LDAP::Filter.eq( "uid", auth['uid'] )
           treebase = "ou=people,dc=univ-tours,dc=fr"
           ldap.search( :base => treebase, :filter => filter , :return_result => false ) do | entry|
-            user.name=entry.displayname.to_s.strip
-            user.email=entry.mail.to_s.strip
+            user.name=entry.displayname
+            user.email=entry.mail
           end
         end
       end

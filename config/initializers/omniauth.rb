@@ -3,4 +3,6 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider 	:cas,
 		url: 'https://cas.univ-tours.fr/cas',
 		name_key: 'uid'
+    #name_key: 'name'
+    email_key: 'email'
 end

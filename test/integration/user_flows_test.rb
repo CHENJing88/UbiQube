@@ -9,7 +9,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
     get "/signin"
     assert_response :success
 
-    post_via_redirect "/login", username: "jing.chen", password: "Ubiqube2015-Jing"
+    post_via_redirect "/signin", username: "jing.chen", password: "Ubiqube2015-Jing"
     assert_equal '/users/:id/mesapps', path
     assert_equal 'Signed in!', flash[:notice]
 
