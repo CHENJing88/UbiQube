@@ -34,10 +34,10 @@ module ApplicationHelper
       filter = Net::LDAP::Filter.eq( "uid", current_user[:uid])
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
-      ldap.search( :base => treebase, :filter => filter,:return_result => false ){|item|
+      ldap.search( :base => treebase, :filter => filter,:return_result => false ) do |item|
         emails << (item.mail.is_a?(Array) ? item.mail.first.to_s.strip : item.mail.to_s.strip)
         aliasname << item.alias.is_a?(Array) ? item.alias.first.to_s.strip : item.alias.to_s.strip)
-      }
+      end
       result["emails"]=emails
       result["name"]=aliasname
     else
