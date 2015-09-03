@@ -33,7 +33,9 @@ module ApplicationHelper
       filter = Net::LDAP::Filter.eq( "uid", current_user[:uid])
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
-      result=ldap.search( :base => treebase, :filter => filter,:attributes => attrs )
+      result=ldap.search( :base => treebase, :filter => filter,:attributes => attrs ){|item|
+        puts "#{item.mail.first}"
+      }
 
     else
         # authentication failed
