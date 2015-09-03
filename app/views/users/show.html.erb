@@ -1,6 +1,6 @@
 <h3>User</h3>
 <p>uid: <%= @user.uid if @user.uid %></p>
-<p>Nom: <%= ldap_query.mail%></p>
+<p>Nom: <%= ldap_query[:mail]%></p>
 <p>Email: <%= @user.email if @user.email%></p>
 
 <%=@ldap_info %>
