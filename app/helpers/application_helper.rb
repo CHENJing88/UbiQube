@@ -27,16 +27,21 @@ module ApplicationHelper
     end
   end
 
-  def ldap_auth(uid)
+  def ldap_query(valeur)
+    result=nil
     if ldap.bind
-      filter = Net::LDAP::Filter.eq( "uid", uid)
+      filter = Net::LDAP::Filter.eq( "uid", current_user.uid)
       filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
-      return ldap.search( :base => treebase, :filter => filter, :return_result => false )
+      ldap.search( :base => treebase, :filter => filter, :return_result => ture ) do |object|
+        result=object.valeur
+      end
     else
         # authentication failed
          logger.debug("ldap authentication failed")
     end
+
+    result
   end
 
 
