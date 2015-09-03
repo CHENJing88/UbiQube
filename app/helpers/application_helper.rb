@@ -34,7 +34,7 @@ module ApplicationHelper
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
       ldap.search( :base => treebase, :filter => filter ) do |object|
-        result=object.vals(valeur).to_s.strip
+        result=object.get_values(valeur).to_s.strip
       end
     else
         # authentication failed
