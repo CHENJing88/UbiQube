@@ -33,8 +33,8 @@ module ApplicationHelper
       filter = Net::LDAP::Filter.eq( "uid", current_user[:uid])
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
-      result=ldap.search( :base => treebase, :filter => filter,:attributes => "mail" ){|item|
-        emails << (result.mail.is_a?(Array) ? result.mail.first : result.mail)
+      ldap.search( :base => treebase, :filter => filter ){|item|
+        emails << (item.mail.is_a?(Array) ? item.mail.first : item.mail)
       }
 
     else
