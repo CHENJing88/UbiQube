@@ -33,7 +33,7 @@ module ApplicationHelper
       filter = Net::LDAP::Filter.eq( "uid", current_user.uid)
       filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
-      ldap.search( :base => treebase, :filter => filter, :return_result => ture ) do |object|
+      ldap.search( :base => treebase, :filter => filter ) do |object|
         result=object.valeur
       end
     else
