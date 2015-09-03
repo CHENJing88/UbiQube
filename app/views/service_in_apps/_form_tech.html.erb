@@ -3,10 +3,10 @@
   <div id="vm-conf">
     <%= f.fields_for :vm_installs do |vms_form|  %>
 
-      <%= link_to_add_fields("New VM", f, :vm_installs, :class => "btn-new-vm btn btn-info btn-sx btn-primary", :title => "Add a new VM to the list of VMs that install the services.") %>
-      <%#= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
+      <%#= link_to_add_fields("New VM", f, :vm_installs, :class => "btn-new-vm btn btn-info btn-sx btn-primary", :title => "Add a new VM to the list of VMs that install the services.") %>
+      <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
         <i class="fi-plus"> New VM</i>
-      <%#end%>
+      <%end%>
       <%= render 'service_in_apps/vms_table', :f=>vms_form%>
 
       <%#=fields_for :vms do |vi_form|%>
