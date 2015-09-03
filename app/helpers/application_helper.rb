@@ -35,7 +35,7 @@ module ApplicationHelper
       treebase = "ou=people,dc=univ-tours,dc=fr"
       result=ldap.search( :base => treebase, :filter => filter )
 
-      end
+      
     else
         # authentication failed
          logger.debug("ldap authentication failed")
