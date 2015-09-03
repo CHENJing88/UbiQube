@@ -5,6 +5,7 @@ fixtures :users
 
   setup do
     @app= apps(:ssh)
+    @user=users(:jing)
   end
   # Routing test
   test "should route to app" do
@@ -43,7 +44,7 @@ fixtures :users
 
   test "should update app" do
     patch :update, id: @app, app: {}
-    assert_redirected_to mesapps_path(assigns(:app))
+    assert_redirected_to mesapps_path(@user,assigns(:app))
   end
 
   test "should destroy app" do

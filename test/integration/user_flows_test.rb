@@ -6,7 +6,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
   test "login and browse site" do
     # login via https
     https!
-    get "/login"
+    get "/signin"
     assert_response :success
 
     post_via_redirect "/login", username: "jing.chen", password: "Ubiqube2015-Jing"
@@ -24,7 +24,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
       def browses_site
         get "/"
         assert_response :success
-        assert assigns(:products)
+        assert assigns(:apps)
       end
     end
 
@@ -33,7 +33,7 @@ class UserFlowsTest < ActionDispatch::IntegrationTest
         sess.extend(CustomDsl)
         u = users(user)
         sess.https!
-        sess.post "/login", username: "jing.chen", password: "Ubiqube2015-Jing"
+        sess.post "/signin", username: "jing.chen", password: "Ubiqube2015-Jing"
         assert_equal '/users/:id/mesapps', sess.path
         sess.https!(false)
       end

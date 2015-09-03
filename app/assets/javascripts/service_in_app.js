@@ -2,8 +2,11 @@
 $(function() {
   //====== button =======
       $('#add_vm').click({
+
+        vmFormHandler.appendFields();
+        vmFormHandler.hideForm();
         //var brands=$('#VM-multiselect option:selected')
-        var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
+        /*var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
         console.log(selected);
         var selected = [];
         $(brands).each(function(index, brand){
@@ -19,9 +22,9 @@ $(function() {
           });
 
           console.log(selected);
-        }
+        }*/
 
-        $("#remCF").on('click',function(){
+        $("#rm_vm").on('click',function(){
   		       $(this).parent().parent().remove();
   	    });
 
@@ -106,7 +109,7 @@ var vmFormHandler = {
 };
 
 var cfg = {
-    formId: '#new-pilot-fields',
+    formId: '#VM-multiselect',
     tableId: '#vm-table',
     inputFieldClassSelector: '.field',
     getTBodySelector: function() {
