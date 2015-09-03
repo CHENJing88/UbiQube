@@ -16,20 +16,10 @@ class User < ActiveRecord::Base
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
+      user.email = auth['email']
       if auth['info']
          user.name = auth['info']['name'] || ""
-         user.email = auth['info']['email'] || ""
-      else
-        if ldap.bind
-          filter = Net::LDAP::Filter.eq( "uid", auth['uid'] )
-          treebase = "ou=people,dc=univ-tours,dc=fr"
-          ldap.search( :base => treebase, :filter => filter , :return_result => false ) do | entry|
-            user.name=entry.displayname
-            user.email=entry.mail
-          end
-        end
       end
-
     end
   end
 
