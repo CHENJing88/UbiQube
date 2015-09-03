@@ -47,7 +47,7 @@ $(function() {
           inputFields.detach();*/
           var vmsAdd = [];
           $('#vm-multiselect :selected').each(function(i, selected){
-            vmsAdd[i] = $(selected).text(); 
+            vmsAdd[i] = $(selected).text();
           });
           // Build the row and add it to the end of the table.
           rowBuilder.addRow(cfg.getTBodySelector(), vmsAdd);
@@ -114,7 +114,7 @@ var addVMFieldsUI = {
 //  getTBodySelector:  A VERY simple method that concatenates the cfg.tableId and " tbody" to build the selector we need
 //      to identify the <TABLE> where we'll be appending rows.
 var cfg = {
-    formId: '#VM-multiselect',
+    formId: '#vm-multiselect',
     tableId: '#vm-table',
     inputFieldClassSelector: '.field',
     getTBodySelector: function() {

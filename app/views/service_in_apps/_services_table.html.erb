@@ -1,0 +1,28 @@
+<table class="table table-hover">
+  <caption>Service-IN Configuration</caption>
+  <thead>
+    <tr>
+      <th>Service IN</th>
+      <th>Port</th>
+      <th>Protocole</th>
+      <th>VM</th>
+      <th>Install par default</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if service_ins.empty? %>
+      There is no Service
+    <% else %>
+      <%= service_ins.each do |s| %>
+        <tr>
+          <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
+          <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
+          <td><%#= check_box_tag , s.is_default %></td>
+          <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
