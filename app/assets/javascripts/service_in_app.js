@@ -9,7 +9,7 @@ $(function() {
   //====== button =======
       $('#add_vm').click({
         vmFormHandler.appendFields();
-        vmFormHandler.hideForm();
+        //vmFormHandler.hideForm();
         //var brands=$('#VM-multiselect option:selected')
         /*var selected-vms=$('#VM-multiselect option:selected').map(function(a, item){return item.value;});
         console.log(selected);
