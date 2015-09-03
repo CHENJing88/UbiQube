@@ -28,13 +28,14 @@ module ApplicationHelper
   end
 
   def ldap_query(valeur)
+    val=valeur.to_sym
     result=nil
     if ldap.bind
       filter = Net::LDAP::Filter.eq( "uid", current_user[:uid])
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
       ldap.search( :base => treebase, :filter => filter ) do |object|
-        result=object.get_values(valeur).to_s.strip
+        result=object.val.to_s.strip
       end
     else
         # authentication failed
