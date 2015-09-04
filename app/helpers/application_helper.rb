@@ -13,10 +13,10 @@ module ApplicationHelper
 
   end
   def admin?
-    return true if current_user[:uid] == Application.first.uid_admin
+    return true if current_user[:uid].to_s == Application.first.uid_admin.to_s
   end
   def dsi?
-    return true if current_user[:uid]== Application.first.uid_dsi
+    return true if current_user[:uid].to_s== Application.first.uid_dsi.to_s
   end
   # Limit le lecture d'info d'user
   def ldap_filtre(titre, var)
