@@ -8,6 +8,8 @@
 $(function() {
   //====== button =======
       $('#add_vm').click({
+        alert("hot stuff");
+        console.log('Testing console');
         vmFormHandler.appendFields();
         //vmFormHandler.hideForm();
         //var brands=$('#VM-multiselect option:selected')
