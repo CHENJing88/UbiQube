@@ -13,10 +13,10 @@ module ApplicationHelper
 
   end
   def admin?
-    return true if current_user.uid == Application.find(params[:uid_admin])
+    return true if current_user.uid == Application.find(params[:uid_admin]).uid_admin
   end
   def dsi?
-    return true if current_user.uid == Application.find(params[:uid_dsi])
+    return true if current_user.uid == Application.find(params[:uid_dsi]).uid_dsi
   end
   # Limit le lecture d'info d'user
   def ldap_filtre(titre, var)
