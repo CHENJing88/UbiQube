@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @mesapps=@user.user_app_roles.includes(:apps,:roles)
   end
   def admin
+    @user = User.find(session[:user_id])
     @apps=App.all
   end
   def dsi

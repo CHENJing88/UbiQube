@@ -19,6 +19,6 @@ Rails.application.routes.draw do
 
 
   # pages ZONE: DSI, ADMIN
-  get '/admin' =>'users#admin', :as=>:admin
-  get '/users/:id/dsi' =>'users#dsi', :as=>:dsi
+  get '/adminzone' =>'users#admin', :as=>:adminzone
+  get '/users/:id/dsi' =>'users#dsi', :as=>:dsizone
 end
