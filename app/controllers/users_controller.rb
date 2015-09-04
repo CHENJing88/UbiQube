@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     @mesapps=@user.user_app_roles.includes(:apps,:roles)
   end
   def admin
-
     @apps=App.all
   end
   def dsi
