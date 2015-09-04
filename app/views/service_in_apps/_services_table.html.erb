@@ -13,7 +13,9 @@
 
   <tbody>
     <% if service_ins.empty? %>
-      There is no Service
+    <tr class="fields">
+      <td>There is no VM</td>
+    </tr>
     <% else %>
       <%= service_ins.each do |s| %>
         <tr>

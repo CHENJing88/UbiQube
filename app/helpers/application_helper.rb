@@ -42,7 +42,6 @@ module ApplicationHelper
       ldap.search( :base => treebase, :filter => filter,:return_result => false ) do |item|
         emails << (item.mail.is_a?(Array) ? item.mail.first.to_s.strip : item.mail.to_s.strip)
       end
-
     else
         # authentication failed
          logger.debug("ldap authentication failed")
