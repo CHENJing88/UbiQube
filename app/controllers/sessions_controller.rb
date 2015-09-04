@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
       if ldap_auth(auth['uid'])
         user = User.where(:provider => auth['provider'],
                           :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
-        
+
         reset_session
         session[:user_id] = user.id
         #redirect_to root_url, :notice => 'Signed in!'
         #redirect à la page de mes Apps
-        redirect_to mesapps_url(user.id), :alert => 'Signed in!'
+        redirect_to mesapps_url(user.id), :notice => 'Signed in!'
       else
          flash.keep
          flash[:notice] ="Authentication error: que les personnelles du DTIC authorisées"

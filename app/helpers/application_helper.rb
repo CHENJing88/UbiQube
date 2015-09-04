@@ -12,6 +12,12 @@ module ApplicationHelper
      }[flash_type.to_sym] || flash_type.to_s
 
   end
+  def admin?
+    return true if current_user.uid == Application.find(params[:uid_admin])
+  end
+  def dsi?
+    return true if current_user.uid == Application.find(params[:uid_dsi])
+  end
   # Limit le lecture d'info d'user
   def ldap_filtre(titre, var)
     if ldap.bind
