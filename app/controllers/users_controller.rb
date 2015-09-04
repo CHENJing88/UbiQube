@@ -14,10 +14,9 @@ class UsersController < ApplicationController
   def mesapps
     @user = User.find(session[:user_id])
     @mesapps=@user.user_app_roles.includes(:apps,:roles)
-    redirect_to mesapps_path(@user)
   end
   def admin
-    
+
     @apps=App.all
   end
   def dsi
