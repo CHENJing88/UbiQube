@@ -2648,3 +2648,719 @@ AppsControllerTest: test_should_show_app
 AppsControllerTest: test_should_update_app
 ------------------------------------------
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36m (60.7ms)[0m  [1mCREATE TABLE `applications` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `version` float(24), `uid_admin` varchar(255), `uid_dsi` varchar(255), `etat_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (21.6ms)[0m  CREATE TABLE `apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `niveau` varchar(255), `description` varchar(255), `envoie` tinyint(1) DEFAULT 0, `etat_app_id` int(11), `etape_app_id` int(11), `groupe_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (16.8ms)[0m  [1mCREATE TABLE `catalog_droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (21.0ms)[0m  CREATE TABLE `catalog_services` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (27.9ms)[0m  [1mCREATE TABLE `droit_catalogdroits` (`id` int(11) auto_increment PRIMARY KEY, `droit_id` int(11), `catalogdroit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (43.7ms)[0m  CREATE UNIQUE INDEX `index_droit_catalogdroits_on_droit_id_and_catalogdroit_id` USING btree ON `droit_catalogdroits` (`droit_id`, `catalogdroit_id`) 
+  [1m[36m (10.7ms)[0m  [1mCREATE TABLE `droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (13.8ms)[0m  CREATE TABLE `etape_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (17.6ms)[0m  [1mCREATE TABLE `etat_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (19.0ms)[0m  CREATE TABLE `groupe_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (9.3ms)[0m  [1mCREATE TABLE `groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (25.8ms)[0m  CREATE TABLE `ips` (`id` int(11) auto_increment PRIMARY KEY, `ip_addr` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (34.9ms)[0m  [1mCREATE TABLE `reseau_services` (`id` int(11) auto_increment PRIMARY KEY, `reseau_id` int(11), `service_in_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (28.1ms)[0m  CREATE UNIQUE INDEX `index_reseau_services_on_reseau_id_and_service_in_app_id` USING btree ON `reseau_services` (`reseau_id`, `service_in_app_id`) 
+  [1m[36m (14.9ms)[0m  [1mCREATE TABLE `reseaus` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `ip_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (9.8ms)[0m  CREATE TABLE `role_droits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `droit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (53.8ms)[0m  [1mCREATE  INDEX `index_role_droits_on_droit_id` USING btree ON `role_droits` (`droit_id`) [0m
+  [1m[35m (31.7ms)[0m  CREATE UNIQUE INDEX `index_role_droits_on_role_id_and_droit_id` USING btree ON `role_droits` (`role_id`, `droit_id`) 
+  [1m[36m (32.3ms)[0m  [1mCREATE  INDEX `index_role_droits_on_role_id` USING btree ON `role_droits` (`role_id`) [0m
+  [1m[35m (19.3ms)[0m  CREATE TABLE `roles` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (10.0ms)[0m  [1mCREATE TABLE `service_catalogservices` (`id` int(11) auto_increment PRIMARY KEY, `serv_id` int(11), `catalogserv_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (24.1ms)[0m  CREATE UNIQUE INDEX `index_service_catalogservices_on_serv_id_and_catalogserv_id` USING btree ON `service_catalogservices` (`serv_id`, `catalogserv_id`) 
+  [1m[36m (11.3ms)[0m  [1mCREATE TABLE `service_in_apps` (`id` int(11) auto_increment PRIMARY KEY, `app_id` int(11), `service_id` int(11), `port` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (24.0ms)[0m  CREATE UNIQUE INDEX `index_service_in_apps_on_app_id_and_service_id` USING btree ON `service_in_apps` (`app_id`, `service_id`) 
+  [1m[36m (52.0ms)[0m  [1mCREATE TABLE `service_out_apps` (`id` int(11) auto_increment PRIMARY KEY, `app_id` int(11), `service_in_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (32.7ms)[0m  CREATE UNIQUE INDEX `index_service_out_apps_on_app_id_and_service_in_app_id` USING btree ON `service_out_apps` (`app_id`, `service_in_app_id`) 
+  [1m[36m (12.5ms)[0m  [1mCREATE TABLE `services` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `port_default` int(11), `protocole` varchar(255), `install_default` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (17.2ms)[0m  CREATE TABLE `user_app_roles` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `app_id` int(11), `role_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (30.5ms)[0m  [1mCREATE UNIQUE INDEX `index_user_app_roles_on_user_id_and_app_id_and_role_id` USING btree ON `user_app_roles` (`user_id`, `app_id`, `role_id`) [0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE `user_groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `groupe_user_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (30.3ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_groupe_user_id` USING btree ON `user_groupe_users` (`groupe_user_id`) [0m
+  [1m[35m (31.4ms)[0m  CREATE UNIQUE INDEX `index_user_groupe_users_on_user_id_and_groupe_user_id` USING btree ON `user_groupe_users` (`user_id`, `groupe_user_id`) 
+  [1m[36m (56.1ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_user_id` USING btree ON `user_groupe_users` (`user_id`) [0m
+  [1m[35m (12.2ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `provider` varchar(255), `uid` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (9.1ms)[0m  [1mCREATE TABLE `vm_install_service_ins` (`id` int(11) auto_increment PRIMARY KEY, `service_in_app_id` int(11), `vm_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (29.6ms)[0m  CREATE UNIQUE INDEX `index_vm_install_service_ins_on_service_in_app_id_and_vm_id` USING btree ON `vm_install_service_ins` (`service_in_app_id`, `vm_id`) 
+  [1m[36m (35.9ms)[0m  [1mCREATE TABLE `vms` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `ip_default` int(11), `template` varchar(255), `etat_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (7.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (42.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.8ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (16.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150708151858')[0m
+  [1m[35m (3.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150629080718')
+  [1m[36m (7.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143809')[0m
+  [1m[35m (5.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20141117153044')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143757')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143544')
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150707072028')[0m
+  [1m[35m (3.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145813')
+  [1m[36m (3.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150609142351')[0m
+  [1m[35m (3.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145738')
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143658')[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150708151830')
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145709')[0m
+  [1m[35m (3.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610101811')
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610101736')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610072317')
+  [1m[36m (3.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143715')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143516')
+  [1m[36m (3.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150615125428')[0m
+  [1m[35m (3.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150708094810')
+  [1m[36m (3.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145725')[0m
+  [1m[35m (3.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145550')
+  [1m[36m (3.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610073011')[0m
+  [1m[35m (3.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145020')
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.9ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM `etat_apps`[0m
+  [1m[35mFixture Insert (1.6ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Normal', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Maintenance', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Panne', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `role_droits`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 298486374)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 113629430)
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `service_catalogservices`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 980190962)
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `catalog_droits`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Droits sur App', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Droits sur User', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `catalog_services`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'reseau', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'outils', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `apps`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (1, 'HTTP', 'Font', 'Web HTTP request', 0, 0, 0, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (2, 'SSH', 'Mid', 'SSH request', 1, 3, 1, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (3, 'Tomcat', 'Mid', 'Tomcat server', 1, 2, 2, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (4, 'Mysql', 'BD', 'base de donnee', 2, 1, 3, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `user_groupe_users`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (1, 1, 3, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (3, 3, 1, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM `roles`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'User', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'RT', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'RF', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM `service_in_apps`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (1, 2, 1, 22, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (2, 1, 2, 22, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM `services`
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (1, 'ssh', 22, 'TCP', 1, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (2, 'http', 8806, 'TCP', 1, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM `user_app_roles`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, 1, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (2, 1, 2, 2, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Delete (0.8ms)[0m  DELETE FROM `service_out_apps`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 298486374)
+  [1m[36mFixture Delete (7.9ms)[0m  [1mDELETE FROM `users`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (1, 'Jing CHEN', 'CAS', 'jchen', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (2, 'Laurent BENECHE', 'CAS', 'beneche', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (3, 'Jame Green', 'CAS', 'jgreen', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (4, 'Katy Coco', 'CAS', 'kcoco', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `vms`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'dtic-1', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'ditic-2', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `groupe_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Information', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Prod', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Preprod', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `groupe_users`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Prod', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Preprod', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Infra', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `etape_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Brouillion', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'cours de validation', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Validé', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Refusé', '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (5, 'Archivé', '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `vm_install_service_ins`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 09:28:37', '2015-09-03 09:28:37')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (3, 2, 2, '2015-09-03 09:28:37', '2015-09-03 09:28:37')[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM `reseaus`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 980190962)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `ips`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:37', '2015-09-03 09:28:37', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `applications`
+  [1m[36mFixture Insert (1.8ms)[0m  [1mINSERT INTO `applications` (`id`, `nom`, `version`, `uid_admin`, `uid_dsi`, `etat_id`, `created_at`, `updated_at`) VALUES (1, 'Ubiqube', 1.0, 'jchen', 'jchen', 0, '2015-09-03 09:28:38', '2015-09-03 09:28:38')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `reseau_services`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:38', '2015-09-03 09:28:38', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:28:38', '2015-09-03 09:28:38', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `droit_catalogdroits`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 09:28:38', '2015-09-03 09:28:38')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 09:28:38', '2015-09-03 09:28:38')[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `droits`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Read', '2015-09-03 09:28:38', '2015-09-03 09:28:38')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Write', '2015-09-03 09:28:38', '2015-09-03 09:28:38')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Delete', '2015-09-03 09:28:38', '2015-09-03 09:28:38')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Create', '2015-09-03 09:28:38', '2015-09-03 09:28:38')
+  [1m[36m (10.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+---------------------------------------------------------
+AppsControllerTest: test_new_should_render_correct_layout
+---------------------------------------------------------
+  [1m[35mApp Load (2.1ms)[0m  SELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1
+Processing by AppsController#new as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+------------------------------------------
+AppsControllerTest: test_should_create_app
+------------------------------------------
+  [1m[36mApp Load (0.4ms)[0m  [1mSELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1[0m
+  [1m[35m (2.9ms)[0m  SELECT COUNT(*) FROM `apps`
+Processing by AppsController#create as HTML
+  Parameters: {"app"=>{"nom"=>"SSH", "description"=>"SSH request"}}
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `apps`[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-------------------------------------------
+AppsControllerTest: test_should_destroy_app
+-------------------------------------------
+  [1m[35mApp Load (0.3ms)[0m  SELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `apps`[0m
+Processing by AppsController#destroy as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `apps`
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+--------------------------------------------
+AppsControllerTest: test_should_get_edit_app
+--------------------------------------------
+  [1m[36mApp Load (0.3ms)[0m  [1mSELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1[0m
+Processing by AppsController#edit as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+AppsControllerTest: test_should_get_index
+-----------------------------------------
+  [1m[35mApp Load (0.4ms)[0m  SELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1
+Processing by AppsController#index as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+---------------------------------------
+AppsControllerTest: test_should_get_new
+---------------------------------------
+  [1m[36mApp Load (0.4ms)[0m  [1mSELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1[0m
+Processing by AppsController#new as HTML
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+--------------------------------------------
+AppsControllerTest: test_should_route_to_app
+--------------------------------------------
+  [1m[35mApp Load (0.3ms)[0m  SELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+----------------------------------------
+AppsControllerTest: test_should_show_app
+----------------------------------------
+  [1m[36mApp Load (0.6ms)[0m  [1mSELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1[0m
+Processing by AppsController#show as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+------------------------------------------
+AppsControllerTest: test_should_update_app
+------------------------------------------
+  [1m[35mApp Load (0.3ms)[0m  SELECT  `apps`.* FROM `apps`  WHERE `apps`.`id` = 2 LIMIT 1
+Processing by AppsController#update as HTML
+  Parameters: {"app"=>{}, "id"=>"2"}
+Redirected to http://test.host/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.7ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `etat_apps`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Normal', '2015-09-03 09:32:33', '2015-09-03 09:32:33')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Maintenance', '2015-09-03 09:32:33', '2015-09-03 09:32:33')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Panne', '2015-09-03 09:32:33', '2015-09-03 09:32:33')
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `role_droits`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:33', '2015-09-03 09:32:33', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:33', '2015-09-03 09:32:33', 298486374)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:33', '2015-09-03 09:32:33', 113629430)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `service_catalogservices`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:33', '2015-09-03 09:32:33', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:33', '2015-09-03 09:32:33', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM `catalog_droits`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Droits sur App', '2015-09-03 09:32:33', '2015-09-03 09:32:33')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Droits sur User', '2015-09-03 09:32:33', '2015-09-03 09:32:33')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `catalog_services`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'reseau', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'outils', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `apps`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (1, 'HTTP', 'Font', 'Web HTTP request', 0, 0, 0, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (2, 'SSH', 'Mid', 'SSH request', 1, 3, 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (3, 'Tomcat', 'Mid', 'Tomcat server', 1, 2, 2, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (4, 'Mysql', 'BD', 'base de donnee', 2, 1, 3, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `user_groupe_users`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (1, 1, 3, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (3, 3, 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `roles`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'User', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'RT', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'RF', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `service_in_apps`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (1, 2, 1, 22, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (2, 1, 2, 22, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `services`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (1, 'ssh', 22, 'TCP', 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (2, 'http', 8806, 'TCP', 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `user_app_roles`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (2, 1, 2, 2, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `service_out_apps`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 980190962)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `users`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (1, 'Jing CHEN', 'CAS', 'jchen', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (2, 'Laurent BENECHE', 'CAS', 'beneche', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (3, 'Jame Green', 'CAS', 'jgreen', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (4, 'Katy Coco', 'CAS', 'kcoco', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `vms`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'dtic-1', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'ditic-2', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `groupe_apps`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Information', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Prod', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Preprod', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `groupe_users`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Prod', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Preprod', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Infra', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `etape_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Brouillion', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'cours de validation', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Validé', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Refusé', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (5, 'Archivé', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `vm_install_service_ins`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (3, 2, 2, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `reseaus`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `ips`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `applications`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `applications` (`id`, `nom`, `version`, `uid_admin`, `uid_dsi`, `etat_id`, `created_at`, `updated_at`) VALUES (1, 'Ubiqube', 1.0, 'jchen', 'jchen', 0, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `reseau_services`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:32:34', '2015-09-03 09:32:34', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `droit_catalogdroits`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `droits`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Read', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Write', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Delete', '2015-09-03 09:32:34', '2015-09-03 09:32:34')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Create', '2015-09-03 09:32:34', '2015-09-03 09:32:34')
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+UserFlowsTest: test_login_and_browse_site
+-----------------------------------------
+Started GET "/login" for 127.0.0.1 at 2015-09-03 11:32:34 +0200
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM `etat_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Normal', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Maintenance', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Panne', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `role_droits`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 298486374)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 113629430)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `service_catalogservices`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `catalog_droits`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Droits sur App', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Droits sur User', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `catalog_services`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'reseau', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'outils', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `apps`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (1, 'HTTP', 'Font', 'Web HTTP request', 0, 0, 0, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (2, 'SSH', 'Mid', 'SSH request', 1, 3, 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (3, 'Tomcat', 'Mid', 'Tomcat server', 1, 2, 2, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (4, 'Mysql', 'BD', 'base de donnee', 2, 1, 3, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `user_groupe_users`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (1, 1, 3, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (3, 3, 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `roles`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'User', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'RT', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'RF', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `service_in_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (1, 2, 1, 22, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (2, 1, 2, 22, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM `services`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (1, 'ssh', 22, 'TCP', 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (2, 'http', 8806, 'TCP', 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `user_app_roles`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (2, 1, 2, 2, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `service_out_apps`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `users`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (1, 'Jing CHEN', 'CAS', 'jchen', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (2, 'Laurent BENECHE', 'CAS', 'beneche', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (3, 'Jame Green', 'CAS', 'jgreen', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (4, 'Katy Coco', 'CAS', 'kcoco', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `vms`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'dtic-1', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'ditic-2', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `groupe_apps`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Information', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Prod', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Preprod', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `groupe_users`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Prod', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Preprod', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Infra', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `etape_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Brouillion', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'cours de validation', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Validé', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Refusé', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (5, 'Archivé', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `vm_install_service_ins`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (3, 2, 2, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `reseaus`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 980190962)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `ips`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 298486374)[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `applications`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `applications` (`id`, `nom`, `version`, `uid_admin`, `uid_dsi`, `etat_id`, `created_at`, `updated_at`) VALUES (1, 'Ubiqube', 1.0, 'jchen', 'jchen', 0, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `reseau_services`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 09:34:17', '2015-09-03 09:34:17', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `droit_catalogdroits`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `droits`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Read', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Write', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Delete', '2015-09-03 09:34:17', '2015-09-03 09:34:17')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Create', '2015-09-03 09:34:17', '2015-09-03 09:34:17')
+  [1m[36m (7.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+UserFlowsTest: test_login_and_browse_site
+-----------------------------------------
+Started GET "/signin" for 127.0.0.1 at 2015-09-03 11:34:17 +0200
+Processing by SessionsController#new as HTML
+Redirected to https://www.example.com/auth/cas
+Completed 302 Found in 59ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (16.1ms)[0m  [1mCREATE TABLE `applications` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `version` float(24), `uid_admin` varchar(255), `uid_dsi` varchar(255), `etat_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (13.9ms)[0m  CREATE TABLE `apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `niveau` varchar(255), `description` varchar(255), `envoie` tinyint(1) DEFAULT 0, `etat_app_id` int(11), `etape_app_id` int(11), `groupe_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (26.0ms)[0m  [1mCREATE TABLE `catalog_droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (23.4ms)[0m  CREATE TABLE `catalog_services` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (10.3ms)[0m  [1mCREATE TABLE `droit_catalogdroits` (`id` int(11) auto_increment PRIMARY KEY, `droit_id` int(11), `catalogdroit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (30.2ms)[0m  CREATE UNIQUE INDEX `index_droit_catalogdroits_on_droit_id_and_catalogdroit_id` USING btree ON `droit_catalogdroits` (`droit_id`, `catalogdroit_id`) 
+  [1m[36m (9.3ms)[0m  [1mCREATE TABLE `droits` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (7.4ms)[0m  CREATE TABLE `etape_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (8.8ms)[0m  [1mCREATE TABLE `etat_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (15.4ms)[0m  CREATE TABLE `groupe_apps` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (10.5ms)[0m  [1mCREATE TABLE `groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (10.9ms)[0m  CREATE TABLE `ips` (`id` int(11) auto_increment PRIMARY KEY, `ip_addr` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (12.0ms)[0m  [1mCREATE TABLE `reseau_services` (`id` int(11) auto_increment PRIMARY KEY, `reseau_id` int(11), `service_in_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (29.9ms)[0m  CREATE UNIQUE INDEX `index_reseau_services_on_reseau_id_and_service_in_app_id` USING btree ON `reseau_services` (`reseau_id`, `service_in_app_id`) 
+  [1m[36m (14.3ms)[0m  [1mCREATE TABLE `reseaus` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `ip_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE `role_droits` (`id` int(11) auto_increment PRIMARY KEY, `role_id` int(11), `droit_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (36.9ms)[0m  [1mCREATE  INDEX `index_role_droits_on_droit_id` USING btree ON `role_droits` (`droit_id`) [0m
+  [1m[35m (72.4ms)[0m  CREATE UNIQUE INDEX `index_role_droits_on_role_id_and_droit_id` USING btree ON `role_droits` (`role_id`, `droit_id`) 
+  [1m[36m (31.2ms)[0m  [1mCREATE  INDEX `index_role_droits_on_role_id` USING btree ON `role_droits` (`role_id`) [0m
+  [1m[35m (11.7ms)[0m  CREATE TABLE `roles` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE `service_catalogservices` (`id` int(11) auto_increment PRIMARY KEY, `serv_id` int(11), `catalogserv_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (38.4ms)[0m  CREATE UNIQUE INDEX `index_service_catalogservices_on_serv_id_and_catalogserv_id` USING btree ON `service_catalogservices` (`serv_id`, `catalogserv_id`) 
+  [1m[36m (13.1ms)[0m  [1mCREATE TABLE `service_in_apps` (`id` int(11) auto_increment PRIMARY KEY, `app_id` int(11), `service_id` int(11), `port` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (25.8ms)[0m  CREATE UNIQUE INDEX `index_service_in_apps_on_app_id_and_service_id` USING btree ON `service_in_apps` (`app_id`, `service_id`) 
+  [1m[36m (12.2ms)[0m  [1mCREATE TABLE `service_out_apps` (`id` int(11) auto_increment PRIMARY KEY, `app_id` int(11), `service_in_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (22.0ms)[0m  CREATE UNIQUE INDEX `index_service_out_apps_on_app_id_and_service_in_app_id` USING btree ON `service_out_apps` (`app_id`, `service_in_app_id`) 
+  [1m[36m (12.5ms)[0m  [1mCREATE TABLE `services` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `port_default` int(11), `protocole` varchar(255), `install_default` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (54.1ms)[0m  CREATE TABLE `user_app_roles` (`id` int(11) auto_increment PRIMARY KEY, `user_id` int(11), `app_id` int(11), `role_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (23.0ms)[0m  [1mCREATE UNIQUE INDEX `index_user_app_roles_on_user_id_and_app_id_and_role_id` USING btree ON `user_app_roles` (`user_id`, `app_id`, `role_id`) [0m
+  [1m[35m (10.8ms)[0m  CREATE TABLE `user_groupe_users` (`id` int(11) auto_increment PRIMARY KEY, `groupe_user_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (27.7ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_groupe_user_id` USING btree ON `user_groupe_users` (`groupe_user_id`) [0m
+  [1m[35m (23.6ms)[0m  CREATE UNIQUE INDEX `index_user_groupe_users_on_user_id_and_groupe_user_id` USING btree ON `user_groupe_users` (`user_id`, `groupe_user_id`) 
+  [1m[36m (31.4ms)[0m  [1mCREATE  INDEX `index_user_groupe_users_on_user_id` USING btree ON `user_groupe_users` (`user_id`) [0m
+  [1m[35m (13.2ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `name` varchar(255), `provider` varchar(255), `uid` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (22.9ms)[0m  [1mCREATE TABLE `vm_install_service_ins` (`id` int(11) auto_increment PRIMARY KEY, `service_in_app_id` int(11), `vm_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (23.8ms)[0m  CREATE UNIQUE INDEX `index_vm_install_service_ins_on_service_in_app_id_and_vm_id` USING btree ON `vm_install_service_ins` (`service_in_app_id`, `vm_id`) 
+  [1m[36m (11.0ms)[0m  [1mCREATE TABLE `vms` (`id` int(11) auto_increment PRIMARY KEY, `nom` varchar(255), `ip_default` int(11), `template` varchar(255), `etat_app_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (7.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (38.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) [0m
+  [1m[35m (0.6ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (3.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150708151858')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150629080718')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143809')[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20141117153044')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143757')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143544')
+  [1m[36m (2.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150707072028')[0m
+  [1m[35m (2.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145813')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150609142351')[0m
+  [1m[35m (1.2ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145738')
+  [1m[36m (4.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143658')[0m
+  [1m[35m (3.1ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150708151830')
+  [1m[36m (3.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145709')[0m
+  [1m[35m (5.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610101811')
+  [1m[36m (4.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610101736')[0m
+  [1m[35m (3.0ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610072317')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610143715')[0m
+  [1m[35m (7.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610143516')
+  [1m[36m (5.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150615125428')[0m
+  [1m[35m (3.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150708094810')
+  [1m[36m (6.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610145725')[0m
+  [1m[35m (9.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145550')
+  [1m[36m (6.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20150610073011')[0m
+  [1m[35m (5.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20150610145020')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (18.3ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (7.9ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mFixture Delete (4.5ms)[0m  [1mDELETE FROM `etat_apps`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Normal', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Maintenance', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Panne', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `role_droits`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 298486374)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 113629430)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `service_catalogservices`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 298486374)[0m
+  [1m[35mFixture Delete (1.0ms)[0m  DELETE FROM `catalog_droits`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Droits sur App', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Droits sur User', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `catalog_services`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'reseau', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'outils', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `apps`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (1, 'HTTP', 'Font', 'Web HTTP request', 0, 0, 0, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (2, 'SSH', 'Mid', 'SSH request', 1, 3, 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (3, 'Tomcat', 'Mid', 'Tomcat server', 1, 2, 2, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (4, 'Mysql', 'BD', 'base de donnee', 2, 1, 3, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `user_groupe_users`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (1, 1, 3, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (3, 3, 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `roles`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'User', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'RT', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'RF', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `service_in_apps`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (1, 2, 1, 22, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (2, 1, 2, 22, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (1.4ms)[0m  DELETE FROM `services`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (1, 'ssh', 22, 'TCP', 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (2, 'http', 8806, 'TCP', 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `user_app_roles`[0m
+  [1m[35mFixture Insert (1.5ms)[0m  INSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (2, 1, 2, 2, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (9.4ms)[0m  DELETE FROM `service_out_apps`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 298486374)
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `users`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (1, 'Jing CHEN', 'CAS', 'jchen', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (2, 'Laurent BENECHE', 'CAS', 'beneche', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (3, 'Jame Green', 'CAS', 'jgreen', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (1.7ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (4, 'Katy Coco', 'CAS', 'kcoco', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `vms`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'dtic-1', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'ditic-2', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM `groupe_apps`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Information', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (1.7ms)[0m  [1mINSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Prod', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Preprod', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `groupe_users`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Prod', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Preprod', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Infra', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `etape_apps`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Brouillion', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'cours de validation', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Validé', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Refusé', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (5, 'Archivé', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `vm_install_service_ins`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (3, 2, 2, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `reseaus`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 298486374)
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM `ips`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `applications`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `applications` (`id`, `nom`, `version`, `uid_admin`, `uid_dsi`, `etat_id`, `created_at`, `updated_at`) VALUES (1, 'Ubiqube', 1.0, 'jchen', 'jchen', 0, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM `reseau_services`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-03 12:34:44', '2015-09-03 12:34:44', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM `droit_catalogdroits`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM `droits`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Read', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Write', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Delete', '2015-09-03 12:34:44', '2015-09-03 12:34:44')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Create', '2015-09-03 12:34:44', '2015-09-03 12:34:44')
+  [1m[36m (10.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+UserFlowsTest: test_login_and_browse_site
+-----------------------------------------
+Started GET "/signin" for 127.0.0.1 at 2015-09-03 14:34:44 +0200
+Processing by SessionsController#new as HTML
+Redirected to https://www.example.com/auth/cas
+Completed 302 Found in 49ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (11.7ms)[0m  SELECT @@FOREIGN_KEY_CHECKS
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mFixture Delete (20.6ms)[0m  [1mDELETE FROM `etat_apps`[0m
+  [1m[35mFixture Insert (8.7ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Normal', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Maintenance', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etat_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Panne', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (1.0ms)[0m  [1mDELETE FROM `role_droits`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 298486374)[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `role_droits` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 113629430)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM `service_catalogservices`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 980190962)
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `service_catalogservices` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 298486374)[0m
+  [1m[35mFixture Delete (0.8ms)[0m  DELETE FROM `catalog_droits`
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Droits sur App', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `catalog_droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Droits sur User', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `catalog_services`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'reseau', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `catalog_services` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'outils', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.7ms)[0m  DELETE FROM `apps`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (1, 'HTTP', 'Font', 'Web HTTP request', 0, 0, 0, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (2, 'SSH', 'Mid', 'SSH request', 1, 3, 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (3, 'Tomcat', 'Mid', 'Tomcat server', 1, 2, 2, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `apps` (`id`, `nom`, `niveau`, `description`, `etat_app_id`, `etape_app_id`, `groupe_app_id`, `created_at`, `updated_at`) VALUES (4, 'Mysql', 'BD', 'base de donnee', 2, 1, 3, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM `user_groupe_users`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (1, 1, 3, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `user_groupe_users` (`id`, `user_id`, `groupe_user_id`, `created_at`, `updated_at`) VALUES (3, 3, 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `roles`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'User', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'RT', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `roles` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'RF', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM `service_in_apps`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (1, 2, 1, 22, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO `service_in_apps` (`id`, `app_id`, `service_id`, `port`, `created_at`, `updated_at`) VALUES (2, 1, 2, 22, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `services`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (1, 'ssh', 22, 'TCP', 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `services` (`id`, `nom`, `port_default`, `protocole`, `install_default`, `created_at`, `updated_at`) VALUES (2, 'http', 8806, 'TCP', 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `user_app_roles`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `user_app_roles` (`id`, `user_id`, `app_id`, `role_id`, `created_at`, `updated_at`) VALUES (2, 1, 2, 2, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `service_out_apps`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `service_out_apps` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 298486374)
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM `users`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (1, 'Jing CHEN', 'CAS', 'jchen', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (2, 'Laurent BENECHE', 'CAS', 'beneche', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (3.3ms)[0m  INSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (3, 'Jame Green', 'CAS', 'jgreen', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.7ms)[0m  [1mINSERT INTO `users` (`id`, `name`, `provider`, `uid`, `created_at`, `updated_at`) VALUES (4, 'Katy Coco', 'CAS', 'kcoco', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `vms`
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'dtic-1', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `vms` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'ditic-2', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `groupe_apps`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Information', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Prod', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Preprod', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `groupe_users`[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Prod', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.3ms)[0m  [1mINSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Preprod', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `groupe_users` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Infra', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.5ms)[0m  [1mDELETE FROM `etape_apps`[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Brouillion', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'cours de validation', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Validé', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Refusé', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `etape_apps` (`id`, `nom`, `created_at`, `updated_at`) VALUES (5, 'Archivé', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM `vm_install_service_ins`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `vm_install_service_ins` (`id`, `service_in_app_id`, `vm_id`, `created_at`, `updated_at`) VALUES (3, 2, 2, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.8ms)[0m  DELETE FROM `reseaus`
+  [1m[36mFixture Insert (0.6ms)[0m  [1mINSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO `reseaus` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 298486374)
+  [1m[36mFixture Delete (0.6ms)[0m  [1mDELETE FROM `ips`[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 980190962)
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `ips` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM `applications`
+  [1m[36mFixture Insert (4.7ms)[0m  [1mINSERT INTO `applications` (`id`, `nom`, `version`, `uid_admin`, `uid_dsi`, `etat_id`, `created_at`, `updated_at`) VALUES (1, 'Ubiqube', 1.0, 'jchen', 'jchen', 0, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.9ms)[0m  DELETE FROM `reseau_services`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 980190962)[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `reseau_services` (`created_at`, `updated_at`, `id`) VALUES ('2015-09-04 10:17:50', '2015-09-04 10:17:50', 298486374)
+  [1m[36mFixture Delete (1.4ms)[0m  [1mDELETE FROM `droit_catalogdroits`[0m
+  [1m[35mFixture Insert (0.6ms)[0m  INSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (1, 1, 1, '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `droit_catalogdroits` (`id`, `droit_id`, `catalogdroit_id`, `created_at`, `updated_at`) VALUES (2, 2, 2, '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Delete (0.8ms)[0m  DELETE FROM `droits`
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (1, 'Read', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (2, 'Write', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36mFixture Insert (0.4ms)[0m  [1mINSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (3, 'Delete', '2015-09-04 10:17:50', '2015-09-04 10:17:50')[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO `droits` (`id`, `nom`, `created_at`, `updated_at`) VALUES (4, 'Create', '2015-09-04 10:17:50', '2015-09-04 10:17:50')
+  [1m[36m (29.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+-----------------------------------------
+UserFlowsTest: test_login_and_browse_site
+-----------------------------------------
+Started GET "/signin" for 127.0.0.1 at 2015-09-04 12:17:50 +0200
+Processing by SessionsController#new as HTML
+Redirected to https://www.example.com/auth/cas
+Completed 302 Found in 56ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK

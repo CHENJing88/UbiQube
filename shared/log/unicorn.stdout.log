@@ -1434,3 +1434,18 @@ I, [2015-09-02T15:51:57.110810 #3019]  INFO -- omniauth: (cas) Request phase ini
 I, [2015-09-02T15:52:10.520339 #3022]  INFO -- omniauth: (cas) Callback phase initiated.
 I, [2015-09-02T16:04:22.862457 #3013]  INFO -- omniauth: (cas) Request phase initiated.
 I, [2015-09-02T16:05:44.608613 #3019]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-09-03T11:59:19.519175 #3022]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-03T11:59:31.701109 #3022]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-09-03T12:13:28.327463 #3022]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-03T12:13:28.440831 #3022]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-09-03T12:14:10.556954 #3016]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-03T12:14:22.596989 #3016]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-09-03T12:21:25.224163 #3013]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-03T12:21:36.625294 #3013]  INFO -- omniauth: (cas) Callback phase initiated.
+jing.chen@univ-tours.fr
+I, [2015-09-04T12:03:44.856880 #3016]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-04T12:04:15.148392 #3016]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-09-04T12:11:30.297632 #3013]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-04T12:11:44.457893 #3019]  INFO -- omniauth: (cas) Callback phase initiated.
+I, [2015-09-04T14:17:49.084385 #3022]  INFO -- omniauth: (cas) Request phase initiated.
+I, [2015-09-04T14:18:04.041930 #3019]  INFO -- omniauth: (cas) Callback phase initiated.
