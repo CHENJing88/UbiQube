@@ -4,11 +4,11 @@
   <li><%= link_to 'Users', users_path %></li>
   <!-- Admin Zone -->
   <% if admin? %>
-    <li><%= link_to 'Admin Zone', adminzone_path%></li>
+    <li><%= link_to 'Admin Zone', adminzone_path(current_user) %></li>
   <% end %>
   <!-- DSI Zone -->
   <% if dsi? %>
-    <li><%= link_to 'DSI Zone', dsizone_path %></li>
+    <li><%= link_to 'DSI Zone', dsizone_path(current_user) %></li>
   <% end %>
   <!-- Mon compte -->
   <li class="dropdown" >
