@@ -1,0 +1,4 @@
+$(".modal").modal("hide");
+$('#new_groupe_user_modal').html("<%= j render('groupe_users/new')%>")
+//.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
+.modal("show");

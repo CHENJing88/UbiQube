@@ -1,0 +1,24 @@
+<!-- ====== c'est des cartes de 'Mes App' ===== -->
+<% if @mesgroupes.empty? %>
+ <p> Non Groupe maintenant. </p>
+<% else %>
+  <% @mesgroupes.each do |groupe|%>
+    <%= link_to groupe_user_path(mesapp) do%>
+      <li class="custom-card" id="groupe-<%=groupe.id%>">
+        <p><%= groupe.nom %></p>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+<!-- ===== c'est la carte de créer nouvelle App ==== -->
+<%= link_to new_groupe_user_path, data:{ remote:true, toggle:"modal",traget:"#new_groupe_user_modal" } do%>
+  <li class="nouvel-card" >
+    <p>Créer un nouveau Groupe</p>
+  </li>
+<% end %>
+<!-- c'est le modal dialog de créer une nouvelle App -->
+<div id="new_app_modal" class="modal" role="dialog"  backdrop="static" aria-labelledby="ModalLabel" data-keyboard="false" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"></div>
+  </div>
+</div>
