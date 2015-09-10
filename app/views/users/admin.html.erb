@@ -1,4 +1,7 @@
-Admin
-<% @apps.each do |app|%>
-<%= app %>
+<h1>Admin</h1>
+
+<p>Users: <%= User.count %> registered</p>
+<p>Apps: <%= App.count %> créé</p>
+<%= @apps.each do |app|%>
+<% app.nom%>
 <% end %>
