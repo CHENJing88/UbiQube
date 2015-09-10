@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
   before_filter :authenticate_user!
   #before_filter :correct_user?, :except => [:index]
-
+  authorize_resource :app
   # GET /apps
   # GET /apps
   def index
@@ -66,7 +66,6 @@ class AppsController < ApplicationController
   # PUT /apps/1.xml
   def update
     @app = App.find(params[:id])
-    #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
     respond_to do |format|
       if App.new(app_params).valid?
         @app.update_attributes(app_params)
@@ -97,7 +96,7 @@ class AppsController < ApplicationController
   private
 
     def app_params
-      params.require(:app).permit(:nom,:niveau, :description,:envoie,:groupe_app_id, :etape_app_id,:etat_app_id, user_app_roles_attributes:[:id,:app_id,:user_id,:role_id])
+      params.require(:app).permit(:nom,:niveau, :description,:envoie,:groupe_app_id, :etape_app_id,:etat_app_id, user_app_roles_attributes:[:id,:app_id,:user_id,:role_id,:_destroy])
     end
 
 end
