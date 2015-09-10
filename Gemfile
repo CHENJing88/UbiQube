@@ -60,5 +60,7 @@ group :development,:test do
   # test gem
   gem 'test-unit', '~> 3.1.2'
   #gem 'rspec-rails', '~> 3.0'
+  # test coverage 
+  gem "rcov"
 
 end

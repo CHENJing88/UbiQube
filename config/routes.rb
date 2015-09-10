@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :vms
+  resources :users, :vms, :groupe_users
 
-  resources :users
   resources :apps do
     resources :service_in_apps
   end
-
 
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
@@ -16,7 +14,6 @@ Rails.application.routes.draw do
 
   get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
-
 
   # pages ZONE: DSI, ADMIN
   get '/users/:id/admin' =>'users#admin', :as=>:adminzone
