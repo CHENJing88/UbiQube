@@ -36,6 +36,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # NOTE: The sass-rails gem is included with new Rails applications by default.
 # Autoprifixer is optional, but recommended. it automatically adds the proper vendor prefixes to your CSS
 gem 'autoprefixer-rails'
+# analyse site performance
+gem 'newrelic_rpm'
 
 gem 'high_voltage'
 gem 'omniauth'
