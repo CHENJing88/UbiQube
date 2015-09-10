@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class UserFlowsTest < ActionDispatch::IntegrationTest
-  fixtures :users
+  fixtures :all
 
   test "login and browse site" do
     # login via https

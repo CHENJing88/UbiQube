@@ -11,7 +11,23 @@ class ActiveSupport::TestCase
     if Rails.env.test?
       OmniAuth.config.test_mode=true
       OmniAuth.config.mock_auth[:cas]= OmniAuth::Builder
-
+      omniauth_hash = { 'provider' => 'cas',
+                        'url'=>'https://cas.univ-tours.fr/cas',
+                        'uid' => 'jchen',
+                        'info' => {
+                            'name' => 'jing',
+                            'email' => 'hi@jingtherobot.com',
+                            'nickname' => 'JingTheRobot'
+                         }
+                      }
+      }
+      OmniAuth.config.add_mock(:cas, omniauth_hash)
     end
   end
+
+
+
+
+
+
 end

@@ -1,9 +1,10 @@
 require 'test_helper'
 
 class UserAppRolesControllerTest < ActionController::TestCase
-
+fixtures :users
   setup do
-    @user_app_role = articles(:one)
+    @user = users(:jing)
+    @user_app_role = @user.user_app_roles.build(:one)
   end
 
   test "should get index" do
@@ -17,7 +18,7 @@ class UserAppRolesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create user_app_role" do
+  test "should create UserAppRole" do
     assert_difference('UserAppRole.count') do
       post :create, user_app_role: {  }
     end
@@ -45,9 +46,14 @@ class UserAppRolesControllerTest < ActionController::TestCase
       delete :destroy, id: @user_app_role
     end
 
-    assert_redirected_to user_app_roles_path
   end
-
+  test "associated user_app_roles should be destroyed" do
+      @user.save
+      @user.user_app_roles.create!(role_id: 1,app_id:2)
+      assert_difference('UserAppRole.count', -1) do
+        @user.destroy
+      end
+    end
   # called after every single test
   def teardown
     # as we are re-initializing @app before every test

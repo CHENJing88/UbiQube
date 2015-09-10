@@ -5,6 +5,10 @@ class UsersControllerTest < ActionController::TestCase
     @user = articles(:jing)
   end
 
+  test "should route to mesapp" do
+    assert_routing '/users/1/mesapps', {controller: "apps", action: "mesapps", id: "1ß"}
+  end
+
   test "should get index" do
     get :index
     assert_response :success
