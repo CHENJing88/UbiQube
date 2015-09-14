@@ -29,15 +29,14 @@ end
 # GET /groupe_users/1.xml
 def create
   @groupe_user=GroupeUser.new(relation_param)
-
   respond_to do |format|
-  if @groupe_user.save
-    format.html { redirect_to mesapps_url(current_user),:notice => 'GroupeUser was successfully created.' }
-    format.js
-  else
-    render root_url
+    if @groupe_user.save
+      format.html { redirect_to mesapps_url(current_user),:notice => 'GroupeUser was successfully created.' }
+      format.js
+    else
+      render root_url
+    end
   end
-
 end
 # PUT /groupe_users/1
 # PUT /groupe_users/1.xml
@@ -70,7 +69,7 @@ def destroy
 
 end
 
-  private
+private
   def relation_param
     params.require(:groupe_user).permit(:nom)
     #params[:id]
