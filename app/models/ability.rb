@@ -26,9 +26,11 @@
 # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 class Ability
   include CanCan::Ability
-  alias_action :read, :list, :search, :to => :basic_read_only
+
 
   def initialize(user)
+    user||=User.new
+    alias_action :read, :list, :search, :to => :basic_read_only
     if user.blank?
       # pour les visiters qui peut parcourir tous
       can :read, :all
