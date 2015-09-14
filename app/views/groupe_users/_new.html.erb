@@ -1,0 +1,32 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="ModalLabel">Créer App</h4>
+    </div>
+
+    <div class="modal-body">
+      <div id="content">
+        <%= form_for @groupe_user do |form| %>
+        <%= render 'layouts/error_message', object: @app %>
+
+        <div class="field">
+          <%= form.label :nom %><br/>
+          <%= form_app.text_field :nom, placeholder: "Groupe Nom...", :size => 30 , class:'form-control'%><br/>
+          <%= form_app.label :description %><br/>
+          <%= form_app.fields_for :user_groupe_users,@groupe_user.user_groupe_users.build do |relation_fields|%>
+            <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <div class = "actions">
+            <%= form_app.submit "Créer", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+
+    </div>
+  </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
