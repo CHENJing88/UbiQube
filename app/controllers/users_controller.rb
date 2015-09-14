@@ -32,7 +32,8 @@ class UsersController < ApplicationController
 
 private
   def user_param
-    params.require(:user).permit(:uid, mesapps_attributes[:user_id,:app_id,:role_id])
+    params.require(:user).permit(:uid, mesapps_attributes[:user_id,:app_id,:role_id],
+    mesgroupes_attributes[:groupe_user_id,:user_id])
   end
 
 
