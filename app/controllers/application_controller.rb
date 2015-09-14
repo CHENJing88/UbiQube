@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     end
   helper_method :current_user,:correct_user?
   helper_method :user_signed_in?
-  helper_method :current_ability
+  #helper_method :current_ability
   helper_method :ldap
   private
     def current_user
@@ -44,9 +44,9 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    def current_ability
-      @current_ability ||= ::Ability.new(current_user)
-    end
+    #def current_ability
+    #  @current_ability ||= ::Ability.new(current_user)
+    #end
 
     def load_and_authorize_resource
      load_resource

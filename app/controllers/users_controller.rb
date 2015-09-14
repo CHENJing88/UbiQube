@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
   before_filter :correct_user?, :except => [:index]
-  authorize_resource :user
+  load_and_authorize_resource :user
   def index
     @users = User.all
   end
