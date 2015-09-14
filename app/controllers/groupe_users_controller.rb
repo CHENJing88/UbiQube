@@ -22,13 +22,14 @@ end
 # GET /groupe_users/new.xml
 def new
   @groupe_user = GroupeUser.new
-  @groupe_user.user_groupe_users.build
-
+  @groupe_user.user_groupe_users.create(:groupe_user_id=>@groupe_user.id)
 end
 # GET /groupe_users/1
 # GET /groupe_users/1.xml
 def create
-  @groupe_user=GroupeUser.new(relation_param)
+  @groupe_user=GroupeUser.new(groupe_user_param)
+
+
   respond_to do |format|
     if @groupe_user.save
       format.html { redirect_to mesapps_url(current_user),:notice => 'GroupeUser was successfully created.' }
@@ -44,12 +45,12 @@ def update
   @groupe_user = GroupeUser.find(params[:id])
   #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   respond_to do |format|
-    if @groupe_user.update_attributes(app_params)
+    if @groupe_user.update_attributes(groupe_user_params)
         format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
         format.json { render :action => "show", :status => :updated, :location => @groupe_user }
         format.js
       else
-        format.html { redirect_to edit_app_path(@groupe_user) }
+        format.html { redirect_to edit_groupe_user_path(@groupe_user) }
         format.json { render :action => @groupe_user.errors.full_messages, :status => :unprocessable_entity}
         format.js
       end
@@ -70,7 +71,7 @@ def destroy
 end
 
 private
-  def relation_param
+  def groupe_user_param
     params.require(:groupe_user).permit(:nom)
     #params[:id]
   end
