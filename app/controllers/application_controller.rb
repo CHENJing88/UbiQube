@@ -2,10 +2,13 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
-  helper_method :current_user
+  # si user n'est pas autorisé à certain action
+  rescue_from CanCan::AccessDenied do |exception|
+    render :file => "#{Rails.root}/public/403.html", :status => 403,:layout => false
+    end
+  helper_method :current_user,:correct_user?
   helper_method :user_signed_in?
-  helper_method :correct_user?
+  helper_method :current_ability
   helper_method :ldap
   private
     def current_user
@@ -39,6 +42,15 @@ class ApplicationController < ActionController::Base
       unless current_user.uid == Application.find(params[:uid_admin])
         redirect_to root_path, :error => "Vous devez être connecté en tant que l'administrateur pour cet opération"
       end
+    end
+
+    def current_ability
+      @current_ability ||= ::Ability.new(current_user)
+    end
+
+    def load_and_authorize_resource
+     load_resource
+     authorize_resource
     end
 
     def ldap

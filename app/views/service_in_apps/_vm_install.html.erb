@@ -1,6 +1,6 @@
-<%= content_tag_for(:tr, @vm_install, :id => "tr_vm_install_#{vm_install.id}", :class => "fields comments") do %>
+<%= content_tag_for(:tr, vm_install, :id => "tr_vm_install_#{vm_install.id}", :class => "fields") do %>
   <%#= form_for vm , remote: true do |f|%>
-    <td><%= vm.nom%></td><td><%= @vm_install.template %></td><td><%= @vm_install.etat_app.nom %></td><td><%= @vm_install.ip_defaut %></td>
-    <td><%= link_to 'Destroy', @vm_install, :confirm => 'Are you sure?', :method => :delete %>
+    <td><%= vm_install.nom%></td><td><%= vm_install.template %></td><td><%= vm_install.etat_app.nom %></td><td><%= vm_install.ip_default %></td>
+    <td><%= link_to 'Destroy', vm_install, :confirm => 'Are you sure?', :method => :delete %>
   <%# end %><!--form_for-->
 <% end %><!--content_tag-->

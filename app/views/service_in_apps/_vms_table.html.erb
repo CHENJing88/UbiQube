@@ -17,13 +17,8 @@
       <td>There is no VM</td>
     </tr>
     <% else %>
-      <%= vm_installs.each do |s| %>
-        <tr class="fields">
-          <td><%= s.nom%></td><td><%=s.template %></td><td><%= s.etat.nom %></td>
-          <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
-          <td><%#= check_box_tag , s.is_default %></td>
-          <td><%= link_to 'Destroy', s, :confirm => 'Are you sure?', :method => :delete %></td>
-        </tr>
+      <%= vm_installs.each do |vm| %>
+        <% render 'service_in_apps/vm_installs', vm_install: vm%>
       <% end %>
     <% end %>
 
