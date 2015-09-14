@@ -70,10 +70,10 @@ def destroy
 
 end
 
-end
+  private
+  def relation_param
+    params.require(:groupe_user).permit(:nom)
+    #params[:id]
+  end
 
-private
-def relation_param
-  params.require(:groupe_user).permit(:nom)
-  #params[:id]
 end
