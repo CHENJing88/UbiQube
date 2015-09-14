@@ -52,17 +52,17 @@ $(function() {
             vmsAdd[i] = $(selected).text();
           });
           // Build the row and add it to the end of the table.
-          rowBuilder.addRow(cfg.getTBodySelector(), vmsAdd);
+          rowBuilder.attachRow(cfg.getTBodySelector(), vmsAdd);
 
           // Add the "Remove" link to the last cell.
           rowBuilder.link.clone().appendTo($('tr:last td:last'));
       },
-      // Public method for hiding the data entry fields.
-      hideForm: function() {
-          $(cfg.formId).modal('hide');
+      // Public method for hiding the data has been selected.
+      hideSelected: function() {
+          //$(cfg.formId).modal('hide');
       }
   };
-  // Provides functionality for building the HTML that represents a new <TR> for the Pilots table.
+  // Provides functionality for building the HTML that represents a new <TR> for the VMs table.
   var rowBuilder = function() {
       // Private property that define the default <TR> element text.
       var row = $('<tr>', { class: 'fields' });
@@ -79,7 +79,7 @@ $(function() {
           var newRow = row.clone();
 
           $(fields).map(function() {
-              $(this).removeAttr('class');
+
               return $('<td/>').append($(this));
           }).appendTo(newRow);
 
@@ -99,24 +99,15 @@ $(function() {
       }
   }();
 
-var addVMFieldsUI = {
-    init: function() {
-        $('#add_vm').on('click', function() {
-            vmFormHandler.appendFields();
-            vmFormHandler.hideForm();
-        });
-    }
-};
-
 // Configuration for the Add/Edit Ship screen's functionality:
-//  formId:  The ID of the <FORM> that contains the input fields that need to be captured and appended to the table of Pilots.
+//  selectId:  The ID of the <select> that contains the option selected that need to be captured and appended to the table of VMs.
 //  tableId:  The ID of the <TABLE> that represents the Pilots assigned to fly a particular ship.
 //  inputFieldClassSelector:  The CSS class that is assigned to all the data entry/input fields that need to be collected
-//      for appending to th Pilots table (and ultimately for saving to the database).
+//      for appending to the VMs table (and ultimately for saving to the database).
 //  getTBodySelector:  A VERY simple method that concatenates the cfg.tableId and " tbody" to build the selector we need
 //      to identify the <TABLE> where we'll be appending rows.
 var cfg = {
-    formId: '#vm-multiselect',
+    selectId: '#vm-multiselect',
     tableId: '#vm-table',
     inputFieldClassSelector: '.field',
     getTBodySelector: function() {
