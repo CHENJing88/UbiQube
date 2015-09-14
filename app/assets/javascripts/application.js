@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-multiselect
+//= require bootstrap-popover.js
 //= require_tree .
   // require foundation $(document).foundation();
 
@@ -26,6 +27,16 @@ $(document).ready(function() {
       //includeSelectAllOption: true,
       //enableFiltering: true,
       maxHeight: 200
+      });
+
+      $('#popover_group_usr').popover({ 
+          html : true,
+          title: function() {
+            return $("#popover-head").html();
+          },
+          content: function() {
+            return $("#popover-content").html();
+          }
       });
 
     });
