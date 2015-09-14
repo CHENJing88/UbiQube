@@ -30,7 +30,7 @@ module ApplicationHelper
     @uars.each do |uar|
       if @uars.rold_id == 1
         return false
-    end
+      end
     return true
   end
 
@@ -66,5 +66,5 @@ module ApplicationHelper
     emails
   end
 
-
+end
 end
