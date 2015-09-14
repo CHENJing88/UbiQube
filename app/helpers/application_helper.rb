@@ -14,7 +14,7 @@ module ApplicationHelper
 
   # retourner true si current_user est admin
   def admin?
-    return true if current_user[:uid].to_s == Application.first.uid_admin.to_s
+    return true if current_user.uid.to_s == Application.first.uid_admin.to_s
   end
 
   # retourner true si current_user est dsi
