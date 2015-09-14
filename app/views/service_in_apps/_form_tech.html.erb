@@ -13,7 +13,7 @@
       <div class="field">
         <%= vms_form.label "VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
         <%= vms_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] },{:prompt => false},{:class=>'multiselect', :multiple=>'multiple', :id=>"vm-multiselect"}%>
-        <%= link_to "Add", :data => {:f=>f, :vms=>:vms, :"disable-with"=> "Loading..."}, :id=>"add_vm",:class=>"button btn btn-default" %>
+        <%= link_to "Add", :data => {:f=>f, :vms=>:vms_installs, :"disable-with"=> "Loading..."}, :id=>"add_vm",:class=>"button btn btn-default" %>
         <%#= link_to_add_fields "Add", f, :vms %>
       </div>
       <%# end %>
@@ -40,7 +40,7 @@
     <div class="modal-footer">
       <div class = "actions">
         <%#= siv.submit "Save", class: 'btn btn-large btn-primary'%>
-        <%=link_to "Annuler",edit_app_path(@app), data:{ toggle:"modal",traget:"#edit_app_modal"},remote:true, :class=>"btn btn-default"%>
+        <%=link_to "Annuler", edit_app_path(@app), data:{ toggle:"modal", traget:"#edit_app_modal"},remote:true, :class=>"btn btn-default"%>
       </div>
     </div><!-- /.modal-footer , {:controller=>'service_in_apps', :action=> 'edit_tech'}-->
   <%# end %><!--form_for service_in_app-->

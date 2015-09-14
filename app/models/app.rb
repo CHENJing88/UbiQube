@@ -17,14 +17,14 @@ class App < ActiveRecord::Base
   belongs_to :etat_app, :class_name => "EtatApp", foreign_key:"etat_app_id"
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
-  accepts_nested_attributes_for :user_app_roles , :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :user_app_roles , :allow_destroy => true, :reject_if => :reject_uars # :all_blank
   #accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
 
   scope :envoie, -> { where(is_envoye: true) }
 
   def reject_uars(attributed)
     # ne peut pas ajouter attributed['app_id'].blank?, car si uar est créé par build, 'app_id' est vide
-    attributed['user_id'].blank? || attributed['role_id'].blank?
+    attributed['user_id'].blank? || attributed['role_id'].blank? || attributed['app_id'].blank?
   end
 
   # pour "accepts_nested_attributes_for" quand il faut transmettre des attributes d'autre model
