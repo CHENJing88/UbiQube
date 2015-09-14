@@ -5,6 +5,6 @@ class UserGroupeUser < ActiveRecord::Base
   #end
   #la relation many to many (user-app-role)
   belongs_to :users , class_name: "User", foreign_key:"user_id" #foreign key user_id
-  belongs_to :groupe_user , class_name: "GroupeUser",foreign_key:"groupe_user_id"#foreign key app_id,
-  
+  belongs_to :groupe_users , class_name: "GroupeUser",foreign_key:"groupe_user_id"#foreign key app_id,
+
 end

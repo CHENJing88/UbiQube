@@ -29,8 +29,6 @@ class AppsController < ApplicationController
     end
   end
 
-
-
   # GET /apps/new
   # GET /apps/new.xml
   def new

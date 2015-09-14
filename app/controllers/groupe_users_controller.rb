@@ -28,6 +28,7 @@ end
 # GET /groupe_users/1.xml
 def create
   @groupe_user=GroupeUser.new(groupe_user_param)
+  
   respond_to do |format|
     if @groupe_user.save
       format.html { redirect_to mesapps_url(current_user),:notice => 'GroupeUser was successfully created.' }
