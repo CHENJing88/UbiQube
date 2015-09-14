@@ -22,7 +22,7 @@ end
 # GET /groupe_users/new.xml
 def new
   @groupe_user = GroupeUser.new
-  @groupe_user.user_groupe_users.create(:groupe_user_id=>@groupe_user.id)
+  @user_groupe_users=@groupe_user.user_groupe_users.build
 end
 # GET /groupe_users/1
 # GET /groupe_users/1.xml
@@ -72,7 +72,7 @@ end
 
 private
   def groupe_user_param
-    params.require(:groupe_user).permit(:nom)
+    params.require(:groupe_user).permit(:nom, user_groupe_users_attributes[:id,:groupe_user_id,:user_id])
     #params[:id]
   end
 
