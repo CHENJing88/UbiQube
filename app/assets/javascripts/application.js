@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap-multiselect
-//= require bootstrap-popover.js
 //= require_tree .
   // require foundation $(document).foundation();
 
@@ -29,7 +28,7 @@ $(document).ready(function() {
       maxHeight: 200
       });
 
-      $('#popover_group_usr').popover({ 
+      $('#popover_group_usr').popover({
           html : true,
           title: function() {
             return $("#popover-head").html();
