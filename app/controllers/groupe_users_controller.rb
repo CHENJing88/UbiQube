@@ -32,7 +32,7 @@ def create
 
   respond_to do |format|
   if @groupe_user.save
-    format.html { :notice => 'GroupeUser was successfully created.' }
+    format.html { redirect_to mesapps_url(current_user),:notice => 'GroupeUser was successfully created.' }
     format.js
   else
     render root_url
