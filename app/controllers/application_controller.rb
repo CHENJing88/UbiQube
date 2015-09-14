@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
   helper_method :current_ability
   helper_method :ldap
-  private
+  #private
     def current_user
       begin
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
