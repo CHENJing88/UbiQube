@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :user_groupe_users
+
   resources :users, :vms, :groupe_users
 
   resources :apps do
