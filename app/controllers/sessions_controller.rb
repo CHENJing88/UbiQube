@@ -17,8 +17,8 @@ class SessionsController < ApplicationController
         #redirect à la page de mes Apps
         redirect_to mesapps_url(user.id), :notice => 'Signed in!'
       else
-         flash.keep
-         redirect_to signout_url; :notice => "Authentication error: que les personnelles du DTIC authorisées"
+        flash.keep
+         redirect_to signout_url, :notice => "Authentication error: que les personnelles du DTIC authorisées"
       end
 
   end
