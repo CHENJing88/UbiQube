@@ -34,7 +34,8 @@ def create
       format.html { redirect_to mesapps_url(current_user),:notice => 'GroupeUser was successfully created.' }
       format.js { render :action => 'mesapps', :status => :created, :location => @user }
     else
-      render root_url
+      format.html { redirect_to mesapps_url(current_user), :notice => 'Create GroupeUser was failed.' }
+      format.js { render :action => @groupe_user.errors, :status => :unprocessable_entity }
     end
   end
 end
