@@ -15,6 +15,8 @@ class UserGroupeUsersController < ApplicationController
   # GET /user_groupe_users/new
   def new
     @user_groupe_user = UserGroupeUser.new
+    @user_groupe_user.groupe_users.build
+    @user_groupe_user.users.build
   end
 
   # GET /user_groupe_users/1/edit
