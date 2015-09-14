@@ -13,15 +13,14 @@
 
         <div class="field">
           <%= form.label :nom %><br/>
-          <%= form_app.text_field :nom, placeholder: "Groupe Nom...", :size => 30 , class:'form-control'%><br/>
-          <%= form_app.label :description %><br/>
-          <%= form_app.fields_for :user_groupe_users,@groupe_user.user_groupe_users.build do |relation_fields|%>
+          <%= form.text_field :nom, placeholder: "Groupe Nom...", :size => 30 , class:'form-control'%><br/>
+          <%= form.fields_for :user_groupe_users,@groupe_user.user_groupe_users.build do |relation_fields|%>
             <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
           <% end %>
         </div>
         <div class="modal-footer">
           <div class = "actions">
-            <%= form_app.submit "Créer", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary' %>
+            <%= form.submit "Créer", :data => { :"disable-with"=> "Loading..."}, class: 'btn btn-large btn-primary' %>
           </div>
         </div>
       <% end %>
