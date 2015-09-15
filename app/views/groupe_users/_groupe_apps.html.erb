@@ -3,6 +3,7 @@
     <p> Non App maintenant. </p>
   <% else %>
     <%= @groupeapps.each do |app|%>
-    <li><%= app.nom%></li>
+      <li><%= app.nom%></li>
+    <% end%>
   <% end%>
 </ul>
