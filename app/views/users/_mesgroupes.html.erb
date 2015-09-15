@@ -3,7 +3,7 @@
  <p> Non Groupe maintenant. </p>
 <% else %>
   <% @mesgroupes.each do |mongroupe|%>
-    <%= link_to groupe_user_path(mesapp) do%>
+    <%= link_to user_groupe_user_path(mongroupe) do%>
       <li class="custom-card" id="groupe-<%=groupe.id%>">
         <p><%= mongroupe.groupe_user.nom %></p>
       </li>
