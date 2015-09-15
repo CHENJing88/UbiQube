@@ -73,7 +73,7 @@ end
 
 private
   def groupe_user_param
-    params.require(:groupe_user).permit(:nom, user_groupe_users_attributes:[:id,:groupe_user_id,:user_id,:_destroy])
+    params.require(:groupe_user).permit(:nom)
     #params[:id]
   end
 

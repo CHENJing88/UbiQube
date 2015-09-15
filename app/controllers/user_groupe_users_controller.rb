@@ -15,8 +15,8 @@ class UserGroupeUsersController < ApplicationController
   # GET /user_groupe_users/new
   def new
     @user_groupe_user = UserGroupeUser.new
-    @user_groupe_user.groupe_users.build
-    @user_groupe_user.users.build
+    @user_groupe_user.groupe_user.build
+    @user_groupe_user.user.build
   end
 
   # GET /user_groupe_users/1/edit
@@ -31,7 +31,7 @@ class UserGroupeUsersController < ApplicationController
     respond_to do |format|
       if @user_groupe_user.save
         format.html {  notice: 'User groupe user was successfully created.' }
-        format.json 
+        format.json
       else
         format.html { render :new }
         format.json { render json: @user_groupe_user.errors, status: :unprocessable_entity }

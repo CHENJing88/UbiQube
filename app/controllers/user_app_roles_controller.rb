@@ -22,9 +22,9 @@ class UserAppRolesController < ApplicationController
   # GET /user_app_roles/new.xml
   def new
     @user_app_role = UserAppRole.new
-    @user_app_role.apps.build
-    @user_app_role.users.build
-    @user_app_role.roles.build
+    @user_app_role.app.build
+    @user_app_role.user.build
+    @user_app_role.role.build
   end
   # GET /user_app_roles/1
   # GET /user_app_roles/1.xml
