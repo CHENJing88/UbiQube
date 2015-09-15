@@ -6,7 +6,8 @@ class GroupeUser < ActiveRecord::Base
   has_many :users, through: :user_groupe_users
 
   has_many :groupe_apps
-  
+  has_many :apps, through: :groupe_apps
+
   accepts_nested_attributes_for :user_groupe_users , :allow_destroy => true, :reject_if => :all_blank
   accepts_nested_attributes_for :users , :allow_destroy => true, :reject_if => :all_blank
 end
