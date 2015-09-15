@@ -46,7 +46,7 @@ class UserAppRolesController < ApplicationController
     @user_app_role = UserAppRole.find(params[:id])
     #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
     respond_to do |format|
-      if @user_app_role.update_attributes(app_params)
+      if @user_app_role.update_attributes(relation_param)
           format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
           format.json { render :action => "show", :status => :updated, :location => @user_app_role }
           format.js
@@ -71,10 +71,9 @@ class UserAppRolesController < ApplicationController
 
   end
 
-end
-
 private
   def relation_param
     params.require(:user_app_role).permit(:user_id,:app_id,:role_id)
     #params[:id]
   end
+end
