@@ -1,5 +1,5 @@
 class UserGroupeUser < ActiveRecord::Base
-  validates_presence_of :user_id, :groupe_user_id
+  #validates_presence_of :user_id, :groupe_user_id
   #before_validation do |model|
     #model.user_id.reject!(&:blank?) if model.user_id
   #end
