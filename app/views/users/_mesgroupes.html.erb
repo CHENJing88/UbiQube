@@ -2,10 +2,10 @@
 <% if @mesgroupes.empty? %>
  <p> Non Groupe maintenant. </p>
 <% else %>
-  <% @mesgroupes.each do |groupe|%>
+  <% @mesgroupes.each do |mongroupe|%>
     <%= link_to groupe_user_path(mesapp) do%>
       <li class="custom-card" id="groupe-<%=groupe.id%>">
-        <p><%= groupe.nom %></p>
+        <p><%= mongroupe.groupe_user.nom %></p>
       </li>
     <% end %>
   <% end %>

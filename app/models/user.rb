@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   #user est dans la relation many to many (user-groupe_user).
   #user peut dans plusieurs groupes.
-  has_many :user_groupe_users, foreign_key: "user_id"
+  has_many :user_groupe_users #, foreign_key: "user_id"
   has_many :groupe_users, through: :user_groupe_users
 
 
