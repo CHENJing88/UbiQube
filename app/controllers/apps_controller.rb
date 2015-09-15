@@ -23,7 +23,7 @@ class AppsController < ApplicationController
   def edit
     @app=App.find(params[:id])
     @user_app_roles=@app.user_app_roles.build
-    @groupe_app=@app.groupe_app.build
+
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -37,7 +37,6 @@ class AppsController < ApplicationController
     @user_app_roles=@app.user_app_roles.build
     @app.users.build
     @app.roles.build
-    @app.groupe_app.build
     #2.times { @app.user_app_roles.build }
     #@service_in_apps = @app.service_in_apps.build
   end

@@ -7,7 +7,7 @@ class CreateApps < ActiveRecord::Migration
       t.boolean :envoie, :default=>false
       t.integer :etat_app_id,:index=>true
       t.integer :etape_app_id,:index=>true
-      
+      t.integer :groupe_user_id,:index=>true
       t.timestamps
     end
   end
