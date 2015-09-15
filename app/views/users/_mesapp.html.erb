@@ -3,10 +3,10 @@
  <p> Non App maintenant. </p>
 <% else %>
   <% @mesapps.each do |mesapp|%>
-    <%= link_to app_path(mesapp.apps), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
-      <li class="custom-card" id="app-<%=mesapp.apps.id%>">
-        <p><%= mesapp.apps.nom %></p>
-        <p><%= mesapp.roles.nom %></p>
+    <%= link_to app_path(mesapp.app), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
+      <li class="custom-card" id="app-<%=mesapp.app.id%>">
+        <p><%= mesapp.app.nom %></p>
+        <p><%= mesapp.role.nom %></p>
       </li>
     <% end %>
   <% end %>
