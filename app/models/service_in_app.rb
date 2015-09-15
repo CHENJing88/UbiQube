@@ -10,6 +10,6 @@ class ServiceInApp < ActiveRecord::Base
   belongs_to :service, foreign_key:"service_id"
   belongs_to :app, foreign_key:"app_id"
 
-  accepts_nested_attributes_for :reseau_services, :service_out_apps, :vm_install_service_ins, :apps
+  accepts_nested_attributes_for :reseau_services, :service_out_apps, :vm_install_service_ins, :app
 
 end
