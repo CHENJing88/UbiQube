@@ -9,15 +9,16 @@
   display: block;
   clear: both;
 }
-i{
+i .fi-torsos-all{
   font-size: 4rem;
   padding: 20px 30%;
-  
+
   h3{
     display: inline;
   }
 }
 .nav-tabs{
+  clear: both;
   padding-left: 40%;
   padding-top: 20px;
   text-align: center;
