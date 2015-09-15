@@ -4,7 +4,7 @@
 <% else %>
   <% @mesgroupes.each do |mongroupe|%>
     <%= link_to user_groupe_user_path(mongroupe) do%>
-      <li class="custom-card" id="groupe-<%=groupe.id%>">
+      <li class="custom-card" id="groupe-<%=mongroupegroupe.id%>">
         <p><%= mongroupe.groupe_user.nom %></p>
       </li>
     <% end %>
