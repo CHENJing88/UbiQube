@@ -22,7 +22,7 @@ end
 # GET /groupe_users/new.xml
 def new
   @groupe_user = GroupeUser.new
-  @user_groupe_users=@groupe_user.user_groupe_users.build
+  @groupe_user.users.create(user: current_user)
 end
 # GET /groupe_users/1
 # GET /groupe_users/1.xml
