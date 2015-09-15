@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708151858) do
+ActiveRecord::Schema.define(version: 20150914092513) do
 
   create_table "applications", force: true do |t|
     t.string   "nom"
@@ -27,10 +27,9 @@ ActiveRecord::Schema.define(version: 20150708151858) do
     t.string   "nom"
     t.string   "niveau"
     t.string   "description"
-    t.boolean  "envoie",        default: false
+    t.boolean  "envoie",       default: false
     t.integer  "etat_app_id"
     t.integer  "etape_app_id"
-    t.integer  "groupe_app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,7 +74,8 @@ ActiveRecord::Schema.define(version: 20150708151858) do
   end
 
   create_table "groupe_apps", force: true do |t|
-    t.string   "nom"
+    t.integer  "groupe_user_id"
+    t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
