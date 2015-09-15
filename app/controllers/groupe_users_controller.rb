@@ -10,7 +10,7 @@ end
 # GET /groupe_users/1.xml
 def show
   @groupe_user = GroupeUser.find(params[:id])
-
+  @membres=@groupe_user.users
 end
 # GET /groupe_users/1
 # GET /groupe_users/1.xml

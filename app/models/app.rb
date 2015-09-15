@@ -1,11 +1,11 @@
 class App < ActiveRecord::Base
-  #validation d'existance
+  # validation d'existance
   validates_presence_of :nom, :description
 
-  #relation d'APP
-  #si une App est supprimée, on va supprimer tous les records dans user_app_roles
+  # relation d'APP
+  # si une App est supprimée, on va supprimer tous les records dans user_app_roles
   has_many :user_app_roles , foreign_key: "app_id", dependent: :destroy
-  #APP a plusieurs users et roles(many to many)
+  # APP a plusieurs users et roles(many to many)
   has_many :users, through: :user_app_roles
   has_many :roles, through: :user_app_roles
 
@@ -18,7 +18,7 @@ class App < ActiveRecord::Base
   belongs_to :groupe_app,:class_name => "GroupeApp", foreign_key:"groupe_app_id"
 
   accepts_nested_attributes_for :user_app_roles , :allow_destroy => true, :reject_if => :all_blank #:reject_uars
-  #accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
+  # accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
 
   scope :envoie, -> { where(is_envoye: true) }
 
@@ -28,7 +28,7 @@ class App < ActiveRecord::Base
   end
 
   # pour "accepts_nested_attributes_for" quand il faut transmettre des attributes d'autre model
-  #def user_app_roles_attributes=(user_app_role_attributes)
+  # def user_app_roles_attributes=(user_app_role_attributes)
   #  if user_app_role_attributes['id'].present?
   #    self.user_app_roles= UserAppRole.find(user_app_role_attributes['id'])
   #  end
