@@ -10,6 +10,7 @@ class UserGroupeUsersController < ApplicationController
   # GET /user_groupe_users/1
   # GET /user_groupe_users/1.json
   def show
+    @user_groupe_user = UserGroupeUser.find(params[:id])
   end
 
   # GET /user_groupe_users/new
@@ -21,6 +22,7 @@ class UserGroupeUsersController < ApplicationController
 
   # GET /user_groupe_users/1/edit
   def edit
+    @user_groupe_user = UserGroupeUser.find(params[:id])
   end
 
   # POST /user_groupe_users
@@ -30,7 +32,7 @@ class UserGroupeUsersController < ApplicationController
 
     respond_to do |format|
       if @user_groupe_user.save
-        format.html {  notice: 'User groupe user was successfully created.' }
+        format.html
         format.json
       else
         format.html { render :new }
