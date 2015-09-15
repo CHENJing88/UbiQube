@@ -1,14 +1,16 @@
-<groupe-header >
-   <i class="fi-torsos-all"><h3 ><%= @groupe_user.nom %></h3></i>
-</group-header >
+<container>
+  <groupe-header >
+     <i class="fi-torsos-all"><h3 ><%= @groupe_user.nom %></h3></i>
+  </group-header >
 
-<groupe-container >
-   <%= render 'groupe_users/nav_tabs' %>
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="apps">App...</div>
-  <div class="tab-pane" id="membres">Membres...</div>
-  <div class="tab-pane" id="messages">Messages...</div>
-  <div class="tab-pane" id="settings">Settings...</div>
-</div>
-</group-container >
+  <groupe-container >
+     <%= render 'groupe_users/nav_tabs' %>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="apps">App...</div>
+        <div class="tab-pane" id="membres">Membres...</div>
+        <div class="tab-pane" id="messages">Messages...</div>
+        <div class="tab-pane" id="settings">Settings...</div>
+      </div>
+  </group-container >
+</container>
