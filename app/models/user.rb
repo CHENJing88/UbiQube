@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   #user est dans la relation many to many (user-role-app).
   #user peut avoir plusieurs roles par rapport à un App.
   #si un user est supprimé, on va supprimer tous les records dans user_app_roles
-  has_many :user_app_roles, foreign_key: "user_id", dependent: :destroy
+  has_many :user_app_roles, dependent: :destroy #foreign_key: "user_id", 
   has_many :roles, through: :user_app_roles
   has_many :apps, through: :user_app_roles
 
