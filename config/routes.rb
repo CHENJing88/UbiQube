@@ -20,6 +20,4 @@ Rails.application.routes.draw do
   # pages ZONE: DSI, ADMIN
   get '/users/:id/admin' =>'users#admin', :as=>:adminzone
   get '/users/:id/dsi' =>'users#dsi', :as=>:dsizone
-
-  get '/groupepanel/:id' =>'groupe_users#show', :as=>:groupe_user
 end
