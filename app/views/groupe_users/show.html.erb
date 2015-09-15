@@ -1,4 +1,8 @@
-<container >
+<groupe-header >   
+   <i class="fi-torsos-all size-72"><h3 ><%= @groupe_user.nom %></h3></i>
+</group-header >
+
+<groupe-container >
    <%= render 'groupe_users/nav_tabs' %>
 <!-- Tab panes -->
 <div class="tab-content">
@@ -7,4 +11,4 @@
   <div class="tab-pane" id="messages">...</div>
   <div class="tab-pane" id="settings">...</div>
 </div>
-</container >
+</group-container >
