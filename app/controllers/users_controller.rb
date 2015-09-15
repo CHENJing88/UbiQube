@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # users/mesapps
   def mesapps
     @user = User.find(session[:user_id])
-    @mesapps=@user.user_app_roles.includes(:apps,:roles)
+    @mesapps=@user.user_app_roles.includes(:app,:role)
     @mesgroupes=@user.user_groupe_users.includes(:groupe_users)
   end
 
