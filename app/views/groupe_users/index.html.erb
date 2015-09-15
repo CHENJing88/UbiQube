@@ -10,6 +10,7 @@
   <tbody>
     <% @groupe_users.each do |groupe_user| %>
       <tr>
+        <td><%= groupe_user.nom %></td>
         <td><%= link_to 'Show', groupe_user %></td>
         <td><%= link_to 'Edit', edit_groupe_user_path(groupe_user) %></td>
         <td><%= link_to 'Destroy', groupe_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
