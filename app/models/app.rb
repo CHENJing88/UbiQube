@@ -15,10 +15,8 @@ class App < ActiveRecord::Base
 
   belongs_to :etape_app,:class_name => "EtapeApp", foreign_key:"etape_app_id"
   belongs_to :etat_app, :class_name => "EtatApp", foreign_key:"etat_app_id"
-
   belongs_to :groupe_user,:class_name => "GroupeUser", foreign_key:"groupe_user_id"
 
-  accepts_nested_attributes_for :groupe_app, :allow_destroy => true, :reject_if => :all_blank
   accepts_nested_attributes_for :user_app_roles , :allow_destroy => true, :reject_if => :all_blank #:reject_uars
   # accepts_nested_attributes_for  :service_in_apps, allow_destroy: true
 
