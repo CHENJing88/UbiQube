@@ -93,8 +93,7 @@ class AppsController < ApplicationController
   private
 
     def app_params
-      params.require(:app).permit(:nom,:niveau, :description,:envoie,:etape_app_id,:etat_app_id,
-      groupe_apps_attributes:[:id,:app_id,:groupe_user_id,:_destroy],
+      params.require(:app).permit(:nom,:niveau, :description,:envoie,:etape_app_id,:etat_app_id,:groupe_user_id,
       user_app_roles_attributes:[:id,:app_id,:user_id,:role_id,:_destroy])
     end
 
