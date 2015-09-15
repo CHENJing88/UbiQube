@@ -1,3 +1,4 @@
 class GroupeApp < ActiveRecord::Base
-  has_many :apps, :class_name => "App", foreign_key:"groupe_app_id"
+  belongs_to :app
+  belongs_to :groupe_user
 end

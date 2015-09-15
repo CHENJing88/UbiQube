@@ -7,8 +7,10 @@
 
     <%= f.label :etat %><%= f.select :etat_app_id, EtatApp.all.map { |etat_app| [etat_app.nom, etat_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
     <%= f.label :etape %><%= f.select :etape_app_id, EtapeApp.all.map { |etape_app| [etape_app.nom, etape_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
-    <%= f.label :groupe %><%= f.select :groupe_app_id, GroupeApp.all.map { |groupe_app| [groupe_app.nom, groupe_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
-
+    <%= f.fields_for @groupe_user do |gu_f|%>
+      <%= gu_f.label :groupe %><%= gu_f.select :groupe_user_id, GroupeUser.all.map { |groupe_user| [groupe_user.nom, groupe_user.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
+      <%= gu_f.hidden_field :app_id, :value => @app.id %>
+    <% end %>
 
     <%=f.fields_for @user_app_roles do |uars| %>
       <%#= debug resp_fonc?(@app) %>
@@ -33,7 +35,7 @@
             {:prompt => false}, {multiple:'multiple',:include_hidden => false,:class=>'multiselect form-control input-sm',:id=>"uar_tech_multi"}%>
             <%= uar_t.hidden_field :app_id, :value => @app.id %>
             <%= uar_t.hidden_field :role_id, :value => find_role("RT")%>
-          
+
       <% end %>
       <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
       <%#= f.fields_for @user_app_roles do |uar_rt_f|%>

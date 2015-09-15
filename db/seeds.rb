@@ -18,11 +18,17 @@ ep4=EtapeApp.create(nom:"Refusé")
 ep5=EtapeApp.create(nom:"Archivé")
 
 g1=GroupeUser.create(nom:"DTIC")
-gp1=GroupeApp.create(nom:"EDTIC")
 
-App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_app_id:ep1.id, groupe_app_id: gp1.id,description:"description de lifray")
-App.create(nom:"SSH", niveau:"mid", etat_app_id:e2.id, etape_app_id:ep2.id, groupe_app_id: gp1.id,description:"description de ssh")
-App.create(nom:"HTTP", niveau:"mid", etat_app_id:e1.id, etape_app_id:ep3.id, groupe_app_id: gp1.id,description:"description de HTTP")
+UserGroupeUser.create(groupe_user_id:g1.id, user_id:1)
+UserGroupeUser.create(groupe_user_id:g1.id, user_id:2)
+
+a1=App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_app_id:ep1.id,description:"description de lifray")
+a2=App.create(nom:"SSH", niveau:"mid", etat_app_id:e2.id, etape_app_id:ep2.id,description:"description de ssh")
+a3=App.create(nom:"HTTP", niveau:"mid", etat_app_id:e1.id, etape_app_id:ep3.id,description:"description de HTTP")
+GroupeApp.create(groupe_user_id: g1.id, app_id:a1.id)
+GroupeApp.create(groupe_user_id: g1.id, app_id:a2.id)
+GroupeApp.create(groupe_user_id: g1.id, app_id:a3.id)
+
 r1=Role.create(nom: "User")
 r2=Role.create(nom: "Admin")
 r3=Role.create(nom: "RF")

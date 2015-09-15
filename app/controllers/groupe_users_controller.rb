@@ -11,6 +11,7 @@ end
 def show
   @groupe_user = GroupeUser.find(params[:id])
   @membres=@groupe_user.users
+  @groupeapps=@groupe_user.apps
 end
 # GET /groupe_users/1
 # GET /groupe_users/1.xml

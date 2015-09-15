@@ -1,0 +1,8 @@
+<ul>
+  <% if @groupeapps.empty? %>
+    <p> Non App maintenant. </p>
+  <% else %>
+    <%= @groupeapps.each do |app|%>
+    <il><%= app.nom%><il>
+  <% end%>
+</ul>
