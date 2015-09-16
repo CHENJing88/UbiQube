@@ -9,6 +9,9 @@
   display: block;
   clear: both;
 }
+.tab-content{
+  margin: 20px;
+}
 i.fi-torsos-all{
   font-size: 4rem;
   padding: 20px 30%;
@@ -29,4 +32,8 @@ table tr th, table tr td{
 }
 a{
   text-decoration:none;
+}
+li{
+  display: block;
+  float: left;
 }
