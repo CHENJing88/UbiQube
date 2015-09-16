@@ -47,9 +47,7 @@ protected
       end
     end
 
-    def current_ability
-      @current_ability ||= ::Ability.new(current_user)
-    end
+  
 
     def load_and_authorize_resource
      load_resource
