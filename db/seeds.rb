@@ -23,8 +23,8 @@ UserGroupeUser.create(groupe_user_id:g1.id, user_id:1)
 UserGroupeUser.create(groupe_user_id:g1.id, user_id:2)
 
 a1=App.create(nom:"lifray", niveau:"font", etat_app_id:e1.id, etape_app_id:ep1.id,groupe_user_id:g1.id,description:"description de lifray")
-a2=App.create(nom:"SSH", niveau:"mid", etat_app_id:e2.id, etape_app_id:ep2.id,groupe_user_id:g1.id,description:"description de ssh")
-a3=App.create(nom:"HTTP", niveau:"mid", etat_app_id:e1.id, etape_app_id:ep3.id,groupe_user_id:g1.id,description:"description de HTTP")
+a2=App.create(nom:"SSH", niveau:"mid", etat_app_id:e2.id, etape_app_id:ep2.id,envoie:true,groupe_user_id:g1.id,description:"description de ssh")
+a3=App.create(nom:"HTTP", niveau:"mid", etat_app_id:e1.id, etape_app_id:ep3.id,envoie:true,groupe_user_id:g1.id,description:"description de HTTP")
 
 
 r1=Role.create(nom: "User")

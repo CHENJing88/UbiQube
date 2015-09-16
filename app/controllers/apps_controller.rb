@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
   before_filter :authenticate_user!
   #before_filter :correct_user?, :except => [:index]
-  load_resource
+  load_and_authorize_resource
   # GET /apps
   # GET /apps
   def index
