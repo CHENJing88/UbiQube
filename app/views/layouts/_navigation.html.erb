@@ -4,11 +4,12 @@
     <div class="nav navbar-header navbar-left">
       <ul >
         <li>
-          <% if user_signed_in? %>
-            <%= link_to "UbiQube", mesapps_path(current_user), id: "logo" %>
-          <% else %>
-            <%= link_to "UbiQube", root_path, id: "logo"%>
-          <% end %>
+          <%=
+             link_to_if(user_signed_in?, "UbiQube", mesapps_path(current_user), id: "logo" ) do
+               link_to("UbiQube", root_path, id: "logo")
+             end
+          %>
+        
         </li>
         <!--li class="name"--><%#= link_to 'Home', root_path %><!--/li-->
         <!--li>

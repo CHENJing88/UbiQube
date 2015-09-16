@@ -25,7 +25,7 @@
                   </tr>
                   <tr><td>Etape</td><td><%= @app.etape_app.nom if @app.etape_app %></td>
                   </tr>
-                  <tr><td>Groupe</td><td><%= @app.groupe_app.nom if @app.groupe_user%></td>
+                  <tr><td>Groupe</td><td><%= @app.groupe_user.nom if @app.groupe_user%></td>
                   </tr>
                 <%#= app_valide?(@app) %>
                   <%#= show_non_blank_field "Niveau", @app.niveau %>
