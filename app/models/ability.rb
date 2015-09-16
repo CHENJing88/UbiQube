@@ -26,7 +26,7 @@
 # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 class Ability
   include CanCan::Ability
-
+  helper :all
 
   def initialize(user)
     user||=User.new
