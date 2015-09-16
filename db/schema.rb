@@ -27,9 +27,10 @@ ActiveRecord::Schema.define(version: 20150914092513) do
     t.string   "nom"
     t.string   "niveau"
     t.string   "description"
-    t.boolean  "envoie",       default: false
+    t.boolean  "envoie",         default: false
     t.integer  "etat_app_id"
     t.integer  "etape_app_id"
+    t.integer  "groupe_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -74,8 +75,7 @@ ActiveRecord::Schema.define(version: 20150914092513) do
   end
 
   create_table "groupe_apps", force: true do |t|
-    t.integer  "groupe_user_id"
-    t.integer  "app_id"
+    t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

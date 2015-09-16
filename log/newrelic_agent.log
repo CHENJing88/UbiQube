@@ -538,3 +538,74 @@
 [09/14/15 11:25:13 +0200 nsadmin.infra.univ-tours.fr (9055)] INFO : Starting Agent shutdown
 [09/15/15 16:44:06 +0200 nsadmin.infra.univ-tours.fr (14975)] INFO : Starting Agent shutdown
 [09/15/15 17:03:37 +0200 nsadmin.infra.univ-tours.fr (15432)] INFO : Starting Agent shutdown
+[09/16/15 08:53:19 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Starting the New Relic agent in "development" environment.
+[09/16/15 08:53:19 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[09/16/15 08:53:19 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Reading configuration from config/newrelic.yml (/usr/local/src/ubiQube/rails)
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : New Relic Agent Developer Mode enabled.
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Environment: development
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : No known dispatcher detected.
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Application: ubiQube (Development)
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing ActiveRecord 4 instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing deferred Rack instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing Rack::Builder middleware instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing Net instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing Rails 3+ middleware instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing Rails 4 view instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing Rails 4 Controller instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Installing Rails 4 Error instrumentation
+[09/16/15 08:53:20 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Finished instrumentation
+[09/16/15 08:53:21 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1089617/applications/8549018
+[09/16/15 08:53:22 +0200 nsadmin.infra.univ-tours.fr (2847)] INFO : Starting Agent shutdown
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Starting the New Relic agent in "development" environment.
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Reading configuration from config/newrelic.yml (/usr/local/src/ubiQube/rails)
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : New Relic Agent Developer Mode enabled.
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Environment: development
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : No known dispatcher detected.
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Application: ubiQube (Development)
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing ActiveRecord 4 instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing deferred Rack instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing Rack::Builder middleware instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing Net instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing Rails 3+ middleware instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing Rails 4 view instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing Rails 4 Controller instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Installing Rails 4 Error instrumentation
+[09/16/15 08:53:31 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Finished instrumentation
+[09/16/15 08:53:32 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1089617/applications/8549018
+[09/16/15 08:53:33 +0200 nsadmin.infra.univ-tours.fr (2860)] INFO : Starting Agent shutdown
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Starting the New Relic agent in "development" environment.
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Reading configuration from config/newrelic.yml (/usr/local/src/ubiQube/rails)
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : New Relic Agent Developer Mode enabled.
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Environment: development
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : No known dispatcher detected.
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Application: ubiQube (Development)
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing ActiveRecord 4 instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing deferred Rack instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing Rack::Builder middleware instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing Net instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing Rails 3+ middleware instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing Rails 4 view instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing Rails 4 Controller instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Installing Rails 4 Error instrumentation
+[09/16/15 08:53:40 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Finished instrumentation
+[09/16/15 08:53:41 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1089617/applications/8549018
+[09/16/15 08:53:41 +0200 nsadmin.infra.univ-tours.fr (2873)] INFO : Starting Agent shutdown
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Starting the New Relic agent in "development" environment.
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Reading configuration from config/newrelic.yml (/usr/local/src/ubiQube/rails)
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : New Relic Agent Developer Mode enabled.
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Environment: development
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : No known dispatcher detected.
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Application: ubiQube (Development)
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing ActiveRecord 4 instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing deferred Rack instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Rack::Builder middleware instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Net instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Rails 3+ middleware instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Rails 4 view instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Rails 4 Controller instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Rails 4 Error instrumentation
+[09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Finished instrumentation
+[09/16/15 08:53:48 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Starting Agent shutdown
