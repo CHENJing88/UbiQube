@@ -277,3 +277,42 @@ i {// icon
   -moz-box-sizing:border-box;
   box-sizing:border-box;
 }
+
+//card d'APP
+.custom-card {
+  background-color: #ddd; // Background color
+  color: #000; // Text color
+  border: 1px solid #ddd; // Border
+  border-radius: 10px; // Border radius
+  box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.7); // Box shadow
+  padding: 5px 5px;
+  margin: 1rem; // Margin bottom
+  height:60px;
+  width: 200px;
+  line-height: 1em;
+
+  p{
+    font-size: 1.7rem;
+    text-align: left;
+    line-height: 1em;
+  }
+}
+
+.nouvel-card{
+  background-color: #cfcfcf; // Background color
+  color: #9b9b9b; // Text color
+  border: 1px solid #cfcfcf; // Border
+  border-radius: 10px; // Border radius
+  padding: 5px 5px;
+  margin: 1rem; // Margin bottom
+  height:60px;
+  width: 200px;
+  line-height: 1em;
+
+  text-align:center;
+  line-height: 1em;
+  p{
+    font-size: 1.7rem;
+  }
+
+}
