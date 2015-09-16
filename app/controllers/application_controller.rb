@@ -8,11 +8,7 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     render :file => "#{Rails.root}/public/403.html", :status => 403,:layout => false
     end
-  helper_method :current_user
-  helper_method :correct_user?
-  helper_method :user_signed_in?
-  helper_method :current_ability
-  helper_method :ldap
+
 protected
     def current_user
       begin
@@ -47,7 +43,7 @@ protected
       end
     end
 
-  
+
 
     def load_and_authorize_resource
      load_resource
