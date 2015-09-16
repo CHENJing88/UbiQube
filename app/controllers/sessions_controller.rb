@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
 
   def create
       auth = request.env["omniauth.auth"]
-      #ldap_auth(auth['uid'].to_s)
-      if false
+
+      if ldap_auth(auth['uid'].to_s, "DTIC")
         user = User.where(:provider => auth['provider'],
                           :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
 
