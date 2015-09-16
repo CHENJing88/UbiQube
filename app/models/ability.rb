@@ -36,7 +36,7 @@ class Ability
       can :read, :all
     elsif admin?
        # admin peut gérer tous
-        can :manage, :all
+       can :manage, :all
     elsif dsi?
         # Dsi peut
         can :manage, APP, :envoie => true
@@ -46,7 +46,8 @@ class Ability
       can :read, :all
       # gérer le compte soi meme
       can :manage, User, :id=> user.id
-      can :update, App, edit_app?(:id, user)
+      #
+      can :update, App #, edit_app?(:id, user)
 
       basic_app
     end

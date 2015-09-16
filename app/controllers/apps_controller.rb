@@ -1,17 +1,17 @@
 class AppsController < ApplicationController
   before_filter :authenticate_user!
   #before_filter :correct_user?, :except => [:index]
-  #authorize_resource :app
+  load_resource
   # GET /apps
   # GET /apps
   def index
-    @apps = App.all
+    #@apps = App.all
   end
 
   # GET /apps/1
   # GET /apps/1.xml
   def show
-    @app = App.find(params[:id])
+    #@app = App.find(params[:id])
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -21,7 +21,7 @@ class AppsController < ApplicationController
   # GET /apps/1/edit
   # GET /apps/1/edit.xml
   def edit
-    @app=App.find(params[:id])
+    #@app=App.find(params[:id])
     @user_app_roles=@app.user_app_roles.build
 
     respond_to do |format|
@@ -62,7 +62,7 @@ class AppsController < ApplicationController
   # PUT /apps/1
   # PUT /apps/1.xml
   def update
-    @app = App.find(params[:id])
+    #@app = App.find(params[:id])
     respond_to do |format|
       if App.new(app_params).valid?
         @app.update_attributes(app_params)
@@ -80,7 +80,7 @@ class AppsController < ApplicationController
   # DELETE /apps/1
   # DELETE /apps/1.xml
   def destroy
-    @app = App.find(params[:id])
+    #@app = App.find(params[:id])
     if @app.destroy then
       respond_to do |format|
         format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
