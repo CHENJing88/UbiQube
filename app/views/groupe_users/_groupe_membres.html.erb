@@ -5,15 +5,17 @@
         <tbody>
           <tr>
             <th> UID </th>
+            <th> Role </th>
             <th> Action </th>
           </tr>
           <% @membres.each do |user| %>
 	          <tr>
               <td><%= user.uid %></td>
+              <td>...</td>
               <td>
-                <span class="glyphicon glyphicon-minus"></span>
+                <span class="glyphicon glyphicon-remove-sign"></span>
               </td>
-            </tr>        
+            </tr>
           <% end %>
         </tbody>
       </table>
