@@ -1,5 +1,21 @@
-<h3>User</h3>
-<p>uid: <%= @user.uid if @user.uid %></p>
-<p>Email: <%= @ldap_info[0].mail[0] %></p>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <h3>Profile</h3>
+      <table class="table table-hover table-bordered">
+        <tbody>
+          <tr>
+            <td>UID</td>
+            <td><%= @user.uid if @user.uid %></td>
+          </tr>
 
-<%=@ldap_info %>
+          <tr>
+            <td>Email</td>
+            <td><%= @ldap_info[0].mail[0] %></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
