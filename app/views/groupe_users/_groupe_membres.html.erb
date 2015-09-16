@@ -1,5 +1,10 @@
-<ul>
-  <%= @membres.each do |membre|%>
-  <il><%= membre.uid%><il>
-  <% end%>
-</ul>
+
+<table class="table table-hover table-bordered">
+  <tbody>
+    <% @membres.each do |user| %>
+      <tr>
+        <%= membre.uid%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
