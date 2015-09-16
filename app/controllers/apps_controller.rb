@@ -22,12 +22,14 @@ class AppsController < ApplicationController
   # GET /apps/1/edit.xml
   def edit
     #@app=App.find(params[:id])
+    authorize! :edit, @app
     @user_app_roles=@app.user_app_roles.build
 
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
     end
+
   end
 
   # GET /apps/new
