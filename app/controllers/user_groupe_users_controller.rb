@@ -1,16 +1,16 @@
 class UserGroupeUsersController < ApplicationController
-  before_action :set_user_groupe_user, only: [:show, :edit, :update, :destroy]
-
+  #before_action :set_user_groupe_user, only: [:show, :edit, :update, :destroy]
+  load_resource
   # GET /user_groupe_users
   # GET /user_groupe_users.json
   def index
-    @user_groupe_users = UserGroupeUser.all
+    #@user_groupe_users = UserGroupeUser.all
   end
 
   # GET /user_groupe_users/1
   # GET /user_groupe_users/1.json
   def show
-    @user_groupe_user = UserGroupeUser.find(params[:id])
+    #@user_groupe_user = UserGroupeUser.find(params[:id])
   end
 
   # GET /user_groupe_users/new
@@ -22,7 +22,7 @@ class UserGroupeUsersController < ApplicationController
 
   # GET /user_groupe_users/1/edit
   def edit
-    @user_groupe_user = UserGroupeUser.find(params[:id])
+    #@user_groupe_user = UserGroupeUser.find(params[:id])
   end
 
   # POST /user_groupe_users

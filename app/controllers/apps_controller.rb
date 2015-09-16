@@ -59,7 +59,6 @@ class AppsController < ApplicationController
     end
 
   end
-
   # PUT /apps/1
   # PUT /apps/1.xml
   def update

@@ -1,14 +1,14 @@
 class ServiceInAppsController < ApplicationController
-before_action :set_app
 helper_method :vm_installs, :service_ins
+load_resource
 
   def index
-    @service_in_apps = @app.service_in_apps
+    #@service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
   def show
-    @service_in_app = ServiceInApp.find(params[:id])
+    #@service_in_app = ServiceInApp.find(params[:id])
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -16,7 +16,7 @@ helper_method :vm_installs, :service_ins
   end
 
   def edit
-    @service_in_app=ServiceInApp.find(params[:id])
+    #@service_in_app=ServiceInApp.find(params[:id])
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -38,7 +38,7 @@ helper_method :vm_installs, :service_ins
   def create
     #app_params.permit!
     #@app=App.find(params[:app_id])
-    @service_in_app = @app.service_in_apps.build(serIN_params)
+    @service_in_app = @app.service_in_apps.build(serv_in_params)
 
     respond_to do |format|
       if @service_in_app.save
@@ -55,7 +55,7 @@ helper_method :vm_installs, :service_ins
   # PUT /ServiceInApps/1
   # PUT /ServiceInApps/1.xml
   def update
-    @service_in_app = ServiceInApp.find(params[:id])
+    #@service_in_app = ServiceInApp.find(params[:id])
 
       if @service_in_app.update_attributes(params[:app])
         format.html {redirect_to mesapps_url(current_user), :notice => 'Data of App Technique was successfully updated.' }
@@ -69,7 +69,7 @@ helper_method :vm_installs, :service_ins
   # DELETE /ServiceInApps/1
   # DELETE /ServiceInApps/1.xml
   def destroy
-    @service_in_app = ServiceInApp.find(params[:id])
+    #@service_in_app = ServiceInApp.find(params[:id])
     if @service_in_app.destroy then
       respond_to do |format|
         format.html {redirect_to mesapps_url(current_user), :notice => 'App Technique was successfully deleted'}
@@ -92,7 +92,7 @@ helper_method :vm_installs, :service_ins
   end
 
   def add_vm
-    @service_in_app= ServiceInApp.find(params[:id])
+    #@service_in_app= ServiceInApp.find(params[:id])
     #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
     @service_ins=@service_in_app.services.build
     @vm_installs=@service_in_app.vms.build
@@ -104,11 +104,7 @@ helper_method :vm_installs, :service_ins
   end
 
 private
-  def serIN_params
+  def serv_in_params
     params.require(:service_in_app).permit(:port, apps_attributes:[:id],vm_install_service_ins_attributes:[:id,:service_in_app_id,:vm_id])
-  end
-
-  def set_app
-    @app=App.find(params[:app_id])
   end
 end

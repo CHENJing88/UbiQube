@@ -1,22 +1,22 @@
 class GroupeUsersController < ApplicationController
-
+load_resource
 # GET /groupe_users
 # GET /groupe_users.xml
 def index
-  @groupe_users = GroupeUser.all
+  #@groupe_users = GroupeUser.all
 end
 
 # GET /groupe_users/1
 # GET /groupe_users/1.xml
 def show
-  @groupe_user = GroupeUser.find(params[:id])
+  #@groupe_user = GroupeUser.find(params[:id])
   @membres=@groupe_user.users
   @groupeapps=@groupe_user.apps
 end
 # GET /groupe_users/1
 # GET /groupe_users/1.xml
 def edit
-  @groupe_user=GroupeUser.find(params[:id])
+  #@groupe_user=GroupeUser.find(params[:id])
 end
 
 # GET /groupe_users/new
@@ -44,7 +44,7 @@ end
 # PUT /groupe_users/1
 # PUT /groupe_users/1.xml
 def update
-  @groupe_user = GroupeUser.find(params[:id])
+  #@groupe_user = GroupeUser.find(params[:id])
   #@app.sort! {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   respond_to do |format|
     if @groupe_user.update_attributes(groupe_user_params)
@@ -62,7 +62,7 @@ end
 # DELETE /groupe_users/1
 # DELETE /groupe_users/1.xml
 def destroy
-  @groupe_user = GroupeUser.find(params[:id])
+  #@groupe_user = GroupeUser.find(params[:id])
   if @groupe_user.destroy then
     respond_to do |format|
       format.html {redirect_to mesapps_url(current_user), :notice => 'App was successfully deleted'}
