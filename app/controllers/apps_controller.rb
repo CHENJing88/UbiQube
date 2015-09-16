@@ -22,7 +22,6 @@ class AppsController < ApplicationController
   # GET /apps/1/edit.xml
   def edit
     #@app=App.find(params[:id])
-    authorize! :edit, @app
     @user_app_roles=@app.user_app_roles.build
 
     respond_to do |format|
@@ -65,6 +64,7 @@ class AppsController < ApplicationController
   # PUT /apps/1.xml
   def update
     #@app = App.find(params[:id])
+    authorize! :update, @app
     respond_to do |format|
       if App.new(app_params).valid?
         @app.update_attributes(app_params)
