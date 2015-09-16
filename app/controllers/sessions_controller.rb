@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         redirect_to mesapps_url(user.id), :notice => 'Signed in!'
       else
          reset_session
-         redirect_to signout_url, :notice => "Authentication error: que les personnelles du DTIC sont authorisées au Ubiqube"
+         redirect_to signout_url, :notice => 'Authentication error: que les personnelles du DTIC sont authorisées au Ubiqube'
       end
 
   end

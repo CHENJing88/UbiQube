@@ -46,7 +46,7 @@ class UserGroupeUsersController < ApplicationController
   def update
     respond_to do |format|
       if @user_groupe_user.update(user_groupe_user_params)
-        format.html { redirect_to @user_groupe_user, notice: 'User groupe user was successfully updated.' }
+        format.html
         format.json { render :show, status: :ok, location: @user_groupe_user }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class UserGroupeUsersController < ApplicationController
   def destroy
     @user_groupe_user.destroy
     respond_to do |format|
-      format.html { redirect_to user_groupe_users_url, notice: 'User groupe user was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'User groupe user was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
