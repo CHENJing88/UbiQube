@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def create
       auth = request.env["omniauth.auth"]
 
-      if ldap_auth(auth['uid'])
+      if ldap_auth(auth['uid'].to_s)
         user = User.where(:provider => auth['provider'],
                           :uid => auth['uid'].to_s).first || User.create_with_omniauth(auth)
 
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         redirect_to mesapps_url(user.id), :notice => 'Signed in!'
       else
         flash.keep
-         redirect_to signout_url, :notice => "Authentication error: que les personnelles du DTIC authorisées"
+         redirect_to signout_url, :notice => "Authentication error: que les personnelles du DTIC sont authorisées au Ubiqube"
       end
 
   end
