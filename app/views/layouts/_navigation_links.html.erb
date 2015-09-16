@@ -3,11 +3,11 @@
   <li><%= link_to "Accueil", mesapps_path(current_user) %></li>
   <li><%= link_to 'Users', users_path %></li>
   <!-- Admin Zone -->
-  <% if admin? %>
+  <% if admin?(current_user) %>
     <li><%= link_to 'Admin Zone', adminzone_path(current_user) %></li>
   <% end %>
   <!-- DSI Zone -->
-  <% if dsi? %>
+  <% if dsi?(current_user) %>
     <li><%= link_to 'DSI Zone', dsizone_path(current_user) %></li>
   <% end %>
   <!-- Mon compte -->

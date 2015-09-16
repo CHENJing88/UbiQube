@@ -13,13 +13,13 @@ module ApplicationHelper
   end
 
   # retourner true si current_user est admin
-  def admin?
-    return true if current_user.uid.to_s == Application.first.uid_admin.to_s
+  def admin?(user)
+    return true if user.uid.to_s == Application.first.uid_admin.to_s
   end
 
   # retourner true si current_user est dsi
-  def dsi?
-    return true if current_user[:uid].to_s== Application.first.uid_dsi.to_s
+  def dsi?(user)
+    return true if user.uid.to_s== Application.first.uid_dsi.to_s
   end
 
   def ldap_auth(uid, local)

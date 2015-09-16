@@ -26,7 +26,6 @@
 # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 class Ability
   include CanCan::Ability
-  helper :all
 
   def initialize(user)
     user||=User.new
@@ -34,10 +33,10 @@ class Ability
     if user.blank?
       # pour les visiters qui peut parcourir tous
       can :read, :all
-    elsif admin?
+    elsif admin?(user)
        # admin peut gérer tous
        can :manage, :all
-    elsif dsi?
+    elsif dsi?(user)
         # Dsi peut
         can :manage, APP, :envoie => true
         basic_app
