@@ -50,17 +50,14 @@ class Ability
 
       basic_app
     end
-
-    protected
-
-      def basic_app
-        can :read,   App
-        can :list,   App
-        can :search, App
-        can :create, App
-        can :delete, App
-      end
-
-
   end
+  protected
+
+    def basic_app
+      can :read,   App
+      can :list,   App
+      can :search, App
+      can :create, App
+      can :delete, App
+    end
 end
