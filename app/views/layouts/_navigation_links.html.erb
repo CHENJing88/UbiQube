@@ -1,6 +1,6 @@
 <%# add navigation links to this file   %>
-<li><%= link_to 'Help', "#" %></li>
 <% if user_signed_in? %>
+  <li><%= link_to "Accueil", mesapps_path(current_user) %></li>
   <li><%= link_to 'Users', users_path %></li>
   <!-- Admin Zone -->
   <% if admin? %>
@@ -23,5 +23,6 @@
   </li>
 
 <% else %>
+  <li><%= link_to "Accueil", root_path%></li>
   <li><%= link_to 'Sign in', signin_path %></li>
 <% end %>
