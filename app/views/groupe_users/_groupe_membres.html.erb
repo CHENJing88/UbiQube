@@ -3,13 +3,17 @@
     <div class="column">
       <table class="table table-hover table-bordered">
         <tbody>
+          <tr>
+            <th> UID </th>
+            <th> Action </th>
+          </tr>
           <% @membres.each do |user| %>
 	          <tr>
-              <%= user.uid %>
-            </tr>
-            <tr>
-              <span class="glyphicon glyphicon-minus"></span>
-            </tr>
+              <td><%= user.uid %></td>
+              <td>
+                <span class="glyphicon glyphicon-minus"></span>
+              </td>
+            </tr>        
           <% end %>
         </tbody>
       </table>
