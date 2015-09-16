@@ -12,7 +12,6 @@
               <%= link_to edit_app_path(app), data:{ remote:true, toggle:"modal",traget:"#dsi_app_modal" } do%>
                 <li class="custom-card" id="app-<%=app.id%>">
                   <p><%= app.nom %></p>
-                  <p><%= app.create_at %></p>
                 </li>
               <% end %>
             <% end %>
