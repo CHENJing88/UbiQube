@@ -8,7 +8,7 @@ module SessionsHelper
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       treebase = "ou=people,dc=univ-tours,dc=fr"
       @results = ldap.search( :base => treebase, :filter => filter )
-      return @results[0].ufrcomposante == "DTIC" 
+      return @results[0].ufrcomposante[0] == "DTIC" 
     else
         # authentication failed
          logger.debug("ldap authentication filter failed")
