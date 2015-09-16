@@ -22,7 +22,6 @@
           <%= form_app.fields_for :user_app_roles,@app.user_app_roles.build do |relation_fields|%>
             <%= relation_fields.hidden_field :user_id, :value => current_user.id %>
             <%= relation_fields.hidden_field :role_id, :value => find_role("User") %>
-
           <% end %>
         </div>
         <div class="modal-footer">

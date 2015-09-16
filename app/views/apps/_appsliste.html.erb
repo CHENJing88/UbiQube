@@ -1,0 +1,35 @@
+<!-- ====== c'est des cartes de 'Mes App' ===== -->
+<% if appsliste.empty? %>
+ <p> Non App maintenant. </p>
+<% else %>
+  <% appsliste.each do |app|%>
+    <%= link_to app_path(app), data:{ remote:true, toggle:"modal",traget:"#show_app_modal" } do%>
+      <li class="custom-card" id="app-<%=app.id%>">
+        <p><%= app.nom %></p>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+
+<!--****** Section du modal dialog template ******-->
+
+<!-- c'est le modal dialog d'afficher information d'App -->
+<div class="modal" id="show_app_modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" data-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- c'est le modal dialog de rédiger gestion fonctionnel d'App -->
+<div id="edit_app_modal" class="modal fade"  arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- c'est le modal dialog de rédiger gestion technique d'App -->
+<div id="edit_tech_app_modal" class="modal fade"  arial-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content"></div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
