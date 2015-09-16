@@ -42,6 +42,9 @@ module ApplicationHelper
       #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
       filter = Net::LDAP::Filter.eq( titre, var )
       treebase = "ou=people,dc=univ-tours,dc=fr"
+      #ldap.search( :base => treebase, :filter => filter,:return_result => false ) do |item|
+      #  emails << (item.mail.is_a?(Array) ? item.mail.first.to_s.strip : item.mail.to_s.strip)
+      #end
       @results = ldap.search( :base => treebase, :filter => filter )
       return @results
     else
@@ -49,23 +52,5 @@ module ApplicationHelper
          logger.debug("ldap authentication filter failed")
     end
   end
-
-  def ldap_query
-    emails=[]
-    if ldap.bind
-      filter = Net::LDAP::Filter.eq( "uid", current_user[:uid])
-      #filter = Net::LDAP::Filter.eq( "ufrcomposante", "DTIC" )
-      treebase = "ou=people,dc=univ-tours,dc=fr"
-      ldap.search( :base => treebase, :filter => filter,:return_result => false ) do |item|
-        emails << (item.mail.is_a?(Array) ? item.mail.first.to_s.strip : item.mail.to_s.strip)
-      end
-    else
-        # authentication failed
-         logger.debug("ldap authentication failed")
-    end
-
-    emails
-  end
-
 
 end
