@@ -22,18 +22,6 @@ module ApplicationHelper
     return true if current_user[:uid].to_s== Application.first.uid_dsi.to_s
   end
 
-  # param app_id: id d'App
-  # param user: @user
-  # examiner est-ce que user peut editer l'app
-  def edit_app?(app_id, user)
-    @uars=UserAppRole.find(app_id:app_id,user_id:user.id)
-    @uars.each do |uar|
-      if @uars.rold_id == 1
-        return false
-      end
-    end
-    return true
-  end
 
   # Limit le lecture d'info d'user
   def ldap_filtre(titre, var)
