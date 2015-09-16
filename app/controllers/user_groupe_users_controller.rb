@@ -1,6 +1,6 @@
 class UserGroupeUsersController < ApplicationController
   #before_action :set_user_groupe_user, only: [:show, :edit, :update, :destroy]
-  load_resource
+  load_resource 
   # GET /user_groupe_users
   # GET /user_groupe_users.json
   def index
