@@ -1,6 +1,6 @@
 class ServiceInAppsController < ApplicationController
 helper_method :vm_installs, :service_ins
-load_resource
+#load_resource
 
   def index
     @service_in_apps = @app.service_in_apps
@@ -8,7 +8,7 @@ load_resource
   end
 
   def show
-    #@service_in_app = ServiceInApp.find(params[:id])
+    @service_in_app = ServiceInApp.find(params[:id])
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -16,7 +16,7 @@ load_resource
   end
 
   def edit
-    #@service_in_app=ServiceInApp.find(params[:id])
+    @service_in_app=ServiceInApp.find(params[:id])
     respond_to do |format|
       format.html
       format.js{ render :layout => false }
@@ -26,7 +26,7 @@ load_resource
   # GET /ServiceInApps/new
   # GET /ServiceInApps/new.xml
   def new
-    #@app=App.find(params[:app_id])
+    @app=App.find(params[:app_id])
     @service_in_app= ServiceInApp.new
     @vm_installs=@service_in_app.vms.build
     @service_in_app.services.build
@@ -55,7 +55,7 @@ load_resource
   # PUT /ServiceInApps/1
   # PUT /ServiceInApps/1.xml
   def update
-    #@service_in_app = ServiceInApp.find(params[:id])
+    @service_in_app = ServiceInApp.find(params[:id])
 
       if @service_in_app.update_attributes(params[:app])
         format.html {redirect_to mesapps_url(current_user), :notice => 'Data of App Technique was successfully updated.' }
@@ -69,7 +69,7 @@ load_resource
   # DELETE /ServiceInApps/1
   # DELETE /ServiceInApps/1.xml
   def destroy
-    #@service_in_app = ServiceInApp.find(params[:id])
+    @service_in_app = ServiceInApp.find(params[:id])
     if @service_in_app.destroy then
       respond_to do |format|
         format.html {redirect_to mesapps_url(current_user), :notice => 'App Technique was successfully deleted'}
@@ -92,7 +92,7 @@ load_resource
   end
 
   def add_vm
-    #@service_in_app= ServiceInApp.find(params[:id])
+    @service_in_app= ServiceInApp.find(params[:id])
     #@vm_install_service_in= @service_in_app.vm_install_service_ins.build
     @service_ins=@service_in_app.services.build
     @vm_installs=@service_in_app.vms.build
