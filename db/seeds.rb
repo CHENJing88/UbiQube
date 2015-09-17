@@ -17,7 +17,7 @@ ep3=EtapeApp.create(nom:"Validé")
 ep4=EtapeApp.create(nom:"Refusé")
 ep5=EtapeApp.create(nom:"Archivé")
 
-g1=GroupeUser.create(nom:"DTIC")
+g1=GroupeUser.create(nom:"Editic")
 
 UserGroupeUser.create(groupe_user_id:g1.id, user_id:1)
 UserGroupeUser.create(groupe_user_id:g1.id, user_id:2)
