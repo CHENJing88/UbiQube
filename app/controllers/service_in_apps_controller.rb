@@ -3,7 +3,7 @@ helper_method :vm_installs, :service_ins
 load_resource
 
   def index
-    #@service_in_apps = @app.service_in_apps
+    @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
   end
 
