@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
+      # recupere les params d'omniauth dans auth
       auth = request.env["omniauth.auth"]
-      flash.keep(:notice)
+      # examiner user est le personnel de DTIC
       if ldap_auth(auth['uid'].to_s, "DTIC")
 
         user = User.where(:provider => auth['provider'],

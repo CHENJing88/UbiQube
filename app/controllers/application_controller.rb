@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
    helper :all
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -12,7 +11,8 @@ class ApplicationController < ActionController::Base
     helper_method :user_signed_in?
     helper_method :current_ability
     helper_method :ldap
-protected
+private
+    # current user
     def current_user
       begin
         @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -20,33 +20,24 @@ protected
         nil
       end
     end
-
+    # test current_user est null
     def user_signed_in?
       return true if current_user
     end
-
+    # comparer user login et user en session est le même
     def correct_user?
       @user = User.find(params[:id])
       unless current_user == @user
         redirect_to root_url, :error => "Accès refussè. Login, s'il vous plaît."
       end
     end
-
-    def authenticate_user!
-      if !current_user
-        redirect_to root_url, :notice => 'Vous avez besoin de se connecter pour accèder à cette page.'
-      end
-    end
-
-
+    # authorisation pour l'admin
     def authorize_admin!
-      authenticate_user!
+      correct_user?
       unless current_user.uid == Application.find(params[:uid_admin])
         redirect_to root_path, :error => "Vous devez être connecté en tant que l'administrateur pour cet opération"
       end
     end
-
-
 
     def load_and_authorize_resource
      load_resource

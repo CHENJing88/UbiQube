@@ -34,7 +34,8 @@ fixtures :users
 
   test "should show app" do
     get :show, id: @app
-    assert_response :success
+    #assert_response :success
+    assert_template  partial: "_show"
   end
 
   test "should get edit app" do

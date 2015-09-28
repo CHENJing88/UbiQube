@@ -1,6 +1,5 @@
 class AppsController < ApplicationController
-  before_filter :authenticate_user!
-  #before_filter :correct_user?, :except => [:index]
+  before_filter :correct_user?, :except => [:index]
   load_resource  # @app automatically set to App.find(params[:id])
   # GET /apps
   # GET /apps

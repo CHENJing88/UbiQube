@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :user_groupe_users
-
-  resources :users, :vms, :groupe_users
+  resources :users, :vms, :groupe_users,:user_groupe_users
 
   resources :apps do
     resources :service_in_apps
@@ -14,7 +12,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure', :as=> :sessions_failure
 
-  get '/users'=> 'users#index'
+  #get '/users'=> 'users#index'
   get '/users/:id/mesapps' => 'users#mesapps', :as=>:mesapps
 
   # pages ZONE: DSI, ADMIN

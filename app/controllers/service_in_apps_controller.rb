@@ -1,7 +1,7 @@
 class ServiceInAppsController < ApplicationController
   before_action :set_app
- helper_method :vm_installs, :service_ins
- load_resource
+  helper_method :vm_installs, :service_ins
+  load_resource
 
   def index
     @service_in_apps = @app.service_in_apps

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
   before_filter :correct_user?, :except => [:index]
   load_resource
   def index
@@ -35,6 +34,5 @@ private
     params.require(:user).permit(:uid, mesapps_attributes[:user_id,:app_id,:role_id],
     mesgroupes_attributes[:groupe_user_id,:user_id])
   end
-
 
 end
