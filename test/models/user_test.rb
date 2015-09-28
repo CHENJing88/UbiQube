@@ -4,6 +4,7 @@ class UserTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  
   test "assigned user_app_roles" do
     user=User.creat(:jing)
     app=App.create(:http)

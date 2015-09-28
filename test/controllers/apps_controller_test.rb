@@ -18,9 +18,9 @@ fixtures :users
     assert_not_nil assigns(:apps)
   end
 
-  test "should get new" do
+  test "should get new and render correct layout" do
     get :new
-    assert_response :success
+    assert_template  partial: "_new"
   end
 
   test "should create app" do
@@ -32,7 +32,7 @@ fixtures :users
     assert_equal 'App was successfully created.', flash[:notice]
   end
 
-  test "should show app" do
+  test "should show app and render correct layout" do
     get :show, id: @app
     #assert_response :success
     assert_template  partial: "_show"
@@ -55,11 +55,6 @@ fixtures :users
     assert_redirected_to mesapps_path(assigns(:app))
   end
 
-  # test views
-  test "new should render correct layout" do
-    get :new
-    assert_template  partial: "_new"
-  end
 
   # called after every single test
   def teardown
