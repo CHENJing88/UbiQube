@@ -12,12 +12,6 @@ fixtures :users
     assert_routing '/apps/1', {controller: "apps", action: "show", id: "1"}
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:apps)
-  end
-
   test "should get new and render correct layout" do
     get :new, user: @user
     assert_template  partial: "_new"
@@ -33,7 +27,7 @@ fixtures :users
   end
 
   test "should show app and render correct layout" do
-    get :show, form: :json, id: @app
+    get :show, form: :json, id: @app, user: @user
     #assert_response :success
     assert_template  partial: "_show"
   end
