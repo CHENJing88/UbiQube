@@ -6,7 +6,7 @@ class SessionsControllerTest < ActionController::TestCase
     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:cas]
   end
   # Routing test
-  
+
 
   test "should get new" do
     get :new
@@ -17,7 +17,7 @@ class SessionsControllerTest < ActionController::TestCase
       assert_nil assigns(session[:user_id])
       post :create, provider: :cas
       assert_not_nil assigns(session[:user_id])
-    end
+    
 
     assert_redirected_to mesapps_path(session[:user_id])
     assert_equal 'Sign in!', flash[:notice]
