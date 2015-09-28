@@ -17,7 +17,7 @@ class SessionsControllerTest < ActionController::TestCase
       assert_nil assigns(session[:user_id])
       post :create, provider: :cas
       assert_not_nil assigns(session[:user_id])
-    
+
 
     assert_redirected_to mesapps_path(session[:user_id])
     assert_equal 'Sign in!', flash[:notice]
@@ -32,7 +32,7 @@ class SessionsControllerTest < ActionController::TestCase
     delete :destroy
     assert_nil assigns(session[:user_id])
     assert_redirected_to 'https://cas.univ-tours.fr/cas/logout?service=http://ubiqube.univ-tours.fr'
-
+  end
   # called after every single test
   def teardown
     # as we are re-initializing @app before every test
