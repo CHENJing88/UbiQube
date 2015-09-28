@@ -13,7 +13,7 @@ fixtures :users
   end
 
   test "should get new and render correct layout" do
-    get :new, user: @user
+    get :new, id: @user
     assert_template  partial: "_new"
   end
 
@@ -27,9 +27,9 @@ fixtures :users
   end
 
   test "should show app and render correct layout" do
-    get :show, form: :json, id: @app, user: @user
-    #assert_response :success
-    assert_template  partial: "_show"
+    get :show, id: @app
+    assert_response :success
+    #assert_template  partial: "_show"
   end
 
   test "should get edit app" do
