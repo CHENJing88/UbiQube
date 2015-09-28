@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   test "assigned user_app_roles" do
-    user=User.create(nom:'user_nom',provider: 'CAS',uid: 'uid')
+    user=User.create(name:'user_nom',provider: 'CAS',uid: 'uid')
     app=App.create(nom: 'app_nom',niveau: 'Font',description: 'Web HTTP',etat_app_id: 1,etape_app_id: 2)
     role=Role.create(nom:'role_nom')
     assert_empty user.user_app_roles
