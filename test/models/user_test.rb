@@ -6,9 +6,9 @@ class UserTest < ActiveSupport::TestCase
   # end
 
   test "assigned user_app_roles" do
-    user=User.create(:jing)
-    app=App.create(:http)
-    role=Role.create(:rt)
+    user=User.create(assigns(:jing))
+    app=App.create(assigns(:http))
+    role=Role.create(assigns(:rt))
     assert_empty user.user_app_roles
     assert_empty app.user_app_roles
     assert_empty role.user_app_roles
