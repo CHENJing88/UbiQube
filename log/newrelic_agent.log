@@ -609,3 +609,60 @@
 [09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Installing Rails 4 Error instrumentation
 [09/16/15 08:53:47 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Finished instrumentation
 [09/16/15 08:53:48 +0200 nsadmin.infra.univ-tours.fr (2893)] INFO : Starting Agent shutdown
+[09/18/15 13:41:36 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.060902168 seconds. If this problem persists, please see http://status.newrelic.com
+[09/18/15 13:41:36 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_data' in Agent Event Loop:
+[09/18/15 13:41:36 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/18/15 13:43:36 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.00537611 seconds. If this problem persists, please see http://status.newrelic.com
+[09/18/15 13:43:36 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_transaction_event_data' in Agent Event Loop:
+[09/18/15 13:43:36 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/18/15 13:45:36 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.001844432 seconds. If this problem persists, please see http://status.newrelic.com
+[09/18/15 13:45:36 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_data' in Agent Event Loop:
+[09/18/15 13:45:36 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/18/15 13:49:28 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.001937843 seconds. If this problem persists, please see http://status.newrelic.com
+[09/18/15 13:49:28 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_transaction_event_data' in Agent Event Loop:
+[09/18/15 13:49:28 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/18/15 13:59:28 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.002260452 seconds. If this problem persists, please see http://status.newrelic.com
+[09/18/15 13:59:28 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_data' in Agent Event Loop:
+[09/18/15 13:59:28 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/21/15 16:01:26 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.001795955 seconds. If this problem persists, please see http://status.newrelic.com
+[09/21/15 16:01:26 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_transaction_event_data' in Agent Event Loop:
+[09/21/15 16:01:26 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/21/15 16:17:25 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.002410446 seconds. If this problem persists, please see http://status.newrelic.com
+[09/21/15 16:17:25 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_transaction_event_data' in Agent Event Loop:
+[09/21/15 16:17:25 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/21/15 16:19:25 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.002975121 seconds. If this problem persists, please see http://status.newrelic.com
+[09/21/15 16:19:25 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_data' in Agent Event Loop:
+[09/21/15 16:19:25 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/22/15 01:47:47 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/22/15 01:47:47 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/23/15 01:46:45 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/23/15 01:46:45 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/24/15 13:44:09 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/24/15 13:44:09 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/24/15 14:29:13 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/24/15 14:29:13 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/24/15 14:38:12 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/24/15 14:38:12 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/25/15 01:39:36 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 01:39:36 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/25/15 01:40:36 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 01:40:36 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/25/15 03:09:11 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Reporting to: https://rpm.newrelic.com/accounts/1089617/applications/8549018
+[09/25/15 06:33:19 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 06:33:19 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/25/15 16:37:42 +0200 nsadmin.infra.univ-tours.fr (23457)] WARN : Timed out opening connection to collector after 120.002880158 seconds. If this problem persists, please see http://status.newrelic.com
+[09/25/15 16:37:42 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : 1 error(s) running task for event 'report_data' in Agent Event Loop:
+[09/25/15 16:37:42 +0200 nsadmin.infra.univ-tours.fr (23457)] ERROR : Timeout::Error: execution expired
+[09/25/15 18:21:47 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 18:21:47 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/25/15 18:22:47 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 18:22:47 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/25/15 20:10:51 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 20:10:51 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/25/15 20:11:51 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/25/15 20:11:51 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Service unavailable (503): Service Unavailable
+[09/26/15 03:56:12 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/26/15 03:56:12 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/27/15 09:22:24 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : Error during check_for_and_handle_agent_commands, will retry later: 
+[09/27/15 09:22:24 +0200 nsadmin.infra.univ-tours.fr (23457)] INFO : NewRelic::Agent::ServerConnectionException: Recoverable error connecting to collector-125.newrelic.com:443: end of file reached
+[09/28/15 10:32:28 +0200 nsadmin.infra.univ-tours.fr (5539)] INFO : Starting Agent shutdown
