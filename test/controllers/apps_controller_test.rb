@@ -28,7 +28,7 @@ fixtures :users
 
   test "should show app and render correct layout" do
     get :show, id: @app
-    assert_response :success
+    assert_redirected_to partial: "_show"
     #assert_template  partial: "_show"
   end
 
