@@ -19,7 +19,7 @@ fixtures :users
   end
 
   test "should get new and render correct layout" do
-    get :new
+    get :new, id: @user
     assert_template  partial: "_new"
   end
 
@@ -33,14 +33,14 @@ fixtures :users
   end
 
   test "should show app and render correct layout" do
-    get :show, id: @app
+    get :show, form: :json, id: @app
     #assert_response :success
     assert_template  partial: "_show"
   end
 
   test "should get edit app" do
     get :edit, id: @app
-    assert_response :success
+    assert_template  partial: "_edit"
   end
 
   test "should update app" do
@@ -50,7 +50,7 @@ fixtures :users
 
   test "should destroy app" do
     assert_difference('App.count', -1) do
-      delete :destroy, id: @app
+      delete :delete, id: @app
     end
     assert_redirected_to mesapps_path(assigns(:app))
   end

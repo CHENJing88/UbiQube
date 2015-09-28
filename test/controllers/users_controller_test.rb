@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
   setup do
-    @user = articles(:jing)
+    @user = users(:jing)
   end
 
   test "should route to mesapp" do
