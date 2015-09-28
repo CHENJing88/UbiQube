@@ -20,7 +20,7 @@ class ActiveSupport::TestCase
                             'nickname' => 'JingTheRobot'
                          }
                       }
-      }
+      
       OmniAuth.config.add_mock(:cas, omniauth_hash)
     end
   end
