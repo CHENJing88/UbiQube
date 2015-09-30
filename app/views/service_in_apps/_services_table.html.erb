@@ -20,7 +20,7 @@
       <%= service_ins.each do |s| %>
         <tr>
           <td><%= s.nom%></td><td><%=s.port %></td><td><%= s.protocole %></td>
-          <td><%= vs.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
+          <td><%= f.select :vm_id, Vm.all.map { |vm| [vm.nom, vm.id] }, {:prompt => false}, { multiple:'multiple'},:class=>'multiselect form-control input-sm'%></td>
           <td><%#= check_box_tag , s.is_default %></td>
           <td><%= link_to 'Destroy', vis, :confirm => 'Are you sure?', :method => :delete %></td>
         </tr>

@@ -1,47 +1,47 @@
 <div class="field">
   <%#= fields_for @service_in_app, :url=> {controller=>'service_in_apps', :action=> 'update'} do |siv_fields| %>
   <div id="vm-conf">
-    <%= f.fields_for :vm_installs do |vms_form|  %>
 
+    <%= f.fields_for :vm_installs do |vms_form| %>
+    <!-- button pour créer un nouveau vm dans la tableau du vm-->
       <%#= link_to_add_fields("New VM", f, :vm_installs, :class => "btn-new-vm btn btn-info btn-sx btn-primary", :title => "Add a new VM to the list of VMs that install the services.") %>
       <%= link_to "#", :class=> "btn-new-vm btn btn-info btn-sx" do%>
         <i class="fi-plus"> New VM</i>
       <%end%>
+      <!-- Affichage les vms choisi pour installer les services-->
       <%= render 'service_in_apps/vms_table', :f=>vms_form%>
 
-      <%#=fields_for :vms do |vi_form|%>
+      <!-- button pour ajouter les vms dans la tableau du vm-->
       <div class="field">
-        <%= vms_form.label "VMs : " %><%#= select_tag "vm_install[]", options_for_select( Vm.all.map { |vm| [vm.nom, vm.id] }),{:class=>'multiselect',:multiple=>'multiple'}%>
+        <%= vms_form.label "VMs : " %>
         <%= vms_form.select :id, Vm.all.map { |vm| [vm.nom, vm.id] },{:prompt => false},{:class=>'multiselect', :multiple=>'multiple', :id=>"vm-multiselect"}%>
         <%= link_to "Add", :data => {:f=>f, :vms=>:vms_installs, :"disable-with"=> "Loading..."}, :id=>"add_vm",:class=>"button btn btn-default" %>
         <%#= link_to_add_fields "Add", f, :vms %>
       </div>
-      <%# end %>
+
     <% end %>
+  </div><!-- /#vm-conf-->
 
+  <div id="serv-conf">
+    <%= f.fields_for :services do |s|%>
+      <!-- Affichage les services pour installer et configuration les vms pour chaque service-->
+      <%= render 'service_in_apps/services_table', :f=>f %>
 
-
-  </div>
-
-    <div id="serv-conf">
-      <%= f.fields_for :services do |s|%>
-        <%= render 'service_in_apps/services_table', :f=>f %>
-
-        <div class="field">
-          <%= s.label "Selection Services : " %><%= s.select :id, Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
-          {:class=>'multiselect', multiple:'multiple',id:"serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
-          <%#= vs.hidden_field :user_id, :value => current_user.id %>
-          <%#= relation_fields.hidden_field :role_id, :value => 1 %>
-        </div>
-
-      <% end %>
-    </div>
-
-    <div class="modal-footer">
-      <div class = "actions">
-        <%#= siv.submit "Save", class: 'btn btn-large btn-primary'%>
-        <%=link_to "Annuler", edit_app_path(@app), data:{ toggle:"modal", traget:"#edit_app_modal"},remote:true, :class=>"btn btn-default"%>
+      <!-- button pour ajouter les services dans la tableau du service-->
+      <div class="field">
+        <%= s.label "Selection Services : " %><%= s.select :id, Service.all.map { |s| [s.nom, s.id] }, {:prompt => false},
+        {:class=>'multiselect', multiple:'multiple',id:"serv-multiselect"}%><button type="submit" class="btn btn-default">Add</button>
       </div>
-    </div><!-- /.modal-footer , {:controller=>'service_in_apps', :action=> 'edit_tech'}-->
+
+    <% end %>
+  </div><!-- /#serv-conf -->
+
+  <div class="modal-footer">
+    <div class = "actions">
+      <%#= f.submit "Save", class: 'btn btn-large btn-primary'%>
+      <%=link_to "Annuler", edit_app_path(@app), data:{ toggle:"modal", traget:"#edit_app_modal"},remote:true, :class=>"btn btn-default"%>
+    </div>
+  </div><!-- /.modal-footer -->
+
   <%# end %><!--form_for service_in_app-->
 </div><!--field -->

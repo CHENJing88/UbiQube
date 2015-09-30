@@ -1,7 +1,5 @@
-//document.getElementById("#edit_app_<%= @app.id %>").submit();
 $('form#edit_app_<%= @app.id%>').submit();
 $('#edit_app_modal')
 .modal("hide");
 $('#show_app_modal').html("<%= j render('apps/show', @app)%>")
-//.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') }
 .modal("show");

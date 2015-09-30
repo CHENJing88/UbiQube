@@ -10,15 +10,15 @@
         <div class="modal-body">
           <i class="fi-list"><h5>Gestion Fonctionnel</h5></i>
           <div id="content">
-          <%# form_for @app, :url=> {controller=>'apps', :action=> 'show'}, remote:true do |f| %>
-          <%# form_for @app do |f| %>
             <%= form_for @app, :url=> {:controller=>'apps', :action=> 'show'} do |f| %>
               <table >
                 <tr>
                   <th> Title </th>
                   <th> Valeur </th>
                 </tr>
+
                 <% if @app.etape_app.id > 2 %>
+                <!-- if app est validé, affichera les infos suivant -->
                   <tr><td>Niveau</td><td><%= @app.niveau %></td>
                   </tr>
                   <tr><td>Etat</td><td><%= @app.etat_app.nom if @app.etat_app %></td>
@@ -27,11 +27,6 @@
                   </tr>
                   <tr><td>Groupe</td><td><%= @app.groupe_user.nom if @app.groupe_user%></td>
                   </tr>
-                <%#= app_valide?(@app) %>
-                  <%#= show_non_blank_field "Niveau", @app.niveau %>
-                  <%#= show_non_blank_field "Etat", @app.etat_app.nom %>
-                  <%#= show_non_blank_field "Etape", @app.etape_app.nom %>
-                  <%#= show_non_blank_field "Groupe", @app.groupe_app.nom %>
                 <% end %>
 
                 <tr><td>Description</td><td><%= @app.description %></td>
@@ -41,15 +36,15 @@
 
           </div><!-- /.content -->
         </div><!-- /.modal-body -->
+
         <div class="modal-footer">
-          <%#= link_to "Edit", {:controller => "apps", :action => "edit", :id => @app.id,},
-            remote: true, onclick: "$('#edit_app_modal').modal();", class="secondary button"%>
-            <%if can? :update, App%>
-              <%=link_to "Éditer", edit_app_path(@app), data:{remote:true, toggle:"modal",traget:"#edit_app_modal",dismiss:"modal" },:class=>"btn btn-primary"%>
-            <%end%>
+          <%if can? :update, App%>
+            <%=link_to "Éditer", edit_app_path(@app), data:{remote:true, toggle:"modal",traget:"#edit_app_modal",dismiss:"modal" },:class=>"btn btn-primary"%>
+          <%end%>
           <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
           <%= link_to 'Supprimer', app_path(@app), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn-danger btn' %>
         </div><!-- /.modal-footer -->
+
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 <!--/div>< /.show_app_modal -->

@@ -1,3 +1,10 @@
+// render edit modal
+$('#edit_app_modal').html("<%= j render('apps/edit')%>")
+.modal("show");
+//setting pour plugin multiselect
+triggetfoncmultiselect();
+
+// js pour configuration de multiselect dans page edit_app_modal
 function triggetfoncmultiselect(){
   $('#uar_fonc_multi').multiselect({
     //enableClickableOptGroups: true,
@@ -20,8 +27,3 @@ function triggetfoncmultiselect(){
     selectedClass: 'multiselect-selected'
   });
 }
-
-$('#edit_app_modal').html("<%= j render('apps/edit')%>")
-//.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
-.modal("show");
-triggetfoncmultiselect();

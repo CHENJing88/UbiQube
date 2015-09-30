@@ -1,15 +1,21 @@
 <container>
   <groupe-header >
-     <i class="fi-torsos-all"><h3 ><%= @groupe_user.nom %></h3></i>
+     <i class="fi-torsos-all"><h3 ><%= @groupe_user.nom %></h3></i><span class="glyphicon glyphicon-pencil"></span>
   </group-header >
 
   <groupe-container >
+     <!-- Nav tab panes -->
      <%= render 'groupe_users/nav_tabs' %>
-      <!-- Tab panes -->
+
+      <!-- Tab panes contenu -->
       <div class="tab-content">
+        <!-- Afficher les Apps dans groupes -->
         <div class="tab-pane active" id="apps"><%= render 'groupe_users/groupe_apps' %></div>
+        <!-- Afficher les users dans groupes -->
         <div class="tab-pane" id="membres"><%= render 'groupe_users/groupe_membres' %></div>
+        <!-- Afficher les commantaires dans groupes -->
         <div class="tab-pane" id="messages">Messages...</div>
+        <!-- Configuration de groupe user-->
         <div class="tab-pane" id="settings">Settings...</div>
       </div>
   </group-container >

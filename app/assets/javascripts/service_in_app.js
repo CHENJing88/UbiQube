@@ -29,11 +29,11 @@ $(function() {
           });
 
           console.log(selected);
-        }*/
+        }
 
         $("#rm_vm").on('click',function(){
   		       $(this).parent().parent().remove();
-  	    });
+  	    });*/
 
       });
 

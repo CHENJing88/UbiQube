@@ -53,7 +53,8 @@ fixtures :users
       assert_difference('UserAppRole.count', -1) do
         @user.destroy
       end
-    end
+  end
+
   # called after every single test
   def teardown
     # as we are re-initializing @app before every test

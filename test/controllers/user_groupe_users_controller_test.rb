@@ -46,4 +46,12 @@ class UserGroupeUsersControllerTest < ActionController::TestCase
 
     assert_redirected_to user_groupe_users_path
   end
+
+  # called after every single test
+  def teardown
+    # as we are re-initializing @app before every test
+    # setting it to nil here is not essential but I hope
+    # you understand how you can use the teardown method
+    @user_groupe_user = nil
+  end
 end

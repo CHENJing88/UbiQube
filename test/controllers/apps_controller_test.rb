@@ -18,6 +18,7 @@ fixtures :users
   end
 
   test "should create app" do
+    get :create, id: @user
     assert_difference('App.count') do
       post :create, app: { nom: @app.nom, description: @app.description }
     end

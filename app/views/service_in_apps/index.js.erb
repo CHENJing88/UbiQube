@@ -1,3 +1,10 @@
+// render le modal d'edit techique d'app
+$('#edit_tech_app_modal').html("<%= j render('service_in_apps/index')%>")
+//.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
+.modal("show");
+// setting pour les multiselects
+triggettechmultiselect();
+
 function triggettechmultiselect(){
   $('#vm-multiselect').multiselect({
     enableClickableOptGroups: true,
@@ -14,9 +21,3 @@ function triggettechmultiselect(){
     selectedClass: 'multiselect-selected'
   });
 }
-
-
-$('#edit_tech_app_modal').html("<%= j render('service_in_apps/index')%>")
-//.on("hidden.bs.modal", function() { $(this).removeData('bs.modal') })
-.modal("show");
-triggettechmultiselect();

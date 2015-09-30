@@ -2,30 +2,25 @@
   <div class="field">
 
     <%= f.label :nom %><%= f.text_field :nom, :size => 30, class:'form-control'  %>
-    <%#= f.label :niveau %><%#= f.select(:niveau_id, Niveau.all.map { |niveau| [niveau.nom, niveau.id] }, :prompt => true) %>
     <%= f.label :niveau %><%= f.text_field :niveau, :size => 30, class:'form-control'%>
 
     <%= f.label :etat %><%= f.select :etat_app_id, EtatApp.all.map { |etat_app| [etat_app.nom, etat_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
     <%= f.label :etape %><%= f.select :etape_app_id, EtapeApp.all.map { |etape_app| [etape_app.nom, etape_app.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
     <%= f.label :groupe %><%= f.select :groupe_user_id, GroupeUser.all.map { |groupe_user| [groupe_user.nom, groupe_user.id] }, {:prompt => true}, {:class=>'form-control input-sm'}%>
 
-
+    <!-- fields pour relation complexe: tous les user_app_roles d'app -->
     <%=f.fields_for @user_app_roles do |uars| %>
-      <%#= debug resp_fonc?(@app) %>
-      <%# uar=resp_fonc?(@app) %>
+        <!-- fields pour relation de Responsable Fonctionnel-->
         <%= f.fields_for :user_app_roles, resp_fonc?(@app) do |uar_f|%>
-          <%#= f.fields_for @user_app_roles do |uar_rf_f|%>
 
-            <%= uar_f.label "Responsable Fonctionnel" %>
-
-            <%= uar_f.select :user_id, User.all.map { |user| [user.uid, user.id] },
+           <%= uar_f.label "Responsable Fonctionnel" %>
+           <%= uar_f.select :user_id, User.all.map { |user| [user.uid, user.id] },
             {:prompt => false}, {multiple:'multiple',:include_hidden => false,:class=>'multiselect form-control input-sm',:id=>"uar_fonc_multi"}%>
             <%= uar_f.hidden_field :app_id, :value => @app.id %>
             <%= uar_f.hidden_field :role_id, :value => find_role("RF")%>
 
       <% end %>
-
-      <%# uar=resp_tech?(@app)%>
+      <!-- fields pour relation de Responsable Technique-->
       <%= f.fields_for :user_app_roles, resp_tech?(@app) do |uar_t|%>
 
             <%= uar_t.label "Responsable Technique" %>
@@ -35,8 +30,6 @@
             <%= uar_t.hidden_field :role_id, :value => find_role("RT")%>
 
       <% end %>
-      <%#= f.fields_for :user_app_roles, @app.user_app_roles.build do |uar_rt_f|%>
-      <%#= f.fields_for @user_app_roles do |uar_rt_f|%>
     <% end %>
 
     <%= f.label :description %><%= f.text_area :description %>

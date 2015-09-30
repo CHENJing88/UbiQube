@@ -46,4 +46,12 @@ class VmsControllerTest < ActionController::TestCase
 
     assert_redirected_to vms_path
   end
+
+  # called after every single test
+  def teardown
+    # as we are re-initializing @app before every test
+    # setting it to nil here is not essential but I hope
+    # you understand how you can use the teardown method
+    @vm = nil
+  end
 end

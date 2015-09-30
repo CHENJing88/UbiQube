@@ -22,6 +22,7 @@ module ApplicationHelper
     return true if user.uid.to_s== Application.first.uid_dsi.to_s
   end
 
+  # évaluer user est de DTIC ou pas
   def ldap_auth(uid, local)
     if ldap.bind
       filter = Net::LDAP::Filter.eq( "uid", uid )
