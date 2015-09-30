@@ -64,8 +64,8 @@ class AppsController < ApplicationController
     #@app = App.find(params[:id])
     authorize! :update, @app
     respond_to do |format|
-      if App.new(app_params).valid?
-        @app.update_attributes(app_params)
+      #if App.new(app_params).valid?
+      if   @app.update_attributes(app_params)
           format.html { redirect_to mesapps_url(current_user), :notice => 'App was successfully updated' }
           format.json { render :action => "show", :status => :updated, :location => @app }
           format.js
