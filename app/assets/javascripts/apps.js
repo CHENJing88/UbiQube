@@ -1,4 +1,4 @@
-$('#app_update').bind('toggle', function() {
+/*$('#app_update').bind('toggle', function() {
   $.ajax({
     url: $(this).parents('form')[0].action,
     headers: {
@@ -11,4 +11,4 @@ $('#app_update').bind('toggle', function() {
       'authenticity_token': $(this).siblings('#authenticity_token').val()
     }
   });
-});
+});*/

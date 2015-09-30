@@ -20,22 +20,4 @@
 
 $(document).ready(function() {
 
-  // ======= multiselect =======
-      $('#rt-multiselect').multiselect({
-      //enableClickableOptGroups: true,
-      //includeSelectAllOption: true,
-      //enableFiltering: true,
-      maxHeight: 200
-      });
-
-      $('#popover_group_usr').popover({
-          html : true,
-          title: function() {
-            return $("#popover-head").html();
-          },
-          content: function() {
-            return $("#popover-content").html();
-          }
-      });
-
     });
