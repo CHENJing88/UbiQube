@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :correct_user?, :except => [:index]
+
   load_resource
   def index
     #@users = User.all

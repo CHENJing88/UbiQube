@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+   before_filter :authenticate_user!
    helper :all
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -31,6 +32,13 @@ private
         redirect_to root_url, :error => "Accès refussè. Login, s'il vous plaît."
       end
     end
+
+    def authenticate_user!
+      if !current_user
+        redirect_to root_url, :notice => 'Vous avez besoin de se connecter pour accèder à cette page.'
+      end
+    end
+
     # authorisation pour l'admin
     def authorize_admin!
       correct_user?
