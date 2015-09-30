@@ -6,7 +6,10 @@ class ServiceInAppsController < ApplicationController
   def index
     @service_in_apps = @app.service_in_apps
     @service_in_apps.sort {|a,b| a.create_at.to_i <=> b.create_at.to_i}
-    @vm_installs=@service_in_app.vms.build
+    @vm_installs=Vm.new
+    @service_in_apps.each do |sia|
+      @vm_installs.push(sia.vm_install_service_ins.includes(:vms))
+    end
   end
 
   def show
@@ -82,7 +85,7 @@ class ServiceInAppsController < ApplicationController
   end
 
   def vm_installs
-      @app.service_in_apps.each do |sia|
+      @service_in_apps.each do |sia|
         @vm_installs.push(sia.vm_install_service_ins.includes(:vms))
       end
   end
