@@ -16,7 +16,8 @@ Getting Started
 
 Documentation and Support
 -------------------------
-
+- Guide of developer
+- CdS
 Issues
 -------------
 
@@ -25,6 +26,8 @@ Similar Projects
 
 Contributing
 ------------
+1. Fork and clone the respo: git clone git://github.com/yourname/ubiQube.git && cd ubiQube
+2. Install the gem dependencies: bundle install
 
 Credits
 -------

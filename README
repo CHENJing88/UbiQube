@@ -26,7 +26,7 @@ choose  Enter your selection: [none]
 option  Continuous testing?
 choose  Enter your selection: []
 option  Front-end framework?
-choose  Enter your selection: [foundation5]
+choose  Enter your selection: [bootstrap]
 option  Add support for sending email?
 choose  Enter your selection: [none]
 option  Authentication?
@@ -34,7 +34,7 @@ choose  Enter your selection: [omniauth]
 option  Devise modules?
 choose  Enter your selection: []
 option  OmniAuth provider?
-choose  Enter your selection: [facebook]
+choose  Enter your selection: [cas]
 option  Authorization?
 choose  Enter your selection: [none]
 option  Use a form builder gem?
