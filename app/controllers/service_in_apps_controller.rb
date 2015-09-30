@@ -109,7 +109,7 @@ private
     params.require(:service_in_app).permit(:port, apps_attributes:[:id],vm_install_service_ins_attributes:[:id,:service_in_app_id,:vm_id])
   end
   def set_app
-  @app=App.find(params[:id])
+  @app=App.find(params[:app_id])
   end
 
 end
