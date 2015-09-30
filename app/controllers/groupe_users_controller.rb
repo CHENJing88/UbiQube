@@ -1,4 +1,5 @@
 class GroupeUsersController < ApplicationController
+  before_filter :authenticate_user!
 load_resource
 # GET /groupe_users
 # GET /groupe_users.xml
