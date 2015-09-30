@@ -12,7 +12,7 @@ e3=EtatApp.create(nom:"Maintenance")
 Application.create(nom:"Ubiqube",version:"1.0",uid_admin:"jchen",uid_dsi:"jchen",etat_id:e1.id)
 
 ep1=EtapeApp.create(nom:"Brouillion")
-ep2=EtapeApp.create(nom:"cours de validation")
+ep2=EtapeApp.create(nom:"en cours de validation")
 ep3=EtapeApp.create(nom:"Validé")
 ep4=EtapeApp.create(nom:"Refusé")
 ep5=EtapeApp.create(nom:"Archivé")

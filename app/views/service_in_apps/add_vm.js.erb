@@ -1,5 +1,0 @@
-var brands = $('#VM-multiselect option:selected');
-
-$(brands).each(function(index, brand){
-  $("#vm-table").append('<% j render(service_in_apps/vm_install)%>, $(this).val()');
-});
